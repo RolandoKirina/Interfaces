@@ -1,8 +1,34 @@
-:root {
-    --color-acento: #00D88C;
-    /* poner variables de color aqui */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+/*NO HACER PUSH*/
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
 }
 
-p {
-    color: var(--color-acento);
+.test {
+    display: flex;
+    width: 100%;
+    
+}
+
+:root {
+    /* seccion colores */
+    --acento-luz: #00D88C;
+    --acento: #00724A;
+    --acento-oscuro: #003A26;;
+    --prim: #00488A;
+    --prim-luz1: #0A5499;
+    --prim-luz2: #0B64B8;
+    --prim-luz3: #0D85F5;
+    --prim-sombra1: #00284E;
+    --prim-sombra2:  #00182F;
+    --prim-sombra3: #000D1A;
+    --blanco: #F5FBFF;
+    --negro: #23282B;
+}
+
+h1 {
+    color: var(--acento-luz);
 }
