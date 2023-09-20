@@ -1,0 +1,8 @@
+:root {
+    --color-acento: #00D88C;
+    /* poner variables de color aqui */
+}
+
+p {
+    color: var(--color-acento);
+}
