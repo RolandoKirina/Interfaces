@@ -32,3 +32,45 @@
 h1 {
     color: var(--acento-luz);
 }
+
+.imgCard {
+    width: 12.9375rem;
+    height: 12.625rem;   
+    padding: 0.5rem;
+}
+
+.card h3, .btnJugar {
+margin-left: 0.5rem;
+}
+.btn {
+    border-radius: 0.3125rem;
+}
+.btnJugar {
+    margin-left: ;
+    width: 6.77713rem;
+    height: 3.18956rem;
+    background-color:var(--prim-luz3);
+    color:var(--blanco);
+}
+
+div h3 {
+ margin-left: 0.5rem;   
+}
+.gratis{
+    width: 3.4375rem;
+    height: 1.5rem;
+    margin: 0.5rem;
+    background-color: var(--acento-luz);
+    color: var(--prim-sombra3);
+}
+.imgcarruselprincipal {
+    width: 90em;
+    height: 41.625em;
+}
+
+.card {
+    width: 15.13569rem;
+    height: 22.89363rem;
+    border-radius: 5px;
+    border: solid
+}
