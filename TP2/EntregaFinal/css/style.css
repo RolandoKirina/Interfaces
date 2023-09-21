@@ -1,4 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;400&family=Roboto:wght@100;400&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;400&family=Roboto:wght@100&display=swap');
 /*NO HACER PUSH*/
 * {
     box-sizing: border-box;
@@ -26,6 +28,7 @@
     --prim-sombra2:  #00182F;
     --prim-sombra3: #000D1A;
     --blanco: #F5FBFF;
+    --blanco-oscuro: #E5F4FF;
     --negro: #23282B;
 }
 
@@ -46,7 +49,7 @@ margin-left: 0.5rem;
     border-radius: 0.3125rem;
 }
 .btnJugar {
-    margin-left: ;
+    /* margin-left: ; */
     width: 6.77713rem;
     height: 3.18956rem;
     background-color:var(--prim-luz3);
@@ -73,4 +76,281 @@ div h3 {
     height: 22.89363rem;
     border-radius: 5px;
     border: solid
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*  Seccion Formulario Registro */
+
+.register-container {
+    width: 100%;
+    height: auto; 
+    display: flex;
+    justify-content: center;
+    background-image: url('../imgs/imgEspacial.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+}
+
+.tituloLogo {
+    display: flex;
+    height: 2.6em;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3em;
+    margin-bottom: 2em;
+}
+
+.tituloLogo img {
+    width: 2.5em;
+    height: 2.7em;
+}
+
+.tituloLogo h1 {
+    margin-left: 5px;
+    margin-right: 1em;
+    font-family: var(--fuente-logo);
+    color: var(--blanco);
+    font-size: 2em;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.form-register-container {
+    width: 25.65em;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    margin-left: 1em;
+}
+
+.tituloRegister {
+    width: 25.62531rem;
+    height: 2.875rem;
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.6em;
+}
+
+
+.linea {
+    display: inline-block;
+    width: 4.06294rem;
+    height: 0.0625rem;
+    background-color: var(--blanco);
+    margin: 1em 0;
+}
+
+.marcianito {
+    width: 2.375rem;
+    height: 2.375rem;
+    margin-left: 0.4em;
+    margin-bottom: 0.4em;
+    margin-right: 0.4em;
+}
+
+.registrarse {
+    display: inline-block;
+    text-align: center;
+    padding-bottom: 0.4em;
+}
+
+.registrarse h1{
+    font-family: var(--fuente-logo);
+    display: inline;
+    margin-bottom: 3em;
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    color: var(--blanco);
+}
+
+/* .tituloRegister:last-child {
+    margin-right: 0.15em;
+} */
+
+.form-register {
+    width: 100%;  
+    display: flex;
+    flex-direction: column;
+    align-items: self-start;
+}
+
+.form-register label {
+    color: var(--blanco);
+    width: 13.625rem;
+    height: 1.3125rem;
+   
+}
+
+.inputForm {
+    margin: 0.4em 0;
+    width: 100%;
+    height: 3.625em;
+    background-color: var(--prim-sombra2);
+    border: 1px solid var(--blanco-oscuro);
+    border-radius: 0.5rem;
+    color: var(--blanco);
+    outline: 0;
+    margin-bottom: 1em;
+}
+
+.inputForm:hover {
+    border: 1px solid var(--blanco-oscuro);
+    background-color: var(--prim-sombra1);
+}
+
+.inputForm:focus {
+    outline: 0;
+}
+
+/* seccion botones form */
+
+.btn-captcha-container, .btn-registrarse-container {
+    text-align: center;
+    margin-top: 1em;
+    width: 100%;
+    height: 3.823rem;
+    align-items: center;
+}
+
+.btn-captcha-container button {
+    width: 16.07213em;
+    height: 100%;
+}
+
+.btn-registrarse-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 2em;
+    height: 2.8125rem;
+}
+
+.btn-registrarse-container button {
+    width: 9.9375em;
+    height: 100%;
+}
+
+
+.lineaBtnGoogleFace1 {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    margin: 1em 0;
+    margin-top: 1.5em;
+}
+
+.lineaBtnGoogleFace1 p{
+    display: inline;
+    color: var(--blanco);
+    font-size: 0.75em;
+    margin: 0 1em;
+}
+
+.linea2 {
+    width: 12.1875rem;
+    height: 0.0625rem;
+    background-color: var(--blanco);
+}
+
+.btn-google-face {
+    width: 100%;
+    height: 19em
+}
+
+.btn-google-container {
+    text-align: center;
+    width: 100%;
+    height: 2.75em;
+}
+
+.btn-google-container button {
+    width: 12.375em;
+    height: 100%;
+}
+
+.btn-facebook-container {
+    text-align: center;
+    width: 100%;
+    height: 2.75em;
+    margin-top: 1em;
+}
+
+.btn-facebook-container button {
+    width: 12.375em;
+    height: 100%;
+}
+
+.linea-btns-google-face {
+    width: 25.875rem;
+    height: 0.0625rem;
+    background-color: var(--blanco);
+   
+}
+
+.tienesCuenta {
+    width: 100%;
+    text-align: center;
+    padding-top: 2em;
+}
+
+.tienesCuenta h2, span {
+    color: var(--blanco);
+    font-size: 1.625rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.tienesCuenta span {
+    color: var(--prim-luz3);
+}
+
+.linea3 {
+    margin-top: 2em;
+    width: 100%;
+    height: 0.0625em;
+    background-color: var(--blanco);
 }
