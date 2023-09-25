@@ -77,46 +77,6 @@ div h3 {
     border-radius: 5px;
     border: solid
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /*  Seccion Formulario Registro */
 
 .register-container {
@@ -206,11 +166,6 @@ div h3 {
     line-height: normal;
     color: var(--blanco);
 }
-
-/* .tituloRegister:last-child {
-    margin-right: 0.15em;
-} */
-
 .form-register {
     width: 100%;  
     display: flex;
@@ -222,7 +177,6 @@ div h3 {
     color: var(--blanco);
     width: 13.625rem;
     height: 1.3125rem;
-   
 }
 
 .inputForm {
@@ -232,20 +186,15 @@ div h3 {
     background-color: var(--prim-sombra2);
     border: 1px solid var(--blanco-oscuro);
     border-radius: 0.5rem;
-    color: var(--blanco);
+    color: var(--gris);
     outline: 0;
     margin-bottom: 1em;
+    padding: 0.7em;
 }
 
 .inputForm:hover {
-    border: 1px solid var(--blanco-oscuro);
     background-color: var(--prim-sombra1);
 }
-
-.inputForm:focus {
-    outline: 0;
-}
-
 /* seccion botones form */
 
 .btn-captcha-container, .btn-registrarse-container {
@@ -256,23 +205,58 @@ div h3 {
     align-items: center;
 }
 
-.btn-captcha-container button {
+.btn-captcha-container{
+    margin-left: 5em;
+    display: flex;
     width: 16.07213em;
-    height: 100%;
+    height: 4.0625em;
+    background-color: var(--prim-sombra2);
+    border: 1px solid var(--blanco);
+    border-radius: 0.5em;
+}
+.btn-captcha-container .rectanguloCaptcha{
+    width: 1.50em;
+    height:1.50em;
+    border-radius: 0.125rem;
+    border: 1px solid var(--gris, #B8CAD8);
+    margin-left: 2em;
+    margin-right: 1em;
+}
+.btn-captcha-container button {
+    background-color: var(--prim-sombra2);
+    color: var(--blanco);
+    margin-left: 3em;
 }
 
+.img-captcha {
+    margin-left: 1em;
+}
+.texto {
+    color: var(--blanco)
+}
 .btn-registrarse-container {
     display: flex;
     justify-content: center;
     margin-top: 2em;
     height: 2.8125rem;
+    
 }
 
 .btn-registrarse-container button {
-    width: 9.9375em;
+    width: 10.9375em;
     height: 100%;
+    background-color: var(--prim-luz3);
 }
 
+.h3 {
+  font-size: medium;  
+}
+.h4 {
+    font-size: small;
+}
+.textonegro{
+    color: var(--negro);
+}
 
 .lineaBtnGoogleFace1 {
     display: flex;
@@ -293,34 +277,6 @@ div h3 {
     width: 12.1875rem;
     height: 0.0625rem;
     background-color: var(--blanco);
-}
-
-.btn-google-face {
-    width: 100%;
-    height: 19em
-}
-
-.btn-google-container {
-    text-align: center;
-    width: 100%;
-    height: 2.75em;
-}
-
-.btn-google-container button {
-    width: 12.375em;
-    height: 100%;
-}
-
-.btn-facebook-container {
-    text-align: center;
-    width: 100%;
-    height: 2.75em;
-    margin-top: 1em;
-}
-
-.btn-facebook-container button {
-    width: 12.375em;
-    height: 100%;
 }
 
 .linea-btns-google-face {
@@ -347,10 +303,48 @@ div h3 {
 .tienesCuenta span {
     color: var(--prim-luz3);
 }
-
 .linea3 {
     margin-top: 2em;
     width: 100%;
     height: 0.0625em;
     background-color: var(--blanco);
+}
+
+
+.btn-google-face {
+    width: 100%;
+    height: 19em
+}
+
+.btn-google-container, .btn-facebook-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 2.50em;
+}
+.btn-google-container button, .btn-facebook-container button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.btn-facebook-container{
+    margin-top: 1em;
+}
+
+.btn-google-container button, .btn-facebook-container button {
+    width: 19.375em;
+    height: 100%;
+    border-radius: 15em;
+    border: 1px solid var(--negro);
+}
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.imgIconos{
+    margin-right: 0.5em;
+}
+.btn-facebook-container button {
+    background-color: var(--prim);
 }
