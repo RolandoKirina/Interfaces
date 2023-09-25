@@ -32,10 +32,6 @@
     --negro: #23282B;
 }
 
-h1 {
-    color: var(--acento-luz);
-}
-
 .imgCard {
     width: 12.9375rem;
     height: 12.625rem;   
@@ -49,11 +45,9 @@ margin-left: 0.5rem;
     border-radius: 0.3125rem;
 }
 .btnJugar {
-    /* margin-left: ; */
     width: 6.77713rem;
     height: 3.18956rem;
     background-color:var(--prim-luz3);
-    color:var(--blanco);
 }
 
 div h3 {
@@ -91,7 +85,13 @@ div h3 {
     align-items: center;
     justify-content: start;
 }
+.margenregister {
+    margin-right: 2.5em;
+}
 
+.tituloLogo h1 {
+    margin-left: 0.2em;
+}
 .tituloLogo {
     display: flex;
     height: 2.6em;
@@ -104,13 +104,12 @@ div h3 {
 .tituloLogo img {
     width: 2.5em;
     height: 2.7em;
+    margin-left: 3em;
 }
 
 .tituloLogo h1 {
-    margin-left: 5px;
     margin-right: 1em;
     font-family: var(--fuente-logo);
-    color: var(--blanco);
     font-size: 2em;
     font-style: normal;
     font-weight: 400;
@@ -175,10 +174,20 @@ div h3 {
 
 .form-register label {
     color: var(--blanco);
-    width: 13.625rem;
+    width: 19.625rem;
     height: 1.3125rem;
 }
+.lineaingresar {
+    display: inline-block;
+    width: 6.06294rem;
+    height: 0.0625rem;
+    background-color: var(--blanco);
+    margin: 1em 0;
+}
 
+.olvidasteTuContraseña{
+    color: ;
+}
 .inputForm {
     margin: 0.4em 0;
     width: 100%;
@@ -224,8 +233,14 @@ div h3 {
 }
 .btn-captcha-container button {
     background-color: var(--prim-sombra2);
-    color: var(--blanco);
     margin-left: 3em;
+}
+
+.colorblanco {
+    color: var(--blanco);
+}
+a.colorblanco{
+    text-decoration:underline;
 }
 
 .img-captcha {
@@ -242,10 +257,12 @@ div h3 {
     
 }
 
+
 .btn-registrarse-container button {
     width: 10.9375em;
     height: 100%;
     background-color: var(--prim-luz3);
+    border: 0;
 }
 
 .h3 {
