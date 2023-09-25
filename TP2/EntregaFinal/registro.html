@@ -24,25 +24,27 @@
             </div>
             <form class="form-register">
                     <label>Nombre *</label>
-                    <input class="inputForm" type="text" required>
+                    <input class="inputForm" type="text" placeholder="Ingrese su nombre" required>
                     <label>Apellido *</label>
-                    <input class="inputForm" type="text" required>
+                    <input class="inputForm" type="text" placeholder="Ingrese su apellido"  required>
                     <label>Nombre de Usuario (opcional)</label>
-                    <input class="inputForm" type="text">
+                    <input class="inputForm" placeholder="Ingrese su nombre de usuario" type="text">
                     <label>Edad *</label>
-                    <input class="inputForm" type="text" required> 
+                    <input class="inputForm" placeholder="Ingrese su edad" type="text" required> 
                     <label>E-Mail *</label>
-                    <input class="inputForm" type="text" required>
-                    <label>Contraseña</label>
-                    <input class="inputForm" type="text" required>
-                    <label>Repetir Contraseña</label>
-                    <input class="inputForm" type="text" required>
+                    <input class="inputForm" placeholder="Ingrese su e-mail" type="text" required>
+                    <label>Contraseña *</label>
+                    <input class="inputForm" placeholder="Ingrese su contraseña" type="text" required>
+                    <label>Repetir Contraseña *</label>
+                    <input class="inputForm" placeholder="Repita su contraseña" type="text" required>
 
                     <div class="btn-captcha-container">
-                        <button>Captcha</button>
+                        <button class="rectanguloCaptcha"></button>
+                        <p class="texto">No soy un robot</p>
+                        <img class="img-captcha" src="imgs/iconos/logos_recaptcha.png">
                     </div>
                     <div class="btn-registrarse-container">
-                        <button>Registrarse</button>
+                        <button class="texto btn h3" type="button">REGISTRARSE</button>
                     </div>
             </form>
             
@@ -54,14 +56,14 @@
 
             <div class="btn-google-face">
                 <div class="btn-google-container">
-                    <button>Google</button>
+                    <button type="button"><img src="imgs/iconos/google.png" class="imgIconos"><span class="h4 textonegro"><a href="index.html">Registrate con Google</a></span></button>
                 </div>
                 <div class="btn-facebook-container">
-                    <button>Facebook</button>
+                    <button class="texto" type="button"><img src="imgs/iconos/facebook.png" class="imgIconos"><span class="h4"><a href="index.html">Regístrate con Facebook</a></span></button>
                 </div>
                 <div class="linea3"></div>
                 <div class="tienesCuenta">
-                    <h2>¿Ya tienes una Cuenta? <span>Ingresá</span></h2>
+                    <h2>¿Ya tienes una Cuenta? <span><a href="login.html">Ingresá</a></span></h2>
                     <div class="linea3"></div>
                 </div>
             </div>
