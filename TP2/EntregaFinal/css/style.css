@@ -354,3 +354,22 @@ div h3 {
     height: 0.0625em;
     background-color: var(--blanco);
 }
+
+
+/* Seccion Juego */
+
+.main-game-container {
+    width: 90em;
+    height: 20em;
+    background-image: url(../imgs/imgEspacial.jpg);  
+}
+
+.sub-container {
+    width: 80%;
+    height: 20em;
+   background-image: url(../imgs/imgEspacial.jpg);
+    opacity: 0.8;
+
+}
+
+
