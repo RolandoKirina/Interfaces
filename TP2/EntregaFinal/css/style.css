@@ -185,9 +185,6 @@ div h3 {
     margin: 1em 0;
 }
 
-.olvidasteTuContraseña{
-    color: ;
-}
 .inputForm {
     margin: 0.4em 0;
     width: 100%;
@@ -365,3 +362,79 @@ a {
 .btn-facebook-container button {
     background-color: var(--prim);
 }
+
+
+.nav {
+    display: flex;
+    background-color: var(--prim-sombra2);
+    width: 100%;
+    height: 3.43em;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.iconosnav {
+    display: flex;
+    justify-content: space-around;
+    width: 25%;
+}
+
+.iconosnav img {
+    width: 1.125em;
+    height: 1.25em;
+}
+.carrito img {
+    margin-top: 0.75em;
+}
+
+.perfil img {
+    width: 2.125em;
+    height: 2.25em;
+    margin-top: 0.25em;
+    margin-left: 0.25em;
+    margin-right: 0.30em;
+}
+
+.lista{
+    display: flex;
+    list-style: none;
+}
+
+.categorias li button {
+    background-color: var(--prim-sombra2);
+    border: 0;
+}
+.categorias li button, .categorias li button img{
+    width: 2em;
+    height: 2em;
+}
+
+.lista li:first-child{
+    font-size: small;
+    margin-top: 0.45em;
+}
+.logo {
+    margin-left: 0.75em;
+    margin-right: 0.25em;
+    width: 1.7em;
+    height: 2em;
+}
+.titulo {
+    display: flex;
+    margin-right: 0.25em;
+}
+
+.titulo h1 {
+    font-size:medium;
+    font-family: 'Poppins', sans-serif;    
+}
+
+.categorias, .iconosnav{
+    margin-bottom: 0.25em;
+}
+
+@media only screen and(min-width: 1024px){
+
+
+}
+/*responsivo*/
