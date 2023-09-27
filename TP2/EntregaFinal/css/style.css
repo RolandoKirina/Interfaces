@@ -90,18 +90,13 @@ nav {
     width: 100%;
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
 .logoCategorias {
     display: flex;
     margin-left: 2.8em;
-}
-
-
-
-.logonav {
-    margin: 0;
-    padding-top: 4.8em; 
+    align-items: center;
 }
 
 .categorias {
@@ -177,7 +172,6 @@ nav {
 
 
 
-
 /*  Seccion Formulario Registro */
 
 .register-container {
@@ -198,8 +192,7 @@ nav {
     height: 2.6em;
     justify-content: center;
     align-items: center;
-    margin-top: 3em;
-    margin-bottom: 2em;
+    margin-top: 3.5em;
 }
 
 .tituloLogo img {
@@ -422,7 +415,7 @@ nav {
 .main-game-container {
     width: 100%;
     height: auto;
-    background-image: url(../imgs/imgEspacial.jpg);  
+    background-image: url(../imgs/2img.png);  
     background-size: cover;
     display: flex;
     justify-content: center;
@@ -431,20 +424,19 @@ nav {
 .sub-container {
     width: 90%;
     height: auto;
-    /* background-image: url(../imgs/imgEspacialOpacidad.jpg); */
-    background-color: #d81900;
+    background-image: url(../imgs/10img.png); 
+    background-size: cover;
     display: flex;
     justify-content: center;
+    background-color: #003A26;
 }
 
 .sub-sub-container {
     width: 90%;
-    background-color: #c75245;
 }
 
 
 .broadcrum {
-    background-color: #33475a;
     display: flex;
     margin-top: 0.4em;
     margin-bottom: 1.5em;
@@ -493,7 +485,6 @@ nav {
 .game-container {
     margin-top: 1.5em;
     height: 56.375em;
-    background-color: #00724A;
 }
 
 .game-container button {
@@ -504,7 +495,6 @@ nav {
     margin-left: 1.9em;
     border: 0.12em solid var(--acento-luz);
     border-radius: 0.377rem;
-    background-color: #141515;
     color: var(--acento-luz);
     text-align: center;
     font-size: 0.87969em;
@@ -512,6 +502,7 @@ nav {
     font-weight: 400;
     line-height: normal;
     letter-spacing: 0.02638em;
+    background: #141515;
 }
 
 .game-container img {
@@ -521,11 +512,12 @@ nav {
 
 .info-game {
     margin-top: 2em;
-    background-color: #394e61;
     height: auto;
     display: flex;
     justify-content: center;
     margin-bottom: 2em;
+    width: 100%;
+    background-color: var(--prim-sombra2);
 }
 
 .deQueTrata {
@@ -581,7 +573,6 @@ nav {
 
 .MomentosIncreibles {
     margin-top: 5em;
-    background-color: #00284E;
     height: auto;
 }
 
@@ -675,7 +666,6 @@ nav {
 
 .community-section {
     height: 72.4em;
-    background-color: #23282B;
 }
 
 .ult-coment-titulo {
@@ -872,7 +862,6 @@ nav {
 .publicidad {
     width: 40%;
     height: 38.8em;
-    background-color: #00724A;
     display: flex;
     flex-direction: column;
     margin-top: 2em;
