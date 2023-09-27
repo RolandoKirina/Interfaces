@@ -829,6 +829,47 @@ margin-left: 0.5rem;
 }
 
 
+/* FOOTER */
+
+.fat-footer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: var(--prim-sombra3);
+    width: auto;
+    height: 16.4375rem; 
+}
+
+.fat-footer ul {
+    height: 8.6em;
+}
+
+.fat-footer ul li {
+    color: var(--blanco);
+    font-size: 0.75rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    list-style: none;
+    margin-bottom: 1em;
+}
+
+.fat-footer ul li:first-child {
+    font-size: 1.25rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    color: var(--blanco-oscuro);
+    margin-bottom: 0.5em;
+}
+
+.fat-footer ul li:first-child:hover {
+    color: var(--blanco);
+}
+
+.fat-footer ul li:hover {
+    color: var(--prim-luz2);
+}
 
 
 
