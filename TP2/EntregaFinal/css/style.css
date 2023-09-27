@@ -367,7 +367,7 @@ a {
 .nav {
     display: flex;
     background-color: var(--prim-sombra2);
-    width: 100%;
+    width: 22.5em;
     height: 3.43em;
     justify-content: space-between;
     align-items: center;
@@ -433,6 +433,30 @@ a {
     margin-bottom: 0.25em;
 }
 
+/*section home*/
+.main{
+    background-image: url(../imgs/imgEspacial.jpg);
+    height: 100%;
+}
+
+.footer {
+    height: 12.5em;
+    background-color: var(--prim-sombra3);
+}
+
+.carruselscroll {
+    height: 10.31em;
+    background-color: #00488A;
+}
+.carrusel {
+    height: 25%;
+    background-color: #00D88C;
+    border: 1px solid black;
+}
+
+.carruseles {
+    height: 40em;
+}
 @media only screen and(min-width: 1024px){
 
 
