@@ -356,7 +356,7 @@ margin-left: 0.5rem;
 /* Seccion Juego */
 
 .main-game-container {
-    width: 90em;
+    width: 100%;
     height: auto;
     background-image: url(../imgs/imgEspacial.jpg);  
     background-size: cover;
@@ -458,16 +458,16 @@ margin-left: 0.5rem;
 .info-game {
     margin-top: 2em;
     background-color: #394e61;
-    height: 70.4em;
+    height: auto;
     display: flex;
     justify-content: center;
+    margin-bottom: 2em;
 }
 
 .deQueTrata {
     text-align: center;
     padding-top: 2em;
     width: 92%;
-    background-color: #003A26;
 }
 
 .descripcion {
@@ -501,9 +501,152 @@ margin-left: 0.5rem;
 
 }
 
+.MomentosIncreibles {
+    margin-top: 5em;
+    background-color: #00284E;
+    height: auto;
+}
+
+.videos {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2em;
+}
+
+.videos div {
+    width: 100%;
+}
+
+
+.videos img {
+    width: 30.39094em;
+    height: 19.79169em;
+}
+
+.videos img:last-child {
+    background-color: #4487c5;
+    width: 6.76069rem;
+    height: 6.83594rem;
+    position: absolute;
+    z-index: 10;
+    margin-right: 15em;
+}
+
+.linksBtnCompartir {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 3em;
+}
+
+.btn-compartir {
+    width: 30.39094em;
+    text-align: left;
+}
+
+.btn-compartir button {
+    width: 10.65138em;
+    height: 4.6875em;
+    border-radius: 0.8125em;
+    background-color: var(--prim-sombra3);
+    color: var(--blanco);
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 0;
+}
+
+.btn-compartir button div {
+    width: 10.65138em;
+    height: 4.6875em;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 0 1em;
+}
+
+.btn-compartir button img {
+    width: 1.32225em;
+    height: 1.64475em;
+}
+
+.btn-compartir button div p {
+    padding-bottom: 0.5em;
+}
+
+.links {
+    text-align: left;
+    color: var(--blanco);
+}
+
+.links div p {
+    margin-bottom: 0.5em;
+}
+
+.links div a {
+    color: var(--blanco);
+    text-decoration: none;
+}
+
+.links div:first-child {
+    margin-bottom: 2em;
+}
+
+
+
 .community-section {
     height: 72.4em;
     background-color: #23282B;
+}
+
+.ult-coment-titulo {
+    display: flex;
+    justify-content: center;
+    padding: 1.5em 0;
+
+}
+
+.ult-coment-titulo h2 {
+    font-size: 1.625rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    color: var(--blanco);
+    margin-top: 0.2em;
+    margin-left: 0.5em;
+}
+
+.ult-coment-titulo div {
+    display: flex;
+    width: auto;
+    justify-content: space-between;
+}
+
+.dejaTuComentario {
+    display: flex;
+    justify-content: center;
+    background-color: #4fe7b2;
+    margin-top: 2.5em;
+}
+
+.dejaTuComentario div {
+    width: 31.79475rem;
+    height: 23.375rem;
+    background-color: #003A26;
+}
+
+.tituloLogoAstronauta {
+    display: flex;
+    justify-content: center;
+    height: 3em;
+
+    
+}
+
+.tituloLogoAstronauta img {
+    width: 2.96581rem;
+    height: 3rem;
+
 }
 
 
