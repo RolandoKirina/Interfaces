@@ -50,9 +50,6 @@ margin-left: 0.5rem;
     background-color:var(--prim-luz3);
 }
 
-div h3 {
- margin-left: 0.5rem;   
-}
 .gratis{
     width: 3.4375rem;
     height: 1.5rem;
@@ -71,6 +68,104 @@ div h3 {
     border-radius: 5px;
     border: solid
 }
+
+
+
+
+/* NAV */
+
+header {
+    background-color: var(--prim-sombra2);
+    width: 100%;
+    height: 7.9em;
+}
+
+nav {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logoCategorias {
+    display: flex;
+    margin-left: 2.8em;
+    align-items: center;
+}
+
+.categorias {
+    width: 9.4375em; 
+    height: 1.9375em;
+    margin-top: 4em; 
+    margin-left: 1em;
+}
+
+.categorias h2 {
+    display: inline;
+    color: var(--blanco);
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.categorias button {
+    background: var(--prim-sombra2);
+    width: 1.5em;
+    height: 1.5em;
+    border: 0;
+}
+
+.categorias button img {
+    width: 100%;
+
+}
+
+.carritoPerfil {
+    display: flex;
+    justify-content: space-between;
+    margin-right: 5.7em;
+}
+
+
+.carrito {
+    width: 7.4em;
+    height: 1.875em;
+    text-align: center;
+    margin-top: 4em;
+    margin-right: 3em;
+}
+
+.carrito button {
+    width: 1.875rem;
+    height: 1.875rem;
+    background-color: var(--prim-sombra2);
+    border: 0;
+}
+
+.carrito button img {
+    width: 100%;
+}
+
+
+.perfil {
+    width: 4em; 
+    height: 3.6875em;
+    margin-top: 3em;
+}
+
+.perfil button {
+    width: 100%;
+    height: 100%;
+    background-color: var(--prim-sombra2);
+    border: 0;
+}
+
+.perfil button img {
+    width: 100%;
+}
+
+
+
 /*  Seccion Formulario Registro */
 
 .register-container {
@@ -97,8 +192,7 @@ div h3 {
     height: 2.6em;
     justify-content: center;
     align-items: center;
-    margin-top: 3em;
-    margin-bottom: 2em;
+    margin-top: 3.5em;
 }
 
 .tituloLogo img {
@@ -325,140 +419,540 @@ a.colorblanco{
 }
 
 
-.btn-google-face {
-    width: 100%;
-    height: 19em
-}
 
-.btn-google-container, .btn-facebook-container {
+/* Seccion Juego */
+
+.main-game-container {
+    width: 100%;
+    height: auto;
+    background-image: url(../imgs/main.png);  
+    background-size: cover;
     display: flex;
     justify-content: center;
-    width: 100%;
-    height: 2.50em;
 }
-.btn-google-container button, .btn-facebook-container button {
+
+.sub-container {
+    width: 90%;
+    height: auto;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    background-color: #3f4442;
+    background-image: url(../imgs/mainOpacity.png); 
+}
+
+.sub-sub-container {
+    width: 90%;
+}
+
+
+.broadcrum {
+    display: flex;
+    margin-top: 0.4em;
+    margin-bottom: 1.5em;
+    align-items: left;
+    flex-direction: column;
+
+}
+
+.TextosBroadcrum {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    height: 100%;
+}
+
+.logoH1 {
+    display: flex;
+    
+}
+
+.TextosBroadcrum h1 {
+    font-family: Poppins;
+    padding-bottom: 0em;
+    font-size: 2em;
+    color: var(--blanco);
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.TextosBroadcrum h3 {
+    font-family: Poppins;
+    font-size: 1.2em;
+    color: var(--blanco);
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.LogoBroadcrum img {
+    width: 5.8775em;
+    height: 4.875em;
+    margin-top: 0.5em;
+}
+
+.linegameone {
+    height: 0.08em;
+    background-color: var(--blanco);
+}
+
+.game-container {
+    margin-top: 1.5em;
+    height: 56.375em;
+}
+
+.game-container button {
+    position: absolute;
+    width: 6.375rem;
+    height: 2.1875rem;
+    margin-top: 1em;
+    margin-left: 1.9em;
+    border: 0.12em solid var(--acento-luz);
+    border-radius: 0.377rem;
+    color: var(--acento-luz);
+    text-align: center;
+    font-size: 0.87969em;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 0.02638em;
+    background: #141515;
+}
+
+.game-container img {
+    width: 100%;
+    height: 100%;
+}
+
+.info-game {
+    margin-top: 2em;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2em;
+    width: 100%;
+    background-color: var(--prim-sombra2);
+}
+
+.deQueTrata {
+    text-align: center;
+    padding-top: 2em;
+    width: 92%;
+}
+
+.descripcion {
+    padding-top: 2em;
+}
+
+.descripcion p {
+    display: inline-block;
+    width: 100%;
+    font-size: 1.125em;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-align: left;
+    color: var(--blanco);
+}
+
+.deQueTrata h1 {
+    font-family: Poppins;
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    color: var(--blanco);
+}
+
+.deQueTrata .imgsGame {
+    display: flex;
+    margin-top: 2.5em;
+    width: 100%;
+    justify-content: space-between;
+
+}
+
+.imgsGame {
+    width: 60em;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.imgsGame img {
+    width: 22%;
+    height: 12.63019em;
+}
+
+
+
+.MomentosIncreibles {
+    margin-top: 5em;
+    height: auto;
+    margin-bottom: 2em;
+}
+
+.MomentosIncreibles h1 {
+    font-family: Roboto;
+    font-size: 1.625rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    color: var(--blanco);
+}
+
+.videos {
+    display: flex;
+    justify-content: space-between;
+}
+
+.videos video {
+    width: 45%;
+    height: 19.79169em;
+}
+
+
+
+
+
+.linksBtnCompartir {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 3em;
+}
+
+.btn-compartir {
+    width: 48%;
+    text-align: left;
+}
+
+.btn-compartir button {
+    width: 10.65138em;
+    height: 4.6875em;
+    border-radius: 0.8125em;
+    background-color: var(--prim-sombra3);
+    color: var(--blanco);
+    text-align: center;
     display: flex;
     justify-content: center;
     align-items: center;
-}
-.btn-facebook-container{
-    margin-top: 1em;
-}
-
-.btn-google-container button, .btn-facebook-container button {
-    width: 19.375em;
-    height: 100%;
-    border-radius: 15em;
-    border: 1px solid var(--negro);
-}
-a {
-    text-decoration: none;
-    color: inherit;
+    border: 0;
+    margin-left: 2em;
 }
 
-.imgIconos{
-    margin-right: 0.5em;
-}
-.btn-facebook-container button {
-    background-color: var(--prim);
-}
-
-
-.nav {
+.btn-compartir button div {
+    width: 10.65138em;
+    height: 4.6875em;
     display: flex;
-    background-color: var(--prim-sombra2);
-    width: 22.5em;
-    height: 3.43em;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1em;
+}
+
+.btn-compartir button img {
+    width: 1.32225em;
+    height: 1.64475em;
+}
+
+.btn-compartir button div p {
+    padding-bottom: 0.4em;
+    font-family: Roboto;
+    font-size: 1.25rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.links {
+    width: 50%;
+    text-align: left;
+    color: var(--blanco);
+}
+
+.links div p {
+    margin-bottom: 0.5em;
+}
+
+.links div a {
+    color: var(--blanco);
+    text-decoration: none;
+}
+
+.links div:first-child {
+    margin-bottom: 2em;
+}
+
+
+
+
+.community-section {
+    height: 72.4em;
+}
+
+.lineacomentarios {
+    width: 100%;
+    height: 0.2em;
+    background-color: var(--blanco);
+}
+
+.ult-coment-titulo {
+    display: flex;
+    justify-content: center;
+    padding: 1.5em 0;
+}
+
+.ult-coment-titulo h2 {
+    font-size: 1.6em;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    color: var(--blanco);
+    margin-left: 0.5em;
+}
+
+.tituloComentarios {
+    display: flex;
+    width: auto;
     justify-content: space-between;
     align-items: center;
 }
 
-.iconosnav {
+.ult-coment-titulo div img {
+    width: 3.11675rem;
+    height: 2.5rem;
+    margin-right: 0.25em;
+}
+
+.dejaTuComentario {
     display: flex;
-    justify-content: space-around;
-    width: 25%;
+    justify-content: center;
+    margin-top: 2.5em;
+    width: 100%;
 }
 
-.iconosnav img {
-    width: 1.125em;
-    height: 1.25em;
-}
-.carrito img {
-    margin-top: 0.75em;
-}
-
-.perfil img {
-    width: 2.125em;
-    height: 2.25em;
-    margin-top: 0.25em;
-    margin-left: 0.25em;
-    margin-right: 0.30em;
-}
-
-.lista{
+.tituloLogoInput {
     display: flex;
-    list-style: none;
+    flex-direction: column;
+    color: var(--blanco);
+
 }
 
-.categorias li button {
-    background-color: var(--prim-sombra2);
+.tituloLogoAstronauta {
+    display: flex;
+    justify-content: center;
+    height: 3em;
+    align-items: center;
+    margin-top: 1em;
+}
+
+.tituloLogoAstronauta h2 {
+    font-size: 1.625em;
+    padding-left: 0.2em;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+
+.tituloLogoAstronauta img {
+    width: 1.96581rem;
+    height: 2rem;
+    
+}
+
+.ponerReseña {
+    height: 71.5em;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 60%;
+}
+
+.inputReseña {
+    margin-top: 0.5em;
+}
+
+.inputReseña input {
+    width: 100%;
+    height: 13.5em;
+    background-color: var(--prim-sombra3);
+    border-radius: 0.3125rem;
+    border: var(--blanco) solid 0.075em;
+}
+
+.calificarJuego {
+    display: flex;
+    margin-top: 0.5em;
+    justify-content: left;
+    align-items: center;
+}
+
+.calificarJuego p {
+    font-size: 1.625em;
+    
+}
+
+.estrellas {
+    margin-left: 0.5em;
+    display: flex;
+    align-items: flex-end;
+}
+
+.estrellas img {
+    width: 1.48288rem;
+    height: 1.5rem;
+    margin-right: 0.4em;
+}
+
+.btn-comment {
+    display: flex;
+    justify-content: center;
+    margin-top: 0.5em;
+    margin-bottom: 2.1em;
+}
+
+.btn-comment button {
+    width: 7.33481rem;
+    height: 2.8125rem;
+    border-radius: 0.375em;
+    background-color: var(--prim-luz3);
+    color: var(--blanco, #F5FBFF);
+    text-align: center;
+    font-family: Roboto;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 0.03rem;
     border: 0;
 }
-.categorias li button, .categorias li button img{
-    width: 2em;
-    height: 2em;
-}
 
-.lista li:first-child{
-    font-size: small;
-    margin-top: 0.45em;
-}
-.logo {
-    margin-left: 0.75em;
-    margin-right: 0.25em;
-    width: 1.7em;
-    height: 2em;
-}
-.titulo {
+.reseñas {
     display: flex;
-    margin-right: 0.25em;
+    flex-direction: column;
+    width: 100%;
 }
 
-.titulo h1 {
-    font-size:medium;
-    font-family: 'Poppins', sans-serif;    
+.reseña {
+    width: 100%;
+    height: 9em;
+    background-color: #747e7a;
+    background-image: url(../imgs/mainOpacity.png); 
+    margin-top: 1em;
+    display: flex;
+    flex-direction: column;
+    border-radius: 0.375em;
+    color: var(--blanco);
 }
 
-.categorias, .iconosnav{
-    margin-bottom: 0.25em;
+.cj1Reseña {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 1em;
 }
 
-/*section home*/
-.main{
-    background-image: url(../imgs/imgEspacial.jpg);
-    height: 100%;
+.cj1Reseña img {
+    width: 2.93394em;
+    height: 2.5em;
+} 
+
+.username {
+    font-family: Roboto;
+    font-size: 1.625em;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    color: var(--acento-luz);
+
 }
 
-.footer {
-    height: 12.5em;
+.fecha {
+    font-size: 1.4em;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.estrReseña {
+    width: 9.70063em;
+    height: 1.5em;
+}
+
+.estrReseña img {
+    width: 9.70063rem;
+    height: 1.5rem;
+}
+
+.cj2Reseña {
+    margin-top: 1em;
+    margin-left: 1.5em;
+}
+
+
+.publicidad {
+    width: 40%;
+    height: 38.8em;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+
+
+.publicidad img:first-child {
+    width:  75%;
+    height: 12.67575rem;
+}
+
+.publicidad img:last-child {
+    width:  75%;
+    height: 26.1875rem;
+}
+
+
+/* FOOTER */
+
+.fat-footer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
     background-color: var(--prim-sombra3);
+    width: auto;
+    height: 16.4375rem; 
 }
 
-.carruselscroll {
-    height: 10.31em;
-    background-color: #00488A;
-}
-.carrusel {
-    height: 25%;
-    background-color: #00D88C;
-    border: 1px solid black;
+.fat-footer ul {
+    height: 8.6em;
 }
 
-.carruseles {
-    height: 40em;
+.fat-footer ul li {
+    color: var(--blanco);
+    font-size: 0.75rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    list-style: none;
+    margin-bottom: 1em;
 }
-@media only screen and(min-width: 1024px){
+
+.fat-footer ul li:first-child {
+    font-size: 1.25rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    color: var(--blanco-oscuro);
+    margin-bottom: 0.5em;
+}
+
+.fat-footer ul li:first-child:hover {
+    color: var(--blanco);
+}
+
+.fat-footer ul li:hover {
+    color: var(--prim-luz2);
+}
 
 
-}
-/*responsivo*/
+
