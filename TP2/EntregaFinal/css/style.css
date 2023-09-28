@@ -441,16 +441,21 @@ nav {
     display: flex;
     margin-top: 0.4em;
     margin-bottom: 1.5em;
-    align-items: center;
+    align-items: left;
+    flex-direction: column;
 
 }
 
 .TextosBroadcrum {
     display: flex;
     flex-direction: column;
-    margin-left: 3em;
     text-align: left;
     height: 100%;
+}
+
+.logoH1 {
+    display: flex;
+    
 }
 
 .TextosBroadcrum h1 {
@@ -465,7 +470,7 @@ nav {
 
 .TextosBroadcrum h3 {
     font-family: Poppins;
-    font-size: 1.5em;
+    font-size: 1.2em;
     color: var(--blanco);
     font-style: normal;
     font-weight: 400;
@@ -597,6 +602,10 @@ nav {
     height: 19.79169em;
 }
 
+
+
+
+
 .linksBtnCompartir {
     display: flex;
     justify-content: space-between;
@@ -663,6 +672,7 @@ nav {
 .links div:first-child {
     margin-bottom: 2em;
 }
+
 
 
 
