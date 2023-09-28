@@ -41,9 +41,13 @@
 .card h3, .btnJugar {
 margin-left: 0.5rem;
 }
+
 .btn {
     border-radius: 0.3125rem;
+    width: 8.77713rem;
+    height: 2.18956rem;
 }
+
 .btnJugar {
     width: 6.77713rem;
     height: 3.18956rem;
@@ -65,12 +69,7 @@ div h3 {
     height: 41.625em;
 }
 
-.card {
-    width: 15.13569rem;
-    height: 22.89363rem;
-    border-radius: 5px;
-    border: solid
-}
+
 /*  Seccion Formulario Registro */
 
 .register-container {
@@ -84,9 +83,6 @@ div h3 {
     flex-direction: column;
     align-items: center;
     justify-content: start;
-}
-.margenregister {
-    margin-right: 2.5em;
 }
 
 .tituloLogo h1 {
@@ -440,25 +436,55 @@ a {
 }
 
 .footer {
-    height: 12.5em;
+    height: 18em;
     background-color: var(--prim-sombra3);
+    color: var(--blanco-oscuro);
 }
 
+.footer ul{ 
+    font-size: 16px;
+    margin: 0.5em;
+    list-style: none;
+    display: none;
+}
+
+.footer ul li {
+    margin:0.25em;
+}
+
+.btnfooter {
+    display: flex;
+    align-items: center;
+    border: 0;
+    margin-right: 0.50em;
+    background-color: var(--prim-sombra3);
+}
 .carruselscroll {
     height: 10.31em;
     background-color: #00488A;
 }
 .carrusel {
     height: 25%;
+    display: flex;
     background-color: #00D88C;
-    border: 1px solid black;
 }
 
 .carruseles {
     height: 40em;
 }
+.card{
+    width: 2em;
+    height: 2em;
+    background-color: red;
+}
+
 @media only screen and(min-width: 1024px){
 
+    .card {
+        width: 15.13569rem;
+        height: 22.89363rem;
+        border-radius: 5px;
+    }
 
 }
 /*responsivo*/
