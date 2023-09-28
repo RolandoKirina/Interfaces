@@ -30,145 +30,141 @@
     --blanco: #F5FBFF;
     --blanco-oscuro: #E5F4FF;
     --negro: #23282B;
-}
-
-.imgCard {
-    width: 12.9375rem;
-    height: 12.625rem;   
-    padding: 0.5rem;
-}
-
-.card h3, .btnJugar {
-margin-left: 0.5rem;
-}
-
-.btn {
-    border-radius: 0.3125rem;
-    width: 8.77713rem;
-    height: 2.18956rem;
-}
-
-.btnJugar {
-    width: 6.77713rem;
-    height: 3.18956rem;
-    background-color:var(--prim-luz3);
-}
-
-.gratis{
-    width: 3.4375rem;
-    height: 1.5rem;
-    margin: 0.5rem;
-    background-color: var(--acento-luz);
-    color: var(--prim-sombra3);
-}
-.imgcarruselprincipal {
-    width: 90em;
-    height: 41.625em;
-}
-
-.card {
-    width: 15.13569rem;
-    height: 22.89363rem;
-    border-radius: 5px;
-    border: solid
+    --especial: #34D919; 
 }
 
 
 
 
-/* NAV */
+/* nav responsive */
 
-header {
+.primariosombra2{
     background-color: var(--prim-sombra2);
-    width: 100%;
-    height: 7.9em;
 }
 
-nav {
-    width: 100%;
+.navhome {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 100%;
+    height: 3.5em;
+}
+.logoplaneta {
+    width: 2.1em;
+    height: 2em;
 }
 
-.logoCategorias {
-    display: flex;
-    margin-left: 2.8em;
-    align-items: center;
-}
-
-.categorias {
-    width: 9.4375em; 
-    height: 1.9375em;
-    margin-top: 4em; 
-    margin-left: 1em;
-}
-
-.categorias h2 {
-    display: inline;
-    color: var(--blanco);
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-}
-
-.categorias button {
-    background: var(--prim-sombra2);
-    width: 1.5em;
-    height: 1.5em;
+.hamburguer-menu button{
+    margin-left: 1.5em;
+    margin-right: 1em;
     border: 0;
 }
-
-.categorias button img {
+.logoastrojuegos{
     width: 100%;
-
-}
-
-.carritoPerfil {
     display: flex;
     justify-content: space-between;
-    margin-right: 5.7em;
+    align-items: center;
 }
 
+.titulo {
+    display: flex;
+    align-items: center;
+}
+.titulo .tituloh1{
+    margin-left: 0.25em;
+    font-size: medium;
+}
 
-.carrito {
-    width: 7.4em;
-    height: 1.875em;
-    text-align: center;
-    margin-top: 4em;
-    margin-right: 3em;
+.iconosnav{
+    width: 100%;
+    display: flex;
+    align-items: center;
 }
 
 .carrito button {
-    width: 1.875rem;
-    height: 1.875rem;
-    background-color: var(--prim-sombra2);
+    margin-left: 4em;
+    width: 2em;
+    height: 2em;
     border: 0;
 }
-
 .carrito button img {
     width: 100%;
 }
+.perfil, .carrito{
 
-
-.perfil {
-    width: 4em; 
-    height: 3.6875em;
-    margin-top: 3em;
+    width: 50%;
+    height: 50%;
 }
-
-.perfil button {
-    width: 100%;
-    height: 100%;
-    background-color: var(--prim-sombra2);
+.perfil button{
+    width: 3.5em;
+    height: 4em;
+    border-radius: 9em;
+    margin-left: 1em;
+    margin-right: 0.5em;
     border: 0;
 }
-
 .perfil button img {
     width: 100%;
 }
 
+/*footer responsive*/
 
+.footerhome{
+    display: flex;
+    flex-direction: column;
+    height: 12em;
+}
+
+.footerhome button {
+    margin-top: 1em;
+    margin-left: 1.5em;
+    display: flex;
+    align-items: center;
+    border: 0;
+    width: 7em;
+    background-color: var(--prim-sombra2);
+    color: var(--blanco);
+    cursor: pointer;
+}
+
+.footerhome .footerulhidden {
+    display: none;
+}
+
+/*cards responsive*/
+.btn {
+    border-radius: 0.2em;
+}
+.main {
+    height: 70%;
+    background-image: url('../imgs/imgEspacial.jpg');
+}
+.imgcarruselprincipal{
+    width: 100%;
+    height: 10.31em;
+}
+.imgcardsresponsive {
+    width: 6.87em;
+    height: 6.87em;
+}
+.carruseles {
+    width: 100%;
+    height: 32em;
+    background-color: blue;
+}
+.card {
+    background-color: red;
+}
+.h3 {
+    font-size: smaller;
+}
+
+.gratis{
+        width: 2.9em;
+        height: 1.5em;
+        margin: 0.5rem;
+        background-color: var(--especial);
+}
 
 /*  Seccion Formulario Registro */
 
@@ -954,9 +950,3 @@ a.colorblanco{
 .fat-footer ul li:hover {
     color: var(--prim-luz2);
 }
-
-    .card {
-        width: 15.13569rem;
-        height: 22.89363rem;
-        border-radius: 5px;
-    }
