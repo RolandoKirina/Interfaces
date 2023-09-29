@@ -139,12 +139,12 @@
     height: 100%;
     background-image: url('../imgs/imgEspacial.jpg');
     background-size: cover;
+
 }
 .imgcarruselprincipal{
     width: 100%;
     height: 100%;
 }
-
 .carruselscroll {
     width: 100%;
     height: 12em;
@@ -156,61 +156,106 @@
 }
 .carruseles {
     width: 100%;
-    height: 55em;
+    height: auto;
+    padding: 0.25em;
 }
 .carrusel {
     display: flex;
+    margin-bottom: 1em;
+    position: relative;
 }
 
 .card {
   width: 6em;
-  height: 11em;
+  height: 10em;
   margin-left: 1em;
   background-color: var(--blanco);
   box-shadow: 1px 0px 5px var(--prim-sombra3);
   border: 1px solid var(--negro);
+  z-index: 1;
+  position: relative;
 }
 .h2 {
     width: auto;
     font-size: 12px;
-    margin-left: 1.25em;
-    margin-top: 1em;
+    margin-left: 1.50em;
+    margin-top: 0.50em;
     margin-bottom: 0.50em;
 }
 .h3 {
     font-size: 12px;
 }
-
+.precio {
+   margin-right: 0.25em;
+}
 .carrusel h3 {
     margin-left: 0.50em;
-    margin-bottom: 0.50em;
+    margin-bottom: 0.25em;
 }
 
 .carrusel h2 {
     margin: 0.25em;
 }
-.jugar {
+.jugar  {
     width: 2.75em;
-    margin-left: 0.50em;
 }
 .jugar img{
-    margin-left: 0.25em;
     width: 0.75em;
     height: 0.75em;
 }
 .h4 {
-    font-size: 12px;
+    font-size: 10px;
 }
-.jugar button {
+.textobtn {
+    font-size: 10px;
+}
+.añadiralcarro{
+    width: 5em;
+}
+.añadiralcarro p, .añadiralcarro button {
+    margin-left: 0.50em;
+}
+.añadiralcarro button{
+    margin-top: 0.5em;
+}
+.jugar button, .btnañadiralcarro, .btnsacardelcarro {
     border: 0;
     width: 100%;
     background-color: var(--prim-luz3);
     height: 2em; 
 }
+.sacardelcarro {
+    display: flex;
+    flex-direction: column;
+}
+.btnsacardelcarro{
+    width: 8em;
+    margin-left: 0.50em;
+}
+
+.jugar button:hover, .añadiralcarro button:hover, .sacardelcarro button:hover {
+    background-color: var(--prim);
+}
+/*preguntar*/
+.imgincart {
+    width: 1em;
+    height: 1em;
+    margin-left: 0.25em;
+    margin-bottom: 0.25em;
+}
+
+.botoncarrusel {
+    width: 2.5em;
+    height: 2.5em;
+    position: absolute;
+    left: 4.5em; bottom:3.7em;
+    z-index: 3;
+}
 .gratis{
         width: 2.75em;
         height: 1.5em;
         background-color: var(--especial);
+        margin-right: 1em;
 }
 
 .jugargratis {
