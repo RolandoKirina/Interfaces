@@ -112,14 +112,14 @@
 .footerhome{
     display: flex;
     flex-direction: column;
-    height: 12em;
+    height: auto;
     background-color: var(--prim-sombra3);
 }
 
 .footerhome button {
     text-align: left;
     margin-top: 1em;
-    margin-left: 1.5em;
+    margin-left: 1.2em;
     display: flex;
     align-items: center;
     border: 0;
@@ -129,9 +129,29 @@
     cursor: pointer;
 }
 
-.footerhome .footerulhidden {
+/* desplegables footer */
+.footerulhidden {
     display: none;
 }
+
+.footerhome div ul {
+    display: none;
+}
+
+.footerhome div ul.show {
+    display: block;
+    font-size: 0.7em;
+    margin-left: 1.5em;
+    list-style: none;
+}
+
+
+
+
+
+
+
+
 
 /*cards responsive*/
 .btn {
@@ -1074,7 +1094,7 @@ a.colorblanco{
     font-weight: 400;
     line-height: normal;
     cursor: default;
-    margin-bottom: 1em;
+    margin-bottom: 0.5em;
 }
 
 .footerhome button img {
@@ -1083,7 +1103,6 @@ a.colorblanco{
 
 .footerhome .footerulhidden {
     display: flex;
-    
 }
 
 .footerhome {
@@ -1116,6 +1135,7 @@ a.colorblanco{
 .footerhome ul li:hover {
     color: var(--prim);
 }
+
 
 
 }
