@@ -70,7 +70,7 @@
     display: flex;
     align-items: center;
 }
-.titulo .tituloh1{
+.titulo h1{
     margin-left: 0.25em;
     font-size: medium;
 }
@@ -112,24 +112,53 @@
 .footerhome{
     display: flex;
     flex-direction: column;
-    height: 12em;
+    height: auto;
+    background-color: var(--prim-sombra3);
+    width: auto;
 }
 
 .footerhome button {
+    text-align: left;
     margin-top: 1em;
-    margin-left: 1.5em;
+    margin-left: 1.2em;
     display: flex;
     align-items: center;
     border: 0;
-    width: 7em;
-    background-color: var(--prim-sombra2);
+    width: 100%;
+    background-color: var(--prim-sombra3);
     color: var(--blanco);
     cursor: pointer;
+    margin-bottom: 0.5em;
 }
 
-.footerhome .footerulhidden {
+/* desplegables footer */
+.footerulhidden {
     display: none;
 }
+
+.footerhome div ul {
+    display: none;
+}
+
+.footerhome div ul.show {
+    display: block;
+    font-size: 0.7em;
+    margin-left: 1.5em;
+    list-style: none;
+}
+
+.footerhome div ul li:hover {
+    color: var(--prim);
+}
+
+.footerhome div ul li {
+    margin-bottom: 0.5em;
+}
+
+
+
+
+
 
 /*cards responsive*/
 .btn {
@@ -1039,4 +1068,169 @@ a.colorblanco{
 
 .fat-footer ul li:hover {
     color: var(--prim-luz2);
+}
+
+
+@media only screen and (min-width: 1024px) {
+    
+/* nav responsive */
+
+.primariosombra2{
+    background-color: var(--prim-sombra2);
+}
+
+.navhome {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 4.8125rem;
+
+}
+.logoplaneta {
+    width: 2.1em;
+    height: 2em;
+}
+
+
+.hamburguer-menu button{
+    width: 2.5rem;
+    height: 2.5rem;
+    margin-left: 1.5em;
+    border: 0;
+}
+.logoastrojuegos{
+    width: 30%;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
+.titulo {
+    display: flex;
+    align-items: center;
+    height: 4.6em;
+}
+
+.titulo h1 {
+   font-size: 2em;
+}
+
+
+.titulo img {
+    width: 2.5em;
+    height: 2.7em;
+}
+
+.iconosnav{
+    width: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.carrito {
+    width: auto;
+}
+
+.carrito button {
+   width: 1.96938rem;
+    height: 1.875rem;
+    border: 0;
+}
+.carrito button img {
+    width: 100%;
+}
+
+.perfil {
+    width: auto;
+    margin: 0 5%;
+}
+
+.perfil button{
+    width: 4rem;
+    height: 3.6875rem;
+    border-radius: 9em;
+    margin-left: 1em;
+    margin-right: 0.5em;
+    border: 0;
+}
+.perfil button img {
+    width: 100%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/*footer responsive*/
+
+.footerhome{
+    display: flex;
+    flex-direction: row;
+    height: 12em;
+}
+
+.footerhome button {
+    display: flex;
+    align-items: center;
+    border: 0;
+    width: 7em;
+    margin-left: 0;
+    color: var(--blanco);
+    cursor: pointer;
+    font-size: 1.25rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    cursor: default;
+    margin-bottom: 0.5em;
+}
+
+.footerhome button img {
+    display: none;
+}
+
+.footerhome .footerulhidden {
+    display: flex;
+}
+
+.footerhome {
+    width: 100%;
+    justify-content: space-evenly;
+
+}
+
+.footerulhidden {
+    flex-direction: column;
+    list-style: none;
+    text-align: left;
+}
+
+.footerhome div {
+    text-align: left;
+    margin-top: 1em;
+}
+
+
+.footerhome ul li {
+    font-family: Roboto;
+    font-size: 0.75rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-bottom: 0.5em;
+}
+
+.footerhome div ul.show {
+   margin: 0;
+}
+
 }
