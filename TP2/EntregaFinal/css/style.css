@@ -141,31 +141,82 @@
 }
 .imgcarruselprincipal{
     width: 100%;
-    height: 10.31em;
+    height: 100%;
+}
+
+.carruselscroll {
+    width: 100%;
+    height: 12em;
 }
 .imgcardsresponsive {
-    width: 6.87em;
-    height: 6.87em;
+    margin: 0.25em; 
+    width: 5.25em;
+    height: 5em;
 }
 .carruseles {
     width: 100%;
-    height: 32em;
-    background-color: blue;
+    height: 36em;
 }
-.card {
-    background-color: red;
-}
-.h3 {
-    font-size: smaller;
+.carrusel {
+    display: flex;
 }
 
+.card {
+  width: 6em;
+  height: 11em;
+  margin-left: 1em;
+  background-color: var(--blanco);
+  box-shadow: 1px 0px 5px var(--prim-sombra3);
+  border: 1px solid var(--negro);
+}
+.h2 {
+    width: auto;
+    font-size: 12px;
+    margin-left: 1.25em;
+    margin-top: 1em;
+    margin-bottom: 0.50em;
+}
+.h3 {
+    font-size: 12px;
+}
+
+.carrusel h3 {
+    margin-left: 0.50em;
+    margin-bottom: 0.50em;
+}
+
+.carrusel h2 {
+    margin: 0.25em;
+}
+.jugar {
+    width: 2.75em;
+    margin-left: 0.50em;
+}
+.jugar img{
+    margin-left: 0.25em;
+    width: 0.75em;
+    height: 0.75em;
+}
+.h4 {
+    font-size: 12px;
+}
+.jugar button {
+    border: 0;
+    width: 100%;
+    background-color: var(--prim-luz3);
+    height: 2em; 
+}
 .gratis{
-        width: 2.9em;
+        width: 2.75em;
         height: 1.5em;
-        margin: 0.5rem;
         background-color: var(--especial);
 }
 
+.jugargratis {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 /*  Seccion Formulario Registro */
 
 .register-container {
@@ -351,13 +402,6 @@ a.colorblanco{
     height: 100%;
     background-color: var(--prim-luz3);
     border: 0;
-}
-
-.h3 {
-  font-size: medium;  
-}
-.h4 {
-    font-size: small;
 }
 .textonegro{
     color: var(--negro);
