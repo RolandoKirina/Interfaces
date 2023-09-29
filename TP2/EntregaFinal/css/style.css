@@ -136,8 +136,9 @@
     border-radius: 0.2em;
 }
 .main {
-    height: 70%;
+    height: 100%;
     background-image: url('../imgs/imgEspacial.jpg');
+    background-size: cover;
 }
 .imgcarruselprincipal{
     width: 100%;
@@ -155,7 +156,7 @@
 }
 .carruseles {
     width: 100%;
-    height: 36em;
+    height: 55em;
 }
 .carrusel {
     display: flex;
