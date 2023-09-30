@@ -294,6 +294,8 @@
     align-items: center;
     justify-content: center;
 }
+
+
 /*  Seccion Formulario Registro */
 
 .register-container {
@@ -308,31 +310,8 @@
     align-items: center;
     justify-content: start;
 }
-
-.tituloLogo h1 {
-    margin-left: 0.2em;
-}
-.tituloLogo {
-    display: flex;
-    height: 2.6em;
-    justify-content: center;
-    align-items: center;
-    margin-top: 3.5em;
-}
-
-.tituloLogo img {
-    width: 2.5em;
-    height: 2.7em;
-    margin-left: 3em;
-}
-
-.tituloLogo h1 {
-    margin-right: 1em;
-    font-family: var(--fuente-logo);
-    font-size: 2em;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
+.margenregister {
+    margin-right: 2.5em;
 }
 
 .form-register-container {
@@ -480,6 +459,13 @@ a.colorblanco{
     background-color: var(--prim-luz3);
     border: 0;
 }
+
+.h3 {
+  font-size: medium;  
+}
+.h4 {
+    font-size: small;
+}
 .textonegro{
     color: var(--negro);
 }
@@ -566,10 +552,20 @@ a.colorblanco{
 
 .broadcrum {
     display: flex;
-    margin-top: 0.4em;
-    margin-bottom: 1.5em;
+    margin-bottom: 0.5em;
     align-items: left;
     flex-direction: column;
+
+}
+
+.broadLink {
+    color: var(--blanco);
+    text-decoration: none;
+}
+
+.broadLink:hover {
+    color: var(--prim-luz2);
+    cursor: pointer;
 
 }
 
@@ -578,46 +574,45 @@ a.colorblanco{
     flex-direction: column;
     text-align: left;
     height: 100%;
+    
 }
 
 .logoH1 {
     display: flex;
-    
+    align-items: center;
 }
 
 .TextosBroadcrum h1 {
     font-family: Poppins;
-    padding-bottom: 0em;
     font-size: 2em;
-    color: var(--blanco);
     font-style: normal;
     font-weight: 400;
     line-height: normal;
+    margin-left: 0.25em;
 }
 
 .TextosBroadcrum h3 {
     font-family: Poppins;
-    font-size: 1.2em;
-    color: var(--blanco);
+    font-size: 1.15975rem;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
 }
 
 .LogoBroadcrum img {
-    width: 5.8775em;
-    height: 4.875em;
-    margin-top: 0.5em;
+    width: 5.9375rem;
+    height: 3.21338rem;
 }
 
 .linegameone {
-    height: 0.08em;
+    height: 0.04em;
     background-color: var(--blanco);
 }
 
 .game-container {
-    margin-top: 1.5em;
+    margin-top: 0.7em;
     height: 56.375em;
+    position: relative;
 }
 
 .game-container button {
@@ -731,22 +726,18 @@ a.colorblanco{
 
 
 
-
-
-.linksBtnCompartir {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 3em;
-}
-
 .btn-compartir {
-    width: 48%;
+    position: absolute;
+    width: 6.375rem;
+    height: 2.1875rem;
     text-align: left;
+    margin-left: 85%;
 }
+
 
 .btn-compartir button {
-    width: 10.65138em;
-    height: 4.6875em;
+    width: 6.375rem;
+    height: 2.1875rem;
     border-radius: 0.8125em;
     background-color: var(--prim-sombra3);
     color: var(--blanco);
@@ -756,6 +747,7 @@ a.colorblanco{
     align-items: center;
     border: 0;
     margin-left: 2em;
+    position: absolute;
 }
 
 .btn-compartir button div {
@@ -768,37 +760,22 @@ a.colorblanco{
 }
 
 .btn-compartir button img {
-    width: 1.32225em;
-    height: 1.64475em;
+    width: 1em;
+    height: 1em;
 }
 
 .btn-compartir button div p {
-    padding-bottom: 0.4em;
+ 
+    padding-left: 0.2em;
     font-family: Roboto;
-    font-size: 1.25rem;
+    font-size: 1em;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
-}
+} 
 
-.links {
-    width: 50%;
-    text-align: left;
-    color: var(--blanco);
-}
 
-.links div p {
-    margin-bottom: 0.5em;
-}
 
-.links div a {
-    color: var(--blanco);
-    text-decoration: none;
-}
-
-.links div:first-child {
-    margin-bottom: 2em;
-}
 
 
 
@@ -817,6 +794,7 @@ a.colorblanco{
     display: flex;
     justify-content: center;
     padding: 1.5em 0;
+    margin-right: 1em;
 }
 
 .ult-coment-titulo h2 {
@@ -838,7 +816,6 @@ a.colorblanco{
 .ult-coment-titulo div img {
     width: 3.11675rem;
     height: 2.5rem;
-    margin-right: 0.25em;
 }
 
 .dejaTuComentario {
@@ -911,7 +888,8 @@ a.colorblanco{
 }
 
 .estrellas {
-    margin-left: 0.5em;
+    width: 9.70063rem;
+height: 1.48313rem;
     display: flex;
     align-items: flex-end;
 }
@@ -952,8 +930,8 @@ a.colorblanco{
 }
 
 .reseña {
-    width: 100%;
-    height: 9em;
+    width: 41.375rem;
+    height: 8.89863rem;
     background-color: #747e7a;
     background-image: url(../imgs/mainOpacity.png); 
     margin-top: 1em;
@@ -987,10 +965,12 @@ a.colorblanco{
 }
 
 .fecha {
-    font-size: 1.4em;
+     font-family: Roboto;
+    font-size: 1.42106rem;
     font-style: normal;
-    font-weight: 700;
+    font-weight: 400;
     line-height: normal;
+    letter-spacing: 0.04263rem;
 }
 
 .estrReseña {
@@ -1005,7 +985,20 @@ a.colorblanco{
 
 .cj2Reseña {
     margin-top: 1em;
-    margin-left: 1.5em;
+    width: 100%;
+    height: 3.52238rem;
+    font-family: Roboto;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-align: left;
+    display: flex;
+    justify-content: center;
+}
+
+.cj2Reseña p {
+    width: 38em;
 }
 
 
@@ -1017,8 +1010,6 @@ a.colorblanco{
     align-items: flex-end;
 }
 
-
-
 .publicidad img:first-child {
     width:  75%;
     height: 12.67575rem;
@@ -1028,6 +1019,9 @@ a.colorblanco{
     width:  75%;
     height: 26.1875rem;
 }
+
+
+/* Scroll carrusel */
 
 .trespuntitos {
     display: flex;
