@@ -1066,7 +1066,9 @@ a.colorblanco{
       background-color: var(--prim-sombra3);
       position: absolute;
       top: 7.5%;
-    display: flex;
+      display: flex;
+      z-index: 3;
+      color: var(--blanco);
 }
 
 .perfilDesplegado.show {
@@ -1092,6 +1094,12 @@ a.colorblanco{
     padding-top: 0.5em;
     padding-bottom: 0.5em;
     padding-left: 0.5em;
+    list-style: none;
+}
+
+.perfilDesplegado.show ul a, .carritoDesplegado.show ul a, .hamburguer-menu-desplegado.show ul a {
+    text-decoration: none;
+    color: var(--blanco);
 }
 
 
@@ -1114,6 +1122,7 @@ a.colorblanco{
     align-items: center;
     opacity: 0.9;
     justify-content: center;
+    z-index: 3;
 } 
 
 .perfilDesplegado.show ul li {
@@ -1146,6 +1155,7 @@ a.colorblanco{
     padding: 0.5em 0.5em 0.5em 0.8em;
     align-items: center;
     text-align: left;
+    z-index: 3;
 } 
 
 .carritoDesplegado.show ul li {
@@ -1168,6 +1178,7 @@ a.colorblanco{
     display: flex;
     justify-content: center;
     align-items: center;
+    z-index: 3;
 }
 
 .hamburguer-menu-desplegado.show ul li {
@@ -1182,8 +1193,19 @@ a.colorblanco{
     padding-bottom: 1.8em;
 }
 
+header ul {
+    list-style: none;
+    color: var(--blanco);
+}
 
+header ul a {
+    text-decoration: none;
+    color: var(--blanco);
+}
 
+button {
+    cursor: pointer;
+}
 
 /* nav responsive */
 
