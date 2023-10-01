@@ -34,7 +34,10 @@ document.querySelector("#menu-burguer").addEventListener("click", function( ) {
     
 });
 
-
+let h = document.querySelector("#btn-help"); 
+h.addEventListener("click", function() {
+    h.parentElement.classList.toggle("show");
+});
 
 
 
