@@ -34,9 +34,24 @@ document.querySelector("#menu-burguer").addEventListener("click", function( ) {
     
 });
 
-let h = document.querySelector("#btn-help"); 
-h.addEventListener("click", function() {
-    h.parentElement.classList.toggle("show");
+let ayudaDesplegado = false;
+
+let btnayuda = document.querySelector("#btn-help"); 
+let texto = btnayuda.textContent;
+
+btnayuda.addEventListener("click", function() {
+    this.classList.toggle("show");
+    this.parentElement.nextElementSibling.classList.toggle("show");
+
+    if(!ayudaDesplegado) {
+        btnayuda.innerHTML = "cerrar";
+    }
+    else {
+        btnayuda.innerHTML = texto;
+    }
+   
+    ayudaDesplegado = !ayudaDesplegado;
+
 });
 
 

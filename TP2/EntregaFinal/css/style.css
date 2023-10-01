@@ -951,17 +951,6 @@ height: 1.48313rem;
 
 /* Menus compartir y ayuda desplegables */
 
-.btn-help.show { /* menu abierto boton ayuda juego*/
-    width: 24.5rem;
-    height: 3.75rem;
-}
-
-.btn-help.show button {
-    width: 6.375rem;
-    height: 2.1875rem;
-    border: red 2px solid;
-}
-
 .btn-help button {
     background: #141515;
     border: 0;
@@ -970,6 +959,16 @@ height: 1.48313rem;
     width: 100%;
     height: 100%;
     border-radius: 0.377em;
+    z-index: 200;
+    border: 1px solid var(--acento-luz);
+}
+
+.btn-help button.show {
+    width: 3.3125rem;
+    height: 1.1875rem;
+    margin-right: 2.5em;
+    margin-top: 2em;
+    font-size: medium;
 }
 
 .btn-help {
@@ -985,6 +984,78 @@ height: 1.48313rem;
     align-items: center;
     justify-content: center;
 }
+
+/* boton jugar desplegado */
+
+.btn-jugar-desplegado {
+    display: none;
+}
+
+.btn-jugar-desplegado.show {
+    position: absolute;
+    width: 25.5em;
+    height: 3.75em;
+    margin-top: 1em;
+    margin-left: 1.9em;
+    border: 0.12em solid var(--acento-luz);
+    border-radius: 0.377em;
+    background: #141515;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 3;
+    top: 0em;
+    color: var(--blanco);
+}
+
+.btn-jugar-desplegado.show p:first-child {
+    margin-top: 0.5em;
+}
+
+.btn-jugar-desplegado.show p {
+    width: 100%;
+    margin-bottom: 0.5em;
+    margin-right: 2em;
+    font-size: medium;
+}
+
+.imgsHelp {
+    margin-right: 1em;
+    margin-left: 3.5em;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.mouse {
+    width: 2.1875em;
+    height: 2em;
+    margin-left: 0.3em;
+}
+
+.mouse img {
+    width: 100%;
+}
+
+.flechas {
+    width: 1.5rem;
+    height: 1.625rem;
+    display: flex;
+}
+
+.flechas img {
+    width: 100%;
+}
+
+
+
+
+
+
+
+
+
+
 
 .btn-compartir {
     position: absolute;
