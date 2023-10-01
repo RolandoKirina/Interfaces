@@ -1048,13 +1048,7 @@ height: 1.48313rem;
 }
 
 
-
-
-
-
-
-
-
+/* boton comparti desplegable */
 
 
 .btn-compartir {
@@ -1106,8 +1100,23 @@ height: 1.48313rem;
 } 
 
 
+/* desplegado compartir */
 
+.btn-compartir-desplegado {
+    position: absolute;
+    width: 28.6875rem;
+    height: 5.5rem;
+    background-color: var(--prim-sombra3);
+    margin-left: 55%;
+}
 
+.btn-comp {
+    z-index: 200;
+}
+
+.btn-comp.show {
+    color: red;
+}
 
 
 
