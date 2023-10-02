@@ -82,8 +82,12 @@
     align-items: center;
 }
 
+.carrito {
+    margin-right: 4em;
+}
+
 .carrito button {
-    margin-left: 4em;
+
     width: 2em;
     height: 2em;
     border: 0;
@@ -92,10 +96,10 @@
     width: 100%;
 }
 .perfil, .carrito{
-
     width: 50%;
     height: 50%;
 }
+
 .perfil button{
     width: 3.5em;
     height: 4em;
@@ -294,6 +298,67 @@
 
 /*  Seccion Formulario Registro */
 
+
+.btn-google-face {
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    align-items: center;
+}
+.btn-google-container button {
+    width: 12.25rem;
+    height: 2.5625rem;
+    background-color: var(--blanco);
+    border-radius: 1em;
+    border: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Roboto;
+    font-size: 0.75rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-bottom: 1.5em;
+}
+
+a {
+    text-decoration: none;
+    color: var(--blanco);
+}
+
+.btn-google-container button a {
+    text-decoration: none;
+    color: var(--negro);
+}
+
+.btn-facebook-container {
+    width: 12.25rem;
+    height: 2.5625rem;
+    background-color: var(--prim);
+    border-radius: 1em;
+    border: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-facebook-container button {
+    background-color: var(--prim);
+    border: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-facebook-container button a {
+    text-decoration: none;
+    color: var(--blanco);
+}
+
+
+
+
 .register-container {
     width: 100%;
     height: auto; 
@@ -323,7 +388,7 @@
     height: 2.875rem;
     display: flex;
     align-items: center;
-    margin-bottom: 0.6em;
+    margin-bottom: 0em;
 }
 
 
@@ -379,17 +444,22 @@
     margin: 1em 0;
 }
 
+input:invalid {
+    border: 10px solid red;
+}
+
 .inputForm {
-    margin: 0.4em 0;
+    margin-top: 0em;
     width: 100%;
     height: 3.625em;
-    background-color: var(--prim-sombra2);
+    background-color: var(--prim-sombra3);
     border: 1px solid var(--blanco-oscuro);
     border-radius: 0.5rem;
     color: var(--gris);
     outline: 0;
     margin-bottom: 1em;
     padding: 0.7em;
+    margin-bottom: 0.4em;
 }
 
 .inputForm:hover {
@@ -497,22 +567,28 @@ a.colorblanco{
 .tienesCuenta {
     width: 100%;
     text-align: center;
-    padding-top: 2em;
 }
 
 .tienesCuenta h2, span {
     color: var(--blanco);
-    font-size: 1.625rem;
+    font-family: Roboto;
+    font-size: 1.12544rem;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
 }
 
 .tienesCuenta span {
-    color: var(--prim-luz3);
+    margin-left: 0.4em;
 }
+
+.tienesCuenta span a {
+    color: var(--prim);
+}
+
 .linea3 {
-    margin-top: 2em;
+    margin-top: 1em;
+    margin-bottom: 1em;
     width: 100%;
     height: 0.0625em;
     background-color: var(--blanco);
@@ -1048,11 +1124,12 @@ height: 1.48313rem;
 
 
 .btn-compartir {
+    margin-top: 1em;
     position: absolute;
     width: 6.375rem;
     height: 2.1875rem;
     text-align: left;
-    margin-left: 85%;
+    margin-left: 83%;
 }
 
 
@@ -1085,8 +1162,7 @@ height: 1.48313rem;
     height: 1em;
 }
 
-.btn-compartir button div p {
- 
+.btn-compartir button div p { 
     padding-left: 0.2em;
     font-family: Roboto;
     font-size: 1em;
@@ -1118,17 +1194,20 @@ height: 1.48313rem;
     z-index: 200;
 }
 
+
+
 .btn-comp.show {
     font-size: 1.25rem;
     width: 2.375rem;
     height: 0.1875rem;
-    margin-top: 0.9em;
-    margin-left: 2.5em;
+    margin-top: 0.0em;
+    margin-left: 4em;
 }
 
-.btn-comp.show img {
+
+/* .btn-comp.show img {
     display: none;
-}
+} */
 
 .btn-compartir-desplegado button {
     display: flex;
@@ -1377,9 +1456,9 @@ height: 1.48313rem;
     position: absolute;
     top: 12.5%;
     /* right: 10%; */
-    right: 13%;
+    right: 14%;
     display: flex;
-    font-size: large;
+    font-size: medium;
     padding: 0.5em 0.5em 0.5em 0.8em;
     align-items: center;
     text-align: left;

@@ -58,6 +58,8 @@ btnayuda.addEventListener("click", function() {
 let compartirDesplegado = false;
 
 let compartir = document.querySelector("#btn-compartir");
+let textoComp = compartir.textContent;
+
 
 compartir.addEventListener("click", function() {
     compartir.parentElement.nextElementSibling.classList.toggle("show");
@@ -67,10 +69,11 @@ compartir.addEventListener("click", function() {
         compartir.innerHTML = "Cerrar";
     }
     else {
-        compartir.innerHTML = texto;
+        compartir.innerHTML = textoComp;
     }
    
     compartirDesplegado = !compartirDesplegado;
 });
+
 
 
