@@ -83,6 +83,7 @@
 
 .carrito {
     margin-right: 4em;
+    padding-left: 1.5em;
 }
 
 .carrito button {
@@ -103,8 +104,8 @@
     width: 3.5em;
     height: 4em;
     border-radius: 9em;
-    margin-left: 1em;
-    margin-right: 0.5em;
+    margin-left: 0em;
+    margin-right: 2em;
     border: 0;
 }
 .perfil button img {
@@ -443,14 +444,10 @@ a {
     margin: 1em 0;
 }
 
-input:invalid {
-    border: 10px solid red;
-}
-
 .inputForm {
-    margin-top: 0em;
+    margin-top: 1em;
     width: 100%;
-    height: 3.625em;
+    height: 3.1em;
     background-color: var(--prim-sombra3);
     border: 1px solid var(--blanco-oscuro);
     border-radius: 0.5rem;
