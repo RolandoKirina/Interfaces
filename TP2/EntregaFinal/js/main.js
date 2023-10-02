@@ -55,5 +55,22 @@ btnayuda.addEventListener("click", function() {
 });
 
 
+let compartirDesplegado = false;
+
+let compartir = document.querySelector("#btn-compartir");
+
+compartir.addEventListener("click", function() {
+    compartir.parentElement.nextElementSibling.classList.toggle("show");
+    compartir.classList.toggle("show");
+
+    if(!compartirDesplegado) {
+        compartir.innerHTML = "Cerrar";
+    }
+    else {
+        compartir.innerHTML = texto;
+    }
+   
+    compartirDesplegado = !compartirDesplegado;
+});
 
 
