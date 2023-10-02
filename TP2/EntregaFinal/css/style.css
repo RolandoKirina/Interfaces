@@ -1120,41 +1120,6 @@ height: 1.48313rem;
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-/* Scroll carrusel */
-
-.trespuntitos {
-    display: flex;
-    z-index: 6;
-    position: absolute;
-    top: 13.5em; 
-    left: 8.5em;
-}
-
-.trespuntitos div{
-    border-radius: 5em;
-    width: 0.7em;
-    height: 0.7em;
-    margin: 0.5em;
-    background-color: var(--blanco-oscuro);
-    opacity: 0.9;
-}
-.trespuntitos div:first-child{
-    background-color: orangered;
-}
-
-
-
 /* DESPLEGABLES */
 
 /* PERFIL */
@@ -1207,8 +1172,79 @@ height: 1.48313rem;
 }
 
 
+
+
+
+
+
+
+
+
+/* slider carrusel drag */
+
+.slider {
+    aspect-ratio: 12 / 16;
+    width: 100%;
+    display: flex;
+    position: relative;
+    overflow: scroll;
+    scroll-snap-type: x mandatory;
+}
+
+.slider img {
+    width: 100%;
+    height: auto;
+    left: 0;
+    position: sticky;
+    object-fit: cover;
+    border-radius: 5px;
+    scroll-snap-align: center;
+}
+
+
+
+
+
+
+
+/* Scroll carrusel */
+
+.trespuntitos {
+    display: flex;
+    z-index: 6;
+    position: absolute;
+    top: 13.5em; 
+    left: 8.5em;
+}
+
+.trespuntitos div{
+    border-radius: 5em;
+    width: 0.7em;
+    height: 0.7em;
+    margin: 0.5em;
+    background-color: var(--blanco-oscuro);
+    opacity: 0.9;
+}
+.trespuntitos div:first-child{
+    background-color: orangered;
+}
+
+
+
+
+
 @media only screen and (min-width: 1024px) {
     
+.slider {
+    width: 34em;
+    height: 20em;
+    aspect-ratio: 16/ 16;
+    object-fit: fill;
+}
+
+.slider img {
+    width: 100%;
+}
 
 /* menus desplegados desktop */
 
