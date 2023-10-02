@@ -31,6 +31,7 @@
     --blanco-oscuro: #E5F4FF;
     --negro: #23282B;
     --especial: #34D919; 
+    --acentonuevo: #ff4500;
 }
 
 
@@ -1277,7 +1278,7 @@ height: 1.48313rem;
     opacity: 0.9;
 }
 .trespuntitos div:first-child{
-    background-color: orangered;
+    background-color: #ff4500;
 }
 
 
