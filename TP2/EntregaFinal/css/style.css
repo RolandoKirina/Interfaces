@@ -1354,8 +1354,8 @@ height: 1.48313rem;
 
 .spinner {
     position: relative;
-    width: 4.6em;
-    height: 4.6em;
+    width: 6.6em;
+    height: 6.6em;
     margin-bottom: 0.5em; /* separar un poco el spinner y el porcentaje de carga */
 }
 
@@ -1530,6 +1530,8 @@ height: 1.48313rem;
 
 }
 
+
+/* Hovers botones*/
 
 /* primer-hover-boton */
 .primer-hover-boton {
