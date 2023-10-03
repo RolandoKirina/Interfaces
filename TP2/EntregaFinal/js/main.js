@@ -4,9 +4,10 @@
 
 let iconoerror = document.querySelector('.icoerrorhidden');
 let diverror = document.querySelector("#diverror");
-let passerror = document.querySelector(".errorcontrahidden");
+let passerror = document.querySelector(".diverrorcontravis");
 let form = document.querySelector('#formregister');
-
+let inputerror = document.querySelector('.contraseñaerror');
+let labelerror = document.querySelector('#labelerror');
 form.addEventListener('submit', registrar);
 
 let usuarios = [];
@@ -31,27 +32,23 @@ function registrar(e){ //paso x parametros el evento de submit
         "email": email,
         "pass": pass
     }
-    if ((pass == pass2) && (!estaRegistrado(user))){
+    if ((pass == pass2) && (!estaRegistrado(user)) && captchacompletado){
         usuarios.push(user);
-        for (let i = 0; i < usuarios.length; i++){
-            console.log(usuarios[i]);
-        }
     }
     else {  
         if (estaRegistrado(user)){
             diverror.innerHTML = " ";
             diverror.classList.add("diverrorvisible");
-            diverror.innerHTML = "Ya tienes una cuenta registrada"
+            diverror.innerHTML += "Ya tienes una cuenta registrada"
         }
         else {
             passerror.innerHTML = " ";
             passerror.classList.remove("errorcontrahidden");
             passerror.classList.add("diverrorcontraflex");
-
             iconoerror.classList.remove("icoerrorhidden");
             iconoerror.classList.add("icoformerrorvis");
-            input.classList.remove(".inputForm");
-            input.classList.add("inputFormError");
+            inputerror.classList.add("errorinput");
+            labelerror.classList.add("errorred");
             passerror.innerHTML += "Las contraseñas no coinciden";
         }
     }
@@ -68,7 +65,22 @@ function estaRegistrado(user){
             }
         }
         return registrado;
-    }
+}
+
+let captcha = document.querySelector("#captcharectangulo");
+captcha.addEventListener('click', captchacompletado);
+let completo = false;
+
+function captchacompletado (){
+    let img = captcha.firstChild; // toma la imagen que esta del boton capthca
+    img.classList.remove('icoerrorhidden');
+    img.classList.add('tickvisible');
+    completo = true;
+    return completo
+}
+
+ 
+
 
 
 /*

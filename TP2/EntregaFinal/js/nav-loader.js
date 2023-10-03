@@ -15,10 +15,7 @@ function updatePercentage() {
     // Si el porcentaje no ha llegado al 100%, incrementa en 1 después de un breve retraso
     if (percentage < 100) {
         percentage++;
-        setTimeout(updatePercentage, 40); // Actualiza cada 50 milisegundos (ajusta según tus necesidades)
-    }
-    else {
-  
+        setTimeout(updatePercentage, 40); // Actualiza cada 40 milisegundos (ajusta según tus necesidades)
     }
 }
     // Comienza el proceso de carga

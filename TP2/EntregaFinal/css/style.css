@@ -480,7 +480,7 @@ a {
     margin: 1em 0;
 }
 
-.inputForm {
+.inputForm , .contraseñaerror {
     margin-top: 0em;
     width: 100%;
     height: 3.625em;
@@ -493,7 +493,14 @@ a {
     padding: 0.7em;
     margin-bottom: 0.4em;
 }
+.errorred {
+    color: var(--error);
+}
 
+
+.errorinput {
+    border: 1px solid var(--error);
+}
 .diverrorvisible {
     text-align: center;
     margin-top: 2em;
@@ -515,23 +522,39 @@ a {
     display: flex;
     align-items: center;
     color: var(--error);
-    width: 14em;
+    width: 30em;
     height: 2em;
-    font-size: 14px;
+    font-size: 13px;
 }
 
 .labelflex {
     display: flex;
+    justify-content: space-between;
     align-items: center;
+    width: 100%;
+}
+.labelflex label {
+    width: 100%;
+    height: auto;
+    font-size: 10px;
+}
+.labelflex label span {
+    width: 10em;
 }
 .icoerrorhidden {
     display: none;
 }
+
+.tickvisible {
+    display: block;
+    width: 1.5em;
+   height: 100%;
+}
 .icoformerrorvis {
     width: 1em;
     height: 1em;
-    margin-right: 5em;
     display: block;
+    margin-right: 2em;
 }
 .inputForm:hover {
     background-color: var(--prim-sombra1);
@@ -1334,8 +1357,8 @@ height: 1.48313rem;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: var(--negro);
-    transition: visibility 5s; /* cambiar tiempo de carga  */
+    background-color: var(--prim-sombra3);
+    transition: visibility 5s; /*tarda 5 segundos*/
 
 
 }
