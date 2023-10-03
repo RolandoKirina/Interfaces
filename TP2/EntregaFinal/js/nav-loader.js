@@ -123,7 +123,7 @@ compartir.addEventListener("click", function() {
         compartir.innerHTML = "Cerrar";
     }
     else {
-        compartir.innerHTML = textoComp;
+        compartir.innerHTML = '<img id="imgcompartir" src="imgs/iconos/btn-compartir.png"><p>Compartir</p>';
     }
    
     compartirDesplegado = !compartirDesplegado;

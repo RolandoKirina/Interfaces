@@ -1194,6 +1194,14 @@ height: 1.48313rem;
 /* boton comparti desplegable */
 
 
+.btn-comp.show {
+    font-size: 1.25rem;
+    width: 2.375rem;
+    height: 0.1875rem;
+    margin-top: 0.0em;
+    margin-left: 4em;
+}
+
 .btn-compartir {
     margin-top: 1em;
     position: absolute;
@@ -1217,6 +1225,7 @@ height: 1.48313rem;
     border: 0;
     margin-left: 2em;
     position: absolute;
+    z-index: 200;
 }
 
 .btn-compartir button div {
@@ -1231,6 +1240,8 @@ height: 1.48313rem;
 .btn-compartir button img {
     width: 1em;
     height: 1em;
+    display: flex;
+    margin-right: 0.25em;
 }
 
 .btn-compartir button div p { 
@@ -1261,19 +1272,6 @@ height: 1.48313rem;
     display: flex;
 }
 
-.btn-comp {
-    z-index: 200;
-}
-
-
-
-.btn-comp.show {
-    font-size: 1.25rem;
-    width: 2.375rem;
-    height: 0.1875rem;
-    margin-top: 0.0em;
-    margin-left: 4em;
-}
 
 .btn-compartir-desplegado button {
     display: flex;
@@ -1290,6 +1288,7 @@ height: 1.48313rem;
     width: 1.1875rem;
     height: 1.07319rem;
 }
+
 
 .wsp {
     background-color: var(--acento-luz);
