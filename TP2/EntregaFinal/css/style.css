@@ -32,6 +32,7 @@
     --negro: #23282B;
     --especial: #34D919; 
     --acentonuevo: #ff4500;
+    --error: #EB1414;
 }
 
 
@@ -61,7 +62,7 @@
     border: 0;
 }
 .logoastrojuegos{
-    width: 100%;
+    width: auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -83,7 +84,7 @@
 }
 
 .carrito {
-    margin-left: 1.5em;
+    margin-left: 1em;
 }
 
 .carritoDesplegado{
@@ -466,7 +467,7 @@ a {
 
 .form-register label {
     color: var(--blanco);
-    width: 19.625rem;
+    width: 10em;
     height: 1.3125rem;
 }
 .lineaingresar {
@@ -475,10 +476,6 @@ a {
     height: 0.0625rem;
     background-color: var(--blanco);
     margin: 1em 0;
-}
-
-input:invalid {
-    border: 10px solid red;
 }
 
 .inputForm {
@@ -495,6 +492,45 @@ input:invalid {
     margin-bottom: 0.4em;
 }
 
+.diverrorvisible {
+    text-align: center;
+    margin-top: 2em;
+    height: 1em;
+    width: 100%;
+    color: var(--error);
+}
+
+.diverrorcontra {
+    display: none;
+}
+.diverrorcontravis {
+    color: var(--error);
+    width: 100%;
+    height: 2em;
+}
+
+.diverrorcontraflex{
+    display: flex;
+    align-items: center;
+    color: var(--error);
+    width: 14em;
+    height: 2em;
+    font-size: 14px;
+}
+
+.labelflex {
+    display: flex;
+    align-items: center;
+}
+.icoerrorhidden {
+    display: none;
+}
+.icoformerrorvis {
+    width: 1em;
+    height: 1em;
+    margin-right: 5em;
+    display: block;
+}
 .inputForm:hover {
     background-color: var(--prim-sombra1);
 }
@@ -1406,7 +1442,7 @@ height: 1.48313rem;
 .carrusel {
     display: flex;
     margin-bottom: 1em;
-    width: 100%;
+    width: auto;
     position: relative;
 }
 
@@ -1418,7 +1454,7 @@ height: 1.48313rem;
     border-radius: 50%; 
     border: 0;
     position: absolute;
-    left: 96em;
+    left: 95.5em;
     bottom: 7em;
     z-index: 3;
     box-shadow: 1px 0px 5px var(--prim-sombra3);
@@ -1664,7 +1700,6 @@ button {
 .footerhome {
     width: 100%;
     justify-content: space-evenly;
-
 }
 
 .footerulhidden {
@@ -1687,7 +1722,12 @@ button {
     line-height: normal;
     margin-bottom: 0.5em;
 }
-
+.footerhome ul {
+    margin-right: 1em;
+}
+.diverror {
+    background-color: red;
+}
 .footerhome div ul.show {
    margin: 0;
 }
@@ -1711,7 +1751,7 @@ button {
     /*width 15em*/
     width: 15em;
     height: 21em;
-    margin-left: 2em;
+    margin-left: 1.5em;
     background-color: var(--blanco);
     box-shadow: 1px 0px 5px var(--prim-sombra3);
     border: 1px solid var(--negro);
@@ -1747,12 +1787,7 @@ button {
     width: 13em;
     height: 13em;
 }
-.firstcard{
-    margin-left: 4em;
-}
-.carrusel .h2{
-    margin-left: 5em;
-}
+
 .precio {
     display: flex;
     align-items: center;
@@ -1784,7 +1819,7 @@ button {
     height: 2em;
 }
 .h2 {
-    margin-left: 3em;
+    margin-left: 1em;
     font-size: 22px;
 }
 }

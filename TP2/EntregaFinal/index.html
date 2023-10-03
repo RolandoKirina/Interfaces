@@ -27,7 +27,7 @@
                 </div>
                 <div class="titulo">
                     <img src="imgs\iconos\logo.png" class="logoplaneta">
-                    <h1 class="colorblanco">Astrojuegos</h1>  
+                    <h1 class="colorblanco"> <a href="home2.html">Astrojuegos</a></h1>  
                 </div>
             </div>
            
@@ -44,31 +44,32 @@
                 <img class="marcianito" src="imgs\iconos\iconomarcianito.png">
                 <div class="linea"></div>
             </div>
-            <form class="form-register" id="registroForm">
+            <form class="form-register" id="formregister">
                     <label>Nombre *</label>
-                    <input class="inputForm" type="text" placeholder="Ingrese su nombre" required>
+                    <input class="inputForm" type="text" placeholder="Ingrese su nombre" name="name" required>
                     <label>Apellido *</label>
-                    <input class="inputForm" type="text" placeholder="Ingrese su apellido"  required>
-                    <label>Nombre de Usuario (opcional)</label>
-                    <input class="inputForm" placeholder="Ingrese su nombre de usuario" type="text">
+                    <input class="inputForm" type="text" placeholder="Ingrese su apellido" name="surname" required>
+                    <label>Nombre de Usuario</label>
+                    <input class="inputForm" placeholder="Ingrese su nombre de usuario"name="username" type="text">
                     <label>Edad *</label>
-                    <input class="inputForm" placeholder="Ingrese su edad" type="text" required> 
+                    <input class="inputForm" placeholder="Ingrese su edad" type="number" name="age" maxlength="3" required> 
                     <label>E-Mail *</label>
-                    <input class="inputForm" placeholder="Ingrese su e-mail" type="text" required>
+                    <input class="inputForm" placeholder="Ingrese su e-mail" type="email" name="email"required>
                     <label>Contraseña *</label>
-                    <input class="inputForm" placeholder="Ingrese su contraseña" type="text" required>
-                    <label>Repetir Contraseña *</label>
-                    <input class="inputForm" placeholder="Repita su contraseña" type="text" required>
+                    <input class="inputForm" placeholder="Ingrese su contraseña" type="password" minlength="6" name="password" required>
+                    <div class="labelflex"> <label>Repetir Contraseña *</label> <div class="errorcontrahidden"></div>   <img src="imgs/iconos/errorform.png" class="icoerrorhidden"></div> 
+                    <input class="inputForm" placeholder="Repita su contraseña" type="password" minlength="6"  name="password2" required>
 
                     <div class="btn-captcha-container">
-                        <button class="rectanguloCaptcha colorblanco"></button>
+                        <button class="rectanguloCaptcha colorblanco" type="button"></button>
                         <p class="texto">No soy un robot</p>
                         <img class="img-captcha" src="imgs/iconos/logos_recaptcha.png">
                     </div>
+                    <div id="diverror"></div>
                     <div class="btn-registrarse-container">
-                        <button class="texto btn h3" type="button"><a href="home.html">REGISTRARSE</a></button>
+                        <button class="texto btn h3" id="btnsubmit">Registrarse</button>
                     </div>
-            </form>
+        </form>
             
             <div class="lineaBtnGoogleFace1">
                 <div class="linea2"></div>
@@ -78,10 +79,10 @@
 
             <div class="btn-google-face">
                 <div class="btn-google-container">
-                    <button type="button"><img src="imgs/iconos/google.png" class="imgIconos"><span class="h4 textonegro"><a href="index.html">Registrate con Google</a></span></button>
+                    <button type="button"><img src="imgs/iconos/google.png" class="imgIconos"><span class="h4 textonegro"><a href="home2.html">Registrate con Google</a></span></button>
                 </div>
                 <div class="btn-facebook-container">
-                    <button class="texto" type="button"><img src="imgs/iconos/facebook.png" class="imgIconos"><span class="h4"><a href="index.html">Regístrate con Facebook</a></span></button>
+                    <button class="texto" type="button"><img src="imgs/iconos/facebook.png" class="imgIconos"><span class="h4"><a href="home2.html">Regístrate con Facebook</a></span></button>
                 </div>
                 <div class="linea3"></div>
                 <div class="tienesCuenta">
@@ -91,7 +92,6 @@
             </div>
         </div>
     </section>
-<!-- <--mover carrito --> 
     <footer class="footerhome">
         <div>
             <div class="btnfooter">

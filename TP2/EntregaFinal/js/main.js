@@ -1,5 +1,77 @@
 "use strict";
 
+//formulario ingresar
+
+let iconoerror = document.querySelector('.icoerrorhidden');
+let diverror = document.querySelector("#diverror");
+let passerror = document.querySelector(".errorcontrahidden");
+let form = document.querySelector('#formregister');
+
+form.addEventListener('submit', registrar);
+
+let usuarios = [];
+
+function registrar(e){ //paso x parametros el evento de submit
+    e.preventDefault();
+
+    let datos = new FormData(formregister);
+    let name = datos.get('name');
+    let surname = datos.get('surname');
+    let username = datos.get('username');
+    let age = datos.get('age');
+    let email = datos.get('email');
+    let pass = datos.get('password');
+    let pass2 = datos.get('password2');
+
+    let user = {
+        "nombre": name,
+        "surname": surname,
+        "username": username,
+        "age": age,
+        "email": email,
+        "pass": pass
+    }
+    if ((pass == pass2) && (!estaRegistrado(user))){
+        usuarios.push(user);
+        for (let i = 0; i < usuarios.length; i++){
+            console.log(usuarios[i]);
+        }
+    }
+    else {  
+        if (estaRegistrado(user)){
+            diverror.innerHTML = " ";
+            diverror.classList.add("diverrorvisible");
+            diverror.innerHTML = "Ya tienes una cuenta registrada"
+        }
+        else {
+            passerror.innerHTML = " ";
+            passerror.classList.remove("errorcontrahidden");
+            passerror.classList.add("diverrorcontraflex");
+
+            iconoerror.classList.remove("icoerrorhidden");
+            iconoerror.classList.add("icoformerrorvis");
+            input.classList.remove(".inputForm");
+            input.classList.add("inputFormError");
+            passerror.innerHTML += "Las contraseñas no coinciden";
+        }
+    }
+}
+
+function estaRegistrado(user){
+        let registrado = false;
+        if (usuarios.length>0){
+            let i = 0;
+            while ( i < usuarios.length && !registrado){
+                if (usuarios[i].nombre == user.nombre && usuarios[i].email == user.email){
+                    registrado = true;
+                }
+            }
+        }
+        return registrado;
+    }
+
+
+/*
 let botonesFooter = document.querySelectorAll("#footer-btn");
 
 botonesFooter.forEach(boton => {
@@ -58,7 +130,7 @@ btnayuda.addEventListener("click", function() {
 let compartirDesplegado = false;
 
 let compartir = document.querySelector("#btn-compartir");
-let textoComp = compartir.textContent;
+//let textoComp = compartir.textContent;
 
 
 compartir.addEventListener("click", function() {
@@ -75,5 +147,4 @@ compartir.addEventListener("click", function() {
     compartirDesplegado = !compartirDesplegado;
 });
 
-
-
+*/
