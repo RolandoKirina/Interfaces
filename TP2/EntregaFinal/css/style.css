@@ -1087,6 +1087,9 @@ height: 1.48313rem;
     height: 26.1875rem;
 }
 
+
+
+
 /* Menus compartir y ayuda desplegables */
 
 .btn-help button {
@@ -1270,11 +1273,6 @@ height: 1.48313rem;
     margin-left: 4em;
 }
 
-
-/* .btn-comp.show img {
-    display: none;
-} */
-
 .btn-compartir-desplegado button {
     display: flex;
     width: 6.3125rem;
@@ -1311,10 +1309,90 @@ height: 1.48313rem;
 }
 
 
+/* loader */
+
+.all {
+    visibility: hidden;
+}
+
+.all.show {
+    visibility: visible;
+}
+
+#percentage {
+    color: var(--blanco);
+    
+}
+
+.loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--negro);
+    transition: visibility 5s; /* cambiar tiempo de carga  */
 
 
+}
 
+.loader-hidden {
+    visibility: hidden;  
+}
 
+.loader div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.spinner {
+    position: relative;
+    width: 4.6em;
+    height: 4.6em;
+    margin-bottom: 0.5em; /* separar un poco el spinner y el porcentaje de carga */
+}
+
+.spinner-circle {
+    width: 100%;
+    height: 100%;
+    border: 1em solid #F5FBFF;
+    border-top-color: var(--prim);
+    border-radius: 50%;
+    animation: loading 0.75s ease infinite;
+}
+
+@keyframes loading {
+    from {
+        transform: rotate(0turn);
+    }
+    to {
+        transform: rotate(1turn);
+    }
+}
+
+/* galeria animada 
+.gallery {
+    display: block;
+    position: relative;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.image {
+    max-width: 100%;
+    height: auto;
+    display: none;
+    transition: opacity 1s ease;
+}
+
+.image:first-child {
+    display: block;
+} */
 
 
 /* DESPLEGABLES */
@@ -1658,7 +1736,7 @@ button {
     width: 4rem;
     height: 3.6875rem;
     border-radius: 9em;
-    margin-left: 1em;
+    margin-left: 6.5em; /* mover carrito */
     margin-right: 0.5em;
     border: 0;
 }
