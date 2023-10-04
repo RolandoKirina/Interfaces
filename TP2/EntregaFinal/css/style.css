@@ -976,7 +976,7 @@ a.colorblanco{
 
 .calificarJuego p {
     font-size: 1.625em;
-    
+    margin-right: 0.5em;
 }
 
 .estrellas {
@@ -1537,22 +1537,21 @@ height: 1.48313rem;
 
 /* primer-hover-boton */
 .primer-hover-boton {
-    background: #fffdfd; /* color de fondo */
     color: #4741d7; /* color de fuente */
-    border: 2px solid #4741d7; /* tamaño y color de borde */
     padding: 16px 20px;
     border-radius: 3px; /* redondear bordes */
     position: relative;
     z-index: 1;
     overflow: hidden;
-    display: inline-block;
+    display: flex;
+    align-items: center;
   }
   .primer-hover-boton:hover {
     color: #fff;/* color de fuente hover */
   }
   .primer-hover-boton::after {
     content: "";
-    background: #4741d7; /* color de fondo hover */
+    background: var(--acentonuevo); /* color de fondo hover */
     position: absolute;
     z-index: -1;
     padding: 16px 20px;
@@ -1573,14 +1572,14 @@ height: 1.48313rem;
 
 .segundo-hover-boton {
     background: #fff; /* color de fondo */
-    color: #4741d7; /* color de fuente */
-    border: 2px solid #4741d7; /* tamaño y color de borde */
     padding: 16px 20px;
     border-radius: 3px; /* redondear bordes */
     position: relative;
     z-index: 1;
     overflow: hidden;
-    display: inline-block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .segundo-hover-boton:hover {
@@ -1589,7 +1588,7 @@ height: 1.48313rem;
 
 .segundo-hover-boton::after {
     content: "";
-    background: #4741d7; /* color de fondo hover */
+    background: var(--acentonuevo); /* color de fondo hover */
     position: absolute;
     z-index: -1;
     padding: 16px 20px;
@@ -1613,14 +1612,14 @@ height: 1.48313rem;
 
 .tercer-hover-boton {
     background: #fff; /* color de fondo */
-    color: #4741d7; /* color de fuente */
-    border: 2px solid #4741d7; /* tamaño y color de borde */
     padding: 16px 20px;
     border-radius: 3px; /* redondear bordes */
     position: relative;
     z-index: 1;
     overflow: hidden;
-    display: inline-block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   
 }
 
@@ -1632,7 +1631,7 @@ height: 1.48313rem;
     height: 100%;
     top: 0;
     left: -50%;
-    background-color: #4741d7; /* color de fondo hover */
+    background: var(--acentonuevo); /* color de fondo hover */
     transition: all 0.3s ease-in-out;
 }
 
@@ -1655,15 +1654,16 @@ height: 1.48313rem;
 /* cuarto hover boton */
 
 .cuarto-hover-boton {
-    background: #fff; /* color de fondo */
-    color: #4741d7; /* color de fuente */
-    border: 2px solid #4741d7; /* tamaño y color de borde */
-    padding: 16px 20px;
+
+
     border-radius: 3px; /* redondear bordes */
     position: relative;
     z-index: 1;
     overflow: hidden;
-    display: inline-block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: small;
   }
 
   .cuarto-hover-boton:hover {
@@ -1671,7 +1671,7 @@ height: 1.48313rem;
   }
 .cuarto-hover-boton::after {
     content: "";
-    background: #4741d7; /* color de fondo hover */
+    background: var(--acentonuevo); /* color de fondo hover */
     position: absolute;
     z-index: -1;
     padding: 16px 20px;
