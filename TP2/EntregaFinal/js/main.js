@@ -8,11 +8,13 @@ let passerror = document.querySelector(".diverrorcontravis");
 let form = document.querySelector('#formregister');
 let inputerror = document.querySelector('.contraseñaerror');
 let labelerror = document.querySelector('#labelerror');
+let registrocorrecto = document.querySelector(".hidden");
 form.addEventListener('submit', registrar);
 
 let usuarios = [];
 
-function registrar(e){ //paso x parametros el evento de submit
+function registrar(e){ //paso x parametros el evento de submit}
+
     e.preventDefault();
 
     let datos = new FormData(formregister);
@@ -34,11 +36,16 @@ function registrar(e){ //paso x parametros el evento de submit
     }
     if ((pass == pass2) && (!estaRegistrado(user)) && captchacompletado){
         usuarios.push(user);
+        registrocorrecto.classList.remove("hidden");
+        registrocorrecto.classList.add("pulse");
+
+       setTimeout ("redireccionar()", 3000);
     }
     else {  
         if (estaRegistrado(user)){
             diverror.innerHTML = " ";
             diverror.classList.add("diverrorvisible");
+            registrocorrecto.classList.remove("pulse");
             diverror.innerHTML += "Ya tienes una cuenta registrada"
         }
         else {
@@ -52,6 +59,10 @@ function registrar(e){ //paso x parametros el evento de submit
             passerror.innerHTML += "Las contraseñas no coinciden";
         }
     }
+}
+
+function redireccionar(){
+   window.location="home.html";
 }
 
 function estaRegistrado(user){

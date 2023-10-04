@@ -3,7 +3,7 @@ let diverror = document.querySelector("#diverror");
 let passerror = document.querySelector(".diverrorcontravis");
 let inputerror = document.querySelector('.contraseñaerror');
 let labelerror = document.querySelector('#labelerror');
-
+let registrocorrecto = document.querySelector(".hidden");
 //form login 
 
 let formLogin = document.querySelector('#formlogin');
@@ -25,8 +25,11 @@ console.log(datos);
 
     if(nombreLogin == userLogin.name && contraLogin == userLogin.password) {
         console.log("logueado correctamente");
-        //animacion
+        registrocorrecto.classList.remove("hidden");
+        registrocorrecto.classList.add("pulse");
+        setTimeout ("redireccionar()", 3000);
     }
+    
     else if(nombreLogin == "" && contraLogin == "") {
         console.log("nombre y contra vacios");
 
@@ -44,5 +47,8 @@ console.log(datos);
     else {
         console.log("incorrecto");
     }
-
 }
+
+function redireccionar(){
+    window.location="home.html";
+ }

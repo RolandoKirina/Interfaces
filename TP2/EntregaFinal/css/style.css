@@ -31,7 +31,7 @@
     --blanco-oscuro: #E5F4FF;
     --negro: #23282B;
     --especial: #34D919; 
-    --acentonuevo: #ff4500;
+    --acentonuevo: #6700dd;
     --error: #EB1414;
 }
 
@@ -281,6 +281,9 @@
     margin-left: 0.50em;
 }
 
+.hidden {
+    display: none;
+}
 .cardhidden{
     display: none;
 }
@@ -317,9 +320,11 @@
     display: inline;
 }
 .gratis{
+    padding: 0.25em;
+    color: var(--blanco);
         width: 2.75em;
         height: 1.5em;
-        background-color: var(--especial);
+        background-color: var(--acentonuevo);
         margin-right: 1em;
 }
 
@@ -534,6 +539,7 @@ a {
     align-items: center;
     width: 100%;
 }
+
 .labelflex label {
     width: 100%;
     height: auto;
@@ -1565,7 +1571,7 @@ height: 1.48313rem;
   }
   .primer-hover-boton::after {
     content: "";
-    background: var(--acentonuevo); /* color de fondo hover */
+    background: var(--acento-luz); /* color de fondo hover */
     position: absolute;
     z-index: -1;
     padding: 16px 20px;
@@ -1602,7 +1608,7 @@ height: 1.48313rem;
 
 .segundo-hover-boton::after {
     content: "";
-    background: var(--acentonuevo); /* color de fondo hover */
+    background: var(--acento-luz); /* color de fondo hover */
     position: absolute;
     z-index: -1;
     padding: 16px 20px;
@@ -1644,7 +1650,7 @@ height: 1.48313rem;
     height: 100%;
     top: 0;
     left: -50%;
-    background: var(--acentonuevo); /* color de fondo hover */
+    background: var(--acento-luz); /* color de fondo hover */
     transition: all 0.3s ease-in-out;
 }
 
@@ -1683,7 +1689,7 @@ height: 1.48313rem;
   }
 .cuarto-hover-boton::after {
     content: "";
-    background: var(--acentonuevo); /* color de fondo hover */
+    background: var(--acento-luz); /* color de fondo hover */
     position: absolute;
     z-index: -1;
 
@@ -2214,3 +2220,27 @@ button {
 }
 }
 
+.registroexitoso{
+    background-color: var(--prim-luz3);
+    width: 25em;
+    height: 2.5em;
+    text-align: center;
+    margin-top: 2em;
+    padding: 0.50em;
+    border-radius: 2em;
+    border: 1px solid var(--blanco-oscuro);
+}
+.registroexitosoflex{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+.pulse{
+  animation: pulse 1.5s;
+  box-shadow: 0 0 0 2em transparent;
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 var(--acento-luz); }
+}
