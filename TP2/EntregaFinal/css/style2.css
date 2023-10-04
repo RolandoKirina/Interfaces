@@ -1,0 +1,12 @@
+.carruselprincipal {
+    display: flex;
+    width: 200%;
+    height: auto;
+    flex-wrap: nowrap;
+    overflow: hidden;
+}
+
+.cincocards {
+    display: flex;
+    width: 100%;
+}
