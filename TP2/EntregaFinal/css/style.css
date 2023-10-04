@@ -775,15 +775,22 @@ a.colorblanco{
 
 .game-container {
     margin-top: 0.7em;
-    height: 56.375em;
+    height: 26em;
     position: relative;
 }
 
+li:hover {
+    color: var(--prim);
+}
 
+.cerrarSesion {
+    color: var(--prim);
+}
 
 .game-container img {
     width: 100%;
     height: 100%;
+    object-fit: fill;
 }
 
 .info-game {
@@ -1474,6 +1481,12 @@ height: 1.48313rem;
     color: var(--blanco);
 }
 
+.perfilDesplegado.show ul a:hover, .carritoDesplegado.show ul a:hover, .hamburguer-menu-desplegado.show ul a:hover {
+    text-decoration: none;
+    color: var(--prim);
+}
+
+
 
 
 
@@ -1737,10 +1750,6 @@ height: 1.48313rem;
     user-select: none;
 }
 
-.btn-left:hover,
-.btn-right:hover {
-    background-color: var(--prim);
-}
 
 .btn-left img {
     width: 2em;
