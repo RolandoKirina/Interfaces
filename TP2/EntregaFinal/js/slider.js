@@ -1,5 +1,5 @@
 const btnLeft = document.querySelector(".btn-left"),
-      btnRight = document.querySelector(".btn-right"),
+   btnRight = document.querySelector(".btn-right"),
       slider = document.querySelector("#slider"),
       sliderSection = document.querySelectorAll(".slider-section");
 

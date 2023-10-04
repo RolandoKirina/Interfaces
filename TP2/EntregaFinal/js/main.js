@@ -79,6 +79,5 @@ function captchacompletado (){
     return completo
 }
 
- 
 
 

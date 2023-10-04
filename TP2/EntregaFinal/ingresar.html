@@ -46,15 +46,20 @@
                 <div class="lineaingresar"></div>
             </div>  
             
-            <form class="form-register">
-                <label>Correo electronico o nombre de usuario*</label>
-                <input class="inputForm" type="text" placeholder="Ingrese su nombre" required>
-                <label>Contraseña*</label>
-                <input class="inputForm" placeholder="Ingrese su contraseña" type="text" required>
+            <form class="form-register" id="formlogin">
+                <div class="labelflex"><label><span id="labelerror">Correo electronico o nombre de usuario *</span></label> <div class="diverrorcontravis"></div><img src="imgs/iconos/errorform.png" class="icoerrorhidden"></div> 
+      
+                <input class="inputForm" type="text" placeholder="Ingrese su nombre" name="name">
+
+                <div class="labelflex"><label><span id="labelerror">Contraseña *</span></label> <div class="diverrorcontravis"></div><img src="imgs/iconos/errorform.png" class="icoerrorhidden"></div> 
+
+                <input class="inputForm" placeholder="Ingrese su contraseña" type="text" name="password">
                 <a href="ingresar.html" class="colorblanco subrayado">Olvidaste tu contraseña?</a>
+
                 <div class="btn-registrarse-container">
                     <button class="texto btn h3 primer-hover-boton">INGRESAR</button>
                 </div>
+
                 <div class="lineaBtnGoogleFace1">
                     <div class="linea2"></div>
                     <p>O</p>
@@ -123,6 +128,6 @@
 
     </footer>
 
-    <script src="js/main.js"></script>
+    <script src="js/login.js"></script>
 </body>
 </html>

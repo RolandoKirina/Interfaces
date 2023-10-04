@@ -1788,6 +1788,10 @@ height: 1.48313rem;
   
 }
 
+label {
+    color: var(--blanco);
+}
+
 .slider-section img {
     width: 85.5em;
     height: 20em;
