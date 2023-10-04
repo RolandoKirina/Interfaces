@@ -1391,11 +1391,14 @@ height: 1.48313rem;
 }
 
 @keyframes loading {
-    from {
-        transform: rotate(0turn);
+    0% {
+        transform: rotate(0deg);
     }
-    to {
-        transform: rotate(1turn);
+    50% {
+        transition: rotate(180deg);
+    }
+    100% {
+        transform: rotate(360deg);
     }
 }
 
@@ -1479,29 +1482,6 @@ height: 1.48313rem;
 
 
 
-/* slider carrusel drag */
-
-.slider {
-    aspect-ratio: 12 / 16;
-    width: 100%;
-    display: flex;
-    position: relative;
-    overflow: scroll;
-    scroll-snap-type: x mandatory;
-}
-
-.slider img {
-    width: 100%;
-    height: auto;
-    left: 0;
-    position: sticky;
-    object-fit: cover;
-    border-radius: 5px;
-    scroll-snap-align: center;
-}
-
-
-
 
 
 
@@ -1557,7 +1537,7 @@ height: 1.48313rem;
 
 /* primer-hover-boton */
 .primer-hover-boton {
-    background: #fff; /* color de fondo */
+    background: #fffdfd; /* color de fondo */
     color: #4741d7; /* color de fuente */
     border: 2px solid #4741d7; /* tamaño y color de borde */
     padding: 16px 20px;
@@ -1618,7 +1598,6 @@ height: 1.48313rem;
     bottom: 0;
     left: -100%;
     right: 100%;
-    -webkit-transition: all 0.35s;
     transition: all 0.35s;
 }
 
@@ -1627,7 +1606,6 @@ height: 1.48313rem;
     right: 0;
     top: 0;
     bottom: 0;
-    -webkit-transition: all 0.35s;
     transition: all 0.35s;
 }
 
@@ -1655,8 +1633,6 @@ height: 1.48313rem;
     top: 0;
     left: -50%;
     background-color: #4741d7; /* color de fondo hover */
-    -webkit-transition: all 0.3s ease-in-out;
-    -o-transition: all 0.3s ease-in-out;
     transition: all 0.3s ease-in-out;
 }
 
@@ -1713,13 +1689,127 @@ height: 1.48313rem;
   }
 
 
+  /* carrusel */
 
+  .container-carousel {
+    position: relative;
+    width: auto;
+    height: 15em;
+    background-image: url('../imgs/imgEspacial.jpg');
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.66);
 
+    overflow: hidden;
+  
+}
 
+.carruseles {
+    width: 1000%;
+    height: 100%;
+    display: flex;
+
+}
+
+.slider-section {
+    width: calc(100% / 3);
+    height: 100%;
+}
+
+.slider-section img {
+    width: 25em;
+    height: 15em;
+    object-fit: cover;
+
+}
+
+.btn-left,
+.btn-right {
+    display: flex;
+    position: absolute;
+    top: 50%;
+    font-size: 1.5rem;
+    background-color: transparent;
+    border-radius: 50%;
+    padding: 5px;
+    font-weight: 600;
+    cursor: pointer;
+    color: #ffffff81;
+    transform: translate(0,-50%);
+    transition: .5s ease;
+    user-select: none;
+}
+
+.btn-left:hover,
+.btn-right:hover {
+    background-color: var(--prim);
+}
+
+.btn-left img {
+    width: 2em;
+    height: 2em;
+}
+
+.btn-right img {
+    width: 2em;
+    height: 2em;
+}
+
+.btn-left {
+    left: 0.1em;
+
+}
+
+.btn-right {
+    right: 0.1em;
+  
+}
+
+.izq-rotacion {
+    rotate: 180deg;
+}
 
 
 @media only screen and (min-width: 1024px) {
     
+  .container-carousel {
+    position: relative;
+    width: auto;
+    height: 20em;
+    background-image: url('../imgs/imgEspacial.jpg');
+    box-shadow: 0 0.5em 2em 0 rgba(0, 0, 0, 0.66);
+    overflow: hidden;
+  
+}
+
+.slider-section img {
+    width: 85.5em;
+    height: 20em;
+    object-fit: fill;
+}
+
+.btn-left {
+    left: 0.3em;
+
+}
+
+.btn-right {
+    right: 0.3em;
+  
+}
+
+.btn-left img {
+    width: 3em;
+    height: 3em;
+}
+
+.btn-right img {
+    width: 3em;
+    height: 3em;
+}
+
+
+
+/* main */
+
 .main {
     height: 100%;
     width: 100%;
