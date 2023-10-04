@@ -340,6 +340,7 @@
     flex-direction: column;
     align-items: center;
 }
+
 .btn-google-container button {
     width: 12.25rem;
     height: 2.5625rem;
@@ -1537,13 +1538,13 @@ height: 1.48313rem;
 
 /* primer-hover-boton */
 .primer-hover-boton {
-    color: #4741d7; /* color de fuente */
-    padding: 16px 20px;
+     /* color de fuente */
     border-radius: 3px; /* redondear bordes */
     position: relative;
     z-index: 1;
     overflow: hidden;
     display: flex;
+    justify-content: center;
     align-items: center;
   }
   .primer-hover-boton:hover {
@@ -1571,7 +1572,7 @@ height: 1.48313rem;
 /* segundo hover boton*/
 
 .segundo-hover-boton {
-    background: #fff; /* color de fondo */
+ /* color de fondo */
     padding: 16px 20px;
     border-radius: 3px; /* redondear bordes */
     position: relative;
@@ -1611,8 +1612,7 @@ height: 1.48313rem;
 /* tercer hover boton */
 
 .tercer-hover-boton {
-    background: #fff; /* color de fondo */
-    padding: 16px 20px;
+     /* color de fondo */
     border-radius: 3px; /* redondear bordes */
     position: relative;
     z-index: 1;
@@ -1663,7 +1663,6 @@ height: 1.48313rem;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: small;
   }
 
   .cuarto-hover-boton:hover {
@@ -1674,7 +1673,7 @@ height: 1.48313rem;
     background: var(--acentonuevo); /* color de fondo hover */
     position: absolute;
     z-index: -1;
-    padding: 16px 20px;
+
     display: block;
     left: 0;
     right: 0;
