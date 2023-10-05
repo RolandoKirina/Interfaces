@@ -195,6 +195,7 @@
     width: 100%;
     padding: 0.25em;
     height: auto;
+    overflow: hidden;
 }
 .imgcarruselprincipal{
     width: 100%;
