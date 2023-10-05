@@ -2268,27 +2268,37 @@ button {
     position: absolute;
     z-index: 100;
     left: 0em;
-    top: 37em;
 }
 
 .btn-right-cards{
     position: absolute;
     z-index: 100;
     right: 1em;
+}
+
+/* botones posicion */
+
+.primero {
     top: 37em;
+}
+
+.segundo {
+    top: 59em;
+}
+
+.tercero {
+    top: 81em;
+}
+
+.cuarto {
+    top: 103em;
 }
 
 
 
+/* btn-izq-normalidad  */
 
-.transformacion-izquierda {
-    transform: translateX(0%) skew(-15deg);
-  }
-  
-  .transformacion-derecha {
-    transform: translateX(-100%) skew(15deg);
-  }
-  
-  .transformacion-reset {
-    transform: translateX(0%) skewX(0deg);
-  }
+
+
+/* btn-der-normalidad  */
+
