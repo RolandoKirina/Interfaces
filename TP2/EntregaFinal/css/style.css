@@ -1837,19 +1837,19 @@ height: 1.48313rem;
 
 
 .primero {
-    top: 23em;
+    top: 25em;
 }
 
 .segundo {
-    top: 34.5em;
+    top: 38em;
 }
 
 .tercero {
-    top: 45.5em;
+    top: 50.5em;
 }
 
 .cuarto {
-    top: 56em;
+    top: 63em;
 } 
 
 
@@ -1936,19 +1936,19 @@ height: 1.48313rem;
 
 
 .primero {
-    top: 36em;
+    top: 39em;
 }
 
 .segundo {
-    top: 58em;
+    top: 64em;
 }
 
 .tercero {
-    top: 80em;
+    top: 89em;
 }
 
 .cuarto {
-    top: 102em;
+    top: 114em;
 } 
 
 
@@ -2033,6 +2033,7 @@ label {
     width: 100%;
     background-image: url('../imgs/imgEspacial.jpg');
     background-size: cover;
+    overflow: hidden; 
 
 }
 .carrusel {
