@@ -1372,7 +1372,7 @@ height: 1.48313rem;
     justify-content: center;
     align-items: center;
     background-color: var(--prim-sombra3);
-    transition: visibility 5s; /*tarda 5 segundos*/
+    transition: visibility 0.5s; /*tarda 5 segundos*/
 
 
 }
@@ -2243,4 +2243,39 @@ button {
 
 @keyframes pulse {
   0% { box-shadow: 0 0 0 0 var(--acento-luz); }
+
 }
+
+
+/* carrusel cards */
+
+.carruselprincipal {
+    display: flex;
+    width: 200%;
+    height: auto;
+    flex-wrap: nowrap;
+    overflow: hidden; 
+    margin-top: 1em;
+}
+
+.cincocards {
+    display: flex;
+    width: 100%;
+    transition: transform 0.5s ease; /*agrega una transicion suave*/
+}
+
+.btn-left-cards {
+    position: absolute;
+    z-index: 100;
+    left: 0em;
+    top: 37em;
+}
+
+.btn-right-cards{
+    position: absolute;
+    z-index: 100;
+    right: 1em;
+    top: 37em;
+}
+
+
