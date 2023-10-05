@@ -1783,8 +1783,207 @@ height: 1.48313rem;
 }
 
 
+
+
+
+/* carrusel cards celular*/
+
+.card h3 {
+    margin-left: 1em;
+}
+
+.carruselprincipal {
+    display: flex;
+    width: 200%;
+    height: auto;
+    flex-wrap: nowrap;
+    overflow: hidden; 
+    margin-top: 1em;
+}
+
+.cincocards {
+    display: flex;
+    width: 100%;
+    transition: transform 0.5s ease; /*agrega una transicion suave*/
+}
+
+.btn-left-cards {
+    position: absolute;
+    z-index: 100;
+    left: 0em;
+    width: 2em;
+    height: 2em;
+}
+
+.btn-right-cards{
+    position: absolute;
+    z-index: 100;
+    right: 1em;
+    width: 2em;
+    height: 2em;
+}
+
+
+.btn-left-cards img {
+    width: 100%;
+}
+
+.btn-right-cards img{
+   width: 100%;
+}
+
+
+/* botones posicion */
+
+
+.primero {
+    top: 23em;
+}
+
+.segundo {
+    top: 34.5em;
+}
+
+.tercero {
+    top: 45.5em;
+}
+
+.cuarto {
+    top: 56em;
+} 
+
+
+/* clases animaciones botones izq der carrusel cards */
+
+.transformacion-izquierda {
+    transform: translateX(0%) skew(-5deg);
+    transition: transform 0.5s ease;
+  }
+  
+  .transformacion-derecha {
+    transform: translateX(-100%) skew(5deg);
+    transition: transform 0.5s ease;
+  }
+  
+  .transformacion-reset {
+    transform: translateX(0%) skewX(0deg);
+    transition: transform 0.5s ease;
+  }
+
+  .transformacion-reset-dos {
+    transform: translateX(-100%) skewX(0deg);
+    transition: transform 0.5s ease;
+  }
+
+
+
+
+
+
+
 @media only screen and (min-width: 1024px) {
     
+
+
+/* carrusel cards */
+
+.card h3 {
+    margin-left: 1em;
+}
+
+.carruselprincipal {
+    display: flex;
+    width: 200%;
+    height: auto;
+    flex-wrap: nowrap;
+    overflow: hidden; 
+    margin-top: 1em;
+}
+
+.cincocards {
+    display: flex;
+    width: 100%;
+    transition: transform 0.5s ease; /*agrega una transicion suave*/
+}
+
+.btn-left-cards {
+    position: absolute;
+    z-index: 100;
+    left: 0em;
+    width: 5em;
+    height: 5em;
+}
+
+.btn-right-cards{
+    position: absolute;
+    z-index: 100;
+    right: 1em;
+    width: 5em;
+    height: 5em;
+}
+
+
+.btn-left-cards img {
+    width: 100%;
+}
+
+.btn-right-cards img{
+   width: 100%;
+}
+
+
+/* botones posicion */
+
+
+.primero {
+    top: 36em;
+}
+
+.segundo {
+    top: 58em;
+}
+
+.tercero {
+    top: 80em;
+}
+
+.cuarto {
+    top: 102em;
+} 
+
+
+/* clases animaciones botones izq der carrusel cards */
+
+.transformacion-izquierda {
+    transform: translateX(0%) skew(-5deg);
+    transition: transform 1s ease;
+  }
+  
+  .transformacion-derecha {
+    transform: translateX(-100%) skew(5deg);
+    transition: transform 1s ease;
+  }
+  
+  .transformacion-reset {
+    transform: translateX(0%) skewX(0deg);
+    transition: transform 1s ease;
+  }
+
+  .transformacion-reset-dos {
+    transform: translateX(-100%) skewX(0deg);
+    transition: transform 1s ease;
+  }
+
+
+
+
+
+
+
+
+
+
+/* carrusel tres imagnees */
   .container-carousel {
     position: relative;
     width: auto;
@@ -2247,77 +2446,3 @@ button {
 
 }
 
-
-/* carrusel cards */
-
-.card h3 {
-    margin-left: 1em;
-}
-
-.carruselprincipal {
-    display: flex;
-    width: 200%;
-    height: auto;
-    flex-wrap: nowrap;
-    overflow: hidden; 
-    margin-top: 1em;
-}
-
-.cincocards {
-    display: flex;
-    width: 100%;
-    transition: transform 0.5s ease; /*agrega una transicion suave*/
-}
-
-.btn-left-cards {
-    position: absolute;
-    z-index: 100;
-    left: 0em;
-}
-
-.btn-right-cards{
-    position: absolute;
-    z-index: 100;
-    right: 1em;
-}
-
-/* botones posicion */
-
-.primero {
-    top: 37em;
-}
-
-.segundo {
-    top: 59em;
-}
-
-.tercero {
-    top: 81em;
-}
-
-.cuarto {
-    top: 103em;
-}
-
-
-/* clases animaciones botones izq der carrusel cards */
-
-.transformacion-izquierda {
-    transform: translateX(0%) skew(-15deg);
-    transition: transform 1s ease;
-  }
-  
-  .transformacion-derecha {
-    transform: translateX(-100%) skew(5deg);
-    transition: transform 1s ease;
-  }
-  
-  .transformacion-reset {
-    transform: translateX(0%) skewX(0deg);
-    transition: transform 1s ease;
-  }
-
-  .transformacion-reset-dos {
-    transform: translateX(-100%) skewX(0deg);
-    transition: transform 1s ease;
-  }
