@@ -32,24 +32,6 @@ function updatePercentage() {
  }); 
 }); 
 
-//galeria animada
-// const images = document.querySelectorAll(".image");
-//     let currentImageIndex = 0;
-
-//     function showImage(index) {
-//         images[currentImageIndex].style.opacity = "0";
-//         images[index].style.opacity = "1";
-//         currentImageIndex = index;
-//     }
-
-//     function nextImage() {
-//         const nextIndex = (currentImageIndex + 1) % images.length;
-//         showImage(nextIndex);
-//     }
-
-//     setInterval(nextImage, 1000); // Cambia de imagen cada 5 segundos (ajusta según tus necesidades)
-
-
 //nav section
 let botonesFooter = document.querySelectorAll("#footer-btn");
 
@@ -59,13 +41,31 @@ botonesFooter.forEach(boton => {
     });
 });
 
-let botonesNav = document.querySelectorAll("#menu-nav");
+// let botonesNav = document.querySelectorAll("#menu-nav");
 
-botonesNav.forEach(boton => {
-    boton.addEventListener("click", function() {
-        boton.parentElement.nextElementSibling.classList.toggle("show");
-    })
+let perfil = document.querySelector(".perfil");
+let carrito = document.querySelector(".carrito");
+let menuburguer = document.querySelector(".hamburguer-menu-desplegado");
+
+perfil.addEventListener("click", function() {
+    perfil.nextElementSibling.classList.toggle("show");
+    carrito.nextElementSibling.classList.remove("show");
+    menuburguer.classList.remove("show");
 });
+
+carrito.addEventListener("click", function() {
+    carrito.nextElementSibling.classList.toggle("show");
+    perfil.nextElementSibling.classList.remove("show");
+    menuburguer.classList.remove("show");
+});
+
+
+// botonesNav.forEach(boton => {
+//     boton.addEventListener("click", function() {
+//         boton.parentElement.nextElementSibling.classList.toggle("show");
+//         console.log(boton);
+//     })
+// });
 
 let openedBurguer = false; //
 
@@ -73,8 +73,13 @@ document.querySelector("#menu-burguer").addEventListener("click", function( ) {
     document.querySelector("#menuH").classList.toggle("show");
     let img = document.querySelector("#imgburguer");
 
+
+    document.querySelector(".carritoDesplegado").classList.remove("show");
+    document.querySelector(".perfilDesplegado").classList.remove("show");
+    
     if(!openedBurguer) {
         img.src = "imgs/iconos/menuabierto.png";
+       
     }
     else {
         img.src = "imgs/iconos/menucerrado.png";

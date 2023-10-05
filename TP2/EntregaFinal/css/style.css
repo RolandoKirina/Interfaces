@@ -84,7 +84,7 @@
 }
 
 .carrito {
-    margin-left: 1em;
+    margin-left: 2.8em;
 }
 
 .carritoDesplegado{
@@ -97,12 +97,11 @@
     display: flex;
     z-index: 3;
     color: var(--negro);
+
 }   
+
 .carritoDesplegado{
     display: none;
-}
-.carritoDesplegado.show {
-    right: 20%;
 }
 
 .carrito button {
@@ -794,8 +793,15 @@ li:hover {
     color: var(--prim);
 }
 
-.game-container img {
+.juegoColocado {
     width: 100%;
+    background-color: #00203E;
+    display: flex;
+    justify-content: center;
+}
+
+.game-container img {
+    width: 50%;
     height: 100%;
     object-fit: fill;
 }
@@ -1156,7 +1162,6 @@ height: 1.48313rem;
     position: absolute;
     width: 6.375rem;
     height: 2.1875rem;
-    margin-left: 1.9em;
     border: 0.12em solid var(--acento-luz);
     border-radius: 0.377em;
     background: #141515;
@@ -1175,7 +1180,6 @@ height: 1.48313rem;
     position: absolute;
     width: 25.5em;
     height: 3.75em;
-    margin-left: 1.9em;
     border: 0.12em solid var(--acento-luz);
     border-radius: 0.377em;
     background: #141515;
@@ -1234,8 +1238,8 @@ height: 1.48313rem;
     font-size: 1.25rem;
     width: 2.375rem;
     height: 0.1875rem;
-    margin-top: 0.0em;
-    margin-left: 4em;
+    margin-top: 0.7em;
+    margin-left: 3em;
 }
 
 .btn-compartir {
@@ -1243,7 +1247,7 @@ height: 1.48313rem;
     width: 6.375rem;
     height: 2.1875rem;
     text-align: left;
-    margin-left: 83%;
+    margin-left: 88.5%;
 }
 
 
@@ -1296,11 +1300,11 @@ height: 1.48313rem;
     width: 28.6875rem;
     height: 5.5rem;
     background-color: var(--prim-sombra3);
-    margin-left: 55%;
+    margin-left: 58%;
     display: none;
     align-items: center;
     justify-content: space-evenly;
-    border-radius: 1em;
+    border-radius: 0.377em;
 }
 
 .btn-compartir-desplegado.show {
@@ -1414,14 +1418,6 @@ height: 1.48313rem;
     }
 }
 
-/* galeria animada 
-.gallery {
-    display: block;
-    position: relative;
-    max-width: 600px;
-    margin: 0 auto;
-}
-
 .image {
     max-width: 100%;
     height: auto;
@@ -1431,8 +1427,7 @@ height: 1.48313rem;
 
 .image:first-child {
     display: block;
-} */
-
+} 
 
 /* DESPLEGABLES */
 
@@ -1462,7 +1457,7 @@ height: 1.48313rem;
 .carritoDesplegado.show {
 
     /* left: 15.8em; */
-    right: 25%;
+    right: 15%;
 } 
 
 
