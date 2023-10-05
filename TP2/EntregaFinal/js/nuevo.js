@@ -11,8 +11,12 @@ btnizq.addEventListener('click', function(){
 
     document.querySelector('.cincocards:nth-child(1)').style.transform = 'translateX(0%) skew(-15deg)'; 
     document.querySelector('.cincocards:nth-child(1)').style.transition = 'transform 1s ease'; 
+
+
     document.querySelector('.cincocards:nth-child(2)').style.transform = 'translateX(0%)';
     document.querySelector('.cincocards:nth-child(2)').style.transition = 'transform 1s ease'; 
+
+//poner que solo despues de un segundo se puede dar click al otro boton, si no se chocan los cards
 
   setTimeout(function() {
     document.querySelector('.cincocards:nth-child(1)').style.transform = 'translateX(0%) skewX(0deg)';
@@ -27,8 +31,12 @@ btnder.addEventListener('click', function(){
 
   document.querySelector('.cincocards:nth-child(1)').style.transform = 'translateX(-100%)';
   document.querySelector('.cincocards:nth-child(1)').style.transition = 'transform 1s ease'; 
+
+
   document.querySelector('.cincocards:nth-child(2)').style.transform = 'translateX(-100%) skew(5deg)'; 
   document.querySelector('.cincocards:nth-child(2)').style.transition = 'transform 1s ease'; 
+
+
 
   setTimeout(function() {
     document.querySelector('.cincocards:nth-child(2)').style.transform = 'translateX(-100%) skewX(0deg)';

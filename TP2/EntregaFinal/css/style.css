@@ -189,6 +189,7 @@
     height: 100%;
     background-image: url('../imgs/imgEspacial.jpg');
     background-size: cover;
+    overflow: hidden; 
 }
 .carruselcompleto {
     width: 100%;
@@ -2249,6 +2250,10 @@ button {
 
 /* carrusel cards */
 
+.card h3 {
+    margin-left: 1em;
+}
+
 .carruselprincipal {
     display: flex;
     width: 200%;
@@ -2296,9 +2301,15 @@ button {
 
 
 
-/* btn-izq-normalidad  */
+/* btn-izq-clases animacion  */
+
+.unoizq {
+    transform: translateX(0%) skew(-15deg); 
+    transition: transform 1s ease; 
+}
 
 
 
-/* btn-der-normalidad  */
+
+/* btn-der-clases animacion */
 
