@@ -272,14 +272,16 @@
     border: 0;
     width: 100%;
     background-color: var(--prim-luz3);
-    height: 2em; 
+    height: 1.5em; 
 }
+
 .sacardelcarro {
+    margin-top: 0.5em;
     display: flex;
-    flex-direction: column;
+    align-items: center;
 }
 .btnsacardelcarro{
-    width: 8em;
+    width: 7em;
     margin-left: 0.50em;
 }
 
@@ -295,8 +297,8 @@
 }
 /*preguntar*/
 .imgincart {
-    width: 1em;
-    height: 1em;
+    width: 0.7em;
+    height: 0.8em;
     margin-left: 0.25em;
     margin-bottom: 0.25em;
 }
@@ -322,12 +324,15 @@
     display: inline;
 }
 .gratis{
+    display: flex;
+    align-items: center;
     padding: 0.25em;
     color: var(--blanco);
-        width: 2.75em;
-        height: 1.5em;
-        background-color: var(--acentonuevo);
-        margin-right: 1em;
+    width: 3em;
+    text-align: center;
+    height: 1.5em;
+    background-color: var(--acentonuevo);
+    margin-right: 1em;
 }
 
 .jugargratis {
@@ -1790,7 +1795,8 @@ height: 1.48313rem;
 /* carrusel cards celular*/
 
 .card h3 {
-    margin-left: 1em;
+    margin-bottom: 0.50em;
+    margin-left: 0.50em;
 }
 
 .carruselprincipal {
