@@ -2300,16 +2300,24 @@ button {
 }
 
 
+/* clases animaciones botones izq der carrusel cards */
 
-/* btn-izq-clases animacion  */
+.transformacion-izquierda {
+    transform: translateX(0%) skew(-15deg);
+    transition: transform 1s ease;
+  }
+  
+  .transformacion-derecha {
+    transform: translateX(-100%) skew(5deg);
+    transition: transform 1s ease;
+  }
+  
+  .transformacion-reset {
+    transform: translateX(0%) skewX(0deg);
+    transition: transform 1s ease;
+  }
 
-.unoizq {
-    transform: translateX(0%) skew(-15deg); 
-    transition: transform 1s ease; 
-}
-
-
-
-
-/* btn-der-clases animacion */
-
+  .transformacion-reset-dos {
+    transform: translateX(-100%) skewX(0deg);
+    transition: transform 1s ease;
+  }
