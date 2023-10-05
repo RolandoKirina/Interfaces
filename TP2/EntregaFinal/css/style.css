@@ -2279,3 +2279,16 @@ button {
 }
 
 
+
+
+.transformacion-izquierda {
+    transform: translateX(0%) skew(-15deg);
+  }
+  
+  .transformacion-derecha {
+    transform: translateX(-100%) skew(15deg);
+  }
+  
+  .transformacion-reset {
+    transform: translateX(0%) skewX(0deg);
+  }
