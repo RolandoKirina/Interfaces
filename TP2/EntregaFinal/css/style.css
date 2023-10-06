@@ -37,7 +37,6 @@
 
 
 
-
 /* nav responsive */
 
 .primariosombra2{
@@ -181,6 +180,16 @@
 
 
 /*cards responsive*/
+
+
+.tachado {
+    text-decoration: line-through;
+}
+
+.oferta {
+    color: var(--acentonuevo);
+}
+
 .btn {
     border-radius: 0.2em;
 }
@@ -264,9 +273,7 @@
 .añadiralcarro p, .añadiralcarro button {
     margin-left: 0.50em;
 }
-.añadiralcarro button{
-    margin-top: 0.5em;
-}
+
 .jugar button, .btnañadiralcarro, .btnsacardelcarro {
     border: 0;
     width: 100%;
@@ -338,6 +345,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-top: 0.5em;
 }
 
 
@@ -422,6 +430,7 @@ a {
     margin-right: 2.5em;
 }
 
+
 .form-register-container {
     width: 25.65em;
     height: auto;
@@ -479,9 +488,10 @@ a {
 
 }
 
+
 .form-register label {
     color: var(--blanco);
-    width: 10em;
+    width: auto;
     height: 1.3125rem;
 }
 .lineaingresar {
@@ -503,8 +513,18 @@ a {
     outline: 0;
     margin-bottom: 1em;
     padding: 0.7em;
-    margin-bottom: 0.4em;
+    margin-bottom: 0.8em;
 }
+
+.inputForm {
+    color: var(--blanco);
+}
+
+.labelflexlogin label {
+    margin-bottom: 1em;
+}
+
+
 .errorred {
     color: var(--error);
 }
@@ -1789,7 +1809,10 @@ height: 1.48313rem;
 .card h3 {
     margin-bottom: 0.50em;
     margin-left: 0.50em;
+    height: 2em;
 }
+
+
 
 .carruselprincipal {
     display: flex;
@@ -1797,9 +1820,13 @@ height: 1.48313rem;
     height: auto;
     flex-wrap: nowrap;
     overflow: hidden; 
-    margin-top: 1em;
+    margin-top: 0em;
+    margin-bottom: 1em;
 }
 
+.h2 {
+    margin-top: 1em;
+}
 
 .cincocards {
     display: flex;
@@ -1889,6 +1916,7 @@ height: 1.48313rem;
 
 .card h3 {
     margin-left: 1em;
+    height: auto;
 }
 
 .carruselprincipal {
@@ -2362,9 +2390,16 @@ button {
     margin-left: 1em;
 }
 
+.gratis p {
+    text-align: center;
+    padding-left: 0.2em;
+}
+
 .gratis p, .jugar button, .btnañadiralcarro, .sacardelcarro button {
     font-size: large;
 }
+
+
 
 .jugar button, .btnañadiralcarro, .btnsacardelcarro {
     border: 0;
@@ -2372,6 +2407,8 @@ button {
     background-color: var(--prim-luz3);
     height: 3em; 
 }
+
+
 
 .gratis , .jugar{
     margin-top: 0.5em;
@@ -2404,18 +2441,28 @@ button {
 
 .precio {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
+    flex-direction: column;
     width: 13.5em;
     margin-top: 0.5em;
     margin-left: 0.5em;
+    justify-content: left;
 }
 .precio button {
     width: 100%;
     height: 2em;
 }
-.h3 {
-    font-size: 16px;
+
+.precio div {
+    display: flex;
+    align-items: center;
 }
+
+.h3 {
+    font-size: 1em;
+}
+
+
 
 .sacardelcarro{
     padding: 0.7em;
@@ -2464,3 +2511,15 @@ button {
 
 }
 
+
+.añadiralcarro button{
+    margin-top: 0em;
+    padding: 0 0.2em;
+    width: auto;
+}
+
+.btnsacardelcarro{
+    width: auto;
+    margin-left: 0em;
+    padding: 0 0.2em;
+}
