@@ -32,7 +32,7 @@
     --negro: #23282B;
     --especial: #34D919; 
     --acentonuevo: #6700dd;
-    --error: #EB1414;
+    --error: #211919;
 }
 
 
@@ -249,12 +249,10 @@
 }
 
 .precio {
+    margin-bottom: 2em;
    margin-right: 0.25em;
 }
-.carrusel h3 {
-    margin-left: 0.50em;
-    margin-bottom: 0.25em;
-}
+
 
 .jugar  {
     width: 2.75em;
@@ -268,8 +266,10 @@
     font-size: 10px;
 }
 .añadiralcarro{
-    width: 5em;
+    width: 7em;
 }
+
+
 .añadiralcarro p, .añadiralcarro button {
     margin-left: 0.50em;
 }
@@ -287,8 +287,7 @@
     align-items: center;
 }
 .btnsacardelcarro{
-    width: 7em;
-    margin-left: 0.50em;
+    width: 6.8em;
 }
 
 .hidden {
@@ -305,8 +304,7 @@
 .imgincart {
     width: 0.7em;
     height: 0.8em;
-    margin-left: 0.25em;
-    margin-bottom: 0.25em;
+    margin: 0 0.25em 0.25em 0.25em;
 }
 
 .botoncarrusel {
@@ -1400,7 +1398,7 @@ height: 1.48313rem;
     justify-content: center;
     align-items: center;
     background-color: var(--prim-sombra3);
-    transition: visibility 0.5s; /*tarda 5 segundos*/
+    transition: visibility 5s; /*tarda 5 segundos*/
 
 
 }
@@ -1807,9 +1805,8 @@ height: 1.48313rem;
 /* carrusel cards celular*/
 
 .card h3 {
-    margin-bottom: 0.50em;
     margin-left: 0.50em;
-    height: 2em;
+    height: auto;
 }
 
 
