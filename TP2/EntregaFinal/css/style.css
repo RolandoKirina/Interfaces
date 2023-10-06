@@ -1800,6 +1800,7 @@ height: 1.48313rem;
     margin-top: 1em;
 }
 
+
 .cincocards {
     display: flex;
     width: 100%;
@@ -1897,7 +1898,10 @@ height: 1.48313rem;
     flex-wrap: nowrap;
     overflow: hidden; 
     margin-top: 1em;
+    margin-bottom: 1.6em;
 }
+
+
 
 .cincocards {
     display: flex;
@@ -2362,6 +2366,13 @@ button {
     font-size: large;
 }
 
+.jugar button, .btnañadiralcarro, .btnsacardelcarro {
+    border: 0;
+    width: 100%;
+    background-color: var(--prim-luz3);
+    height: 3em; 
+}
+
 .gratis , .jugar{
     margin-top: 0.5em;
     text-align: center;
@@ -2374,10 +2385,17 @@ button {
 }
 .jugar{
     margin-bottom: 0.25em;
+
 }
 .jugar button img {
     margin-right: 0.25em;
 }
+
+.jugar button {
+    height: 2em;
+}
+
+
 .imgcardsresponsive {
     margin: 1em; 
     width: 13em;
