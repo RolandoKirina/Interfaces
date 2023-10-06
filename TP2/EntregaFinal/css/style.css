@@ -1253,14 +1253,14 @@ height: 1.48313rem;
     width: 6.375rem;
     height: 2.1875rem;
     text-align: left;
-    margin-left: 88.5%;
+    margin-left: 88.3%;
 }
 
 
 .btn-compartir button {
     width: 6.375rem;
     height: 2.1875rem;
-    border-radius: 0.8125em;
+    border-radius: 0.377em;
     background-color: var(--prim-sombra3);
     color: var(--blanco);
     text-align: center;
