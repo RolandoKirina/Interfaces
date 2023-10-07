@@ -377,6 +377,8 @@
     margin-bottom: 1.5em;
 }
 
+
+
 a {
     text-decoration: none;
     color: var(--blanco);
@@ -385,6 +387,14 @@ a {
 .btn-google-container button a {
     text-decoration: none;
     color: var(--negro);
+}
+
+.btn-google-container img {
+    margin-right: 0.5em;
+}
+
+.btn-facebook-container img {
+    margin-right: 0.5em;
 }
 
 .btn-facebook-container {
@@ -602,6 +612,7 @@ a {
     align-items: center;
 }
 
+
 .btn-captcha-container{
     margin-left: 5em;
     display: flex;
@@ -642,13 +653,12 @@ a.colorblanco{
     justify-content: center;
     margin-top: 2em;
     height: 2.8125rem;
-    
 }
 
 
 .btn-registrarse-container button {
-    width: 10.9375em;
-    height: 100%;
+    width: 9.9375rem;
+    height: 2.8125rem;
     background-color: var(--prim-luz3);
     border: 0;
 }
