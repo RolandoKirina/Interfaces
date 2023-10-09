@@ -250,9 +250,12 @@
 
 .precio {
     margin-bottom: 2em;
-   margin-right: 0.25em;
+    margin-right: 0.25em;
 }
 
+.otra {
+    margin-top: 0;
+}
 
 .jugar  {
     width: 2.75em;
@@ -2395,6 +2398,7 @@ button {
     position: relative;
 }
 .carrusel h3 {
+    width: auto;
     margin-left: 1em;
 }
 
@@ -2456,11 +2460,15 @@ button {
 .precio {
     display: flex;
     align-items: flex-start;
-    flex-direction: column;
     width: 13.5em;
     margin-top: 0.7em;
     margin-left: 0.5em;
     justify-content: left;
+}
+
+.ofertaprecio {
+    display: flex;
+    flex-direction: column;
 }
 .precio button {
     width: 100%;
@@ -2537,4 +2545,9 @@ button {
     width: auto;
     margin-left: 0em;
     padding: 0 0.2em;
+}
+
+
+.btnanadiralineado{
+    margin-bottom: 1em;
 }
