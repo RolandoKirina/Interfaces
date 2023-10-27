@@ -7,6 +7,10 @@ class Ficha {
         this.context = context;
     }
 
+    getPosIni(){
+        posIni = this.getPosicion();
+        return posIni;
+    }
     getPosX(){
         return this.posX;
     }
@@ -24,10 +28,6 @@ class Ficha {
     }
 
     draw() {
-        this.context.shadowColor = 'rgba(0, 0, 0, 0.5)'; 
-        this.context.shadowBlur = 12; 
-        this.context.shadowOffsetX = 1;  
-        this.context.shadowOffsetY = 5; 
         this.context.fillStyle = this.fill;
         this.context.strokeStyle = "#000000";
         this.context.lineWidth = '0.5';
@@ -38,10 +38,23 @@ class Ficha {
         this.context.closePath();
     }
 
-    getPosition(){
+    getPosicion(){
         return {
             x: this.getPosX(),
             y: this.getPosY()
-        }
     }
+    }
+
+    setPosition (x,y){
+        this.posX = x;
+        this.posY = y;
+    }
+
+    estaSeleccionado(x,y){
+        let posicionx = this.posX - x;
+        let posiciony = this.posY - y;
+        return Math.sqrt(Math.pow(posicionx,2), Math.pow(posiciony,2)) < this.radio;
+    }
+
+
 }

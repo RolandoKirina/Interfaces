@@ -31,13 +31,14 @@ class Tablero {
             fichas[i].draw(context);
         }
     }
+    
 
-    /*inicializarTablero(filas, columnas){
+    inicializarTablero(filas, columnas){
         for (let i = 0; i < filas; i++) {
             this.fichas[i] = [];
             for (let j = 0; j < columnas; j++) {
               this.fichas[i][j] = "hola"; 
             }
         }
-    }*/
+    }
 }
