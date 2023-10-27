@@ -1,5 +1,4 @@
 class Ficha {
- 
     constructor(posX, posY, radio, fill, context){
         this.posX = posX;
         this.posY = posY;
@@ -25,10 +24,17 @@ class Ficha {
     }
 
     draw() {
-        super.draw();
-        this.context.beginPath();
-        this.context.arc(this.posX, this.posY, this.radius, 0, 2 * Math.PI);
+        this.context.shadowColor = 'rgba(0, 0, 0, 0.5)'; 
+        this.context.shadowBlur = 12; 
+        this.context.shadowOffsetX = 1;  
+        this.context.shadowOffsetY = 5; 
+        this.context.fillStyle = this.fill;
+        this.context.strokeStyle = "#000000";
+        this.context.lineWidth = '0.5';
+        this.context.beginPath();        
+        this.context.arc(this.posX, this.posY, this.radio, 0, 2 * Math.PI);
         this.context.fill();
+        this.context.stroke();
         this.context.closePath();
     }
 
