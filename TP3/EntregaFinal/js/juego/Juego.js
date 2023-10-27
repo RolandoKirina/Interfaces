@@ -13,12 +13,12 @@ let tablero = new Tablero(6,7);
 
 let fichas = [];
 let fichastablero = [];
-
+let posicionesFichas =[];
 function drawTablero(){
 
     context.fillStyle = "#00182F";
     context.beginPath(); 
-    context.rect(150, 50, 800, 440); 
+    context.rect(150, 60, 800, 440); 
     context.strokeStyle="#000D1A";
     context.lineWidth = "2";
     context.stroke();
@@ -38,31 +38,21 @@ drawTablero();
 
 // 4 en raya c jugador tiene 21 fichas
 
-function crearFicha(posX, posY, radio, color, decrementacion, aumentox) {
+function crearFicha(posX, posY, radio, color, decrementacion, aumentox, arr) {
     posY = posY - decrementacion;
     posX = posX + aumentox;
     let ficha = new Ficha(posX, posY, radio, color, context);
-    fichas.push(ficha);
+    arr.push(ficha);
     ficha.draw();
 }
-
-
-function crearFichaTab(posX, posY, radio, color, decrementacion, aumentox) {
-    posY = posY - decrementacion;
-    posX = posX + aumentox;
-    let ficha = new Ficha(posX, posY, radio, color, context);
-    fichastablero.push(ficha);
-    ficha.draw();
-}
-
 
 
 function crearTodasFichas(){
     let decrementacion = 0;
     for (let i = 0; i < numerofichas; i++){
         decrementacion = decrementacion - 20;
-        crearFicha(70,50,27,'#0000FF',decrementacion,0);
-        crearFicha(1020,50,27,'#FF0000',decrementacion,0);  
+        crearFicha(70,50,26,'#0000FF',decrementacion,0,fichas);
+        crearFicha(1020,50,26,'#FF0000',decrementacion,0,fichas);  
     }   
 }
 
@@ -78,13 +68,12 @@ function rellenarTablero(){
         decrementacion = 0;
         for (let i = 0; i < tablero.getFilas(); i++){
             decrementacion = decrementacion - 70;
-            crearFichaTab(110,30,28,'#FFFFFF',decrementacion, aumentox);     
+            crearFicha(110,30,28,'#FFFFFF',decrementacion, aumentox, fichastablero);     
         }
     }
 }
 
 rellenarTablero();
-
 
 function encontrarFiguraClickeada(x,y){
     for (let i = 0; i < fichas.length; i++){
@@ -135,6 +124,10 @@ function drawAllFichas(){
     for (let i = 0; i < fichastablero.length; i++){
         fichastablero[i].draw();
     }
+    for (let i = 0; i < posicionesFichas.length; i++){
+        posicionesFichas[i].draw();
+    }
+
 }
 
 function clearCanvas() {
@@ -142,4 +135,13 @@ function clearCanvas() {
     context.fillRect(0, 0, canvasWidth, canvasHeight);
 }
 
+function crearPosicionesFicha(){
+    let aumentox = 0;
+    for (let i = 0; i < tablero.getColumnas(); i++){
+        aumentox = aumentox + 110;
+        crearFicha(110,30,27,'#FF0000',0,aumentox, posicionesFichas);
+        
+    }
+}
 
+crearPosicionesFicha();
