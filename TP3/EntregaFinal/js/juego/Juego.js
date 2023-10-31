@@ -106,7 +106,7 @@ function drawAllFichas(){
     }
 
     for (let i = 0; i < posicionesFichas.length; i++){
-        posicionesFichas[i].draw();
+        posicionesFichas[i].drawStroke();
     }
 
 }
@@ -134,6 +134,7 @@ function encontrarFiguraClickeada(x,y){
 function mousedown(e){
     
     mouseDown = true;
+    //setColorPosiciones();
     let figuraClickeada = encontrarFiguraClickeada(e.offsetX, e.offsetY);
 
     if (figuraClickeada != null){ 
@@ -143,6 +144,10 @@ function mousedown(e){
     canvas.addEventListener('mousemove',mouseMove);   
 }
 
+
+//setColorPosiciones(){
+   // seguir
+//}
 function mouseMove(e){
     
     if (mouseDown && lastClicked != null){
@@ -274,17 +279,12 @@ function encontrarFila(columna) {
 function volverPosInicial(nueva){ //en caso de posicion incorrecta, vuelve a la pos original la ficha
     let posinix = nueva.getPosIniX();
     let posiniy = nueva.getPosIniY();
-
-    alert("volvio a la pos original, pos incorrecta");
- 
-
    nueva.setPosition(posinix,posiniy); //vuelve bruscamente de momento a la pos original
    nueva.draw();
    clearCanvas();
    drawTablero();
    drawAllFichas(); 
 } 
-    
 
 function clearCanvas(){
     context.fillStyle = "#00203E";
@@ -295,7 +295,14 @@ function crearPosicionesFicha(){
     let aumentox = 0;
     for (let i = 0; i < tablero.getColumnas(); i++){
         aumentox = aumentox + 110;
-        crearFicha(110,30,27,"#00FF00",0,aumentox, posicionesFichas);  
+        crearFichaStroke(110,30,27,"#00FF00",0,aumentox, posicionesFichas);  
     }
 }
 
+function crearFichaStroke(posX, posY, radio, fill, decrementacion, aumentox, arr) {
+    posY = posY - decrementacion;
+    posX = posX + aumentox;
+    let ficha = new Ficha(posX, posY, radio, fill, context);
+    arr.push(ficha);
+    ficha.drawStroke();
+}

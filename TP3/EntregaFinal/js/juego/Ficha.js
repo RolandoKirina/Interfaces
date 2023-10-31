@@ -65,11 +65,13 @@ class Ficha {
         this.context.fillStyle = this.fill;
         this.context.strokeStyle = "#000000";
         this.context.lineWidth = '0.5';
-        this.context.beginPath();        
+        this.context.beginPath(); 
+        context.globalAlpha = 1.0;       
         this.context.arc(this.posX, this.posY, this.radio, 0, 2 * Math.PI);
         this.context.fill();
         this.context.stroke();
         this.context.closePath();
+
     }
 
     /*draw() {
@@ -85,13 +87,15 @@ class Ficha {
         };
     }*/
 
-    /*drawSimple(){
-        this.context.strokeStyle = "#FF0000";
+    drawStroke(){
+        this.context.strokeStyle = "#00262F";
+        this.context.globalAlpha = 0.5;
+        this.context.lineWidth=1;
         this.context.beginPath();        
         this.context.arc(this.posX, this.posY, this.radio, 0, 2 * Math.PI);
         this.context.stroke();
         this.context.closePath();
-    }*/
+    }
 
     estaSeleccionado(x,y){
         let posicionx = this.posX - x;
