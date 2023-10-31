@@ -41,7 +41,12 @@ class Ficha {
     
     setPosY(nueva){
         this.posY = nueva;
-    }    
+    }  
+    
+    setPosX(nueva){
+        this.posX = nueva;
+    }  
+
     getPosicion(){
         return {
             x: this.getPosX(),
