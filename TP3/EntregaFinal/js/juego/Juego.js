@@ -156,14 +156,15 @@ function mouseMove(e){
 function mouseUp(){
     mouseDown = false;
     let col = findCol(lastClicked);
+   
     let fila = encontrarFila(col);
-    console.log(fila);
+    console.log(fila); 
    
     if (fila == -1){
         volverPosInicial(lastClicked);
     }
     else {
-        //alert("fila" + fila + "col " + col);
+        alert("fila" + fila + "col " + col);
         tablero.casillero[col][fila] =lastClicked;
     }
     lastClicked = null;
@@ -185,7 +186,7 @@ function findCol(nueva){
 
     for(let i = 0; i < posicionesFichas.length; i++) { 
         posFichaX = posicionesFichas[i].getPosIniX();
-        posFichaY = posicionesFichas[i].getPosIniX();
+        posFichaY = posicionesFichas[i].getPosIniY();
 
         if(posXnueva >= posFichaX - 30 && posXnueva < posFichaX + diferencia 
             && posYnueva > posValorValidoY && posYnueva<=valory) { //mira si coincide con alguna de las posiciones de las fichas
@@ -193,30 +194,28 @@ function findCol(nueva){
             return i;
         }
     }
-    if(!encontro) {
+    if(!encontro && nueva.estaSeleccionado(posXnueva,posYnueva)) {
         volverPosInicial(nueva);
     }
 
 }
 
 
-
-   
-
-
 //let iteraciones = 7; //que vaya subiendo la ficha a medida se ocupan lugares.
 //se guardan cambios pero deberia resetearse al poner la ficha en otra columna
 
 function encontrarFila(columna) {
-    let fila = tablero.getFilas() - 1;
 
+    let fila = tablero.getFilas()-1;
+
+    console.log(tablero.casillero[6][5]);
 
     for (let i = fila; i >= 0; i--) {
-        console.log(tablero.casillero[columna][i]);
         if (tablero.casillero[columna][i] == null) {
             return i;
         }
     }
+
     return -1; // Si no se encuentra una fila vacía, puedes devolver -1 u otro valor que indique que no hay filas vacías.
 }
 
@@ -260,15 +259,12 @@ function volverPosInicial(nueva){ //en caso de posicion incorrecta, vuelve a la 
 
     alert("volvio a la pos original, pos incorrecta");
  
-    console.log(posinix, posiniy);
 
    nueva.setPosition(posinix,posiniy); //vuelve bruscamente de momento a la pos original
    nueva.draw();
    clearCanvas();
    drawTablero();
    drawAllFichas(); 
-
-
 } 
     
 

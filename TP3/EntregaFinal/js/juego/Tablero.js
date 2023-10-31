@@ -33,10 +33,10 @@ class Tablero {
     
 
     inicializarTablero(filas, columnas){
-        for (let i = 0; i < filas; i++) {
-            this.casillero[i] = [];
-            for (let j = 0; j < columnas; j++) {
-              this.casillero[i][j] = null; 
+        for (let j = 0; j < this.columnas; j++) {
+            this.casillero[j] = [];
+            for (let i = 0; i < filas; i++) {
+              this.casillero[j][i] = null; 
             }
         }
     }
