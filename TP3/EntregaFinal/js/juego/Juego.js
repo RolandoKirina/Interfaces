@@ -193,15 +193,15 @@ function volverPosInicial(nueva){
         };
  
 
-         for (let i =nueva.getPosY(); i >= posiniy; i--){
-             setTimeout(() => {
-             nueva.setPosition(posx,i);
-             nueva.draw();
-             clearCanvas();
-             drawTablero();
-             drawAllFichas(); 
+        for (let i =nueva.getPosY(); i >= posiniy; i--){
+            setTimeout(() => {
+            nueva.setPosition(posx,i);
+            nueva.draw();
+            clearCanvas();
+            drawTablero();
+            drawAllFichas(); 
 
-         }, 100);
+        }, 100);
      }
     }; 
     
