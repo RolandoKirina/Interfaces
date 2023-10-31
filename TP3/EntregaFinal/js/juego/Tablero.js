@@ -41,18 +41,5 @@ class Tablero {
         }
     }
 
-    // addFicha(fila,columna,nueva){
-    //     if (this.casillero[fila][columna] == null){
-    //     this.casillero[fila][columna] = nueva;
-    //     alert("me agregue en la fila" + fila + "columna" + columna);
-    //     }else {
-    //         this.casillero[fila-1][columna] = nueva;
-    //     }
-    //     for (let i = 0; i <100;i++ ){
-    //         let desplazamiento = 5;
-    //         nueva.setPosY(this.getPosY()+desplazamiento);
-    //         nueva.draw();
-    //     }
-      
-    // }
+
 }

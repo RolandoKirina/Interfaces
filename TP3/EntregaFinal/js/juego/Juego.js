@@ -158,14 +158,12 @@ function mouseUp(){
     let col = findCol(lastClicked);
    
     let fila = encontrarFila(col);
-    console.log(fila); 
-   
     if (fila == -1){
         volverPosInicial(lastClicked);
     }
     else {
-        alert("fila" + fila + "col " + col);
         tablero.casillero[col][fila] =lastClicked;
+        setearPosicion(lastClicked,col,fila);
     }
     lastClicked = null;
    
@@ -173,6 +171,28 @@ function mouseUp(){
     canvas.removeEventListener('mouseup', mouseUp); 
 }
 
+function setearPosicion(nueva,col,fila){
+   
+    let posYfichaTab = fichastablero[col][fila].getPosY();
+    //let posYnueva = nueva.getPosY();
+    let posXvalida = fichastablero[col][fila].getPosX();
+    nueva.setPosX(posXvalida);
+    //PREGUNTARLE AL PROFESOR COMO HACER LA ANIMACION
+    // for (let i = posYnueva ; i <= posYfichaTab; i++){     
+    //     nueva.setPosY(i);
+    //     nueva.draw();
+    //     limpiarTodoCanvas()
+    // }
+    nueva.setPosY(posYfichaTab);
+    nueva.draw();
+    limpiarTodoCanvas()
+}
+
+function limpiarTodoCanvas(){
+    clearCanvas();
+    drawTablero();
+    drawAllFichas();
+}
 function findCol(nueva){
     let diferencia = 25; //corregida diferencia
     let valory = 50;
@@ -207,8 +227,6 @@ function findCol(nueva){
 function encontrarFila(columna) {
 
     let fila = tablero.getFilas()-1;
-
-    console.log(tablero.casillero[6][5]);
 
     for (let i = fila; i >= 0; i--) {
         if (tablero.casillero[columna][i] == null) {
