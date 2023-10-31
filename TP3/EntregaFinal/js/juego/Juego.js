@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded",drawTablero);
 document.addEventListener("DOMContentLoaded", rellenarTablero);
 document.addEventListener("DOMContentLoaded", crearPosicionesFicha);
 document.addEventListener("DOMContentLoaded",crearTodasFichas);
-//document.addEventListener("DOMContentLoaded",prueba);
+
 
 function drawTablero(){
 
@@ -62,12 +62,25 @@ function rellenarTablero(){
     for (let j = 0; j < tablero.getColumnas();j++){
         aumentox = aumentox + 110;
         decrementacion = 0;
+        fichastablero[j] = [];
         for (let i = 0; i < tablero.getFilas(); i++){
             decrementacion = decrementacion - 70;
-            crearFicha(110,30,28,"#FFFFFF",decrementacion, aumentox, fichastablero);     
+            crearFichaTab(110,30,28,"#FFFFFF",decrementacion, aumentox,j,i);  
         }
     }
+    
 }
+
+function crearFichaTab(posX, posY, radio, fill, decrementacion, aumentox,j,i) {
+    posY = posY - decrementacion;
+    posX = posX + aumentox;
+    let ficha = new Ficha(posX, posY, radio, fill, context);
+    
+    fichastablero[j][i] = ficha;
+    ficha.draw();
+}
+
+
 
 function crearFicha(posX, posY, radio, fill, decrementacion, aumentox, arr) {
     posY = posY - decrementacion;
@@ -82,8 +95,10 @@ function drawAllFichas(){
     clearCanvas();
     drawTablero();
 
-    for (let i = 0; i < fichastablero.length; i++){
-        fichastablero[i].draw();
+    for (let j = 0; j < 7; j++){ //mejorar 
+        for (let i = 0; i < 6;i++){
+            fichastablero[j][i].draw();
+        }
     }
 
     for (let i = 0; i < fichas.length; i++){
@@ -137,22 +152,27 @@ function mouseMove(e){
     canvas.addEventListener('mouseup', mouseUp);
 }
 
+
 function mouseUp(){
     mouseDown = false;
-    //let columna = encontrarPosFicha(lastClicked);
-    //let fila = tablero.casillero.getFilas();
-    //let casillero 
-
-
-    agregarFicha(lastClicked,5);
+    let col = findCol(lastClicked);
+    let fila = encontrarFila(col);
+    console.log(fila);
+   
+    if (fila == -1){
+        volverPosInicial(lastClicked);
+    }
+    else {
+        //alert("fila" + fila + "col " + col);
+        tablero.casillero[col][fila] =lastClicked;
+    }
     lastClicked = null;
    
     canvas.removeEventListener('mousemove', mouseMove); 
     canvas.removeEventListener('mouseup', mouseUp); 
 }
 
-function agregarFicha(nueva,filas){
-    
+function findCol(nueva){
     let diferencia = 25; //corregida diferencia
     let valory = 50;
     let posValorValidoY = 25;
@@ -167,25 +187,42 @@ function agregarFicha(nueva,filas){
         posFichaX = posicionesFichas[i].getPosIniX();
         posFichaY = posicionesFichas[i].getPosIniX();
 
-        if(posXnueva >= posFichaX - 30 && posXnueva < posFichaX + diferencia && posYnueva > posValorValidoY && posYnueva<=valory) { //mira si coincide con alguna de las posiciones de las fichas
-            addFicha(filas,i,nueva, posFichaX); //añade la ficha en el tablero
+        if(posXnueva >= posFichaX - 30 && posXnueva < posFichaX + diferencia 
+            && posYnueva > posValorValidoY && posYnueva<=valory) { //mira si coincide con alguna de las posiciones de las fichas
             encontro = true;
+            return i;
         }
-
     }
-
     if(!encontro) {
         volverPosInicial(nueva);
     }
 
 }
 
+
+
+   
+
+
 //let iteraciones = 7; //que vaya subiendo la ficha a medida se ocupan lugares.
 //se guardan cambios pero deberia resetearse al poner la ficha en otra columna
 
-function addFicha(fila,columna,nueva, centrarFichaPuesta){
-    let iteraciones = 7; 
-    if (tablero.casillero[fila][columna] == null && !nueva.getAgregada()){
+function encontrarFila(columna) {
+    let fila = tablero.getFilas() - 1;
+
+
+    for (let i = fila; i >= 0; i--) {
+        console.log(tablero.casillero[columna][i]);
+        if (tablero.casillero[columna][i] == null) {
+            return i;
+        }
+    }
+    return -1; // Si no se encuentra una fila vacía, puedes devolver -1 u otro valor que indique que no hay filas vacías.
+}
+
+//function addFicha(fila,columna,nueva, centrarFichaPuesta){
+    //let iteraciones = 7; 
+    /*if (tablero.casillero[fila][columna] == null && !nueva.getAgregada()){
         tablero.casillero[fila][columna] = nueva;
     }   
     else if (tablero.casillero[fila][columna] != null && !nueva.getAgregada()){
@@ -196,12 +233,9 @@ function addFicha(fila,columna,nueva, centrarFichaPuesta){
     alert("me agregue en la fila" + fila + "columna" + columna);
     nueva.setAgregada(true);
 
-    let desplazamiento = 60; 
+    let desplazamiento = 60; */
 
-
-
-
-    for (let i = 0; i < iteraciones; i++){ //CORREGIR, esta bug
+    /*for (let i = 0; i < iteraciones; i++){ //CORREGIR, esta bug
         clearCanvas();
         drawTablero();
         drawAllFichas();
@@ -215,10 +249,8 @@ function addFicha(fila,columna,nueva, centrarFichaPuesta){
         drawTablero();
         drawAllFichas();
         nueva.draw(); 
-      
+    } */
 
-    } 
-}
 
 
 
@@ -228,7 +260,7 @@ function volverPosInicial(nueva){ //en caso de posicion incorrecta, vuelve a la 
 
     alert("volvio a la pos original, pos incorrecta");
  
-   console.log(posinix, posiniy);
+    console.log(posinix, posiniy);
 
    nueva.setPosition(posinix,posiniy); //vuelve bruscamente de momento a la pos original
    nueva.draw();
@@ -239,12 +271,6 @@ function volverPosInicial(nueva){ //en caso de posicion incorrecta, vuelve a la 
 
 } 
     
-  
-
-
-
-
-
 
 function clearCanvas(){
     context.fillStyle = "#00203E";
