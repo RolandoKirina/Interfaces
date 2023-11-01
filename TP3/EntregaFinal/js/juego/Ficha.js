@@ -9,7 +9,7 @@ class Ficha {
         this.context = context;
         this.nombreJugador = nombreJugador;
         this.movible = movible;
-        
+
     }
 
     getMovible(){
@@ -78,7 +78,7 @@ class Ficha {
         this.context.strokeStyle = "#000000";
         this.context.lineWidth = '0.5';
         this.context.beginPath(); 
-        context.globalAlpha = 1.0;       
+        context.globalAlpha = 1.0;     
         this.context.arc(this.posX, this.posY, this.radio, 0, 2 * Math.PI);
         this.context.fill();
         this.context.stroke();

@@ -43,19 +43,64 @@ function drawTablero(){
 
 
    
-/*function crearImagen(){
-    let imagen = new Image();
-    imagen.src = "imgs/fichas/fichablanca.png";
-    imagen.onload = function() {
-      let patron = context.createPattern(imagen, "no-repeat");
-      context.fillStyle = patron;
-      context.beginPath();
-      context.arc(300+desp,10, 50, 0, 2 * Math.PI);
-      context.fill();
-      context.closePath();
-    };
-    document.removeEventListener("DOMContentLoaded", createCircle);
-}*/
+function crearImagen(){
+    // let ruta = new Image();
+    // ruta.src = "imgs/fichas/men.png";
+    // console.log("hola");
+    // ruta.onload = function() {
+    //   let img = context.createPattern(ruta, "no-repeat");
+    //   context.fillStyle = img;
+    //   context.beginPath();
+    //   context.arc(100, 75, 50, 0, 2 * Math.PI);
+    //   context.fill();
+    // };
+    
+//     let ruta = new Image();
+//     ruta.src = "imgs/fichas/men.png";
+
+//     ruta.onload = function() {
+//         context.save();
+//         context.beginPath();
+//         context.arc(100, 75, 50, 0, 2 * Math.PI);
+//         context.clip();
+//         context.drawImage(ruta, 50, 25, 100, 100); // Dibuja la imagen dentro del círculo recortado
+//         context.restore(); // Restaura el contexto
+//     };
+//     document.removeEventListener("DOMContentLoaded", crearImagen);
+
+
+
+// }
+let ruta = new Image();
+ruta.src = "imgs/fichas/men.png";
+ruta.onload = function() {
+    context.save();
+    context.beginPath();
+    context.arc(500, 100, 50, 0, 2 * Math.PI);
+    context.clip();
+  
+    // ancho y alto de la imagen
+    let anchoimagen = ruta.width;
+    let altoimagen = ruta.height;
+
+    //para que no se rompa la imagen
+    let aspecto = anchoimagen / altoimagen;
+  
+    let ancho = 100; // Cambia el ancho según tus necesidades
+    let altura = ancho / aspecto;
+  
+    //dibuja
+    context.drawImage(ruta, 500 - ancho / 2, 100 - altura / 2, ancho, altura);
+    //context.restore();
+
+    }
+}
+
+document.addEventListener("DOMContentLoaded", crearImagen);
+
+
+
+
 
 
 function rellenarTablero(){
@@ -267,10 +312,6 @@ function reset() {
         }
     }
 }
-
-
-
-
 
 
 function verificarTurnos(){
