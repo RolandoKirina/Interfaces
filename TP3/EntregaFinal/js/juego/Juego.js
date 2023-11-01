@@ -158,31 +158,120 @@ function mouseMove(e){
     canvas.addEventListener('mouseup', mouseUp);
 }
 
-//let movible = 
 function mouseUp(){
     mouseDown = false;
     let col = findCol(lastClicked);
     let fila = encontrarFila(col);
-    
+
     if (fila != -1) {
         tablero.casillero[col][fila]= lastClicked;
-        lastClicked.setMovible(false);
         setearPosicion(lastClicked,col,fila);
-        verificarTurnos();
-        //hizoXenLinea(fila)
+        lastClicked.setMovible(false);
+        //verificarTurnos();
+        if (hizoXenLineaHor(fila) || hizoXenLineaVertical(col) || hizoXenLineaDiagonal(fila,col) || hizoXenLineaDiagonalInvertida(primerafila,col)){
+            alert("ganaste");
+            reset();
+        }
      
     }   
     else if (lastClicked.getMovible()){
         volverPosInicial(lastClicked);
-        console.log(lastClicked.getMovible());
     }
    
-    
     lastClicked = null;
+  
    
     canvas.removeEventListener('mousemove', mouseMove); 
     canvas.removeEventListener('mouseup', mouseUp); 
 }
+
+
+function hizoXenLineaHor(fila){
+    //alert("hola")
+    let j = 0;
+    let cant = 0;
+    let jugador = lastClicked.getNombreJugador();
+    while (j < tablero.getColumnas()){
+         if (tablero.casillero[j][fila] != null && tablero.casillero[j][fila].getNombreJugador()=== jugador){
+             cant++;
+         }
+        j++;
+    }
+    return cant==cantLinea;
+}
+
+function hizoXenLineaVertical(col){
+
+    let i = 0;
+    let cantjug1 = 0;
+    let cantjug2 = 0;
+
+    while (i < tablero.getFilas()){
+        if (tablero.casillero[col][i] != null && tablero.casillero[col][i].getNombreJugador() === jugador1){
+            cantjug1++;
+            cantjug2 = 0;
+        }
+        else if(tablero.casillero[col][i] != null && tablero.casillero[col][i].getNombreJugador() === jugador2) {
+            cantjug2++;
+            cantjug1 = 0;
+        }
+        i++;
+    }
+    return cantjug1==cantLinea || cantjug2 == cantLinea;
+}
+function hizoXenLineaDiagonal(fila,col){
+    
+    let cant = 0; 
+    let jugador = lastClicked.getNombreJugador();
+    for (let j = 0; j < tablero.getColumnas(); j++){
+       for (let i = 0; i < tablero.getFilas(); i++){
+            if (j==i){
+                console.log("j" + j + "i" + i );
+                if (tablero.casillero[j][i] != null && tablero.casillero[j][i].getNombreJugador() === jugador){
+                    cant++;
+                }
+            }   
+       }
+    }
+    return cant==cantLinea;
+}
+
+function hizoXenLineaDiagonalInvertida(fila,col){
+    
+    let cant = 0; 
+    let jugador = lastClicked.getNombreJugador();
+    for (let j = 0; j <= tablero.getColumnas(); j++){
+       for (let i = tablero.getFilas(); i >0 ; i--){
+            if (j+i == fila+col) {
+                console.log(j+i);
+                if (tablero.casillero[j][i] != null && tablero.casillero[j][i].getNombreJugador() === jugador){
+                    cant++;
+                }
+            }   
+       }
+    }
+    console.log(fila);
+    console.log(cant);
+    return cant==cantLinea;
+
+}
+
+function reset() {
+    for (let j= 0; j< tablero.getColumnas(); j++){
+        for (let i = 0; i < tablero.getFilas(); i++) {
+            if (tablero.casillero[j][i] != null){
+                tablero.casillero[j][i].setMovible(true); // seteamos movible para que las fichas puedan moverse hasta su pos original
+                volverPosInicial(tablero.casillero[j][i]);
+                tablero.casillero[j][i] = null;
+            }
+        }
+    }
+}
+
+
+
+
+
 
 function verificarTurnos(){
     let jugador = lastClicked.getNombreJugador(); // obtiene el nombre de cualquier jugador
@@ -195,6 +284,7 @@ function verificarTurnos(){
                 if (!EstaEnTablero(fichas[i])) {
                     fichas[i].setMovible(true);
                 }
+                
             }
         }   
     }
@@ -215,26 +305,13 @@ function EstaEnTablero(ficha){
     return esta;
 }
 
-/**function hizoXenLinea(fila){
-    let j = 0;
-    let cant = 0;
-    let jugador = lastClicked.getJugador();
-    while (j < tablero.getColumnas()){
-         if (tablero.casillero[j][fila] != null && tablero.casillero[j][fila].getJugador()=== jugador){
-             cant++;
-         }
-        j++;
-    }
-    console.log(cant);
-    return cant==cantLinea;
-   
-}*/
 function setearPosicion(nueva,col,fila){
    
     let posYfichaTab = fichastablero[col][fila].getPosY();
     //let posYnueva = nueva.getPosY();
     let posXvalida = fichastablero[col][fila].getPosX();
     nueva.setPosX(posXvalida);
+    nueva.setMovible(false);
     //PREGUNTARLE AL PROFESOR COMO HACER LA ANIMACION
     // for (let i = posYnueva ; i <= posYfichaTab; i++){     
     //     nueva.setPosY(i);
@@ -330,13 +407,16 @@ function encontrarFila(columna) {
 
 
 function volverPosInicial(nueva){ //en caso de posicion incorrecta, vuelve a la pos original la ficha
-    let posinix = nueva.getPosIniX();
-    let posiniy = nueva.getPosIniY();
-   nueva.setPosition(posinix,posiniy); //vuelve bruscamente de momento a la pos original
-   nueva.draw();
-   clearCanvas();
-   drawTablero();
-   drawAllFichas(); 
+    //alert(nueva.getMovible())
+    if (nueva.getMovible()){ // Para que si esta en el tablero no vuelva a la posicion original
+        let posinix = nueva.getPosIniX();
+        let posiniy = nueva.getPosIniY();
+        nueva.setPosition(posinix,posiniy); //vuelve bruscamente de momento a la pos original
+        nueva.draw();
+        clearCanvas();
+        drawTablero();
+        drawAllFichas();
+    }
 } 
 
 function clearCanvas(){

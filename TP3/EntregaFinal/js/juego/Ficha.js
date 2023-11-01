@@ -9,6 +9,7 @@ class Ficha {
         this.context = context;
         this.nombreJugador = nombreJugador;
         this.movible = movible;
+        
     }
 
     getMovible(){
