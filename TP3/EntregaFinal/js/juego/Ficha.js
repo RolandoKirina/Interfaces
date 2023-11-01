@@ -1,5 +1,5 @@
 class Ficha {
-    constructor(posX, posY, radio, fill, context,agregada){
+    constructor(posX, posY, radio, fill, context,nombreJugador,movible){
         this.posX = posX;
         this.posY = posY;
         this.posiniX = posX;
@@ -7,7 +7,18 @@ class Ficha {
         this.radio = radio;
         this.fill =fill;
         this.context = context;
-        this.agregada = false;
+        this.nombreJugador = nombreJugador;
+        this.movible = movible;
+    }
+
+    getMovible(){
+        return this.movible;
+    }
+    setMovible(valor){
+        this.movible = valor;
+    }
+    getNombreJugador(){
+        return this.nombreJugador;
     }
 
     getAgregada(){
