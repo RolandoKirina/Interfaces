@@ -212,25 +212,38 @@ function hizoXenLineaHor(fila){
     return cant==cantLinea;
 }
 
+
 function hizoXenLineaVertical(col){
 
     let i = 0;
     let cantjug1 = 0;
     let cantjug2 = 0;
 
-    while (i < tablero.getFilas()){
+    while (i < tablero.getFilas() && (cantjug1 < cantLinea || cantjug2 < cantLinea)){
         if (tablero.casillero[col][i] != null && tablero.casillero[col][i].getNombreJugador() === jugador1){
+
             cantjug1++;
+            if(cantjug1 == cantLinea) {
+                alert("gano el jug 1");
+                return true;
+            }
             cantjug2 = 0;
         }
-        else if(tablero.casillero[col][i] != null && tablero.casillero[col][i].getNombreJugador() === jugador2) {
+        else if(tablero.casillero[col][i] != null && tablero.casillero[col][i].getNombreJugador() !== jugador1) {
+      
             cantjug2++;
+            if(cantjug2 == cantLinea) {
+                alert("gano el jug 2");
+                return true;
+            }
             cantjug1 = 0;
         }
         i++;
     }
-    return cantjug1==cantLinea || cantjug2 == cantLinea;
+
+    return false;
 }
+
 function hizoXenLineaDiagonal(fila,col){
     
     let cant = 0; 
