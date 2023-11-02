@@ -183,7 +183,7 @@ function mouseUp(){
         setearPosicion(lastClicked,col,fila);
         lastClicked.setMovible(false);
         //verificarTurnos();
-        if (hizoXenLineaHor(fila) || hizoXenLineaVertical(col) || hizoXenLineaDiagonal(fila,col) || hizoXenLineaDiagonalInvertida(primerafila,col)){
+        if (hizoXenLineaHor(fila) || hizoXenLineaVertical(col) || hizoXenLineaDiagonal(fila,col)) {
             alert("ganaste");
             reset();
         }
@@ -245,41 +245,39 @@ function hizoXenLineaVertical(col){
 }
 
 function hizoXenLineaDiagonal(fila,col){
-    
-    let cant = 0; 
-    let jugador = lastClicked.getNombreJugador();
-    for (let j = 0; j < tablero.getColumnas(); j++){
-       for (let i = 0; i < tablero.getFilas(); i++){
-            if (j==i){
-                console.log("j" + j + "i" + i );
-                if (tablero.casillero[j][i] != null && tablero.casillero[j][i].getNombreJugador() === jugador){
-                    cant++;
-                }
-            }   
-       }
-    }
-    return cant==cantLinea;
-}
 
-function hizoXenLineaDiagonalInvertida(fila,col){
-    
-    let cant = 0; 
-    let jugador = lastClicked.getNombreJugador();
-    for (let j = 0; j <= tablero.getColumnas(); j++){
-       for (let i = tablero.getFilas(); i >0 ; i--){
-            if (j+i == fila+col) {
-                console.log(j+i);
-                if (tablero.casillero[j][i] != null && tablero.casillero[j][i].getNombreJugador() === jugador){
-                    cant++;
-                }
-            }   
-       }
+    if (hizoXenLineaDiagonalNormal(fila,col)){
+
     }
-    console.log(fila);
-    console.log(cant);
-    return cant==cantLinea;
 
 }
+function hizoXenLineaDiagonalNormal(fila,col){
+
+    let cont = 0;
+    for (let i =  0; i < cantLinea; i++){
+        if (tablero.casillero[col-i][fila-i] != null & tablero.casillero[col-i][fila-i].getNombreJugador() === jugador1){
+            cont++;
+        }
+    }
+    return cont == cantLinea;
+}
+// function hizoXenLineaDiagonal(fila,col){
+    
+//     let cant = 0; 
+//     let jugador = lastClicked.getNombreJugador();
+//     for (let j = 0; j < tablero.getColumnas(); j++){
+//        for (let i = 0; i < tablero.getFilas(); i++){
+//             if (j==i){
+//                 console.log("j" + j + "i" + i );
+//                 if (tablero.casillero[j][i] != null && tablero.casillero[j][i].getNombreJugador() === jugador){
+//                     cant++;
+//                 }
+//             }   
+//        }
+//     }
+//     return cant==cantLinea;
+// }
+
 
 function reset() {
     for (let j= 0; j< tablero.getColumnas(); j++){
