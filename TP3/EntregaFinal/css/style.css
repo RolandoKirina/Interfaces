@@ -2552,3 +2552,12 @@ button {
     margin-bottom: 1em;
 }
 
+.elegirpersonajes{
+    background-image: url('../imgs/MIBfondo/fondo.webp');
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 32em;
+    background-color: #000D1A;
+    margin-top:200px;
+}

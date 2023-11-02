@@ -15,6 +15,8 @@ let fichastablero = [];
 let posicionesFichas =[];
 let cantLinea = 4;
 
+//GUARDAR EN CONSTANTES LOS VALORES DEL RADIO DE LAS FICHAS Y EL TABLERO
+//CALCULAR LAS DIAGONALES A PARTIR DE LA FICHA LANZADA, MIRANDO LA FILA Y LA COL
 let jugador1 = "rojas";
 let jugador2 = "azules";
 canvas.addEventListener('mousedown', mousedown);
@@ -23,7 +25,8 @@ document.addEventListener("DOMContentLoaded", rellenarTablero);
 document.addEventListener("DOMContentLoaded", crearPosicionesFicha);
 document.addEventListener("DOMContentLoaded",crearTodasFichas);
 
-
+canvas.addEventListener('mouseup', mouseUp);
+canvas.addEventListener('mousemove',mouseMove); 
 function drawTablero(){
 
     context.fillStyle = "#00182F";
@@ -32,7 +35,7 @@ function drawTablero(){
     context.strokeStyle="#000D1A";
     context.lineWidth = "2";
     context.stroke();
-    context.shadowColor = 'rgba(0, 0, 0, 0.5'; // Color de la sombra (negro con transparencia)
+    context.shadowColor = 'rgba(0, 0, 0, 0.5)'; // Color de la sombra (negro con transparencia)
     context.shadowBlur = 10; // Difuminado de la sombra
     context.shadowOffsetX = 5; // Desplazamiento horizontal de la sombra
     context.shadowOffsetY = 5; // Desplamiento en y
@@ -43,60 +46,30 @@ function drawTablero(){
 
 
    
-function crearImagen(){
+/*function crearImagen(){
     // let ruta = new Image();
     // ruta.src = "imgs/fichas/men.png";
-    // console.log("hola");
     // ruta.onload = function() {
-    //   let img = context.createPattern(ruta, "no-repeat");
-    //   context.fillStyle = img;
-    //   context.beginPath();
-    //   context.arc(100, 75, 50, 0, 2 * Math.PI);
-    //   context.fill();
-    // };
+
+    //     context.beginPath();
+    //     context.arc(500, 100, 28, 0, 2 * Math.PI);    
+    //     // ancho y alto de la imagen
+    //     let anchoimagen = ruta.width;
+    //     let altoimagen = ruta.height;
+
+    //     //para que no se rompa la imagen
+    //     let aspecto = anchoimagen / altoimagen;
     
-//     let ruta = new Image();
-//     ruta.src = "imgs/fichas/men.png";
-
-//     ruta.onload = function() {
-//         context.save();
-//         context.beginPath();
-//         context.arc(100, 75, 50, 0, 2 * Math.PI);
-//         context.clip();
-//         context.drawImage(ruta, 50, 25, 100, 100); // Dibuja la imagen dentro del círculo recortado
-//         context.restore(); // Restaura el contexto
-//     };
-//     document.removeEventListener("DOMContentLoaded", crearImagen);
+    //     let ancho = 100; // Cambia el ancho según tus necesidades
+    //     let altura = ancho / aspecto;
+    
+    //     //dibuja
+    //     context.drawImage(ruta, 500 - ancho / 2, 100 - altura / 2, ancho, altura);
+    //     }
+}*/
 
 
-
-// }
-let ruta = new Image();
-ruta.src = "imgs/fichas/men.png";
-ruta.onload = function() {
-    context.save();
-    context.beginPath();
-    context.arc(500, 100, 50, 0, 2 * Math.PI);
-    context.clip();
-  
-    // ancho y alto de la imagen
-    let anchoimagen = ruta.width;
-    let altoimagen = ruta.height;
-
-    //para que no se rompa la imagen
-    let aspecto = anchoimagen / altoimagen;
-  
-    let ancho = 100; // Cambia el ancho según tus necesidades
-    let altura = ancho / aspecto;
-  
-    //dibuja
-    context.drawImage(ruta, 500 - ancho / 2, 100 - altura / 2, ancho, altura);
-    //context.restore();
-
-    }
-}
-
-document.addEventListener("DOMContentLoaded", crearImagen);
+//document.addEventListener("DOMContentLoaded", crearImagen);
 
 
 
@@ -112,7 +85,7 @@ function rellenarTablero(){
         fichastablero[j] = [];
         for (let i = 0; i < tablero.getFilas(); i++){
             decrementacion = decrementacion - 70;
-            crearFichaTab(110,30,28,"#FFFFFF",decrementacion, aumentox,j,i,false);  
+            crearFichaTab(110,30,28,"imgs/fichas/fichablanca.png",decrementacion, aumentox,j,i,false);  
         }
     }
     
@@ -142,8 +115,8 @@ function drawAllFichas(){
     clearCanvas();
     drawTablero();
 
-    for (let j = 0; j < 7; j++){ //mejorar 
-        for (let i = 0; i < 6;i++){
+    for (let j = 0; j < tablero.getColumnas(); j++){ //mejorar 
+        for (let i = 0; i < tablero.getFilas();i++){
             fichastablero[j][i].draw();
         }
     }
@@ -162,8 +135,8 @@ function crearTodasFichas(){
     let decrementacion = 0;
     for (let i = 0; i < numerofichas; i++){
         decrementacion = decrementacion - 20;
-        crearFicha(70,50,28,"#FF0000",decrementacion,0,fichas,jugador1,true);
-        crearFicha(1020,50,28,"#0000FF",decrementacion,0,fichas,jugador2,true);  
+        crearFicha(70,50,28,"imgs/fichas/CirculoAlien.png",decrementacion,0,fichas,jugador1,true);
+        crearFicha(1020,50,28,"imgs/fichas/men.png",decrementacion,0,fichas,jugador2,true);  
     }   
 }
 
@@ -186,8 +159,7 @@ function mousedown(e){
     if (figuraClickeada != null){ 
         lastClicked = figuraClickeada;
     }
-
-    canvas.addEventListener('mousemove',mouseMove);   
+   
 }
 
 
@@ -195,12 +167,10 @@ function mousedown(e){
    // seguir
 //}
 function mouseMove(e){
-    
     if (mouseDown && lastClicked != null && lastClicked.getMovible()){
         lastClicked.setPosition(e.offsetX, e.offsetY);   
         drawAllFichas();
     }
-    canvas.addEventListener('mouseup', mouseUp);
 }
 
 function mouseUp(){
@@ -217,17 +187,14 @@ function mouseUp(){
             alert("ganaste");
             reset();
         }
-     
     }   
     else if (lastClicked.getMovible()){
         volverPosInicial(lastClicked);
     }
    
     lastClicked = null;
-  
+    figuraClickeada = null;
    
-    canvas.removeEventListener('mousemove', mouseMove); 
-    canvas.removeEventListener('mouseup', mouseUp); 
 }
 
 
@@ -353,12 +320,6 @@ function setearPosicion(nueva,col,fila){
     let posXvalida = fichastablero[col][fila].getPosX();
     nueva.setPosX(posXvalida);
     nueva.setMovible(false);
-    //PREGUNTARLE AL PROFESOR COMO HACER LA ANIMACION
-    // for (let i = posYnueva ; i <= posYfichaTab; i++){     
-    //     nueva.setPosY(i);
-    //     nueva.draw();
-    //     limpiarTodoCanvas()
-    // }
     nueva.setPosY(posYfichaTab);
     nueva.draw();
     limpiarTodoCanvas()

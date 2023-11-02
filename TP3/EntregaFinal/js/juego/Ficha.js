@@ -10,6 +10,11 @@ class Ficha {
         this.nombreJugador = nombreJugador;
         this.movible = movible;
 
+        this.ruta = new Image();
+        this.ruta.src = this.fill;
+        this.ruta.onload = () => {
+            this.draw();
+        }
     }
 
     getMovible(){
@@ -74,34 +79,25 @@ class Ficha {
     
 
     draw() {
-        this.context.fillStyle = this.fill;
-        this.context.strokeStyle = "#000000";
-        this.context.lineWidth = '0.5';
-        this.context.beginPath(); 
-        context.globalAlpha = 1.0;     
-        this.context.arc(this.posX, this.posY, this.radio, 0, 2 * Math.PI);
-        this.context.fill();
-        this.context.stroke();
-        this.context.closePath();
-
-    }
-
-    /*draw() {
-        let imagen = this.fill;
-        imagen.src = "imgs/fichas/fichablanca.png";
-        imagen.onload = function() {
-            let img = context.createPattern(imagen, "no-repeat");
-            this.context.fillStyle = img;
+    
             this.context.beginPath();
-            this.context.arc(this.posX, this.posY, this.radio, 0, 2 * Math.PI);
-            this.context.fill();
-            this.context.closePath();
-        };
-    }*/
+            this.context.arc(this.posX, this.posY, this.radio, 0, 2 * Math.PI);    
+            // ancho y alto de la imagen
+            let anchoimagen = this.ruta.width;
+            let altoimagen = this.ruta.height;
+    
+            //para que no se rompa la imagen
+            let aspecto = anchoimagen / altoimagen;
+        
+            let ancho = 60; // Cambia el ancho según tus necesidades
+            let altura = ancho / aspecto;
+    
+            //dibuja
+            this.context.drawImage(this.ruta, this.posX - ancho / 2, this.posY - altura / 2, ancho, altura);
+}
 
     drawStroke(){
-        this.context.strokeStyle = "#00262F";
-        this.context.globalAlpha = 0.5;
+        this.context.strokeStyle = "#00FF00";
         this.context.lineWidth=1;
         this.context.beginPath();        
         this.context.arc(this.posX, this.posY, this.radio, 0, 2 * Math.PI);
