@@ -185,7 +185,7 @@ function hizoXenLinea(col,fila){
             alert("gano en vertical el jugador "+lastClicked.getNombreJugador());
             reset(contador);
             break;
-        case hizoXenLineaDiagonalNormal(col,fila,contador):
+        case hizoXenLineaDiagonal(col,fila,contador,contador2,jugador):
             alert("gano en diagonal normal el jugador "+lastClicked.getNombreJugador());
             reset(contador);
             break;
@@ -198,6 +198,25 @@ function hizoXenLinea(col,fila){
             break;
     }
 }
+
+function hizoXenLineaDiagonal(col,fila,contador,contador2,jugador){
+    let diagonalNormal = hizoXenLineaDiagonalNormal(col, fila, contador, jugador);
+    let diagonalInvertida = hizoXenLineaDiagonalInvertida(col, fila, contador2, jugador);
+
+    if (diagonalNormal == cantLinea) {
+        alert("gane x diagonal normal");
+        return true;
+    // } else if (contadorDerecha == cantLinea) {
+    //     alert("gane x hor dere");
+    //     return true;
+    // } else {
+    //     if (sumoXenLinea(fila,jugador)) {
+    //         alert("cont suma");
+    //     }
+    // }
+    }
+}
+
 
 function  verificarHorizontalDerecha(col,fila,contador2, jugador){
     let contveces = 0;
@@ -279,10 +298,6 @@ function hizoXenLineaVertical(col, fila, contador,contador2,jugador) {
         alert("vertical arriba")
         return true;
     }
-    // else if (hizoVerticalArriba(col,fila,contador2,jugador)){
-    //     alert("vertical abajo")
-    //     return false;
-    // }
 }
 
 function hizoVerticalArriba(col,fila,contador,jugador){
@@ -301,9 +316,22 @@ function hizoVerticalArriba(col,fila,contador,jugador){
     }
 }
 
-function hizoXenLineaDiagonalNormal(col, fila, contador) {
-  //  console.log("norm");
-    return false;
+function hizoXenLineaDiagonalNormal(col, fila, contador,jugador) {
+    let j = col;
+    let i = fila;
+    let cantveces = 0;
+    while (j < tablero.getColumnas() && i < tablero.getFilas() && cantveces < cantLinea){
+        if (tablero.casillero[col+cantveces][fila+cantveces] != null && tablero.casillero[col+cantveces][fila+cantveces]. getNombreJugador() == jugador){
+            contador++;
+            console.log(contador);
+            if (contador == cantLinea){
+                return Number(contador);
+            }
+        }
+        j++;
+        i++;
+        cantveces++;
+    }
 }
 
 function hizoXenLineaDiagonalInvertida(col, fila, contador) {
