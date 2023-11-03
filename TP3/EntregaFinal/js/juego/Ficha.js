@@ -1,5 +1,5 @@
 class Ficha {
-    constructor(posX, posY, radio, fill, context,nombreJugador,movible){
+    constructor(posX, posY, radio, fill, context,nombreJugador,movible,ancho){
         this.posX = posX;
         this.posY = posY;
         this.posiniX = posX;
@@ -9,7 +9,7 @@ class Ficha {
         this.context = context;
         this.nombreJugador = nombreJugador;
         this.movible = movible;
-
+        this.ancho = ancho;
         this.ruta = new Image();
         this.ruta.src = this.fill;
         this.ruta.onload = () => {
@@ -17,6 +17,12 @@ class Ficha {
         }
     }
 
+    getAncho(){
+        return this.ancho;
+    }
+    setAncho(valor){
+        this.ancho = valor;
+    }
     getMovible(){
         return this.movible;
     }
@@ -89,7 +95,7 @@ class Ficha {
             //para que no se rompa la imagen
             let aspecto = anchoimagen / altoimagen;
         
-            let ancho = 60; // Cambia el ancho según tus necesidades
+            let ancho = this.ancho; // Cambia el ancho según tus necesidades
             let altura = ancho / aspecto;
     
             //dibuja

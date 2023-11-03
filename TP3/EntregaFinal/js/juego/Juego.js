@@ -5,16 +5,23 @@ let context = canvas.getContext('2d');
 
 let canvasWidth = canvas.width;
 let canvasHeight = canvas.height;
-let numerofichas = 21;
 let mouseDown = false;
 let lastClicked = null;
 let rellenoficha = '#0000FF';
-let tablero = new Tablero(6,7);
 let fichas = [];
 let fichastablero = [];
 let posicionesFichas =[];
-let cantLinea = 4;
+let widthTablero = 800;
+let heightTablero = 440;
 
+let tablero = new Tablero(6,7)
+let cantLinea = 4; // cambia
+let radioFicha = 28;
+let decrementacionYFichaTab = 70;
+let aumentoXFicha = 110;
+let decrementacionfichasCostados = 20;
+let numerofichas = 21;
+let anchoFicha = 60;
 //GUARDAR EN CONSTANTES LOS VALORES DEL RADIO DE LAS FICHAS Y EL TABLERO
 //CALCULAR LAS DIAGONALES A PARTIR DE LA FICHA LANZADA, MIRANDO LA FILA Y LA COL
 let jugador1 = "alien";
@@ -31,7 +38,7 @@ function drawTablero(){
 
     context.fillStyle = "#00182F";
     context.beginPath(); 
-    context.rect(150, 60, 800, 440); 
+    context.rect(150, 60, widthTablero, heightTablero); 
     context.strokeStyle="#000D1A";
     context.lineWidth = "2";
     context.stroke();
@@ -44,32 +51,25 @@ function drawTablero(){
 
 }
 
-
-   
-
-
-
-
-
 function rellenarTablero(){
     let decrementacion = 0;
     let aumentox = 0;
     for (let j = 0; j < tablero.getColumnas();j++){
-        aumentox = aumentox + 110;
+        aumentox = aumentox + aumentoXFicha;
         decrementacion = 0;
         fichastablero[j] = [];
         for (let i = 0; i < tablero.getFilas(); i++){
-            decrementacion = decrementacion - 70;
-            crearFichaTab(110,30,28,"imgs/fichas/fichablanca.png",decrementacion, aumentox,j,i,false);  
+            decrementacion = decrementacion - decrementacionYFichaTab;
+            crearFichaTab(110,30,radioFicha,"imgs/fichas/fichablanca.png",decrementacion, aumentox,j,i,false,anchoFicha);  
         }
     }
     
 }
 
-function crearFichaTab(posX, posY, radio, fill, decrementacion, aumentox,j,i) {
+function crearFichaTab(posX, posY, radio, fill, decrementacion, aumentox,j,i,movible,anchoFicha) {
     posY = posY - decrementacion;
     posX = posX + aumentox;
-    let ficha = new Ficha(posX, posY, radio, fill, context);
+    let ficha = new Ficha(posX, posY, radio, fill, context,null,movible,anchoFicha);
     
     fichastablero[j][i] = ficha;
     ficha.draw();
@@ -77,10 +77,10 @@ function crearFichaTab(posX, posY, radio, fill, decrementacion, aumentox,j,i) {
 
 
 
-function crearFicha(posX, posY, radio, fill, decrementacion, aumentox, arr,jugador,movible) {
+function crearFicha(posX, posY, radio, fill, decrementacion, aumentox, arr,jugador,movible,anchoFicha) {
     posY = posY - decrementacion;
     posX = posX + aumentox;
-    let ficha = new Ficha(posX, posY, radio, fill, context,jugador,movible);
+    let ficha = new Ficha(posX, posY, radio, fill, context,jugador,movible,anchoFicha);
     arr.push(ficha);
     ficha.draw();
 }
@@ -109,9 +109,9 @@ function drawAllFichas(){
 function crearTodasFichas(){
     let decrementacion = 0;
     for (let i = 0; i < numerofichas; i++){
-        decrementacion = decrementacion - 20;
-        crearFicha(70,50,28,"imgs/fichas/CirculoAlien.png",decrementacion,0,fichas,jugador1,true);
-        crearFicha(1020,50,28,"imgs/fichas/men.png",decrementacion,0,fichas,jugador2,true);  
+        decrementacion = decrementacion - decrementacionfichasCostados;
+        crearFicha(70,50,radioFicha,"imgs/fichas/CirculoAlien.png",decrementacion,0,fichas,jugador1,true,anchoFicha);
+        crearFicha(1020,50,radioFicha,"imgs/fichas/men.png",decrementacion,0,fichas,jugador2,true,anchoFicha);  
     }   
 }
 
@@ -554,15 +554,15 @@ function clearCanvas(){
 function crearPosicionesFicha(){
     let aumentox = 0;
     for (let i = 0; i < tablero.getColumnas(); i++){
-        aumentox = aumentox + 110;
-        crearFichaStroke(110,30,27,"#00FF00",0,aumentox, posicionesFichas,null,false);  
+        aumentox = aumentox + aumentoXFicha;
+        crearFichaStroke(110,30,radioFicha,"#00FF00",0,aumentox, posicionesFichas,null,false,anchoFicha);  
     }
 }
 
-function crearFichaStroke(posX, posY, radio, fill, decrementacion, aumentox, arr) {
+function crearFichaStroke(posX, posY, radio, fill, decrementacion, aumentox, arr,anchoFicha) {
     posY = posY - decrementacion;
     posX = posX + aumentox;
-    let ficha = new Ficha(posX, posY, radio, fill, context);
+    let ficha = new Ficha(posX, posY, radio, fill, context,0);
     arr.push(ficha);
     ficha.drawStroke();
 }
