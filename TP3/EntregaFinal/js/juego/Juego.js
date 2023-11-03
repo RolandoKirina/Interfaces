@@ -14,6 +14,8 @@ let posicionesFichas =[];
 let widthTablero = 800;
 let heightTablero = 440;
 
+
+// valores que cambiaran en el futuro
 let tablero = new Tablero(6,7)
 let cantLinea = 4; // cambia
 let radioFicha = 28;
