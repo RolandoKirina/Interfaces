@@ -209,9 +209,85 @@ function hizoXenLineaHorizontal(col, fila, contador) {
     let i = 0;
     let j = 0;
 
-    //mirar a la izquierda, mirar a la derecha
+    //Mira a la izquierda
+    //seccion while que mirara a la derecha de la fila puesta.
+
+    //mira que haya 4 a la derecha de la columna donde este la ficha puesta.
+   
+    // if para evitar que se salga de rango.
+     //ej si la columna es 4, no debe contar hasta 8 porque no existe tablero.casillero[8][fila] y quizas de error por consola;
+
+     while((i < cantLinea) && (col-i >= 0)) { //itera maximo 4 veces, disminuye maximo hasta 0, primer columna valida
+     
+            if((tablero.casillero[col-i][fila] != null) && (tablero.casillero[col-i][fila].getNombreJugador() == jugador1)) {
+           
+                contador++;
+                console.log(contador + "a la izquierda");
+
+                if(contador == cantLinea) {
+                    return true;
+                }
+
+             
+            }
+            else if((tablero.casillero[col-i][fila] == null) || (tablero.casillero[col-i][fila].getNombreJugador() != jugador1)){
+                contador = 0;
+            }
 
   
+
+        
+ 
+         i++;
+     }
+
+let contizq = contador; //toma el valor que registró en 
+
+     contador = 0;
+
+//CORREGIR A DERECHA, se acumula el izquierdo con el derecho
+
+    //Mira a la derecha
+    //seccion while que mirara a la derecha de la fila puesta.
+
+    //mira que haya 4 a la derecha de la columna donde este la ficha puesta.
+   
+    // if para evitar que se salga de rango.
+     //ej si la columna es 4, no debe contar hasta 8 porque no existe tablero.casillero[8][fila] y quizas de error por consola;
+
+    while((j < cantLinea) && (col+j < tablero.getColumnas())) { //itera maximo 4 veces, incrementa maximo hasta 6, ultima columna valida
+       // console.log(Number(col+j) + "fila: "+ fila);
+ 
+            if((tablero.casillero[col+j][fila] != null) && (tablero.casillero[col+j][fila].getNombreJugador() == jugador1)) {
+                
+                contador++;
+                console.log(contador + "a la derecha");
+
+                if(contador == cantLinea) {
+                    return true;
+                }
+            }
+            else if((tablero.casillero[col+i][fila] == null) || (tablero.casillero[col+i][fila].getNombreJugador() != jugador1)){
+                contador = 0;
+            }
+    
+       
+   
+
+        
+        j++;
+    }
+
+    let contder = contador;
+
+    if((((contizq + contder) + 1) == cantLinea)  || (((contizq + contder) - 1) == cantLinea)     ) {
+        return true;
+    }
+
+    console.log("contizq + contder: "+Number(contizq + contder));
+
+
+
     return false;
 } 
 
