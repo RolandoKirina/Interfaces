@@ -17,8 +17,8 @@ let cantLinea = 4;
 
 //GUARDAR EN CONSTANTES LOS VALORES DEL RADIO DE LAS FICHAS Y EL TABLERO
 //CALCULAR LAS DIAGONALES A PARTIR DE LA FICHA LANZADA, MIRANDO LA FILA Y LA COL
-let jugador1 = "rojas";
-let jugador2 = "azules";
+let jugador1 = "alien";
+let jugador2 = "hombre de negro";
 canvas.addEventListener('mousedown', mousedown);
 document.addEventListener("DOMContentLoaded",drawTablero);
 document.addEventListener("DOMContentLoaded", rellenarTablero);
@@ -46,31 +46,6 @@ function drawTablero(){
 
 
    
-/*function crearImagen(){
-    // let ruta = new Image();
-    // ruta.src = "imgs/fichas/men.png";
-    // ruta.onload = function() {
-
-    //     context.beginPath();
-    //     context.arc(500, 100, 28, 0, 2 * Math.PI);    
-    //     // ancho y alto de la imagen
-    //     let anchoimagen = ruta.width;
-    //     let altoimagen = ruta.height;
-
-    //     //para que no se rompa la imagen
-    //     let aspecto = anchoimagen / altoimagen;
-    
-    //     let ancho = 100; // Cambia el ancho según tus necesidades
-    //     let altura = ancho / aspecto;
-    
-    //     //dibuja
-    //     context.drawImage(ruta, 500 - ancho / 2, 100 - altura / 2, ancho, altura);
-    //     }
-}*/
-
-
-//document.addEventListener("DOMContentLoaded", crearImagen);
-
 
 
 
@@ -162,10 +137,6 @@ function mousedown(e){
    
 }
 
-
-//setColorPosiciones(){
-   // seguir
-//}
 function mouseMove(e){
     if (mouseDown && lastClicked != null && lastClicked.getMovible()){
         lastClicked.setPosition(e.offsetX, e.offsetY);   
@@ -175,93 +146,278 @@ function mouseMove(e){
 
 function mouseUp(){
     mouseDown = false;
-    let col = findCol(lastClicked);
-    let fila = encontrarFila(col);
-
+    if (lastClicked != null){
+        let col = findCol(lastClicked);
+        let fila = encontrarFila(col);
+    
     if (fila != -1) {
         tablero.casillero[col][fila]= lastClicked;
         setearPosicion(lastClicked,col,fila);
         lastClicked.setMovible(false);
         //verificarTurnos();
-        if (hizoXenLineaHor(fila) || hizoXenLineaVertical(col) || hizoXenLineaDiagonal(fila,col)) {
-            alert("ganaste");
-            reset();
+
+        //cada vez que se tira una ficha, cuenta a su alrededor si hay 4, si no los hay, resetea el contador.
+        //al poner la ultima ficha la cuarta vez, deberia contar 4 a su alrededor y devolver ganador.
+        //si no los hay, no acierta ningun caso y va al default, donde se resetea el contador.
+        let contador = 0; 
+
+        switch(true) {
+            case hizoXenLineaHorizontal(col,fila,contador): 
+                alert("gano en horizontal el jugador "+lastClicked.getNombreJugador());
+                reset();
+                break;
+            case hizoXenLineaVertical(col,fila,contador):
+                alert("gano en vertical el jugador "+lastClicked.getNombreJugador());
+                reset();
+                break;
+            case hizoXenLineaDiagonalNormal(col,fila,contador):
+                alert("gano en diagonal normal el jugador "+lastClicked.getNombreJugador());
+                reset();
+                break;
+            case hizoXenLineaDiagonalInvertida(col,fila,contador):
+                alert("gano en diagonal invertida el jugador "+lastClicked.getNombreJugador());
+                reset();
+                break;
+            default:
+                contador = 0; //se resetea, ej se pusieron 2 fichas nada mas, por lo que no contó 4 a su alrededor
+                break;
         }
+
+
+
+
+
+
+
+        // if (hizoXenLineaHor(col,fila) || hizoXenLineaVertical(col) || hizoXenLineaDiagonal(fila,col)) {
+        //     alert("ganaste");
+        //     reset();
+        // }
     }   
     else if (lastClicked.getMovible()){
         volverPosInicial(lastClicked);
     }
-   
-    lastClicked = null;
-    figuraClickeada = null;
-   
-}
-
-
-function hizoXenLineaHor(fila){
-    //alert("hola")
-    let j = 0;
-    let cant = 0;
-    let jugador = lastClicked.getNombreJugador();
-    while (j < tablero.getColumnas()){
-         if (tablero.casillero[j][fila] != null && tablero.casillero[j][fila].getNombreJugador()=== jugador){
-             cant++;
-         }
-        j++;
     }
-    return cant==cantLinea;
+
+    lastClicked = null;
 }
 
 
-function hizoXenLineaVertical(col){
-
+function hizoXenLineaHorizontal(col, fila, contador) {
+    console.log("hor");
     let i = 0;
-    let cantjug1 = 0;
-    let cantjug2 = 0;
 
-    while (i < tablero.getFilas() && (cantjug1 < cantLinea || cantjug2 < cantLinea)){
-        if (tablero.casillero[col][i] != null && tablero.casillero[col][i].getNombreJugador() === jugador1){
 
-            cantjug1++;
-            if(cantjug1 == cantLinea) {
-                alert("gano el jug 1");
-                return true;
-            }
-            cantjug2 = 0;
-        }
-        else if(tablero.casillero[col][i] != null && tablero.casillero[col][i].getNombreJugador() !== jugador1) {
-      
-            cantjug2++;
-            if(cantjug2 == cantLinea) {
-                alert("gano el jug 2");
-                return true;
-            }
-            cantjug1 = 0;
-        }
+    //Mira a la izquierda
+    //seccion while que mirara a la derecha de la fila puesta.
+
+    //mira que haya 4 a la derecha de la columna donde este la ficha puesta.
+   
+    // if para evitar que se salga de rango.
+     //ej si la columna es 4, no debe contar hasta 8 porque no existe tablero.casillero[8][fila] y quizas de error por consola;
+
+     while((i < cantLinea) && (col-i >= 0)) { //itera maximo 4 veces, disminuye maximo hasta 0, primer columna valida
+        console.log(contador);
+       if((tablero.casillero[col-i][fila] != null) && (tablero.casillero[col-i][fila].getNombreJugador == jugador1)) {
+        console.log(contador + "a la izquierda");
+        contador++;
+       }
+
+    //    if(contador == cantLinea) {
+    //       return true; //encontro 4 
+    //    }
+ 
+         i++;
+     }
+
+
+
+
+    //Mira a la derecha
+    //seccion while que mirara a la derecha de la fila puesta.
+
+    //mira que haya 4 a la derecha de la columna donde este la ficha puesta.
+   
+    // if para evitar que se salga de rango.
+     //ej si la columna es 4, no debe contar hasta 8 porque no existe tablero.casillero[8][fila] y quizas de error por consola;
+
+    while((i < cantLinea) && (col+i < tablero.getColumnas())) { //itera maximo 4 veces, incrementa maximo hasta 6, ultima columna valida
+
+        if((tablero.casillero[col+i][fila] != null) && (tablero.casillero[col+i][fila].getNombreJugador == jugador1)) {
+            console.log(contador + "a la derecha");
+            contador++;
+           }
+
         i++;
     }
+
+
+
+
+
+
 
     return false;
 }
 
-function hizoXenLineaDiagonal(fila,col){
+function hizoXenLineaVertical(col, fila, contador) {
+   // console.log("ver");
 
-    if (hizoXenLineaDiagonalNormal(fila,col)){
 
-    }
-
+    return false;
 }
-function hizoXenLineaDiagonalNormal(fila,col){
 
-    let cont = 0;
-    for (let i =  0; i < cantLinea; i++){
-        if (tablero.casillero[col-i][fila-i] != null & tablero.casillero[col-i][fila-i].getNombreJugador() === jugador1){
-            cont++;
-        }
-    }
-    return cont == cantLinea;
+function hizoXenLineaDiagonalNormal(col, fila, contador) {
+  //  console.log("norm");
+    return false;
 }
+
+function hizoXenLineaDiagonalInvertida(col, fila, contador) {
+   // console.log("inver");
+    return false;
+}
+
+
+
+
+
+
+
+// function hizoXenLineaHor(col,fila){
+//     //alert("hola")
+//     // let j = 0;
+ 
+//     // let jugador = lastClicked.getNombreJugador();
+//     // while (j < tablero.getColumnas()){
+//     //      if (tablero.casillero[j+i][fila] != null && tablero.casillero[j][fila].getNombreJugador()=== jugador){
+//     //          cant++;
+//     //      }
+//     //     j++;
+//     // }
+//     let jugador = lastClicked.getNombreJugador();
+//     console.log(jugador)
+//     for (let i =0; i <= cantLinea-1; i++){
+//         if (tablero.casillero[col+i][fila] != null && tablero.casillero[col+i][fila].getNombreJugador()=== jugador){
+//             cant++;
+//             if (cant==cantLinea){
+//                 alert("gano horizontal jk");
+//                return cant==cantLinea;
+//         }
+//     }
+
+//     for (let j =0; j < cantLinea; j++){
+//         if (tablero.casillero[col-j][fila] != null && tablero.casillero[col-j][fila].getNombreJugador()=== jugador){
+//             cant2++;
+//             console.log(cant2);
+//             if (cant2==cantLinea-1){
+//                 alert("gano horizontal");
+//                return cant2==cantLinea;
+//             }
+//         }
+//      }
+
+//   return cant==cantLinea || cant2==cantLinea  || cant + cant2 == cantLinea;
+// }
+// }
+
+
+// function hizoXenLineaVertical(col, fila){
+
+//     let i = 0;
+//     let cantjug1 = 0;
+//     let cantjug2 = 0;
+
+//     while (i < tablero.getFilas() && (cantjug1 < cantLinea || cantjug2 < cantLinea)){
+//         if (tablero.casillero[col][i] != null && tablero.casillero[col][i].getNombreJugador() === jugador1){
+
+//             cantjug1++;
+//             if(cantjug1 == cantLinea) {
+//                 alert("gano vertical");
+//                 return true;
+//             }
+//             cantjug2 = 0;
+//         }
+//         else if(tablero.casillero[col][i] != null && tablero.casillero[col][i].getNombreJugador() !== jugador1) {
+      
+//             cantjug2++;
+//             if(cantjug2 == cantLinea) {
+//                 alert("gano vertical");
+//                 return true;
+//             }
+//             cantjug1 = 0;
+//         }
+//         i++;
+//     }
+
+//     return false;
+// }
+
+
 // function hizoXenLineaDiagonal(fila,col){
+
+//     return hizoXenLineaDiagonalNormal(fila,col) || hizoXenLineaDiagonalInvertida(fila,col);
+
+// }
+
+
+// let contJug1 = 0;
+// function hizoXenLineaDiagonalInvertida(fila,col){
+
+//     //alert("hola");
+  
+//     // let contJug2 = 0; 
+
+//     for (let i =  0; i < cantLinea; i++){
+//         if (tablero.casillero[col+i][fila-i] != null && tablero.casillero[col+i][fila-i].getNombreJugador() === jugador1){
+          
+//             contJug1++;
+//             console.log("col" + Number(col-i) + "fil" + Number(fila-i));
+//             console.log(contJug1 + "contjug1");
+//             if (contJug1 == cantLinea){
+//                 alert("gano diagonal invertida");
+//                 return true;
+//             }
+//             // contJug2 = 0;
+//         }
+//     }
+   
+//     return false;
+// }
+
+// function hizoXenLineaDiagonalNormal(fila,col){
+
+//     let contJug1 = 0;
+//     let contJug2 = 0; 
+//     for (let i =  0; i < cantLinea; i++){
+//         if (tablero.casillero[col-i][fila-i] != null && tablero.casillero[col-i][fila-i].getNombreJugador() === jugador1){
+          
+//             contJug1++;
+//             // console.log("col" + Number(col-i) + "fil" + Number(fila-i));
+//             // console.log(contJug1 + "contjug1");
+//             if (contJug1 == cantLinea){
+//                 alert("gano diagonal normal");
+//                 return true;
+//             }
+//             contJug2 = 0;
+//         }
+//         else if(tablero.casillero[col-i][fila-i] != null && tablero.casillero[col-i][fila-i].getNombreJugador() !==jugador1){
+//             contJug2++;  
+//             // console.log(contJug2 + "contjug2");
+//             if (contJug2 == cantLinea){
+//                 alert("gano diagonal normal");
+//                 return true;
+//             }
+//             contJug1 = 0;
+//         }
+//     }
+//     return false;
+// }
+
+
+
+
+
+// function hizoXenLineaDiagonal(fila,col){ METODOVIEJO
     
 //     let cant = 0; 
 //     let jugador = lastClicked.getNombreJugador();
@@ -289,6 +445,7 @@ function reset() {
             }
         }
     }
+
 }
 
 
@@ -382,7 +539,7 @@ function encontrarFila(columna) {
         }
     }
 
-    return -1; // Si no se encuentra una fila vacía, puedes devolver -1 u otro valor que indique que no hay filas vacías.
+    return -1; // Si no se encuentra una vacia devuelve -1.
 }
 
 //function addFicha(fila,columna,nueva, centrarFichaPuesta){
