@@ -198,37 +198,62 @@ function hizoXenLinea(col,fila){
     }
 }
 
-function hizoXenLineaHorizontal(col, fila, contador, contador2) {
-    let jugador = lastClicked.getNombreJugador();
-    switch (true) {
-        case verificarHorizontalIzquierda(col,fila,contador,jugador):
-            return true;
-        case verificarHorizontalDerecha(col,fila,contador2,jugador):
-            return true;
-
+function  verificarHorizontalDerecha(col,fila,contador2, jugador){
+    let contveces = 0;
+    let j = col;
+    while (j < tablero.getColumnas() && contveces < cantLinea){
+        if (tablero.casillero[col+contveces][fila] != null && tablero.casillero[col+contveces][fila].getNombreJugador() === jugador){
+            contador2++;
+            console.log("contador " + contador2);
+            if (contador2 == cantLinea){
+                return Number(contador2);
+            } 
+            else if (tablero.casillero[col+contveces][fila] == null || tablero.casillero[col+contveces][fila].getNombreJugador() !== jugador){
+                return Number(0);
+            }
+        }
+        contveces++;
+        j++
     }
-
 }
 
-    function  verificarHorizontalDerecha(col,fila,contador2, jugador){
-        let contveces = 0;
-        let j = col;
-        while (j < tablero.getColumnas() && contveces < cantLinea){
-            if (tablero.casillero[col+contveces][fila] != null && tablero.casillero[col+contveces][fila].getNombreJugador() === jugador){
-                contador2++;
-                console.log("contador " + contador2);
-                if (contador2 == cantLinea){
-                    return true;
-                } 
-                else if (tablero.casillero[col+contveces][fila] == null || tablero.casillero[col+contveces][fila].getNombreJugador() !== jugador){
-                    return false;
-                }
-            }
-            contveces++;
-            j++
+function hizoXenLineaHorizontal(col, fila, contador, contador2) {
+    let jugador = lastClicked.getNombreJugador();
+   
+    let contadorIzquierda = verificarHorizontalIzquierda(col, fila, contador, jugador);
+    let contadorDerecha = verificarHorizontalDerecha(col, fila, contador2, jugador);
+
+    if (contadorIzquierda == cantLinea) {
+        alert("gane x hor izq");
+        return true;
+    } else if (contadorDerecha == cantLinea) {
+        alert("gane x hor dere");
+        return true;
+    } else {
+        console.log("cont izquie" + Number(contadorIzquierda));
+        console.log("contador der " + Number(contadorDerecha))
+        if (sumoXenLinea(fila,jugador)) {
+            alert("cont suma");
         }
     }
+}
 
+
+function sumoXenLinea(fila,jugador){
+    let cont = 0;
+    for (let i = 0; i < tablero.getColumnas(); i++ ){
+        if (tablero.casillero[i][fila] != null && tablero.casillero[i][fila].getNombreJugador() === jugador){
+            cont++;
+            if (cont == cantLinea){
+                return true;
+            }
+        }
+        else {
+            cont = 0;
+        }
+    }
+    return false;
+}
     //anda
 function verificarHorizontalIzquierda(col,fila,contador,jugador){
 
@@ -239,10 +264,10 @@ function verificarHorizontalIzquierda(col,fila,contador,jugador){
             contador++;
             //console.log(contador);     
             if (contador == cantLinea){
-                return true;
+                return Number(contador);
             } 
             else if (tablero.casillero[col-contveces][fila] == null || tablero.casillero[col-contveces][fila].getNombreJugador() !== jugador){
-                return false;
+                return Number(0);
             }
         }
         contveces++;
