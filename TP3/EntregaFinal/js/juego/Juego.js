@@ -144,6 +144,7 @@ function mouseMove(e){
     }
 }
 
+
 function mouseUp(){
     mouseDown = false;
     if (lastClicked != null){
@@ -164,19 +165,19 @@ function mouseUp(){
         switch(true) {
             case hizoXenLineaHorizontal(col,fila,contador): 
                 alert("gano en horizontal el jugador "+lastClicked.getNombreJugador());
-                reset();
+                reset(contador);
                 break;
             case hizoXenLineaVertical(col,fila,contador):
                 alert("gano en vertical el jugador "+lastClicked.getNombreJugador());
-                reset();
+                reset(contador);
                 break;
             case hizoXenLineaDiagonalNormal(col,fila,contador):
                 alert("gano en diagonal normal el jugador "+lastClicked.getNombreJugador());
-                reset();
+                reset(contador);
                 break;
             case hizoXenLineaDiagonalInvertida(col,fila,contador):
                 alert("gano en diagonal invertida el jugador "+lastClicked.getNombreJugador());
-                reset();
+                reset(contador);
                 break;
             default:
                 contador = 0; //se resetea, ej se pusieron 2 fichas nada mas, por lo que no contó 4 a su alrededor
@@ -206,7 +207,7 @@ function mouseUp(){
 function hizoXenLineaHorizontal(col, fila, contador) {
     console.log("hor");
     let i = 0;
-
+    let j = 0;
 
     //Mira a la izquierda
     //seccion while que mirara a la derecha de la fila puesta.
@@ -217,21 +218,34 @@ function hizoXenLineaHorizontal(col, fila, contador) {
      //ej si la columna es 4, no debe contar hasta 8 porque no existe tablero.casillero[8][fila] y quizas de error por consola;
 
      while((i < cantLinea) && (col-i >= 0)) { //itera maximo 4 veces, disminuye maximo hasta 0, primer columna valida
-        console.log(contador);
-       if((tablero.casillero[col-i][fila] != null) && (tablero.casillero[col-i][fila].getNombreJugador == jugador1)) {
-        console.log(contador + "a la izquierda");
-        contador++;
-       }
+     
+            if((tablero.casillero[col-i][fila] != null) && (tablero.casillero[col-i][fila].getNombreJugador() == jugador1)) {
+           
+                contador++;
+                console.log(contador + "a la izquierda");
 
-    //    if(contador == cantLinea) {
-    //       return true; //encontro 4 
-    //    }
+                if(contador == cantLinea) {
+                    return true;
+                }
+
+             
+            }
+            else if((tablero.casillero[col-i][fila] == null) || (tablero.casillero[col-i][fila].getNombreJugador() != jugador1)){
+                contador = 0;
+            }
+
+  
+
+        
  
          i++;
      }
 
+let contizq = contador; //toma el valor que registró en 
 
+     contador = 0;
 
+//CORREGIR A DERECHA, se acumula el izquierdo con el derecho
 
     //Mira a la derecha
     //seccion while que mirara a la derecha de la fila puesta.
@@ -241,19 +255,36 @@ function hizoXenLineaHorizontal(col, fila, contador) {
     // if para evitar que se salga de rango.
      //ej si la columna es 4, no debe contar hasta 8 porque no existe tablero.casillero[8][fila] y quizas de error por consola;
 
-    while((i < cantLinea) && (col+i < tablero.getColumnas())) { //itera maximo 4 veces, incrementa maximo hasta 6, ultima columna valida
+    while((j < cantLinea) && (col+j < tablero.getColumnas())) { //itera maximo 4 veces, incrementa maximo hasta 6, ultima columna valida
+       // console.log(Number(col+j) + "fila: "+ fila);
+ 
+            if((tablero.casillero[col+j][fila] != null) && (tablero.casillero[col+j][fila].getNombreJugador() == jugador1)) {
+                
+                contador++;
+                console.log(contador + "a la derecha");
 
-        if((tablero.casillero[col+i][fila] != null) && (tablero.casillero[col+i][fila].getNombreJugador == jugador1)) {
-            console.log(contador + "a la derecha");
-            contador++;
-           }
+                if(contador == cantLinea) {
+                    return true;
+                }
+            }
+            else if((tablero.casillero[col+i][fila] == null) || (tablero.casillero[col+i][fila].getNombreJugador() != jugador1)){
+                contador = 0;
+            }
+    
+       
+   
 
-        i++;
+        
+        j++;
     }
 
+    let contder = contador;
 
+    if((((contizq + contder) + 1) == cantLinea)  || (((contizq + contder) - 1) == cantLinea)     ) {
+        return true;
+    }
 
-
+    console.log("contizq + contder: "+Number(contizq + contder));
 
 
 
@@ -277,7 +308,19 @@ function hizoXenLineaDiagonalInvertida(col, fila, contador) {
     return false;
 }
 
+function reset(contador) {
+    for (let j= 0; j< tablero.getColumnas(); j++){
+        for (let i = 0; i < tablero.getFilas(); i++) {
+            if (tablero.casillero[j][i] != null){
+                tablero.casillero[j][i].setMovible(true); // seteamos movible para que las fichas puedan moverse hasta su pos original
+                volverPosInicial(tablero.casillero[j][i]);
+                tablero.casillero[j][i] = null;
+            }
+        }
+    }
 
+    contador = 0;
+}
 
 
 
@@ -435,18 +478,7 @@ function hizoXenLineaDiagonalInvertida(col, fila, contador) {
 // }
 
 
-function reset() {
-    for (let j= 0; j< tablero.getColumnas(); j++){
-        for (let i = 0; i < tablero.getFilas(); i++) {
-            if (tablero.casillero[j][i] != null){
-                tablero.casillero[j][i].setMovible(true); // seteamos movible para que las fichas puedan moverse hasta su pos original
-                volverPosInicial(tablero.casillero[j][i]);
-                tablero.casillero[j][i] = null;
-            }
-        }
-    }
 
-}
 
 
 function verificarTurnos(){
