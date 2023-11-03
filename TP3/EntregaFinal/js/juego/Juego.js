@@ -144,6 +144,7 @@ function mouseMove(e){
     }
 }
 
+
 function mouseUp(){
     mouseDown = false;
     if (lastClicked != null){
@@ -164,19 +165,19 @@ function mouseUp(){
         switch(true) {
             case hizoXenLineaHorizontal(col,fila,contador): 
                 alert("gano en horizontal el jugador "+lastClicked.getNombreJugador());
-                reset();
+                reset(contador);
                 break;
             case hizoXenLineaVertical(col,fila,contador):
                 alert("gano en vertical el jugador "+lastClicked.getNombreJugador());
-                reset();
+                reset(contador);
                 break;
             case hizoXenLineaDiagonalNormal(col,fila,contador):
                 alert("gano en diagonal normal el jugador "+lastClicked.getNombreJugador());
-                reset();
+                reset(contador);
                 break;
             case hizoXenLineaDiagonalInvertida(col,fila,contador):
                 alert("gano en diagonal invertida el jugador "+lastClicked.getNombreJugador());
-                reset();
+                reset(contador);
                 break;
             default:
                 contador = 0; //se resetea, ej se pusieron 2 fichas nada mas, por lo que no contó 4 a su alrededor
@@ -206,59 +207,13 @@ function mouseUp(){
 function hizoXenLineaHorizontal(col, fila, contador) {
     console.log("hor");
     let i = 0;
+    let j = 0;
 
+    //mirar a la izquierda, mirar a la derecha
 
-    //Mira a la izquierda
-    //seccion while que mirara a la derecha de la fila puesta.
-
-    //mira que haya 4 a la derecha de la columna donde este la ficha puesta.
-   
-    // if para evitar que se salga de rango.
-     //ej si la columna es 4, no debe contar hasta 8 porque no existe tablero.casillero[8][fila] y quizas de error por consola;
-
-     while((i < cantLinea) && (col-i >= 0)) { //itera maximo 4 veces, disminuye maximo hasta 0, primer columna valida
-        console.log(contador);
-       if((tablero.casillero[col-i][fila] != null) && (tablero.casillero[col-i][fila].getNombreJugador == jugador1)) {
-        console.log(contador + "a la izquierda");
-        contador++;
-       }
-
-    //    if(contador == cantLinea) {
-    //       return true; //encontro 4 
-    //    }
- 
-         i++;
-     }
-
-
-
-
-    //Mira a la derecha
-    //seccion while que mirara a la derecha de la fila puesta.
-
-    //mira que haya 4 a la derecha de la columna donde este la ficha puesta.
-   
-    // if para evitar que se salga de rango.
-     //ej si la columna es 4, no debe contar hasta 8 porque no existe tablero.casillero[8][fila] y quizas de error por consola;
-
-    while((i < cantLinea) && (col+i < tablero.getColumnas())) { //itera maximo 4 veces, incrementa maximo hasta 6, ultima columna valida
-
-        if((tablero.casillero[col+i][fila] != null) && (tablero.casillero[col+i][fila].getNombreJugador == jugador1)) {
-            console.log(contador + "a la derecha");
-            contador++;
-           }
-
-        i++;
-    }
-
-
-
-
-
-
-
+  
     return false;
-}
+} 
 
 function hizoXenLineaVertical(col, fila, contador) {
    // console.log("ver");
@@ -277,7 +232,19 @@ function hizoXenLineaDiagonalInvertida(col, fila, contador) {
     return false;
 }
 
+function reset(contador) {
+    for (let j= 0; j< tablero.getColumnas(); j++){
+        for (let i = 0; i < tablero.getFilas(); i++) {
+            if (tablero.casillero[j][i] != null){
+                tablero.casillero[j][i].setMovible(true); // seteamos movible para que las fichas puedan moverse hasta su pos original
+                volverPosInicial(tablero.casillero[j][i]);
+                tablero.casillero[j][i] = null;
+            }
+        }
+    }
 
+    contador = 0;
+}
 
 
 
@@ -435,18 +402,7 @@ function hizoXenLineaDiagonalInvertida(col, fila, contador) {
 // }
 
 
-function reset() {
-    for (let j= 0; j< tablero.getColumnas(); j++){
-        for (let i = 0; i < tablero.getFilas(); i++) {
-            if (tablero.casillero[j][i] != null){
-                tablero.casillero[j][i].setMovible(true); // seteamos movible para que las fichas puedan moverse hasta su pos original
-                volverPosInicial(tablero.casillero[j][i]);
-                tablero.casillero[j][i] = null;
-            }
-        }
-    }
 
-}
 
 
 function verificarTurnos(){
