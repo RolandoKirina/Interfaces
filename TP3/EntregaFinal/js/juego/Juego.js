@@ -173,8 +173,8 @@ function mouseUp(){
 }
 
 function hizoXenLinea(col,fila){
-    let contador =1;
-    let contador2 = 1;
+    let contador =0;
+    let contador2 = 0;
     switch(true) {
         case hizoXenLineaHorizontal(col,fila,contador,contador2): 
             alert("gano en horizontal el jugador "+lastClicked.getNombreJugador());
@@ -210,23 +210,26 @@ function hizoXenLineaHorizontal(col, fila, contador, contador2) {
 
 }
 
-function  verificarHorizontalDerecha(col,fila,contador2,jugador){
-    let j = 1;
-    while ( col+j< tablero.getColumnas() && j <= cantLinea-1){
-        if (tablero.casillero[col+j][fila] != null && tablero.casillero[col+j][fila].getNombreJugador() === jugador){
-            contador2++;
-            console.log("cont 2 " + contador2);
+    function  verificarHorizontalDerecha(col,fila,contador2, jugador){
+        let contveces = 0;
+        let j = col;
+        while (j < tablero.getColumnas() && contveces < cantLinea){
+            if (tablero.casillero[col+contveces][fila] != null && tablero.casillero[col+contveces][fila].getNombreJugador() === jugador){
+                contador2++;
+                console.log("contador " + contador2);
+                if (contador2 == cantLinea){
+                    return true;
+                } 
+                else if (tablero.casillero[col+contveces][fila] == null || tablero.casillero[col+contveces][fila].getNombreJugador() !== jugador){
+                    return false;
+                }
+            }
+            contveces++;
+            j++
         }
-        j++;
-    }
-    if (tablero.casillero[col+j][fila] == null || tablero.casillero[col+j][fila].getNombreJugador() !== jugador){
-        return false;
-    }
-    else if (contador2+1 == cantLinea){
-        return true;
     }
 
-}
+    //anda
 function verificarHorizontalIzquierda(col,fila,contador,jugador){
 
     let i = col;
@@ -234,8 +237,7 @@ function verificarHorizontalIzquierda(col,fila,contador,jugador){
     while ( i>0 && contveces < cantLinea){
         if (tablero.casillero[col-contveces][fila] != null && tablero.casillero[col-contveces][fila].getNombreJugador() === jugador){
             contador++;
-            console.log(contador);     
-
+            //console.log(contador);     
             if (contador == cantLinea){
                 return true;
             } 
