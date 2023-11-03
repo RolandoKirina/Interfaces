@@ -186,34 +186,12 @@ function hizoXenLinea(col,fila){
             reset(contador);
             break;
         case hizoXenLineaDiagonal(col,fila,contador,contador2,jugador):
-            alert("gano en diagonal normal el jugador "+lastClicked.getNombreJugador());
-            reset(contador);
-            break;
-        case hizoXenLineaDiagonalInvertida(col,fila,contador):
-            alert("gano en diagonal invertida el jugador "+lastClicked.getNombreJugador());
+            alert("gano en diagonal el jugador "+lastClicked.getNombreJugador());
             reset(contador);
             break;
         default:
             contador = 0; //se resetea, ej se pusieron 2 fichas nada mas, por lo que no contó 4 a su alrededor
             break;
-    }
-}
-
-function hizoXenLineaDiagonal(col,fila,contador,contador2,jugador){
-    let diagonalNormal = hizoXenLineaDiagonalNormal(col, fila, contador, jugador);
-    let diagonalInvertida = hizoXenLineaDiagonalInvertida(col, fila, contador2, jugador);
-
-    if (diagonalNormal == cantLinea) {
-        alert("gane x diagonal normal");
-        return true;
-    // } else if (contadorDerecha == cantLinea) {
-    //     alert("gane x hor dere");
-    //     return true;
-    // } else {
-    //     if (sumoXenLinea(fila,jugador)) {
-    //         alert("cont suma");
-    //     }
-    // }
     }
 }
 
@@ -224,7 +202,6 @@ function  verificarHorizontalDerecha(col,fila,contador2, jugador){
     while (j < tablero.getColumnas() && contveces < cantLinea){
         if (tablero.casillero[col+contveces][fila] != null && tablero.casillero[col+contveces][fila].getNombreJugador() === jugador){
             contador2++;
-            console.log("contador " + contador2);
             if (contador2 == cantLinea){
                 return Number(contador2);
             } 
@@ -306,7 +283,6 @@ function hizoVerticalArriba(col,fila,contador,jugador){
     while ( i < tablero.getFilas() && cantveces < cantLinea){
         if (tablero.casillero[col][fila+cantveces] != null && tablero.casillero[col][fila+cantveces].getNombreJugador() === jugador){
             contador++;
-            console.log(contador)
             if (contador == cantLinea){
                 return Number(contador);
             }
@@ -315,6 +291,47 @@ function hizoVerticalArriba(col,fila,contador,jugador){
         i++;
     }
 }
+
+
+function hizoXenLineaDiagonal(col,fila,contador,contador2,jugador){
+    let diagonalNormal = hizoXenLineaDiagonalNormal(col, fila, contador, jugador);
+    let diagonalInvertida = hizoXenLineaDiagonalInvertida(col, fila, contador2, jugador);
+
+    if (diagonalNormal == cantLinea) {
+        alert("gane x diagonal normal");
+        return true;
+    } 
+    else if (diagonalInvertida == cantLinea) {
+        alert("gane x diagonal invertida");
+        return true;
+    }
+    else {
+        console.log("no cumple");
+    }
+}
+
+
+function hizoXenLineaDiagonalInvertida(col, fila, contador2,jugador) {
+    let j = col;
+    let i = fila;
+    let cantveces = 0;
+    while (j > 0  && i < tablero.getFilas() && cantveces < cantLinea){
+        console.log("holaaaaa");
+        if (tablero.casillero[col-cantveces][fila+cantveces] != null && tablero.casillero[col-cantveces][fila+cantveces]. getNombreJugador() == jugador){
+            console.log("col menos cantves " + Number(col-cantveces));
+            console.log("fila mas cantves " + Number(fila+cantveces));
+            contador2++;
+            console.log("contador " + contador2);
+            if (contador2 == cantLinea){
+                return Number(contador2);
+            }
+        }
+        j--;
+        i++;
+        cantveces++;
+    }
+}
+
 
 function hizoXenLineaDiagonalNormal(col, fila, contador,jugador) {
     let j = col;
@@ -323,7 +340,6 @@ function hizoXenLineaDiagonalNormal(col, fila, contador,jugador) {
     while (j < tablero.getColumnas() && i < tablero.getFilas() && cantveces < cantLinea){
         if (tablero.casillero[col+cantveces][fila+cantveces] != null && tablero.casillero[col+cantveces][fila+cantveces]. getNombreJugador() == jugador){
             contador++;
-            console.log(contador);
             if (contador == cantLinea){
                 return Number(contador);
             }
@@ -332,11 +348,6 @@ function hizoXenLineaDiagonalNormal(col, fila, contador,jugador) {
         i++;
         cantveces++;
     }
-}
-
-function hizoXenLineaDiagonalInvertida(col, fila, contador) {
-   // console.log("inver");
-    return false;
 }
 
 function reset(contador) {
