@@ -50,6 +50,7 @@ canvas.addEventListener('mousemove',mouseMove);
 
 function cargarJuego(){
     btn4enlinea.addEventListener('click', function (){
+     
         crearXenLinea(col,fila,cantLinea,radioFicha,decrementacionYFichaTab,aumentoXFicha,
             decrementacionfichasCostados,numerofichas,anchoFicha);
             clearCanvas();
@@ -57,19 +58,23 @@ function cargarJuego(){
             rellenarTablero();
             crearPosicionesFicha();
             drawAllFichas();
+          //  reset();
         //al final remover los events 
     } );
     
     btn5enlinea.addEventListener('click', function(){
+    
         crearXenLinea(7,8,5,25,55,110,15,28,54);
         clearCanvas();
         drawTablero();
         rellenarTablero();
         crearPosicionesFicha();
         crearTodasFichas();
+       // reset();
     });
     
     btn6enlinea.addEventListener('click', function (){
+  
         crearXenLinea(8,9,6,22,49,98,12,36,45);
         clearCanvas();
         drawTablero();
@@ -77,15 +82,18 @@ function cargarJuego(){
         crearPosicionesFicha();
         crearTodasFichas();
         drawAllFichas();
+        //reset();
     });
     
     btn7enlinea.addEventListener('click', function (){
+  
         crearXenLinea(9,10,7,16,45,88,9.5,45,35);
         clearCanvas();
         drawTablero();
         rellenarTablero();
         crearPosicionesFicha();
         crearTodasFichas();
+      //  reset();
     });
 }
 
@@ -514,6 +522,13 @@ function reset() {
             }
         }
     }
+
+    // for (let i= 0; i< fichas.length; i++){
+    //         fichas[i].setMovible(true);
+    //         console.log(fichas[i].getMovible());
+    //         volverPosInicial(fichas[i]);
+
+    // }
 
 }
 
