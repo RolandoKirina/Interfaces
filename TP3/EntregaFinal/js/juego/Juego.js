@@ -161,6 +161,7 @@ function crearFicha(posX, posY, radio, fill, decrementacion, aumentox, arr,jugad
 function drawAllFichas(){
     clearCanvas();
     drawTablero();
+    
 
     for (let j = 0; j < tablero.getColumnas(); j++){ //mejorar 
         for (let i = 0; i < tablero.getFilas();i++){
