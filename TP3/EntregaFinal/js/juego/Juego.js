@@ -12,45 +12,47 @@ let elegirpersonajes = document.querySelector("#elegirpersonajes");
 
 let jugador1 = null;
 let jugador2 = null;
-let jug1aux = "hombres de negro";
-let jug2aux = "alien";
 
-let rutajug1 = "imgs/fichas/men.png";
-let rutajug2 = "imgs/fichas/men.png";
-
+let rutajug1 = "imgs/fichas/men.png" ;
+let rutajug2= "imgs/fichas/CirculoAlien1.png";
 
 function seleccionarPersonajes(){
     imagenesficha.forEach(img => {
         img.addEventListener("click", function() {
             if (jugador1 === null) {
                 jugador1 = img.getAttribute("alt");
-                rutajug1 = img.getAttribute("src");
-                
+                rutajug1 = img.getAttribute("src"); 
+                console.log(jugador1);              
             } 
             else {
+                if (jugador1 != null & jugador2 == null){
                     jugador2 = img.getAttribute("alt");
                     rutajug2 = img.getAttribute("src");
+                    console.log(jugador2);
                     // si se seleccionaron ambos,eliminamos los event listener
                     imagenesficha.forEach(img => img.removeEventListener("click", seleccionarPersonajes));
+                    setearJugadores(rutajug1, rutajug2, jugador1,jugador2);
+                }
                 }
             }
-  
         );
     });
-    setearJugadores(rutajug1, rutajug2, jugador1,jugador2);
     }
 
     function setearJugadores(rutajug1,rutajug2,jug,jugdos){
-     for (let i = 0; i < fichas.length; i++){
-        if (i < fichas.length/2){
-            console.log("jug " + jug);
-            fichas[i].setNombreJugador(jug)
-        }
-        else {
-            console.log("jug " + jugdos);
-            fichas[i].setNombreJugador(jugdos);
-         }
-     }   
+        alert("hola")
+        for (let i = 0; i < fichas.length; i++){
+            if (i < fichas.length/2){
+                console.log("jug 1 " + jug);
+                ficha[i].setFill(rutajug1);
+                fichas[i].setNombreJugador(jug)
+            }
+            else {
+                console.log("jug 2" + jugdos);
+                ficha[i].setFill(rutajug2);
+                fichas[i].setNombreJugador(jugdos);
+            }
+        }   
     }
 
 
@@ -208,10 +210,10 @@ function drawAllFichas(){
 
     for (let i = 0; i < fichas.length; i++){
         fichas[i].setAncho(anchoFicha);
-        console.log(jugador1);
-        console.log(jugador2);
-        console.log(rutajug1);
-        console.log(rutajug2);
+        // console.log(jugador1);
+        // console.log(jugador2);
+        // console.log(rutajug1);
+        // console.log(rutajug2);
         if (i < fichas.length/2){
             fichas[i].setNombreJugador(jugador1); // las 1eras 21 le seteamos el nombre del jug1
             //fichas[i].setFill(rutajug1);
@@ -235,8 +237,8 @@ function crearTodasFichas(){
     for (let i = 0; i < numerofichas; i++){
         decrementacion = decrementacion - decrementacionfichasCostados;
 
-        crearFicha(70,50,radioFicha,rutajug1,decrementacion,0,fichas,jug1aux,true,anchoFicha);
-        crearFicha(1020,50,radioFicha,rutajug2,decrementacion,0,fichas,jug2aux,true,anchoFicha);  
+        crearFicha(70,50,radioFicha,rutajug1,decrementacion,0,fichas,jugador1,true,anchoFicha);
+        crearFicha(1020,50,radioFicha,rutajug2,decrementacion,0,fichas,jugador2,true,anchoFicha);  
     }   
 }
 
@@ -260,7 +262,7 @@ function mousedown(e){
    
     if (figuraClickeada != null){ 
         lastClicked = figuraClickeada;
-        console.log(lastClicked.getNombreJugador());
+        // console.log(lastClicked.getNombreJugador());
     }
     else {  
         lastClicked = null;
@@ -569,16 +571,18 @@ function reset() {
 
 function verificarTurnos(){
     let jugador = lastClicked.getNombreJugador(); // obtiene el nombre de cualquier jugador}
-    console.log(jugador);
+    console.log("jugador " + jugador);
     if (!lastClicked.getMovible()){ // si no es movible la ultima
         for (let i = 0; i < fichas.length; i++){ // si el nombre del jugador coincide con x fichas las inhabilita
            
-           
+            console.log("entre" + jugador);
             if (fichas[i].getNombreJugador() === jugador) { 
+                console.log("no voy a entrar" + jugador);
                     fichas[i].setMovible(false); 
             }
             else { //si no las habilita para jugar
                 if (!EstaEnTablero(fichas[i])) {
+                    console.log("no estoy en tablero")
                     fichas[i].setMovible(true);
                 }
                 

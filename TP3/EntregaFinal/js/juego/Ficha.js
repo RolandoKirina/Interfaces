@@ -65,6 +65,7 @@ class Ficha {
     }
     setFill(fill){
         this.fill = fill;
+        this.draw();
     }
     
     setPosY(nueva){
