@@ -161,19 +161,21 @@ function crearFicha(posX, posY, radio, fill, decrementacion, aumentox, arr,jugad
 function drawAllFichas(){
     clearCanvas();
     drawTablero();
-    
 
     for (let j = 0; j < tablero.getColumnas(); j++){ //mejorar 
         for (let i = 0; i < tablero.getFilas();i++){
+            fichastablero[j][i].setAncho(anchoFicha);
             fichastablero[j][i].draw();
         }
     }
 
     for (let i = 0; i < fichas.length; i++){
+        fichas[i].setAncho(anchoFicha);
         fichas[i].draw();
     }
 
     for (let i = 0; i < posicionesFichas.length; i++){
+       // posicionesFichas[j][i].setRadio(radioFicha);
         posicionesFichas[i].drawStroke();
     }
 
@@ -661,7 +663,7 @@ function crearPosicionesFicha(){
 function crearFichaStroke(posX, posY, radio, fill, decrementacion, aumentox, arr,anchoFicha) {
     posY = posY - decrementacion;
     posX = posX + aumentox;
-    let ficha = new Ficha(posX, posY, radio, fill, context,0);
+    let ficha = new Ficha(posX, posY, radio, fill, context,0, anchoFicha);
     arr.push(ficha);
     ficha.drawStroke();
 }
