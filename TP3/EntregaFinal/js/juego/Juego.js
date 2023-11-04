@@ -2,59 +2,6 @@
 
 let canvas = document.querySelector("#canvas");
 let context = canvas.getContext('2d');
-let btn4enlinea = document.getElementById("4enlinea");
-let btn5enlinea = document.getElementById("5enlinea");
-let btn6enlinea = document.getElementById("6enlinea");
-let btn7enlinea = document.getElementById("7enlinea");
-
-let imagenesficha = document.querySelectorAll("#img");
-let elegirpersonajes = document.querySelector("#elegirpersonajes");
-
-let jugador1 = null;
-let jugador2 = null;
-
-let rutajug1 = "imgs/fichas/men.png" ;
-let rutajug2= "imgs/fichas/CirculoAlien1.png";
-
-function seleccionarPersonajes(){
-    imagenesficha.forEach(img => {
-        img.addEventListener("click", function() {
-            if (jugador1 === null) {
-                jugador1 = img.getAttribute("alt");
-                rutajug1 = img.getAttribute("src"); 
-                console.log(jugador1);              
-            } 
-            else {
-                if (jugador1 != null & jugador2 == null){
-                    jugador2 = img.getAttribute("alt");
-                    rutajug2 = img.getAttribute("src");
-                    console.log(jugador2);
-                    // si se seleccionaron ambos,eliminamos los event listener
-                    imagenesficha.forEach(img => img.removeEventListener("click", seleccionarPersonajes));
-                    setearJugadores(rutajug1, rutajug2, jugador1,jugador2);
-                }
-                }
-            }
-        );
-    });
-    }
-
-    function setearJugadores(rutajug1,rutajug2,jug,jugdos){
-        alert("hola")
-        for (let i = 0; i < fichas.length; i++){
-            if (i < fichas.length/2){
-                console.log("jug 1 " + jug);
-                ficha[i].setFill(rutajug1);
-                fichas[i].setNombreJugador(jug)
-            }
-            else {
-                console.log("jug 2" + jugdos);
-                ficha[i].setFill(rutajug2);
-                fichas[i].setNombreJugador(jugdos);
-            }
-        }   
-    }
-
 
 let canvasWidth = canvas.width;
 let canvasHeight = canvas.height;
@@ -67,10 +14,9 @@ let posicionesFichas =[];
 let widthTablero = 800;
 let heightTablero = 440;
 
-let col = 7;
-let fila = 6;
+
 // valores que cambiaran en el futuro
-let tablero;
+let tablero = new Tablero(6,7)
 let cantLinea = 4; // cambia
 let radioFicha = 28;
 let decrementacionYFichaTab = 70;
@@ -78,74 +24,18 @@ let aumentoXFicha = 110;
 let decrementacionfichasCostados = 20;
 let numerofichas = 21;
 let anchoFicha = 60;
-
-function cargarJuego(){
-    btn4enlinea.addEventListener('click', function (){
-        crearXenLinea(col,fila,cantLinea,radioFicha,decrementacionYFichaTab,aumentoXFicha,
-            decrementacionfichasCostados,numerofichas,anchoFicha);
-            clearCanvas();
-            drawTablero();
-            rellenarTablero();
-            crearPosicionesFicha();
-            crearTodasFichas();
-        //al final remover los events 
-    } );
-    
-    btn5enlinea.addEventListener('click', function(){
-        crearXenLinea(7,8,5,25,55,110,15,28,54);
-        clearCanvas();
-        drawTablero();
-        rellenarTablero();
-        crearPosicionesFicha();
-        crearTodasFichas();
-    });
-    
-    btn6enlinea.addEventListener('click', function (){
-        crearXenLinea(8,9,6,22,49,98,12,36,45);
-        clearCanvas();
-        drawTablero();
-        rellenarTablero();
-        crearPosicionesFicha();
-        crearTodasFichas();
-        drawAllFichas();
-    });
-    
-    btn7enlinea.addEventListener('click', function (){
-        crearXenLinea(9,10,7,16,45,88,9.5,45,35);
-        clearCanvas();
-        drawTablero();
-        rellenarTablero();
-        crearPosicionesFicha();
-        crearTodasFichas();
-    });
-}
-
-
+//GUARDAR EN CONSTANTES LOS VALORES DEL RADIO DE LAS FICHAS Y EL TABLERO
+//CALCULAR LAS DIAGONALES A PARTIR DE LA FICHA LANZADA, MIRANDO LA FILA Y LA COL
+let jugador1 = "alien";
+let jugador2 = "hombre de negro";
 canvas.addEventListener('mousedown', mousedown);
-document.addEventListener("DOMContentLoaded", seleccionarPersonajes);
-document.addEventListener("DOMContentLoaded",cargarJuego);
 document.addEventListener("DOMContentLoaded",drawTablero);
-document.addEventListener("DOMContentLoaded",rellenarTablero);
-document.addEventListener("DOMContentLoaded",crearPosicionesFicha);
+document.addEventListener("DOMContentLoaded", rellenarTablero);
+document.addEventListener("DOMContentLoaded", crearPosicionesFicha);
 document.addEventListener("DOMContentLoaded",crearTodasFichas);
-// document.addEventListener("DOMContentLoaded", timer);
+//document.addEventListener("DOMContentLoaded", timer);
 canvas.addEventListener('mouseup', mouseUp);
 canvas.addEventListener('mousemove',mouseMove); 
-
-function crearXenLinea(col,fila,cant,radio,decrementacionYTab,aumentoX,decrementacionCostados,nrofichas,ancho){
-
-    tablero = new Tablero(fila,col);
-    cantLinea = cant; // cambia
-    radioFicha = radio;
-    decrementacionYFichaTab = decrementacionYTab;
-    aumentoXFicha = aumentoX;
-    decrementacionfichasCostados = decrementacionCostados;
-    numerofichas = nrofichas;
-    anchoFicha = ancho;
-}
-
-
-
 function drawTablero(){
 
     context.fillStyle = "#00182F";
@@ -175,6 +65,7 @@ function rellenarTablero(){
             crearFichaTab(110,30,radioFicha,"imgs/fichas/fichablanca.png",decrementacion, aumentox,j,i,false,anchoFicha);  
         }
     }
+    
 }
 
 function crearFichaTab(posX, posY, radio, fill, decrementacion, aumentox,j,i,movible,anchoFicha) {
@@ -203,30 +94,15 @@ function drawAllFichas(){
 
     for (let j = 0; j < tablero.getColumnas(); j++){ //mejorar 
         for (let i = 0; i < tablero.getFilas();i++){
-            fichastablero[j][i].setAncho(anchoFicha);
-            fichastablero[j][i].draw();    
+            fichastablero[j][i].draw();
         }
     }
 
     for (let i = 0; i < fichas.length; i++){
-        fichas[i].setAncho(anchoFicha);
-        // console.log(jugador1);
-        // console.log(jugador2);
-        // console.log(rutajug1);
-        // console.log(rutajug2);
-        if (i < fichas.length/2){
-            fichas[i].setNombreJugador(jugador1); // las 1eras 21 le seteamos el nombre del jug1
-            //fichas[i].setFill(rutajug1);
-        }
-        else {
-            fichas[i].setNombreJugador(jugador2); //las otras nombre jug 2
-            //fichas[i].setFill(rutajug2)
-        }
         fichas[i].draw();
     }
 
     for (let i = 0; i < posicionesFichas.length; i++){
-        posicionesFichas[i].setRadio(radioFicha);
         posicionesFichas[i].drawStroke();
     }
 
@@ -236,9 +112,8 @@ function crearTodasFichas(){
     let decrementacion = 0;
     for (let i = 0; i < numerofichas; i++){
         decrementacion = decrementacion - decrementacionfichasCostados;
-
-        crearFicha(70,50,radioFicha,rutajug1,decrementacion,0,fichas,jugador1,true,anchoFicha);
-        crearFicha(1020,50,radioFicha,rutajug2,decrementacion,0,fichas,jugador2,true,anchoFicha);  
+        crearFicha(70,50,radioFicha,"imgs/fichas/CirculoAlien.png",decrementacion,0,fichas,jugador1,true,anchoFicha);
+        crearFicha(1020,50,radioFicha,"imgs/fichas/men.png",decrementacion,0,fichas,jugador2,true,anchoFicha);  
     }   
 }
 
@@ -259,12 +134,13 @@ function mousedown(e){
     
     mouseDown = true;
     let figuraClickeada = encontrarFiguraClickeada(e.offsetX, e.offsetY);
-   
+
     if (figuraClickeada != null){ 
         lastClicked = figuraClickeada;
-        // console.log(lastClicked.getNombreJugador());
+       // console.log("pos x: "+lastClicked.getPosX());
+        //console.log("pos y: "+lastClicked.getPosY());
     }
-    else {  
+    else {  //ARREGLA BUG QUE SIGUE POSICIONANDO FICHA AUNQUE YA LA HAYA SOLTADO
         lastClicked = null;
     }
    
@@ -274,7 +150,7 @@ function mousedown(e){
 
 function mouseMove(e){
     if (mouseDown && lastClicked != null && lastClicked.getMovible()){
-        lastClicked.setPosition(e.offsetX, e.offsetY);  
+        lastClicked.setPosition(e.offsetX, e.offsetY);   
         drawAllFichas();
     }
 }
@@ -570,19 +446,14 @@ function reset() {
 
 
 function verificarTurnos(){
-    let jugador = lastClicked.getNombreJugador(); // obtiene el nombre de cualquier jugador}
-    console.log("jugador " + jugador);
+    let jugador = lastClicked.getNombreJugador(); // obtiene el nombre de cualquier jugador
     if (!lastClicked.getMovible()){ // si no es movible la ultima
         for (let i = 0; i < fichas.length; i++){ // si el nombre del jugador coincide con x fichas las inhabilita
-           
-            console.log("entre" + jugador);
             if (fichas[i].getNombreJugador() === jugador) { 
-                console.log("no voy a entrar" + jugador);
                     fichas[i].setMovible(false); 
             }
             else { //si no las habilita para jugar
                 if (!EstaEnTablero(fichas[i])) {
-                    console.log("no estoy en tablero")
                     fichas[i].setMovible(true);
                 }
                 
@@ -615,7 +486,7 @@ function setearPosicion(nueva,col,fila){
     nueva.setMovible(false);
     nueva.setPosY(posYfichaTab);
     nueva.draw();
-    limpiarTodoCanvas();
+    limpiarTodoCanvas()
 }
 
 function limpiarTodoCanvas(){

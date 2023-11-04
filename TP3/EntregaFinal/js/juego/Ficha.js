@@ -32,9 +32,7 @@ class Ficha {
     getNombreJugador(){
         return this.nombreJugador;
     }
-    setNombreJugador(nuevo){
-        this.nombreJugador = nuevo;
-    }
+
     getAgregada(){
         return this.agregada;
     }
@@ -51,9 +49,6 @@ class Ficha {
     getPosX(){
         return this.posX;
     }
-    setRadio(nuevo){
-        this.radio = nuevo;
-    }
     getRadio(){
         return this.radio;
     }
@@ -65,7 +60,6 @@ class Ficha {
     }
     setFill(fill){
         this.fill = fill;
-        this.draw();
     }
     
     setPosY(nueva){
@@ -88,8 +82,10 @@ class Ficha {
         this.posY = y;
     }
 
+    
 
     draw() {
+    
             this.context.beginPath();
             this.context.arc(this.posX, this.posY, this.radio, 0, 2 * Math.PI);    
             // ancho y alto de la imagen
@@ -115,9 +111,9 @@ class Ficha {
         this.context.closePath();
     }
 
-    estaSeleccionado(x,y){
+    estaSeleccionado(x, y) {
         let posicionx = this.posX - x;
         let posiciony = this.posY - y;
-        return Math.sqrt(Math.pow(posicionx,2), Math.pow(posiciony,2)) < this.radio;
+        return Math.sqrt(Math.pow(posicionx, 2) + Math.pow(posiciony, 2)) < this.radio;
     }
 }
