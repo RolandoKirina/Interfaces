@@ -194,10 +194,10 @@ function hizoXenLinea(col,fila){
             reset();
             break;
         default:
-            contador = 0; //se resetea, ej se pusieron 2 fichas nada mas, por lo que no contó 4 a su alrededor
-            contador2 = 0;
-            contador3 = 0;
-            contador4 = 0;
+            // contador = 0; //se resetea, ej se pusieron 2 fichas nada mas, por lo que no contó 4 a su alrededor
+            // contador2 = 0;
+            // contador3 = 0;
+            // contador4 = 0;
             break;
     }
 }
@@ -325,7 +325,7 @@ function hizoXenLineaDiagonal(col,fila,contador,contador2,contador3, contador4, 
 
 }
 
-
+///esta se rompio
 function hizoXenLineaDiagonalInvertida(col, fila, contador2,jugador) {
     let j = col;
     let i = fila;
@@ -333,6 +333,7 @@ function hizoXenLineaDiagonalInvertida(col, fila, contador2,jugador) {
     while (j > 0  && i < tablero.getFilas() && cantveces < cantLinea){
         if (tablero.casillero[col-cantveces][fila+cantveces] != null && tablero.casillero[col-cantveces][fila+cantveces]. getNombreJugador() == jugador){
             contador2++;
+            console.log("invertida " + contador2);
             if (contador2 == cantLinea){
                 return Number(contador2);
             }
@@ -341,6 +342,7 @@ function hizoXenLineaDiagonalInvertida(col, fila, contador2,jugador) {
         i++;
         cantveces++;
     }
+    return 0;
 }
 
 
@@ -351,6 +353,7 @@ function hizoXenLineaDiagonalNormal(col, fila, contador,jugador) {
     while (j < tablero.getColumnas() && i < tablero.getFilas() && cantveces < cantLinea){
         if (tablero.casillero[col+cantveces][fila+cantveces] != null && tablero.casillero[col+cantveces][fila+cantveces]. getNombreJugador() == jugador){
             contador++;
+            console.log("normal " + contador);
             if (contador == cantLinea){
                 return Number(contador);
             }
@@ -359,6 +362,7 @@ function hizoXenLineaDiagonalNormal(col, fila, contador,jugador) {
         i++;
         cantveces++;
     }
+    return 0;
 }
 
 function hizoXenLineaDiagonalNormalAbajo(col, fila, contador4,jugador) {
@@ -367,6 +371,7 @@ function hizoXenLineaDiagonalNormalAbajo(col, fila, contador4,jugador) {
     let cantveces = 0;
     while (j >= 0 && i >= 0 && cantveces < cantLinea){
         if (tablero.casillero[col-cantveces][fila-cantveces] != null && tablero.casillero[col-cantveces][fila-cantveces]. getNombreJugador() == jugador){
+            console.log("normal abajo " + contador4);
             contador4++;
             if (contador4 == cantLinea){
                 return Number(contador4);
@@ -376,6 +381,7 @@ function hizoXenLineaDiagonalNormalAbajo(col, fila, contador4,jugador) {
         i--;
         cantveces++;
     }
+    return 0;
 }
 
 function hizoXenLineaInvertidaHaciaAbajo(col,fila,contador,jugador){
@@ -384,6 +390,7 @@ function hizoXenLineaInvertidaHaciaAbajo(col,fila,contador,jugador){
     let cantveces = 0;
     while (j < tablero.getColumnas() && i>= 0 && cantveces < cantLinea){
         if (tablero.casillero[col+cantveces][fila-cantveces] != null && tablero.casillero[col+cantveces][fila-cantveces]. getNombreJugador() == jugador){
+            console.log("inv abajo " + contador);
             contador++;
             if (contador == cantLinea){
                 return Number(contador);
@@ -393,6 +400,7 @@ function hizoXenLineaInvertidaHaciaAbajo(col,fila,contador,jugador){
         i--;
         cantveces++;
     }
+    return 0;
 }
 function reset() {
     for (let j= 0; j< tablero.getColumnas(); j++){
