@@ -56,7 +56,7 @@ function cargarJuego(){
             drawTablero();
             rellenarTablero();
             crearPosicionesFicha();
-            crearTodasFichas();
+            drawAllFichas();
         //al final remover los events 
     } );
     
