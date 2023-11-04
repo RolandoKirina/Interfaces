@@ -121,6 +121,8 @@ function crearTodasFichas(){
 function encontrarFiguraClickeada(x,y){
     for (let i = 0; i < fichas.length; i++){
         let ficha = fichas[i];
+     //   console.log(ficha);
+       // console.log(ficha.estaSeleccionado());
         if (ficha.estaSeleccionado(x,y)){
             return ficha;
         }
@@ -135,8 +137,8 @@ function mousedown(e){
 
     if (figuraClickeada != null){ 
         lastClicked = figuraClickeada;
-        console.log("pos x: "+lastClicked.getPosX());
-        console.log("pos y: "+lastClicked.getPosY());
+       // console.log("pos x: "+lastClicked.getPosX());
+        //console.log("pos y: "+lastClicked.getPosY());
     }
     else {  //ARREGLA BUG QUE SIGUE POSICIONANDO FICHA AUNQUE YA LA HAYA SOLTADO
         lastClicked = null;
@@ -524,9 +526,9 @@ function findCol(nueva){
 //se guardan cambios pero deberia resetearse al poner la ficha en otra columna
 
 function encontrarFila(columna) {
-    console.log("collllllllll:"+ columna);
+
     let fila = tablero.getFilas()-1;
-    console.log("fila; "+fila);
+
 
     //ARREGLA BUG READING 5 Ya que la columna no esta definida cuando clickeamos y soltamos una ficha sin ponerla en el tablero
     if(columna != undefined) { 
@@ -537,9 +539,6 @@ function encontrarFila(columna) {
         }
     }
 
-
-    console.log("no entro al for, col:"+ columna);
-    console.log("no entro al for, fila; "+fila);
     return -1; // Si no se encuentra una vacia devuelve -1.
 }
 
