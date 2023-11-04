@@ -135,9 +135,16 @@ function mousedown(e){
 
     if (figuraClickeada != null){ 
         lastClicked = figuraClickeada;
+        console.log("pos x: "+lastClicked.getPosX());
+        console.log("pos y: "+lastClicked.getPosY());
+    }
+    else {  //ARREGLA BUG QUE SIGUE POSICIONANDO FICHA AUNQUE YA LA HAYA SOLTADO
+        lastClicked = null;
     }
    
 }
+
+
 
 function mouseMove(e){
     if (mouseDown && lastClicked != null && lastClicked.getMovible()){
@@ -145,6 +152,21 @@ function mouseMove(e){
         drawAllFichas();
     }
 }
+
+
+function volverPosInicial(nueva){ //en caso de posicion incorrecta, vuelve a la pos original la ficha
+    //alert(nueva.getMovible())
+    if (nueva.getMovible()){ // Para que si esta en el tablero no vuelva a la posicion original
+        let posinix = nueva.getPosIniX();
+        let posiniy = nueva.getPosIniY();
+        nueva.setPosition(posinix,posiniy); //vuelve bruscamente de momento a la pos original
+        nueva.draw();
+        clearCanvas();
+        drawTablero();
+        drawAllFichas();
+        mouseDown = false;
+    }
+} 
 
 
 function mouseUp(){
@@ -171,7 +193,7 @@ function mouseUp(){
     }
     }
 
-    lastClicked = null;
+   
 }
 
 function hizoXenLinea(col,fila){
@@ -545,21 +567,6 @@ function encontrarFila(columna) {
         nueva.draw(); 
     } */
 
-
-
-
-function volverPosInicial(nueva){ //en caso de posicion incorrecta, vuelve a la pos original la ficha
-    //alert(nueva.getMovible())
-    if (nueva.getMovible()){ // Para que si esta en el tablero no vuelva a la posicion original
-        let posinix = nueva.getPosIniX();
-        let posiniy = nueva.getPosIniY();
-        nueva.setPosition(posinix,posiniy); //vuelve bruscamente de momento a la pos original
-        nueva.draw();
-        clearCanvas();
-        drawTablero();
-        drawAllFichas();
-    }
-} 
 
 function clearCanvas(){
     context.fillStyle = "#00203E";
