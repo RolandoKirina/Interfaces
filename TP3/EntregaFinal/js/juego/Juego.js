@@ -302,27 +302,104 @@ function hizoVerticalArriba(col,fila,contador,jugador){
 
 
 function hizoXenLineaDiagonal(col,fila,contador,contador2,contador3, contador4, jugador){
-    let diagonalNormal = hizoXenLineaDiagonalNormal(col, fila, contador, jugador);
-    let diagonalInvertida = hizoXenLineaDiagonalInvertida(col, fila, contador2, jugador);
-    let diagonalInvertidaAbajo = hizoXenLineaInvertidaHaciaAbajo(col,fila,contador3,jugador);
-    let diagonalNormalAbajo = hizoXenLineaDiagonalNormalAbajo(col,fila,contador4,jugador);
+    // let diagonalNormal = hizoXenLineaDiagonalNormal(col, fila, contador, jugador);
+    // let diagonalInvertida = hizoXenLineaDiagonalInvertida(col, fila, contador2, jugador);
+    // let diagonalInvertidaAbajo = hizoXenLineaInvertidaHaciaAbajo(col,fila,contador3,jugador);
+    // let diagonalNormalAbajo = hizoXenLineaDiagonalNormalAbajo(col,fila,contador4,jugador);
 
-    switch (true) {
-        case diagonalNormal == cantLinea:
-            alert("gane x diagonal normal");
-            return diagonalNormal == cantLinea;
-        case diagonalInvertida == cantLinea:
-            alert("gane x diagonal inv ");
-            return diagonalInvertida == cantLinea;
-        case diagonalInvertidaAbajo == cantLinea:
-            alert("gane x diagonal inv abajo ");
-            return diagonalInvertidaAbajo == cantLinea;
-        case  diagonalNormalAbajo == cantLinea: 
-        alert("gane x diagonal normal abajo ");
-            return diagonalNormalAbajo == cantLinea;
-        default:
-            return false;
+    // switch (true) {
+    //     case diagonalNormal == cantLinea:
+    //         alert("gane x diagonal normal");
+    //         return diagonalNormal == cantLinea;
+    //     case diagonalInvertida == cantLinea:
+    //         alert("gane x diagonal inv ");
+    //         return diagonalInvertida == cantLinea;
+    //     case diagonalInvertidaAbajo == cantLinea:
+    //         alert("gane x diagonal inv abajo ");
+    //         return diagonalInvertidaAbajo == cantLinea;
+    //     case  diagonalNormalAbajo == cantLinea: 
+    //     alert("gane x diagonal normal abajo ");
+    //         return diagonalNormalAbajo == cantLinea;
+    //     default:
+    //         return false;
+    // }
+
+    
+
+    //diagonal normal suma
+
+    let j = col;
+    let i = fila;
+    let cantveces = 0;
+    while (j < tablero.getColumnas() && i < tablero.getFilas() && cantveces < cantLinea){
+        if (tablero.casillero[col+cantveces][fila+cantveces] != null && tablero.casillero[col+cantveces][fila+cantveces]. getNombreJugador() == jugador){
+            contador++;
+            console.log("el contador de diagonal normal quedó en: "+contador);
+            if (contador == cantLinea){
+                alert("gano en diagonal normal");
+                return true;
+            }
+        }
+        j++;
+        i++;
+        cantveces++;
     }
+
+    cantveces = 0;
+
+   
+    //diagonal normal abajo
+
+    let j2 = col;
+    let i2 = fila;
+    
+    while (j2 >= 0 && i2 >= 0 && cantveces < cantLinea){
+        if (tablero.casillero[col-cantveces][fila-cantveces] != null && tablero.casillero[col-cantveces][fila-cantveces]. getNombreJugador() == jugador){
+            contador2++;
+            console.log("el contador de diagonal normal abajo quedó en: "+contador2);
+            if (contador2 == cantLinea){
+                alert("gano en diagonal normal ABAJO");
+                return true;
+            }
+        }
+        j2--;
+        i2--;
+        cantveces++;
+    }
+
+    if(contador-1 + contador2 == cantLinea) {
+        alert("gano en diagonal normal cruzado");
+        return true;
+    }
+
+
+
+
+
+    //diagonal invertida suma
+
+
+
+
+
+
+
+
+
+    //diagonal invertida abajo
+
+
+
+
+
+
+
+    
+
+
+
+
+    return false;
 
 }
 
