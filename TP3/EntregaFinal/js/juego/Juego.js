@@ -235,6 +235,7 @@ function hizoXenLineaHorizontal(col, fila, contador, contador2,jugador) {
     } else {
         if (sumoXenLinea(fila,jugador)) {
             alert("cont suma");
+            return true;
         }
     }
 }
