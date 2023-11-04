@@ -3,6 +3,11 @@
 let canvas = document.querySelector("#canvas");
 let context = canvas.getContext('2d');
 
+let btn4enlinea = document.getElementById("4enlinea");
+let btn5enlinea = document.getElementById("5enlinea");
+let btn6enlinea = document.getElementById("6enlinea");
+let btn7enlinea = document.getElementById("7enlinea");
+
 let canvasWidth = canvas.width;
 let canvasHeight = canvas.height;
 let mouseDown = false;
@@ -16,7 +21,9 @@ let heightTablero = 440;
 
 
 // valores que cambiaran en el futuro
-let tablero = new Tablero(6,7)
+let col = 7;
+let fila = 6;
+let tablero;
 let cantLinea = 4; // cambia
 let radioFicha = 28;
 let decrementacionYFichaTab = 70;
@@ -24,11 +31,13 @@ let aumentoXFicha = 110;
 let decrementacionfichasCostados = 20;
 let numerofichas = 21;
 let anchoFicha = 60;
-//GUARDAR EN CONSTANTES LOS VALORES DEL RADIO DE LAS FICHAS Y EL TABLERO
-//CALCULAR LAS DIAGONALES A PARTIR DE LA FICHA LANZADA, MIRANDO LA FILA Y LA COL
+
+
+
 let jugador1 = "alien";
 let jugador2 = "hombre de negro";
 canvas.addEventListener('mousedown', mousedown);
+document.addEventListener("DOMContentLoaded",cargarJuego);
 document.addEventListener("DOMContentLoaded",drawTablero);
 document.addEventListener("DOMContentLoaded", rellenarTablero);
 document.addEventListener("DOMContentLoaded", crearPosicionesFicha);
@@ -36,6 +45,67 @@ document.addEventListener("DOMContentLoaded",crearTodasFichas);
 //document.addEventListener("DOMContentLoaded", timer);
 canvas.addEventListener('mouseup', mouseUp);
 canvas.addEventListener('mousemove',mouseMove); 
+
+
+
+function cargarJuego(){
+    btn4enlinea.addEventListener('click', function (){
+        crearXenLinea(col,fila,cantLinea,radioFicha,decrementacionYFichaTab,aumentoXFicha,
+            decrementacionfichasCostados,numerofichas,anchoFicha);
+            clearCanvas();
+            drawTablero();
+            rellenarTablero();
+            crearPosicionesFicha();
+            crearTodasFichas();
+        //al final remover los events 
+    } );
+    
+    btn5enlinea.addEventListener('click', function(){
+        crearXenLinea(7,8,5,25,55,110,15,28,54);
+        clearCanvas();
+        drawTablero();
+        rellenarTablero();
+        crearPosicionesFicha();
+        crearTodasFichas();
+    });
+    
+    btn6enlinea.addEventListener('click', function (){
+        crearXenLinea(8,9,6,22,49,98,12,36,45);
+        clearCanvas();
+        drawTablero();
+        rellenarTablero();
+        crearPosicionesFicha();
+        crearTodasFichas();
+        drawAllFichas();
+    });
+    
+    btn7enlinea.addEventListener('click', function (){
+        crearXenLinea(9,10,7,16,45,88,9.5,45,35);
+        clearCanvas();
+        drawTablero();
+        rellenarTablero();
+        crearPosicionesFicha();
+        crearTodasFichas();
+    });
+}
+
+
+function crearXenLinea(col,fila,cant,radio,decrementacionYTab,aumentoX,decrementacionCostados,nrofichas,ancho){
+
+    tablero = new Tablero(fila,col);
+    cantLinea = cant; // cambia
+    radioFicha = radio;
+    decrementacionYFichaTab = decrementacionYTab;
+    aumentoXFicha = aumentoX;
+    decrementacionfichasCostados = decrementacionCostados;
+    numerofichas = nrofichas;
+    anchoFicha = ancho;
+}
+
+
+
+
+
 function drawTablero(){
 
     context.fillStyle = "#00182F";
