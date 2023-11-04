@@ -32,7 +32,9 @@ class Ficha {
     getNombreJugador(){
         return this.nombreJugador;
     }
-
+    setNombreJugador(nuevo){
+        this.nombreJugador = nuevo;
+    }
     getAgregada(){
         return this.agregada;
     }
@@ -48,6 +50,9 @@ class Ficha {
     }
     getPosX(){
         return this.posX;
+    }
+    setRadio(nuevo){
+        this.radio = nuevo;
     }
     getRadio(){
         return this.radio;
@@ -82,10 +87,8 @@ class Ficha {
         this.posY = y;
     }
 
-    
 
     draw() {
-    
             this.context.beginPath();
             this.context.arc(this.posX, this.posY, this.radio, 0, 2 * Math.PI);    
             // ancho y alto de la imagen
