@@ -524,15 +524,22 @@ function findCol(nueva){
 //se guardan cambios pero deberia resetearse al poner la ficha en otra columna
 
 function encontrarFila(columna) {
-
+    console.log("collllllllll:"+ columna);
     let fila = tablero.getFilas()-1;
+    console.log("fila; "+fila);
 
-    for (let i = fila; i >= 0; i--) {
-        if (tablero.casillero[columna][i] == null) {
-            return i;
+    //ARREGLA BUG READING 5 Ya que la columna no esta definida cuando clickeamos y soltamos una ficha sin ponerla en el tablero
+    if(columna != undefined) { 
+        for (let i = fila; i >= 0; i--) {
+            if (tablero.casillero[columna][i] == null) {
+                return i;
+            }
         }
     }
 
+
+    console.log("no entro al for, col:"+ columna);
+    console.log("no entro al for, fila; "+fila);
     return -1; // Si no se encuentra una vacia devuelve -1.
 }
 
