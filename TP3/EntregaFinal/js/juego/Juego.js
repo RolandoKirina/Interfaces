@@ -23,7 +23,7 @@ let heightTablero = 440;
 // valores que cambiaran en el futuro
 let col = 7;
 let fila = 6;
-let tablero;
+let tablero = new Tablero(0,0);
 let cantLinea = 4; // cambia
 let radioFicha = 28;
 let decrementacionYFichaTab = 70;
@@ -49,8 +49,9 @@ canvas.addEventListener('mousemove',mouseMove);
 
 
 function cargarJuego(){
+    
     btn4enlinea.addEventListener('click', function (){
-     
+        reset();
         crearXenLinea(col,fila,cantLinea,radioFicha,decrementacionYFichaTab,aumentoXFicha,
             decrementacionfichasCostados,numerofichas,anchoFicha);
             clearCanvas();
@@ -58,23 +59,22 @@ function cargarJuego(){
             rellenarTablero();
             crearPosicionesFicha();
             drawAllFichas();
-          //  reset();
-        //al final remover los events 
+       
     } );
     
     btn5enlinea.addEventListener('click', function(){
-    
+        reset();
         crearXenLinea(7,8,5,25,55,110,15,28,54);
         clearCanvas();
         drawTablero();
         rellenarTablero();
         crearPosicionesFicha();
         crearTodasFichas();
-       // reset();
+   
     });
     
     btn6enlinea.addEventListener('click', function (){
-  
+        reset();
         crearXenLinea(8,9,6,22,49,98,12,36,45);
         clearCanvas();
         drawTablero();
@@ -82,18 +82,18 @@ function cargarJuego(){
         crearPosicionesFicha();
         crearTodasFichas();
         drawAllFichas();
-        //reset();
+     
     });
     
     btn7enlinea.addEventListener('click', function (){
-  
+        reset();
         crearXenLinea(9,10,7,16,45,88,9.5,45,35);
         clearCanvas();
         drawTablero();
         rellenarTablero();
         crearPosicionesFicha();
         crearTodasFichas();
-      //  reset();
+ 
     });
 }
 
@@ -183,7 +183,7 @@ function drawAllFichas(){
     }
 
     for (let i = 0; i < posicionesFichas.length; i++){
-       // posicionesFichas[j][i].setRadio(radioFicha);
+        posicionesFichas[i].setRadio(radioFicha);
         posicionesFichas[i].drawStroke();
     }
 
@@ -259,11 +259,12 @@ function mouseUp(){
         hizoXenLinea(col,fila)
     }   
     else if (lastClicked.getMovible()){
+        console.log(posicionesFichas[0].getRadio());
         volverPosInicial(lastClicked);
     }
     }
 
-   
+
 }
 
 function hizoXenLinea(col,fila){
@@ -500,27 +501,40 @@ function hizoXenLineaDiagonal(col,fila,contador,contador2,contador3, contador4, 
 
 
 function reset() {
-    for (let j= 0; j< tablero.getColumnas(); j++){
-        for (let i = 0; i < tablero.getFilas(); i++) {
-            if (tablero.casillero[j][i] != null){
-                //tablero.casillero[j][i].setMovible(true); // seteamos movible para que las fichas puedan moverse hasta su pos original
-              //  volverPosInicial(tablero.casillero[j][i]);
-                tablero.casillero[j][i] = null;
+
+    //console.log(tablero.getColumnas() + tablero.getFilas());
+    //console.log(fichas.length);
+    if(tablero.getColumnas() > 0 && tablero.getFilas() > 0) {
+        for (let j= 0; j< tablero.getColumnas(); j++){
+            for (let i = 0; i < tablero.getFilas(); i++) {
+                if (tablero.casillero[j][i] != null){
+                    //tablero.casillero[j][i].setMovible(true); // seteamos movible para que las fichas puedan moverse hasta su pos original
+                  //  volverPosInicial(tablero.casillero[j][i]);
+                    tablero.casillero[j][i] = null;
+                }
             }
         }
     }
-
-    for (let i= 0; i< fichas.length; i++){
+    
+    if(fichas.length > 0) {
+        for (let i= 0; i< fichas.length; i++){
             fichas[i].setMovible(true);
             let posinix = fichas[i].getPosIniX();
             let posiniy = fichas[i].getPosIniY();
             fichas[i].setPosition(posinix,posiniy); //vuelve bruscamente de momento a la pos original
             fichas[i].draw();
+        }
     }
 
-    clearCanvas();
-    drawTablero();
-    drawAllFichas();
+    if(fichas.length > 0) {
+        clearCanvas();
+        drawTablero();
+        drawAllFichas();
+    }
+
+    for(let i = 0; i < posicionesFichas.length; i++) {
+        console.log(posicionesFichas[i].getRadio());
+    }
 
 }
 

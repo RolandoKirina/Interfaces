@@ -17,6 +17,14 @@ class Ficha {
         }
     }
 
+    getRadio(){
+        return this.radio;
+    }
+    
+    setRadio(valor){
+        this.radio = valor;
+    }
+
     getAncho(){
         return this.ancho;
     }
@@ -103,9 +111,9 @@ class Ficha {
 }
 
     drawStroke(){
+        this.context.beginPath();   
         this.context.strokeStyle = "#00FF00";
         this.context.lineWidth=1;
-        this.context.beginPath();        
         this.context.arc(this.posX, this.posY, this.radio, 0, 2 * Math.PI);
         this.context.stroke();
         this.context.closePath();
