@@ -51,55 +51,59 @@ canvas.addEventListener('mousemove',mouseMove);
 function cargarJuego(){
     
     btn4enlinea.addEventListener('click', function (){
+        
         reset();
-        crearXenLinea(col,fila,cantLinea,radioFicha,decrementacionYFichaTab,aumentoXFicha,
-            decrementacionfichasCostados,numerofichas,anchoFicha);
+        crearXenLinea(7,6,4,28,70,110,
+            20,21,60);
             clearCanvas();
             drawTablero();
             rellenarTablero();
             crearPosicionesFicha();
-            drawAllFichas();
-       
+            crearTodasFichas();
+            console.log(fichas.length);
     } );
     
     btn5enlinea.addEventListener('click', function(){
+        
         reset();
-        crearXenLinea(7,8,5,25,55,110,15,28,54);
+        crearXenLinea(9,7,5,25,62,88,15,28,55);
         clearCanvas();
         drawTablero();
         rellenarTablero();
         crearPosicionesFicha();
         crearTodasFichas();
-   
+        console.log(fichas.length);
     });
     
     btn6enlinea.addEventListener('click', function (){
         reset();
-        crearXenLinea(8,9,6,22,49,98,12,36,45);
+        crearXenLinea(11,9,6,18,50,73,12,36,37);
         clearCanvas();
         drawTablero();
         rellenarTablero();
         crearPosicionesFicha();
         crearTodasFichas();
-        drawAllFichas();
-     
+        console.log(fichas.length);
     });
     
     btn7enlinea.addEventListener('click', function (){
         reset();
-        crearXenLinea(9,10,7,16,45,88,9.5,45,35);
+        crearXenLinea(13,10,7,16,45.2,62.2,9.5,45,33.2);
         clearCanvas();
         drawTablero();
         rellenarTablero();
         crearPosicionesFicha();
         crearTodasFichas();
- 
+        console.log(fichas.length);
     });
 }
 
 
+
 function crearXenLinea(col,fila,cant,radio,decrementacionYTab,aumentoX,decrementacionCostados,nrofichas,ancho){
 
+    fichas = []; //resetea la cantidad de fichas al cambiar entre modos de juego
+    posicionesFichas = []; //resetea la cantidad de posiciones al cambiar entre modos de juego
     tablero = new Tablero(fila,col);
     cantLinea = cant; // cambia
     radioFicha = radio;
@@ -108,10 +112,8 @@ function crearXenLinea(col,fila,cant,radio,decrementacionYTab,aumentoX,decrement
     decrementacionfichasCostados = decrementacionCostados;
     numerofichas = nrofichas;
     anchoFicha = ancho;
+    
 }
-
-
-
 
 
 function drawTablero(){
@@ -169,7 +171,7 @@ function crearFicha(posX, posY, radio, fill, decrementacion, aumentox, arr,jugad
 function drawAllFichas(){
     clearCanvas();
     drawTablero();
-
+   
     for (let j = 0; j < tablero.getColumnas(); j++){ //mejorar 
         for (let i = 0; i < tablero.getFilas();i++){
             fichastablero[j][i].setAncho(anchoFicha);
@@ -190,6 +192,7 @@ function drawAllFichas(){
 }
 
 function crearTodasFichas(){
+    fichas = [];
     let decrementacion = 0;
     for (let i = 0; i < numerofichas; i++){
         decrementacion = decrementacion - decrementacionfichasCostados;
@@ -259,7 +262,7 @@ function mouseUp(){
         hizoXenLinea(col,fila)
     }   
     else if (lastClicked.getMovible()){
-        console.log(posicionesFichas[0].getRadio());
+        //console.log(posicionesFichas[0].getRadio());
         volverPosInicial(lastClicked);
     }
     }
@@ -533,7 +536,8 @@ function reset() {
     }
 
     for(let i = 0; i < posicionesFichas.length; i++) {
-        console.log(posicionesFichas[i].getRadio());
+        //console.log(posicionesFichas[i].getRadio());
+        //posicionesFichas[i].setRadio(radioFicha);
     }
 
 }

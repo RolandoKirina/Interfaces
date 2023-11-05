@@ -20,7 +20,7 @@ class Ficha {
     getRadio(){
         return this.radio;
     }
-    
+
     setRadio(valor){
         this.radio = valor;
     }
@@ -77,6 +77,12 @@ class Ficha {
     setPosX(nueva){
         this.posX = nueva;
     }  
+
+    clear() {
+        // Borra la ficha dibujando un rectángulo del color del fondo
+        context.fillStyle = "#00203E"; // El color del fondo
+        context.fillRect(this.posX - this.radio, this.posY - this.radio, this.radio * 2, this.radio * 2);
+    }
 
     getPosicion(){
         return {
