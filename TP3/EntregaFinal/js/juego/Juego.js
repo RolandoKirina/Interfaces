@@ -32,23 +32,73 @@ let decrementacionfichasCostados = 20;
 let numerofichas = 21;
 let anchoFicha = 60;
 
-//elegir fichas
+//Seccion elegir fichas
 
-let jugador1 = "jugador 1"; //el nombre del jugador no cambia, solo cambia la ruta de la ficha
-let jugador2 = "jugador 2"; //el nombre del jugador no cambia, solo cambia la ruta de la ficha
+const jugador1 = "jugador 1"; //el nombre del jugador no cambia, solo cambia la ruta de la ficha
+const jugador2 = "jugador 2"; //el nombre del jugador no cambia, solo cambia la ruta de la ficha
+
+let contadorPersonaje = 0;
+const topeContadorPersonaje = 2;
+let primerRuta;
+
+let primerValor = null;
+let segundoValor = null;
+
+let imagenesficha = document.querySelectorAll("#imgFicha");
+let elegirpersonajes = document.querySelector("#elegirpersonajes");
+
+let rutajug1 = "imgs/fichas/men.png" ;
+let rutajug2= "imgs/fichas/CirculoAlien1.png";
 
 
+function seleccionarPersonajes(){
+    imagenesficha.forEach(img => {
+        img.addEventListener("click", function() {
+            if (primerValor === null) {
+                primerValor = img.getAttribute("alt");
+                rutajug1 = img.getAttribute("src"); 
+                console.log(primerValor);              
+            } 
+            else {
+                if (primerValor != null & segundoValor == null){
+                    segundoValor = img.getAttribute("alt");
+                    rutajug2 = img.getAttribute("src");
+                    console.log(segundoValor);
+                    // si se seleccionaron ambos,eliminamos los event listener
+                    imagenesficha.forEach(img => img.removeEventListener("click", seleccionarPersonajes));
+                 //   setearJugadores(rutajug1, rutajug2);
+                }
+                }
+            }
+        );
+    });
+    }
 
-
-
+    function setearJugadores(rutajug1,rutajug2){
+        alert("hola")
+        for (let i = 0; i < fichas.length; i++){
+            if (i < fichas.length/2){
+                console.log("jug 1 " + rutajug1);
+                ficha[i].setFill(rutajug1);
+            }
+            else {
+                console.log("jug 2" + rutajug2);
+                ficha[i].setFill(rutajug2);
+            }
+        }   
+    }
 
 canvas.addEventListener('mousedown', mousedown);
+document.addEventListener("DOMContentLoaded", seleccionarPersonajes);
 document.addEventListener("DOMContentLoaded",cargarJuego);
 document.addEventListener("DOMContentLoaded",drawTablero);
 document.addEventListener("DOMContentLoaded", rellenarTablero);
 document.addEventListener("DOMContentLoaded", crearPosicionesFicha);
 document.addEventListener("DOMContentLoaded",crearTodasFichas);
+
+//timer
 //document.addEventListener("DOMContentLoaded", timer);
+
 canvas.addEventListener('mouseup', mouseUp);
 canvas.addEventListener('mousemove',mouseMove); 
 
@@ -202,9 +252,10 @@ function crearTodasFichas(){
     let decrementacion = 0;
     for (let i = 0; i < numerofichas; i++){
         decrementacion = decrementacion - decrementacionfichasCostados;
-        crearFicha(70,50,radioFicha,"imgs/fichas/CirculoAlien.png",decrementacion,0,fichas,jugador1,true,anchoFicha);
-        crearFicha(1020,50,radioFicha,"imgs/fichas/men.png",decrementacion,0,fichas,jugador2,true,anchoFicha);  
+        crearFicha(70,50,radioFicha,rutajug1,decrementacion,0,fichas,jugador1,true,anchoFicha);
+        crearFicha(1020,50,radioFicha,rutajug2,decrementacion,0,fichas,jugador2,true,anchoFicha);  
     }   
+    
 }
 
 
