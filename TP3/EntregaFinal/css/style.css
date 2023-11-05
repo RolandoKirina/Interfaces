@@ -2622,3 +2622,49 @@ button {
 .resetButton img {
     margin-right: 0.5em;
 }
+.mensaje {
+    margin-top: 10em;
+    background-color: var(--prim-sombra3);
+    width: 30em;
+    height: 20em;
+    border-radius: 8px;
+    position:absolute;
+    top:5em;
+    right: 27em;
+    box-shadow: 1px 0px 5px var(--prim-sombra3);
+}
+.mensaje p {
+    text-align: center;
+    font-size: 24px;
+}
+.mensaje div {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 4em;
+}
+.mensajediv {
+    padding-top: 2em;
+}
+.btn-danger {
+    display: flex;
+    width: 9em;
+    height: 2.30rem;
+    justify-content: center;
+    align-items: center;
+    border: solid 3px var(--error);
+    border-radius: 6px;
+    color: var(--error);
+    background-color: var(--prim-sombra3);
+}
+
+.btn-sucess {
+    display: flex;
+    width: 9em;
+    height: 2.30rem;
+    justify-content: center;
+    align-items: center;
+    border: solid 3px var(--acento-luz);
+    border-radius: 6px;
+    color: var(--acento-luz);
+    background-color: var(--prim-sombra3);
+}

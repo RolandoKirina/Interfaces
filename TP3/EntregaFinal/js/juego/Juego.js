@@ -8,6 +8,16 @@ let btn5enlinea = document.getElementById("5enlinea");
 let btn6enlinea = document.getElementById("6enlinea");
 let btn7enlinea = document.getElementById("7enlinea");
 
+
+let btnReset = document.querySelector("#reset");
+btnReset.addEventListener('click', mostrarMensajeReset);
+
+let segundos = 0;
+let minutos = 0;
+let stop = false; //sirve para frenar el timer cuando esta el mensaje de reinicio.
+let ultimominuto;
+let ultimosegundo;
+
 let canvasWidth = canvas.width;
 let canvasHeight = canvas.height;
 let mouseDown = false;
@@ -80,7 +90,6 @@ document.addEventListener("DOMContentLoaded",drawTablero);
 document.addEventListener("DOMContentLoaded", rellenarTablero);
 document.addEventListener("DOMContentLoaded", crearPosicionesFicha);
 document.addEventListener("DOMContentLoaded",crearTodasFichas);
-document.addEventListener("DOMContentLoaded", timer);
 
 canvas.addEventListener('mouseup', mouseUp);
 canvas.addEventListener('mousemove',mouseMove); 
@@ -91,6 +100,7 @@ function cargarJuego(){
     
     btn4enlinea.addEventListener('click', function (){
         reset();
+        timer();
         crearXenLinea(7,6,4,28,70,110,
             20,21,60);
             clearCanvas();
@@ -98,11 +108,13 @@ function cargarJuego(){
             rellenarTablero();
             crearPosicionesFicha();
             crearTodasFichas();
+
             console.log(fichas.length);
     } );
     
     btn5enlinea.addEventListener('click', function(){
         reset();
+        timer();
         crearXenLinea(9,7,5,25,62,88,15,28,55);
         clearCanvas();
         drawTablero();
@@ -114,6 +126,7 @@ function cargarJuego(){
     
     btn6enlinea.addEventListener('click', function (){
         reset();
+        timer();
         crearXenLinea(11,9,6,18,50,73,12,36,37);
         clearCanvas();
         drawTablero();
@@ -125,6 +138,7 @@ function cargarJuego(){
     
     btn7enlinea.addEventListener('click', function (){
         reset();
+        timer();
         crearXenLinea(13,10,7,16,45.2,62.2,9.5,45,33.2);
         clearCanvas();
         drawTablero();
@@ -317,14 +331,23 @@ function hizoXenLinea(col,fila){
     switch(true) {
         case hizoXenLineaHorizontal(col,fila,contador,contador2,jugador): 
             alert("gano en horizontal el"+lastClicked.getNombreJugador());
+            minutos = 0;
+            segundos = 0;
+            stop = true;
             reset();
             break;
         case hizoXenLineaVertical(col,fila,contador,jugador):
             alert("gano en vertical el "+lastClicked.getNombreJugador());
+            minutos = 0;
+            segundos = 0;
+            stop = true;
             reset();
             break;
         case hizoXenLineaDiagonal(col,fila,contador,contador2,contador3,contador4,jugador):
             alert("gano en diagonal el "+lastClicked.getNombreJugador());
+            minutos = 0;
+            segundos = 0;
+            stop = true;
             reset();
             break;
         default:
@@ -535,48 +558,9 @@ function hizoXenLineaDiagonal(col,fila,contador,contador2,contador3, contador4, 
         return true;
     }
 
-
     return false;
 
 }
-
-
-function reset() {
-
-    if(tablero.getColumnas() > 0 && tablero.getFilas() > 0) {
-        for (let j= 0; j< tablero.getColumnas(); j++){
-            for (let i = 0; i < tablero.getFilas(); i++) {
-                if (tablero.casillero[j][i] != null){
-                    //tablero.casillero[j][i].setMovible(true); // seteamos movible para que las fichas puedan moverse hasta su pos original
-                  //  volverPosInicial(tablero.casillero[j][i]);
-                    tablero.casillero[j][i] = null;
-                }
-            }
-        }
-    }
-    
-    if(fichas.length > 0) {
-        for (let i= 0; i< fichas.length; i++){
-            fichas[i].setMovible(true);
-            let posinix = fichas[i].getPosIniX();
-            let posiniy = fichas[i].getPosIniY();
-            fichas[i].setPosition(posinix,posiniy); //vuelve bruscamente de momento a la pos original
-            fichas[i].draw();
-        }
-    }
-
-    if(fichas.length > 0) {
-        clearCanvas();
-        drawTablero();
-        drawAllFichas();
-    }
-
-    primerValor = null;
-    segundoValor = null;
-
-}
-
-
 
 
 
@@ -746,33 +730,92 @@ function crearFichaStroke(posX, posY, radio, fill, decrementacion, aumentox, arr
     arr.push(ficha);
     ficha.drawStroke();
 }
-
-let segundos = 0;
-let minutos = 0;
 let timerDom = document.querySelector("#timer");
 timerDom.innerHTML = " ";
 let mensaje = " ";
 let cantMinutosMaximo = 2;
 let intervalID;
+
+let btnaceptarReinicio = document.querySelector("#reiniciar");
+let btnContinuarJugando = document.querySelector("#continuar");
+let mensajeReinicio = document.querySelector("#mensajeReinicio");
+
+btnaceptarReinicio.addEventListener('click', function (){
+    mensajeReinicio.classList.add("hidden");
+    segundos =0; //para que cuando se reinicie tambien se reinicie el timer
+    minutos = 0;
+    stop = false;
+    reset();
+});
+
+btnContinuarJugando.addEventListener('click', function (){
+    mensajeReinicio.classList.add("hidden");
+    stop = false;
+})
+function mostrarMensajeReset(){
+    stop = true;
+    mensajeReinicio.classList.remove("hidden");
+    mensajeReinicio.classList.add("mensaje");
+}
+
+
+function reset() {
+    stop = false;
+    // timer(); // se llama al timer cuando inicia la partida
+
+    if(tablero.getColumnas() > 0 && tablero.getFilas() > 0) {
+        for (let j= 0; j< tablero.getColumnas(); j++){
+            for (let i = 0; i < tablero.getFilas(); i++) {
+                if (tablero.casillero[j][i] != null){
+                    tablero.casillero[j][i] = null; //seteamos null para que el tablero se vuelva vacio.
+                }
+            }
+        }
+    }
+    
+    if(fichas.length > 0) {
+        for (let i= 0; i< fichas.length; i++){
+            fichas[i].setMovible(true);
+            let posinix = fichas[i].getPosIniX();
+            let posiniy = fichas[i].getPosIniY();
+            fichas[i].setPosition(posinix,posiniy); //vuelve bruscamente de momento a la pos original
+            fichas[i].draw();
+        }
+    }
+
+    if(fichas.length > 0) {
+        clearCanvas();
+        drawTablero();
+        drawAllFichas();
+    }
+
+    primerValor = null;
+    segundoValor = null;
+
+}
+let mensajestop;
 function timer() {
-    // Usar setInterval en lugar de setTimeout para ejecutar una función cada segundo
-    intervalID = setInterval(function() {
-        segundos++; // Incrementar el contador de segundos
-        if (segundos < 10 && minutos < cantMinutosMaximo){
-            mensaje =  0 + "" + minutos + ":" + 0 + segundos;
-            timerDom.innerHTML = mensaje;
-        }
-        if (segundos >= 10 && minutos < cantMinutosMaximo){
-            mensaje = 0 + ""+ minutos + ":" + segundos;
-            timerDom.innerHTML = mensaje;
-        }
-        if (segundos == 59 && minutos < cantMinutosMaximo) {
-            minutos++;
-            segundos = 0;
-        }
-        if (minutos == cantMinutosMaximo && segundos == 0){
-            clearInterval(intervalID);
-            alert("empate");
-        }
-    }, 1000);
+        // Usar setInterval en lugar de setTimeout para ejecutar una función cada segundo
+        intervalID =  setInterval(function(){
+            if (!stop){
+                segundos++; // Incrementar el contador de segundos
+            }
+            if (segundos < 10 && minutos < cantMinutosMaximo && !stop){
+                mensaje =  0 + "" + minutos + ":" + 0 + segundos;
+                timerDom.innerHTML = mensaje;
+                
+            }
+            if (segundos >= 10 && minutos < cantMinutosMaximo && !stop){
+                mensaje = 0 + ""+ minutos + ":" + segundos;
+                timerDom.innerHTML = mensaje;
+            }
+            if (segundos == 59 && minutos < cantMinutosMaximo && !stop) {
+                minutos++;
+                segundos = 0;
+            }
+            if (minutos == cantMinutosMaximo && segundos == 0 && !stop){
+                clearInterval(intervalID);
+                alert("empate");
+            }
+        }, 1000);
 }
