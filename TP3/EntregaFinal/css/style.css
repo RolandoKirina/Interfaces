@@ -2583,9 +2583,42 @@ button {
     margin: 0 2em; /* Añade espacio entre las imágenes */
 }
 
+.timer {
+    margin-top: 8em;
+    height: 2.40em;
+    background-color: var(--prim-sombra3);
+    width: 16em;
+    text-align: center;
+    justify-content: space-evenly;
+    align-items: center;
+    display: flex;
+    border-radius: 6px;
+    position: absolute;
+    top: -3.4em;
+    right: 32em;
+    box-shadow: 1px 0px 5px var(--prim-sombra3);
+}
+.timer p {
+    font-size: 28px;
+    color: var(--blanco);
+    display: inline-block; /*se ajusta al contenido del parrafo*/
+    width: 4em;
+    height: 2.30rem;
+    background-color: var(--prim-luz3);
+    border: solid 3px var(--prim-sombra3);
+    border-radius: 6px;
+}
 
-
-
-
-
-
+.resetButton {
+    display: flex;
+    align-items: center;
+    width: 9em;
+    height: 2.30rem;
+    background-color: var(--prim-luz3);
+    color: var(--blanco);
+    border: solid 3px var(--prim-sombra3);
+    border-radius: 6px;
+}
+.resetButton img {
+    margin-right: 0.5em;
+}

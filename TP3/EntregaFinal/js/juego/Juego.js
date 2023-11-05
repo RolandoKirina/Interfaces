@@ -34,8 +34,8 @@ let anchoFicha = 60;
 
 //Seccion elegir fichas
 
-const jugador1 = "jugador 1"; //el nombre del jugador no cambia, solo cambia la ruta de la ficha
-const jugador2 = "jugador 2"; //el nombre del jugador no cambia, solo cambia la ruta de la ficha
+const jugador1 = "Jugador 1"; //el nombre del jugador no cambia, solo cambia la ruta de la ficha
+const jugador2 = "Jugador 2"; //el nombre del jugador no cambia, solo cambia la ruta de la ficha
 
 let contadorPersonaje = 0;
 const topeContadorPersonaje = 2;
@@ -65,27 +65,12 @@ function seleccionarPersonajes(){
                         console.log(segundoValor);
                         // si se seleccionaron ambos,eliminamos los event listener
                         imagenesficha.forEach(img => img.removeEventListener("click", seleccionarPersonajes));
-                    //   setearJugadores(rutajug1, rutajug2);
+                   
                 }
                 }
             }
         );
     });
-    }
-
-    function setearJugadores(rutajug1,rutajug2){
-        alert("hola")
-        for (let i = 0; i < fichas.length; i++){
-            if (i < fichas.length/2){
-                console.log("jug 1 " + rutajug1);
-                ficha[i].setFill(rutajug1);
-            }
-            else {
-                console.log("jug 2" + rutajug2);
-                ficha[i].setFill(rutajug2);
-            }
-        }   
-
     }
 
 canvas.addEventListener('mousedown', mousedown);
@@ -95,9 +80,7 @@ document.addEventListener("DOMContentLoaded",drawTablero);
 document.addEventListener("DOMContentLoaded", rellenarTablero);
 document.addEventListener("DOMContentLoaded", crearPosicionesFicha);
 document.addEventListener("DOMContentLoaded",crearTodasFichas);
-
-//timer
-//document.addEventListener("DOMContentLoaded", timer);
+document.addEventListener("DOMContentLoaded", timer);
 
 canvas.addEventListener('mouseup', mouseUp);
 canvas.addEventListener('mousemove',mouseMove); 
@@ -333,22 +316,22 @@ function hizoXenLinea(col,fila){
     let jugador = lastClicked.getNombreJugador();
     switch(true) {
         case hizoXenLineaHorizontal(col,fila,contador,contador2,jugador): 
-            alert("gano en horizontal el jugador "+lastClicked.getNombreJugador());
+            alert("gano en horizontal el"+lastClicked.getNombreJugador());
             reset();
             break;
         case hizoXenLineaVertical(col,fila,contador,jugador):
-            alert("gano en vertical el jugador "+lastClicked.getNombreJugador());
+            alert("gano en vertical el "+lastClicked.getNombreJugador());
             reset();
             break;
         case hizoXenLineaDiagonal(col,fila,contador,contador2,contador3,contador4,jugador):
-            alert("gano en diagonal el jugador "+lastClicked.getNombreJugador());
+            alert("gano en diagonal el "+lastClicked.getNombreJugador());
             reset();
             break;
         default:
-            // contador = 0; //se resetea, ej se pusieron 2 fichas nada mas, por lo que no contó 4 a su alrededor
-            // contador2 = 0;
-            // contador3 = 0;
-            // contador4 = 0;
+            contador = 0; //se resetea, ej se pusieron 2 fichas nada mas, por lo que no contó 4 a su alrededor
+            contador2 = 0;
+            contador3 = 0;
+            contador4 = 0;
             break;
     }
 }
@@ -766,21 +749,30 @@ function crearFichaStroke(posX, posY, radio, fill, decrementacion, aumentox, arr
 
 let segundos = 0;
 let minutos = 0;
+let timerDom = document.querySelector("#timer");
+timerDom.innerHTML = " ";
+let mensaje = " ";
+let cantMinutosMaximo = 2;
+let intervalID;
 function timer() {
     // Usar setInterval en lugar de setTimeout para ejecutar una función cada segundo
-    setInterval(function() {
+    intervalID = setInterval(function() {
         segundos++; // Incrementar el contador de segundos
-        if (segundos < 10){
-            console.log("minutos " + minutos + "segundos " + 0 + segundos);
+        if (segundos < 10 && minutos < cantMinutosMaximo){
+            mensaje =  0 + "" + minutos + ":" + 0 + segundos;
+            timerDom.innerHTML = mensaje;
         }
-        if (segundos >= 10){
-            console.log("minutos " + minutos + "segundos " +  segundos);
+        if (segundos >= 10 && minutos < cantMinutosMaximo){
+            mensaje = 0 + ""+ minutos + ":" + segundos;
+            timerDom.innerHTML = mensaje;
         }
-        if (segundos == 60) {
+        if (segundos == 59 && minutos < cantMinutosMaximo) {
             minutos++;
             segundos = 0;
-            alert("1 min");
-            // reset();
+        }
+        if (minutos == cantMinutosMaximo && segundos == 0){
+            clearInterval(intervalID);
+            alert("empate");
         }
     }, 1000);
 }
