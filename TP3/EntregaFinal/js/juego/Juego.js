@@ -9,6 +9,8 @@ let btn6enlinea = document.getElementById("6enlinea");
 let btn7enlinea = document.getElementById("7enlinea");
 
 
+
+
 let btnReset = document.querySelector("#reset");
 btnReset.addEventListener('click', mostrarMensajeReset);
 
@@ -58,6 +60,39 @@ let elegirpersonajes = document.querySelector("#elegirpersonajes");
 
 let rutajug1 = "imgs/fichas/men.png";  //imagenes por defecto
 let rutajug2= "imgs/fichas/CirculoAlien1.png";  //imagenes por defecto
+
+//imagen de tablero
+
+let rutaTablero = "imgs/MIBfondo/imagenTablero.png";
+let colorCanvas = "#805130";
+let imagenTablero = new Image();
+imagenTablero.src = rutaTablero;
+
+imagenTablero.onload = () => {
+    drawTablero();
+}
+
+function drawTablero(){
+
+    context.beginPath();
+    context.rect(150, 60, widthTablero, heightTablero);   
+    // ancho y alto de la imagen
+    let anchoimagen = imagenTablero.width;
+    let altoimagen = imagenTablero.height;
+
+    //para que no se rompa la imagen
+    let aspecto = anchoimagen / altoimagen;
+
+    let ancho = widthTablero; // Cambia el ancho según tus necesidades
+    let altura = heightTablero;
+
+    //dibuja
+   context.drawImage(imagenTablero, 550 - ancho / 2, 280 - altura / 2, ancho, altura);
+
+
+
+
+}
 
 
 function seleccionarPersonajes(){
