@@ -2,7 +2,17 @@
 
 let canvas = document.querySelector("#canvas");
 let context = canvas.getContext('2d');
+canvas.addEventListener('mousedown', mousedown);
+document.addEventListener("DOMContentLoaded", clearCanvas);
+document.addEventListener("DOMContentLoaded", seleccionarPersonajes);
+document.addEventListener("DOMContentLoaded",cargarJuego);
+document.addEventListener("DOMContentLoaded",drawTablero);
+document.addEventListener("DOMContentLoaded", rellenarTablero);
+document.addEventListener("DOMContentLoaded", crearPosicionesFicha);
+document.addEventListener("DOMContentLoaded",crearTodasFichas);
 
+canvas.addEventListener('mouseup', mouseUp);
+canvas.addEventListener('mousemove',mouseMove); 
 let btn4enlinea = document.getElementById("4enlinea");
 let btn5enlinea = document.getElementById("5enlinea");
 let btn6enlinea = document.getElementById("6enlinea");
@@ -60,7 +70,6 @@ let elegirpersonajes = document.querySelector("#elegirpersonajes");
 
 let rutajug1 = "imgs/fichas/men.png";  //imagenes por defecto
 let rutajug2= "imgs/fichas/CirculoAlien1.png";  //imagenes por defecto
-
 //imagen de tablero
 
 let rutaTablero = "imgs/MIBfondo/imagenTablero.png";
@@ -88,11 +97,8 @@ function drawTablero(){
 
     //dibuja
    context.drawImage(imagenTablero, 550 - ancho / 2, 280 - altura / 2, ancho, altura);
-
-
-
-
 }
+
 
 
 function seleccionarPersonajes(){
@@ -118,16 +124,7 @@ function seleccionarPersonajes(){
     });
     }
 
-canvas.addEventListener('mousedown', mousedown);
-document.addEventListener("DOMContentLoaded", seleccionarPersonajes);
-document.addEventListener("DOMContentLoaded",cargarJuego);
-document.addEventListener("DOMContentLoaded",drawTablero);
-document.addEventListener("DOMContentLoaded", rellenarTablero);
-document.addEventListener("DOMContentLoaded", crearPosicionesFicha);
-document.addEventListener("DOMContentLoaded",crearTodasFichas);
 
-canvas.addEventListener('mouseup', mouseUp);
-canvas.addEventListener('mousemove',mouseMove); 
 
 
 
@@ -199,24 +196,6 @@ function crearXenLinea(col,fila,cant,radio,decrementacionYTab,aumentoX,decrement
     numerofichas = nrofichas;
     anchoFicha = ancho;
     
-}
-
-
-function drawTablero(){
-
-    context.fillStyle = "#00182F";
-    context.beginPath(); 
-    context.rect(150, 60, widthTablero, heightTablero); 
-    context.strokeStyle="#000D1A";
-    context.lineWidth = "2";
-    context.stroke();
-    context.shadowColor = 'rgba(0, 0, 0, 0.5)'; // Color de la sombra (negro con transparencia)
-    context.shadowBlur = 10; // Difuminado de la sombra
-    context.shadowOffsetX = 5; // Desplazamiento horizontal de la sombra
-    context.shadowOffsetY = 5; // Desplamiento en y
-    context.fill(); 
-    context.closePath();
-
 }
 
 function rellenarTablero(){
@@ -746,7 +725,7 @@ function encontrarFila(columna) {
 
 
 function clearCanvas(){
-    context.fillStyle = "#00203E";
+    context.fillStyle = "#C79A6B";
     context.fillRect(0,0,canvasWidth,canvasHeight);
 }
 
