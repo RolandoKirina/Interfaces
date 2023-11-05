@@ -237,19 +237,6 @@ function mouseMove(e){
 }
 
 
-function volverPosInicial(nueva){ //en caso de posicion incorrecta, vuelve a la pos original la ficha
-    //alert(nueva.getMovible())
-    if (nueva.getMovible()){ // Para que si esta en el tablero no vuelva a la posicion original
-        let posinix = nueva.getPosIniX();
-        let posiniy = nueva.getPosIniY();
-        nueva.setPosition(posinix,posiniy); //vuelve bruscamente de momento a la pos original
-        nueva.draw();
-        clearCanvas();
-        drawTablero();
-        drawAllFichas();
-        mouseDown = false;
-    }
-} 
 
 
 function mouseUp(){
@@ -516,21 +503,46 @@ function reset() {
     for (let j= 0; j< tablero.getColumnas(); j++){
         for (let i = 0; i < tablero.getFilas(); i++) {
             if (tablero.casillero[j][i] != null){
-                tablero.casillero[j][i].setMovible(true); // seteamos movible para que las fichas puedan moverse hasta su pos original
-                volverPosInicial(tablero.casillero[j][i]);
+                //tablero.casillero[j][i].setMovible(true); // seteamos movible para que las fichas puedan moverse hasta su pos original
+              //  volverPosInicial(tablero.casillero[j][i]);
                 tablero.casillero[j][i] = null;
             }
         }
     }
 
-    // for (let i= 0; i< fichas.length; i++){
-    //         fichas[i].setMovible(true);
-    //         console.log(fichas[i].getMovible());
-    //         volverPosInicial(fichas[i]);
+    for (let i= 0; i< fichas.length; i++){
+            fichas[i].setMovible(true);
+            let posinix = fichas[i].getPosIniX();
+            let posiniy = fichas[i].getPosIniY();
+            fichas[i].setPosition(posinix,posiniy); //vuelve bruscamente de momento a la pos original
+            fichas[i].draw();
+    }
 
-    // }
+    clearCanvas();
+    drawTablero();
+    drawAllFichas();
 
 }
+
+
+
+
+
+function volverPosInicial(nueva){ //en caso de posicion incorrecta, vuelve a la pos original la ficha
+    //alert(nueva.getMovible())
+    if (nueva.getMovible()){ // Para que si esta en el tablero no vuelva a la posicion original
+        let posinix = nueva.getPosIniX();
+        let posiniy = nueva.getPosIniY();
+        nueva.setPosition(posinix,posiniy); //vuelve bruscamente de momento a la pos original
+        nueva.draw();
+        clearCanvas();
+        drawTablero();
+        drawAllFichas();
+        mouseDown = false;
+    }
+    console.log(lastClicked.getMovible());
+} 
+
 
 
 function verificarTurnos(){
