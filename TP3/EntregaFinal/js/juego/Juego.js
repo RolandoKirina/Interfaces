@@ -39,16 +39,15 @@ const jugador2 = "jugador 2"; //el nombre del jugador no cambia, solo cambia la 
 
 let contadorPersonaje = 0;
 const topeContadorPersonaje = 2;
-let primerRuta;
 
-let primerValor = null;
+let primerValor = null; //variables de comparacion para asignar rutas de imagenes
 let segundoValor = null;
 
 let imagenesficha = document.querySelectorAll("#imgFicha");
 let elegirpersonajes = document.querySelector("#elegirpersonajes");
 
-let rutajug1 = "imgs/fichas/men.png" ;
-let rutajug2= "imgs/fichas/CirculoAlien1.png";
+let rutajug1 = "imgs/fichas/men.png";  //imagenes por defecto
+let rutajug2= "imgs/fichas/CirculoAlien1.png";  //imagenes por defecto
 
 
 function seleccionarPersonajes(){
@@ -61,12 +60,12 @@ function seleccionarPersonajes(){
             } 
             else {
                 if (primerValor != null & segundoValor == null){
-                    segundoValor = img.getAttribute("alt");
-                    rutajug2 = img.getAttribute("src");
-                    console.log(segundoValor);
-                    // si se seleccionaron ambos,eliminamos los event listener
-                    imagenesficha.forEach(img => img.removeEventListener("click", seleccionarPersonajes));
-                 //   setearJugadores(rutajug1, rutajug2);
+                        segundoValor = img.getAttribute("alt");
+                        rutajug2 = img.getAttribute("src");
+                        console.log(segundoValor);
+                        // si se seleccionaron ambos,eliminamos los event listener
+                        imagenesficha.forEach(img => img.removeEventListener("click", seleccionarPersonajes));
+                    //   setearJugadores(rutajug1, rutajug2);
                 }
                 }
             }
