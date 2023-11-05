@@ -32,10 +32,16 @@ let decrementacionfichasCostados = 20;
 let numerofichas = 21;
 let anchoFicha = 60;
 
+//elegir fichas
+
+let jugador1 = "jugador 1"; //el nombre del jugador no cambia, solo cambia la ruta de la ficha
+let jugador2 = "jugador 2"; //el nombre del jugador no cambia, solo cambia la ruta de la ficha
 
 
-let jugador1 = "alien";
-let jugador2 = "hombre de negro";
+
+
+
+
 canvas.addEventListener('mousedown', mousedown);
 document.addEventListener("DOMContentLoaded",cargarJuego);
 document.addEventListener("DOMContentLoaded",drawTablero);
