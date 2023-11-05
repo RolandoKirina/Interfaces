@@ -86,6 +86,7 @@ function seleccionarPersonajes(){
                 ficha[i].setFill(rutajug2);
             }
         }   
+
     }
 
 canvas.addEventListener('mousedown', mousedown);
@@ -107,7 +108,6 @@ canvas.addEventListener('mousemove',mouseMove);
 function cargarJuego(){
     
     btn4enlinea.addEventListener('click', function (){
-        
         reset();
         crearXenLinea(7,6,4,28,70,110,
             20,21,60);
@@ -120,7 +120,6 @@ function cargarJuego(){
     } );
     
     btn5enlinea.addEventListener('click', function(){
-        
         reset();
         crearXenLinea(9,7,5,25,62,88,15,28,55);
         clearCanvas();
@@ -562,8 +561,6 @@ function hizoXenLineaDiagonal(col,fila,contador,contador2,contador3, contador4, 
 
 function reset() {
 
-    //console.log(tablero.getColumnas() + tablero.getFilas());
-    //console.log(fichas.length);
     if(tablero.getColumnas() > 0 && tablero.getFilas() > 0) {
         for (let j= 0; j< tablero.getColumnas(); j++){
             for (let i = 0; i < tablero.getFilas(); i++) {
@@ -592,10 +589,8 @@ function reset() {
         drawAllFichas();
     }
 
-    for(let i = 0; i < posicionesFichas.length; i++) {
-        //console.log(posicionesFichas[i].getRadio());
-        //posicionesFichas[i].setRadio(radioFicha);
-    }
+    primerValor = null;
+    segundoValor = null;
 
 }
 
