@@ -18,8 +18,9 @@ let btn5enlinea = document.getElementById("5enlinea");
 let btn6enlinea = document.getElementById("6enlinea");
 let btn7enlinea = document.getElementById("7enlinea");
 
+let modoJuego = document.querySelector("#modoJuegoElegir");
 
-
+let contadortimer = document.querySelector("#contadortimer");
 
 let btnReset = document.querySelector("#reset");
 btnReset.addEventListener('click', mostrarMensajeReset);
@@ -97,6 +98,7 @@ function drawTablero(){
 
 
 function seleccionarPersonajes(){
+   
     imagenesficha.forEach(img => {
         img.addEventListener("click", function() {
             if (primerValor === null) {
@@ -111,8 +113,15 @@ function seleccionarPersonajes(){
                         console.log(segundoValor);
                         // si se seleccionaron ambos,eliminamos los event listener
                         imagenesficha.forEach(img => img.removeEventListener("click", seleccionarPersonajes));
-                   
-                }
+                        elegirpersonajes.classList.remove("elegirpersonajes");
+                        elegirpersonajes.classList.add("hidden");
+
+                        contadortimer.classList.remove("hidden");
+                        contadortimer.classList.add("timer");
+                       
+
+
+                }   
                 }
             }
         );
@@ -188,6 +197,11 @@ function cargarJuego(){
 
 
 function crearXenLinea(col,fila,cant,radio,decrementacionYTab,aumentoX,decrementacionCostados,nrofichas,ancho){
+    
+    //mostrar primero menu elegir modo de juego al reiniciar partida
+    modoJuego.classList.remove("modosJuego");
+    modoJuego.classList.add("hidden");
+    elegirpersonajes.classList.add("elegirpersonajes");
 
     fichas = []; //resetea la cantidad de fichas al cambiar entre modos de juego
     posicionesFichas = []; //resetea la cantidad de posiciones al cambiar entre modos de juego
@@ -778,6 +792,17 @@ function mostrarMensajeReset(){
 
 
 function reset() {
+
+    //mostrar primero menu elegir modo de juego al reiniciar partida
+    elegirpersonajes.classList.remove("elegirpersonajes");
+    elegirpersonajes.classList.add("hidden");
+    modoJuego.classList.add("modosJuego");
+    modoJuego.classList.remove("hidden");
+    contadortimer.classList.remove("timer");
+    contadortimer.classList.add("hidden");
+    
+
+
     stop = false;
     minutos = 0;
     segundos = 0;
