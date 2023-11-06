@@ -161,7 +161,7 @@ function cargarJuego(){
         if(mensaje == " ") {
             timer();
         }
-        crearXenLinea(9,7,5,25,62,88,15,28,55);
+        crearXenLinea(8,7,5,25,62,100,15,28,60);
         clearCanvas();
         drawTablero();
         rellenarTablero();
@@ -175,7 +175,7 @@ function cargarJuego(){
         if(mensaje == " ") {
             timer();
         }
-        crearXenLinea(11,9,6,18,50,73,12,36,37);
+        crearXenLinea(9,8,6,18,55,88,12,36,55);
         clearCanvas();
         drawTablero();
         rellenarTablero();
@@ -189,7 +189,7 @@ function cargarJuego(){
         if(mensaje == " ") {
             timer();
         }
-        crearXenLinea(13,10,7,16,45.2,62.2,9.5,45,33.2);
+        crearXenLinea(10,9,7,20,49.5,80,9.5,45,42);
         clearCanvas();
         drawTablero();
         rellenarTablero();
