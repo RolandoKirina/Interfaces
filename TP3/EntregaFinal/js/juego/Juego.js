@@ -118,7 +118,9 @@ function seleccionarPersonajes(){
                        
                         contadortimer.classList.remove("hidden");
                         contadortimer.classList.add("timer");
-                        
+
+                        minutos = 0;
+                        segundos = 0;
                        
 
 
@@ -204,7 +206,7 @@ function crearXenLinea(col,fila,cant,radio,decrementacionYTab,aumentoX,decrement
     modoJuego.classList.add("hidden");
     elegirpersonajes.classList.add("elegirpersonajes");
     modoJuego.classList.remove("elegirpersonajes");
-    
+
     fichas = []; //resetea la cantidad de fichas al cambiar entre modos de juego
     posicionesFichas = []; //resetea la cantidad de posiciones al cambiar entre modos de juego
     tablero = new Tablero(fila,col);
