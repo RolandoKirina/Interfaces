@@ -24,11 +24,6 @@ let btn7enlinea = document.getElementById("7enlinea");
 let btnReset = document.querySelector("#reset");
 btnReset.addEventListener('click', mostrarMensajeReset);
 
-let segundos = 0;
-let minutos = 0;
-let stop = false; //sirve para frenar el timer cuando esta el mensaje de reinicio.
-let ultimominuto;
-let ultimosegundo;
 
 let canvasWidth = canvas.width;
 let canvasHeight = canvas.height;
@@ -775,6 +770,8 @@ function mostrarMensajeReset(){
 
 function reset() {
     stop = false;
+    minutos = 0;
+    segundos = 0;
     // timer(); // se llama al timer cuando inicia la partida
 
     if(tablero.getColumnas() > 0 && tablero.getFilas() > 0) {
@@ -807,6 +804,12 @@ function reset() {
     segundoValor = null;
 
 }
+
+
+
+let segundos = 0;
+let minutos = 0;
+let stop = false; //sirve para frenar el timer cuando esta el mensaje de reinicio.
 let mensajestop;
 function timer() {
         // Usar setInterval en lugar de setTimeout para ejecutar una función cada segundo
@@ -828,8 +831,13 @@ function timer() {
                 segundos = 0;
             }
             if (minutos == cantMinutosMaximo && segundos == 0 && !stop){
-                clearInterval(intervalID);
+                //clearInterval(intervalID);
+                stop = true;
                 alert("empate");
+                segundos =0; //para que cuando se reinicie tambien se reinicie el timer
+                minutos = 0;
+                reset();
+             
             }
         }, 1000);
 }
