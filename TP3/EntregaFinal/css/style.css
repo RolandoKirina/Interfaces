@@ -2663,14 +2663,9 @@ button {
     height: auto;
 }
 
-.modosJuego {
-    bottom: -6.85em;
-    height: 528px;
-    position: absolute;
-}
 
 .elegirpersonajes{
-    background-image: url('../imgs/MIBfondo/fondoeleg.png');
+    background-image: url('../imgs/MIBfondo/mibprueba.png');
     background-size: cover;
     background-repeat: no-repeat;
     width: 100%;
@@ -2679,8 +2674,26 @@ button {
     display: flex;
     flex-direction: column; 
     align-items: center; 
-
 }
+
+.tablerojuego{
+    background-image: url('../imgs/MIBfondo/mibprueba.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 32em;
+    margin-top:200px;
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+}
+
+.modosJuego {
+    bottom: -7em;
+    height: 528px;
+    position: absolute;
+}
+
 .elegirpersonajes div {
     display: flex; 
     justify-content: center; 
@@ -2703,7 +2716,7 @@ button {
 
 .fichasElegir {
     position: absolute;
-    bottom: -9em;
+    bottom: -6.85em;
     height: 528px;
 }
 .jugador {
@@ -2728,6 +2741,7 @@ button {
     align-items:center ;
 }
 .elegirtablerosimg{
+
     display: flex;
     align-items: center;
     justify-content:  center;
@@ -2741,5 +2755,17 @@ button {
 .h2 {
     font-size: larger;
     margin-bottom: 0;
+
+}
+.divbackground {
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(0, 13, 26, 0.3);  
+    height: 30em;
+    width: auto;
 }
 
+.resaltado{
+    color: white;
+    text-shadow: 1px 1px 2px var(--acento-luz), 0 0 1em var(--acento), 0 0 0.2em var(--prim-luz2);
+}

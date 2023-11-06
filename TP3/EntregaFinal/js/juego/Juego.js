@@ -68,8 +68,10 @@ let rutajug1 = "imgs/fichas/men.png";  //imagenes por defecto
 let rutajug2= "imgs/fichas/CirculoAlien1.png";  //imagenes por defecto
 //imagen de tablero
 
-let rutaTablero = "imgs/MIBfondo/imagenTablero.png";
-let colorCanvas = "#805130";
+let rutaTablero = "imgs/MIBfondo/mib.jpg";
+
+// let colorCanvas = "#805130";
+let colorCanvas = "#000911";
 let imagenTablero = new Image();
 imagenTablero.src = rutaTablero;
 
@@ -92,7 +94,7 @@ function drawTablero(){
     let altura = heightTablero;
 
     //dibuja
-   context.drawImage(imagenTablero, 550 - ancho / 2, 280 - altura / 2, ancho, altura);
+    context.drawImage(imagenTablero, 550 - ancho / 2, 280 - altura / 2, ancho, altura);
 }
 
 
@@ -116,10 +118,10 @@ function seleccionarPersonajes(){
                         elegirpersonajes.classList.remove("elegirpersonajes");
                         elegirpersonajes.classList.add("hidden");
                         modoJuego.classList.remove("hidden");
-                        modoJuego.classList.add("elegirpersonajes");
+                        modoJuego.classList.add("tablerojuego");
                         modoJuego.classList.add("modosJuego");
-                        contadortimer.classList.remove("hidden");
-                        contadortimer.classList.add("timer");
+                        // contadortimer.classList.remove("hidden");
+                        // contadortimer.classList.add("timer");
 
                         minutos = 0;
                         segundos = 0;
@@ -144,7 +146,8 @@ function cargarJuego(){
         if(mensaje == " ") {
             timer();
         }
-       
+        contadortimer.classList.remove("hidden");
+        contadortimer.classList.add("timer");
         crearXenLinea(7,6,4,28,70,110,
             20,21,60);
             clearCanvas();
@@ -152,8 +155,6 @@ function cargarJuego(){
             rellenarTablero();
             crearPosicionesFicha();
             crearTodasFichas();
-
-            console.log(fichas.length);
     } );
     
     btn5enlinea.addEventListener('click', function(){
@@ -161,13 +162,15 @@ function cargarJuego(){
         if(mensaje == " ") {
             timer();
         }
+        contadortimer.classList.remove("hidden");
+        contadortimer.classList.add("timer");
         crearXenLinea(8,7,5,25,62,100,15,28,60);
         clearCanvas();
         drawTablero();
         rellenarTablero();
         crearPosicionesFicha();
         crearTodasFichas();
-        console.log(fichas.length);
+
     });
     
     btn6enlinea.addEventListener('click', function (){
@@ -175,13 +178,15 @@ function cargarJuego(){
         if(mensaje == " ") {
             timer();
         }
+        contadortimer.classList.remove("hidden");
+        contadortimer.classList.add("timer");
         crearXenLinea(9,8,6,18,55,88,12,36,55);
         clearCanvas();
         drawTablero();
         rellenarTablero();
         crearPosicionesFicha();
         crearTodasFichas();
-        console.log(fichas.length);
+
     });
     
     btn7enlinea.addEventListener('click', function (){
@@ -189,13 +194,14 @@ function cargarJuego(){
         if(mensaje == " ") {
             timer();
         }
+        contadortimer.classList.remove("hidden");
+        contadortimer.classList.add("timer");
         crearXenLinea(10,9,7,20,49.5,80,9.5,45,42);
         clearCanvas();
         drawTablero();
         rellenarTablero();
         crearPosicionesFicha();
         crearTodasFichas();
-        console.log(fichas.length);
     });
 }
 
@@ -754,7 +760,9 @@ function encontrarFila(columna) {
 
 
 function clearCanvas(){
-    context.fillStyle = "#C79A6B";
+
+    // context.fillStyle = "#C79A6B";
+    context.fillStyle = "#000911";
     context.fillRect(0,0,canvasWidth,canvasHeight);
 }
 

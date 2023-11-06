@@ -118,7 +118,7 @@ class Ficha {
 
     drawStroke(){
         this.context.beginPath();   
-        this.context.strokeStyle = "#00FF00";
+        this.context.strokeStyle = "#0A5499";
         this.context.lineWidth=1;
         this.context.arc(this.posX, this.posY, this.radio, 0, 2 * Math.PI);
         this.context.stroke();
