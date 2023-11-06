@@ -107,7 +107,7 @@
                             <div class="juegoColocado">
                                 <canvas width="1090" height="525" id="canvas"></canvas>
                                 <div class="menusjuego">
-                                    <div class="timer">
+                                    <div class="hidden" id="contadortimer">
                                         <p id="timer">00:00</p>
                                         <button class="resetButton cuarto-hover-boton" id="reset"><img src="imgs/iconos/reset.png"> Reiniciar</button>
                                     </div>
@@ -120,7 +120,14 @@
                                         </div>
                                      
                                     </div>
-                                    <div class="elegirpersonajes colorblanco" id="elegirpersonajes">
+                                    <div class="elegirpersonajes colorblanco modosJuego" id="modoJuegoElegir">
+                                        <h1 class="h1">Elegi que tablero vas a usar</h1>
+                                        <button id="4enlinea"> 4 en linea</button>
+                                        <button id="5enlinea"> 5 en linea </button>
+                                        <button id="6enlinea"> 6 en linea</button>
+                                        <button id="7enlinea"> 7 en linea </button>
+                                    </div>
+                                    <div class="hidden colorblanco fichasElegir" id="elegirpersonajes">
                                         <p>titulo de juego</p>
                                         <div><h1 class="h1">Elegi tu personaje:</h1></div>
                                         
@@ -140,13 +147,7 @@
                                             <div class="imgfichas"><img src="imgs/fichas/alienmib.png" id="imgFicha" alt="Alien"> </div>
                                         </div>
                                     </div>
-                                    <div class="elegirpersonajes colorblanco">
-                                        <h1 class="h1">Elegi que tablero vas a usar</h1>
-                                        <button id="4enlinea"> 4 en linea</button>
-                                        <button id="5enlinea"> 5 en linea </button>
-                                        <button id="6enlinea"> 6 en linea</button>
-                                        <button id="7enlinea"> 7 en linea </button>
-                                    </div>
+                                    
                                 </div>
                             </div>
                             

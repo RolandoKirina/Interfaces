@@ -2687,3 +2687,15 @@ button {
     flex-direction: column;
     height: auto;
 }
+
+.modosJuego {
+    bottom: -6.85em;
+    height: 528px;
+    position: absolute;
+}
+
+.fichasElegir {
+    position: absolute;
+    bottom: -6.85em;
+     height: 528px;
+}
