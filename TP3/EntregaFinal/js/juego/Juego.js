@@ -117,7 +117,7 @@ function seleccionarPersonajes(){
                         elegirpersonajes.classList.add("hidden");
                         modoJuego.classList.remove("hidden");
                         modoJuego.classList.add("elegirpersonajes");
-                       
+                        modoJuego.classList.add("modosJuego");
                         contadortimer.classList.remove("hidden");
                         contadortimer.classList.add("timer");
 
