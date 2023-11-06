@@ -2613,7 +2613,7 @@ button {
 .mensaje {
     margin-top: 10em;
     background-color: var(--prim-sombra3);
-    width: 30em;
+    width: 40em;
     height: 20em;
     border-radius: 8px;
     position:absolute;
@@ -2686,14 +2686,27 @@ button {
     display: flex;
     flex-direction: column; 
     align-items: center;
+    
 }
 
 .modosJuego {
     bottom: -7em;
     height: 528px;
     position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
 }
-
+.column{
+    display: flex;
+    flex-direction: row;
+}
+.hiddendos {
+    display: none;
+    position: absolute;
+}
 .elegirpersonajes div {
     display: flex; 
     justify-content: center; 
@@ -2708,6 +2721,7 @@ button {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
 }
 .elegirJugadordiv{
     display: flex;
@@ -2740,31 +2754,43 @@ button {
     justify-content: center;
     align-items:center ;
 }
-.elegirtablerosimg{
 
-    display: flex;
-    align-items: center;
-    justify-content:  center;
-}
-.elegirtablerosimg img {
-    width: 14em;
-    height: 10em;
+
+.img {
+    width: 18em;
+    height: 12em;
     margin-left: 1em;
 }
-
-.h2 {
+.tituloh2 {
     font-size: larger;
-    margin-bottom: 0;
-
+    text-align: center;
 }
+.contenedortitulo{
+    width: 50%;
+}
+.divflex {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;  
+    margin-top: 2em;
+}
+
 .divbackground {
     display: flex;
     flex-direction: column;
     background-color: rgba(0, 13, 26, 0.3);  
     height: 30em;
-    width: auto;
+    justify-content: center;
+    align-items: center;
 }
-
+.divcenter {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: 12em; 
+}
 .resaltado{
     color: white;
     text-shadow: 1px 1px 2px var(--acento-luz), 0 0 1em var(--acento), 0 0 0.2em var(--prim-luz2);

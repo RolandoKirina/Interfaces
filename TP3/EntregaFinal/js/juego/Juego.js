@@ -117,7 +117,7 @@ function seleccionarPersonajes(){
                         imagenesficha.forEach(img => img.removeEventListener("click", seleccionarPersonajes));
                         elegirpersonajes.classList.remove("elegirpersonajes");
                         elegirpersonajes.classList.add("hidden");
-                        modoJuego.classList.remove("hidden");
+                        modoJuego.classList.remove("hiddendos");
                         modoJuego.classList.add("tablerojuego");
                         modoJuego.classList.add("modosJuego");
                         // contadortimer.classList.remove("hidden");
@@ -148,6 +148,8 @@ function cargarJuego(){
         }
         contadortimer.classList.remove("hidden");
         contadortimer.classList.add("timer");
+        modoJuego.classList.remove("modosJuego");
+        modoJuego.classList.add("hiddendos");
         crearXenLinea(7,6,4,28,70,110,
             20,21,60);
             clearCanvas();
@@ -164,7 +166,9 @@ function cargarJuego(){
         }
         contadortimer.classList.remove("hidden");
         contadortimer.classList.add("timer");
-        crearXenLinea(8,7,5,25,62,100,15,28,60);
+        modoJuego.classList.remove("modosJuego");
+        modoJuego.classList.add("hiddendos");
+        crearXenLinea(8,7,5,28,62,100,15,28,60);
         clearCanvas();
         drawTablero();
         rellenarTablero();
@@ -180,7 +184,9 @@ function cargarJuego(){
         }
         contadortimer.classList.remove("hidden");
         contadortimer.classList.add("timer");
-        crearXenLinea(9,8,6,18,55,88,12,36,55);
+        modoJuego.classList.remove("modosJuego");
+        modoJuego.classList.add("hiddendos");
+        crearXenLinea(9,8,6,26,55,88,12,36,55);
         clearCanvas();
         drawTablero();
         rellenarTablero();
@@ -196,6 +202,9 @@ function cargarJuego(){
         }
         contadortimer.classList.remove("hidden");
         contadortimer.classList.add("timer");
+        modoJuego.classList.remove("modosJuego");
+        modoJuego.classList.add("hiddendos");
+
         crearXenLinea(10,9,7,20,49.5,80,9.5,45,42);
         clearCanvas();
         drawTablero();
@@ -869,7 +878,16 @@ function reset() {
 
 }
 
+function pausar() {
+    stop = true;
+}
+function continuar(){
+    stop = false;
+}
 
+setTimeout(pausar, 20000);
+
+setTimeout(continuar, 30000);
 
 let segundos = 0;
 let minutos = 0;
