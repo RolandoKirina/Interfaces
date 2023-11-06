@@ -115,7 +115,7 @@ function seleccionarPersonajes(){
                         imagenesficha.forEach(img => img.removeEventListener("click", seleccionarPersonajes));
                         elegirpersonajes.classList.remove("elegirpersonajes");
                         elegirpersonajes.classList.add("hidden");
-
+                        modoJuego.classList.remove("elegirpersonajes");
                         contadortimer.classList.remove("hidden");
                         contadortimer.classList.add("timer");
                        
@@ -798,6 +798,7 @@ function reset() {
     elegirpersonajes.classList.add("hidden");
     modoJuego.classList.add("modosJuego");
     modoJuego.classList.remove("hidden");
+    modoJuego.classList.add("elegirpersonajes");
     contadortimer.classList.remove("timer");
     contadortimer.classList.add("hidden");
     
