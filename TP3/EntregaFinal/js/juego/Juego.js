@@ -127,7 +127,10 @@ function cargarJuego(){
     
     btn4enlinea.addEventListener('click', function (){
         reset();
-        timer();
+        if(mensaje == " ") {
+            timer();
+        }
+       
         crearXenLinea(7,6,4,28,70,110,
             20,21,60);
             clearCanvas();
@@ -141,7 +144,9 @@ function cargarJuego(){
     
     btn5enlinea.addEventListener('click', function(){
         reset();
-        timer();
+        if(mensaje == " ") {
+            timer();
+        }
         crearXenLinea(9,7,5,25,62,88,15,28,55);
         clearCanvas();
         drawTablero();
@@ -153,7 +158,9 @@ function cargarJuego(){
     
     btn6enlinea.addEventListener('click', function (){
         reset();
-        timer();
+        if(mensaje == " ") {
+            timer();
+        }
         crearXenLinea(11,9,6,18,50,73,12,36,37);
         clearCanvas();
         drawTablero();
@@ -165,7 +172,9 @@ function cargarJuego(){
     
     btn7enlinea.addEventListener('click', function (){
         reset();
-        timer();
+        if(mensaje == " ") {
+            timer();
+        }
         crearXenLinea(13,10,7,16,45.2,62.2,9.5,45,33.2);
         clearCanvas();
         drawTablero();
