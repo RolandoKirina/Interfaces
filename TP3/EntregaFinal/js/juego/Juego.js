@@ -115,6 +115,8 @@ function seleccionarPersonajes(){
                         imagenesficha.forEach(img => img.removeEventListener("click", seleccionarPersonajes));
                         elegirpersonajes.classList.remove("elegirpersonajes");
                         elegirpersonajes.classList.add("hidden");
+                        modoJuego.classList.remove("hidden");
+                        modoJuego.classList.add("elegirpersonajes");
                        
                         contadortimer.classList.remove("hidden");
                         contadortimer.classList.add("timer");
@@ -204,8 +206,13 @@ function crearXenLinea(col,fila,cant,radio,decrementacionYTab,aumentoX,decrement
     //mostrar primero menu elegir modo de juego al reiniciar partida
     modoJuego.classList.remove("modosJuego");
     modoJuego.classList.add("hidden");
-    elegirpersonajes.classList.add("elegirpersonajes");
-    modoJuego.classList.remove("elegirpersonajes");
+    elegirpersonajes.classList.remove("elegirpersonajes");
+    elegirpersonajes.classList.add("hidden");
+    contadortimer.classList.remove("hidden");
+    contadortimer.classList.add("timer");
+    // elegirpersonajes.classList.remove("elegirpersonajes");
+    // elegirpersonajes.classList.add("hidden");
+
 
     fichas = []; //resetea la cantidad de fichas al cambiar entre modos de juego
     posicionesFichas = []; //resetea la cantidad de posiciones al cambiar entre modos de juego
@@ -798,11 +805,11 @@ function mostrarMensajeReset(){
 function reset() {
 
     //mostrar primero menu elegir modo de juego al reiniciar partida
-    elegirpersonajes.classList.remove("elegirpersonajes");
-    elegirpersonajes.classList.add("hidden");
-    modoJuego.classList.add("modosJuego");
-    modoJuego.classList.remove("hidden");
-    modoJuego.classList.add("elegirpersonajes");
+    elegirpersonajes.classList.add("elegirpersonajes");
+    elegirpersonajes.classList.remove("hidden");
+    modoJuego.classList.remove("modosJuego");
+    modoJuego.classList.add("hidden");
+    modoJuego.classList.remove("elegirpersonajes");
     contadortimer.classList.remove("timer");
     contadortimer.classList.add("hidden");
     
@@ -841,6 +848,16 @@ function reset() {
 
     primerValor = null;
     segundoValor = null;
+
+
+    // for(let i = 0; i < fichas.length; i++) {
+    //     if(i < fichas.length/2) {
+    //         fichas[i].setFill(rutajug1);
+    //     }
+    //     else {
+    //         fichas[i].setFill(rutajug2);
+    //     }
+    // }
 
 }
 
