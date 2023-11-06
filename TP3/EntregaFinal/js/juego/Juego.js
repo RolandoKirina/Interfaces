@@ -200,7 +200,6 @@ function crearXenLinea(col,fila,cant,radio,decrementacionYTab,aumentoX,decrement
     
     //mostrar primero menu elegir modo de juego al reiniciar partida
     modoJuego.classList.remove("modosJuego");
-    modoJuego.classList.remove("elegirpersonajes");
     modoJuego.classList.add("hidden");
     elegirpersonajes.classList.add("elegirpersonajes");
 
@@ -799,7 +798,6 @@ function reset() {
     elegirpersonajes.classList.add("hidden");
     modoJuego.classList.add("modosJuego");
     modoJuego.classList.remove("hidden");
-    modoJuego.classList.add("elegirpersonajes");
     contadortimer.classList.remove("timer");
     contadortimer.classList.add("hidden");
     
