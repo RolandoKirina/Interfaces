@@ -17,6 +17,7 @@ let btn4enlinea = document.getElementById("4enlinea");
 let btn5enlinea = document.getElementById("5enlinea");
 let btn6enlinea = document.getElementById("6enlinea");
 let btn7enlinea = document.getElementById("7enlinea");
+let turnos = document.querySelector("#turno");
 
 let modoJuego = document.querySelector("#modoJuegoElegir");
 
@@ -128,6 +129,7 @@ function seleccionarPersonajes(){
                 rutajug1 = img.getAttribute("src");               
             } 
             else {
+                // esto es cuando elegis la segunda ficha y pasa al menu tablero
                 if (primerValor != null & segundoValor == null){
                         segundoValor = img.getAttribute("alt");
                         rutajug2 = img.getAttribute("src");
@@ -142,7 +144,10 @@ function seleccionarPersonajes(){
                         btnElegirMinutos.classList.add('btn', 'colorblanco', 'btnañadiralcarro', 'h4', 'tercer-hover-boton', 'btnabsoluto');;
                         minutos = cantMinutosMaximo-1;
                         segundos = 59;
+                        turnos.classList.add("resaltado");
+                        turnos.classList.remove("hidden");
                        
+
                         if(!envio) {
                             cantMinutosMaximo = 2; // si no hizo click a enviar le setea x default 2 minutos
                         }
@@ -665,7 +670,6 @@ function volverPosInicial(nueva) {
 
 
 //verifica los turnos de modo que juegue el jugador 1 y luego el 2 o viceversa
-let turnos = document.querySelector("#turno");
 function verificarTurnos(){
     let jugador = lastClicked.getNombreJugador(); // obtiene el nombre de cualquier jugador
     if (!lastClicked.getMovible()){ // si no es movible la ultima
@@ -865,6 +869,9 @@ function reset() {
     contadortimer.classList.remove("timer");
     contadortimer.classList.add("hidden");
     btnElegirMinutos.classList.add("hidden"); //lo oculta al btn y luego lo muestra
+    turnos.innerHTML = " ";
+    turnos.classList.remove("hidden");
+    turnos.classList.add("resaltado");
     btnElegirMinutos.classList.remove('btn', 'colorblanco', 'btnañadiralcarro', 'h4', 'tercer-hover-boton', 'btnabsoluto');
 
     stop = false;
