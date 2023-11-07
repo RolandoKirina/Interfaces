@@ -76,6 +76,11 @@
     font-size: medium;
 }
 
+.titulojugador {
+    margin-bottom: -1em;
+    font-size: larger;
+}
+
 .iconosnav{
     width: 100%;
     display: flex;
@@ -2733,9 +2738,10 @@ button {
     bottom: -6.85em;
     height: 528px;
 }
-.jugador {
-    margin-bottom: -1em;
-}
+
+.margendiv{
+    margin:0;
+} 
 
 .imgfichas {
     margin: 0 2em; /* Añade espacio entre las imágenes */
@@ -2836,12 +2842,13 @@ button {
     flex-direction: column;
     position: absolute;
     height: 8em;
-    left: 17em;
-    width: 35em;
+    left: 21.5em;
+    width: 26em;
     text-align: center;
     background-color: var(--prim-sombra2);
     border-radius: 8px;
-    box-shadow: 1px 0px 5px var(--prim-sombra3);
+    border: 0.2em solid var(--blanco);
+    box-shadow: 1px 0px 15px var(--acento-luz);
 
 }
 
@@ -2857,4 +2864,13 @@ button {
     height: 8em;
     width: auto;
     background-color: rgba(0, 13, 26, 0.1);   
+}
+
+.lineablanca {
+    background-color: white;
+    height: 0.15em;
+    width: 100%;
+    opacity: 0.7;
+    /* text-shadow: 1px 1px 2px var(--acento-luz), 0 0 1em var(--acento), 0 0 0.2em var(--prim-luz2); */
+    box-shadow: 0px 0px 2px 1px var(--acento-luz);
 }
