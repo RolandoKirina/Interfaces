@@ -108,14 +108,12 @@ function seleccionarPersonajes(){
         img.addEventListener("click", function() {
             if (primerValor === null) {
                 primerValor = img.getAttribute("alt");
-                rutajug1 = img.getAttribute("src"); 
-                console.log(primerValor);              
+                rutajug1 = img.getAttribute("src");               
             } 
             else {
                 if (primerValor != null & segundoValor == null){
                         segundoValor = img.getAttribute("alt");
                         rutajug2 = img.getAttribute("src");
-                        console.log(segundoValor);
                         // si se seleccionaron ambos,eliminamos los event listener
                         imagenesficha.forEach(img => img.removeEventListener("click", seleccionarPersonajes));
                         elegirpersonajes.classList.remove("elegirpersonajes");
@@ -319,8 +317,6 @@ function crearTodasFichas(){
 function encontrarFiguraClickeada(x,y){
     for (let i = 0; i < fichas.length; i++){
         let ficha = fichas[i];
-     //   console.log(ficha);
-       // console.log(ficha.estaSeleccionado());
         if (ficha.estaSeleccionado(x,y)){
             return ficha;
         }
@@ -375,9 +371,8 @@ function mouseUp(){
         
     }   
     else if (lastClicked.getMovible()){
-        //console.log(posicionesFichas[0].getRadio());
-        volverPosInicial(lastClicked);
-    }
+            volverPosInicial(lastClicked);
+        }
     }
 
 
@@ -391,21 +386,18 @@ function hizoXenLinea(col,fila){
     let jugador = lastClicked.getNombreJugador();
     switch(true) {
         case hizoXenLineaHorizontal(col,fila,contador,contador2,jugador): 
-            alert("gano en horizontal el"+lastClicked.getNombreJugador());
             minutos = cantMinutosMaximo-1;
             segundos = 59;
             stop = true;
             showMensaje();
             break;
         case hizoXenLineaVertical(col,fila,contador,jugador):
-            alert("gano en vertical el "+lastClicked.getNombreJugador());
             minutos = cantMinutosMaximo-1;
             segundos = 59;
             stop = true;
             showMensaje();
             break;
         case hizoXenLineaDiagonal(col,fila,contador,contador2,contador3,contador4,jugador):
-            alert("gano en diagonal el "+lastClicked.getNombreJugador());
             minutos = cantMinutosMaximo-1;
             segundos = 59;
             stop = true;
@@ -445,14 +437,11 @@ function hizoXenLineaHorizontal(col, fila, contador, contador2,jugador) {
     let contadorDerecha = verificarHorizontalDerecha(col, fila, contador2, jugador);
 
     if (contadorIzquierda == cantLinea) {
-        alert("gane x hor izq");
         return true;
     } else if (contadorDerecha == cantLinea) {
-        alert("gane x hor dere");
         return true;
     } else {
         if (sumoXenLinea(fila,jugador)) {
-            alert("cont suma");
             return true;
         }
     }
@@ -498,7 +487,6 @@ function verificarHorizontalIzquierda(col,fila,contador,jugador){
 function hizoXenLineaVertical(col, fila, contador,jugador) {
  
     if (hizoVerticalArriba(col,fila,contador,jugador) == cantLinea){
-        alert("vertical arriba")
         return true;
     }
 }
@@ -530,9 +518,7 @@ function hizoXenLineaDiagonal(col,fila,contador,contador2,contador3, contador4, 
     while (j < tablero.getColumnas() && i < tablero.getFilas() && cantveces < cantLinea){
         if (tablero.casillero[col+cantveces][fila+cantveces] != null && tablero.casillero[col+cantveces][fila+cantveces]. getNombreJugador() == jugador){
             contador++;
-            console.log("el contador de diagonal normal quedó en: "+contador);
             if (contador == cantLinea){
-                alert("gano en diagonal normal");
                 return true;
             }
         }
@@ -554,7 +540,6 @@ function hizoXenLineaDiagonal(col,fila,contador,contador2,contador3, contador4, 
             contador2++;
             
             if (contador2 == cantLinea){
-                alert("gano en diagonal normal ABAJO");
                 return true;
             }
         }
@@ -564,7 +549,6 @@ function hizoXenLineaDiagonal(col,fila,contador,contador2,contador3, contador4, 
     }
 
     if(contador-1 + contador2 == cantLinea) { //suma los resultados parciales de las dos diagonales normales
-        alert("gano en diagonal normal cruzado");
         return true;
     }
 
@@ -580,9 +564,7 @@ function hizoXenLineaDiagonal(col,fila,contador,contador2,contador3, contador4, 
     while (j3 >= 0  && i3 < tablero.getFilas() && cantveces < cantLinea){
         if (tablero.casillero[col-cantveces][fila+cantveces] != null && tablero.casillero[col-cantveces][fila+cantveces]. getNombreJugador() == jugador){
             contador3++;
-            console.log("el contador de diagonal invertida quedó en: "+contador3);
             if (contador3 == cantLinea){
-                alert("ganó en diagonal invertida");
                 return true;
             }
         }
@@ -602,9 +584,7 @@ function hizoXenLineaDiagonal(col,fila,contador,contador2,contador3, contador4, 
     while (j4 < tablero.getColumnas() && i4>= 0 && cantveces < cantLinea){
         if (tablero.casillero[col+cantveces][fila-cantveces] != null && tablero.casillero[col+cantveces][fila-cantveces]. getNombreJugador() == jugador){
             contador4++;
-            console.log("el contador de diagonal invertida ABAJO quedó en: "+contador4);
             if (contador4 == cantLinea){
-                alert("ganó en diagonal invertida ABAJO");
                 return true;
             }
         }
@@ -613,14 +593,11 @@ function hizoXenLineaDiagonal(col,fila,contador,contador2,contador3, contador4, 
         cantveces++;
     }
 
-
     if(contador3-1 + contador4 == cantLinea) {  //suma los resultados parciales de las dos diagonales invertidas
-        alert("gano en diagonal DIAGONAL CRUZADO");
         return true;
     }
 
     return false;
-
 }
 
 function volverPosInicial(nueva) {
@@ -923,14 +900,12 @@ btnPausar.addEventListener('click',function (){
     if (segundos > 0 && minutos >= 0 && !clickeo){
     
        stop = true; //frena el timer
-       clickeo = true //el user clickea el bt
-       console.log(imagenPausar);
+       clickeo = true //el user clickea el btn
        btnPausar.innerHTML = '<img src="imgs/iconos/play.png" id="imagenpausar">Reanudar' //cambio el DOM
     }
     else if (clickeo){
         stop = false;
         clickeo = false; 
-        console.log(imagenPausar);
         btnPausar.innerHTML = '<img src="imgs/iconos/pausa.png" id="imagenpausar">Pausar';
     }
 });
@@ -959,7 +934,6 @@ function timer() {
             if (minutos == 0 && segundos == 0 && !stop){
                 //clearInterval(intervalID);
                 stop = true;
-                alert("empate");
                 empato = true;
                 showMensaje();
                 segundos =59; //para que cuando se reinicie tambien se reinicie el timer
