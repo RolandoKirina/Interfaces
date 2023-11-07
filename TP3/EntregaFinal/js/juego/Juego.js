@@ -393,7 +393,6 @@ function hizoXenLinea(col,fila){
             segundos = 0;
             stop = true;
             showMensaje();
-            reset();
             break;
         case hizoXenLineaVertical(col,fila,contador,jugador):
             alert("gano en vertical el "+lastClicked.getNombreJugador());
@@ -401,16 +400,13 @@ function hizoXenLinea(col,fila){
             segundos = 0;
             stop = true;
             showMensaje();
-            reset();
             break;
         case hizoXenLineaDiagonal(col,fila,contador,contador2,contador3,contador4,jugador):
             alert("gano en diagonal el "+lastClicked.getNombreJugador());
             minutos = 0;
             segundos = 0;
             stop = true;
-            showMensaje();
-             reset();
-          
+            showMensaje(); 
             break;
         default:
             contador = 0; //se resetea, ej se pusieron 2 fichas nada mas, por lo que no contó 4 a su alrededor
@@ -741,32 +737,6 @@ function limpiarTodoCanvas(){
     drawAllFichas();
 }
 
-// function findCol(nueva){
-//     let diferencia = 25; //corregida diferencia
-//     let valory = 50;
-//     let posValorValidoY = 25;
-//     let posXnueva = nueva.getPosX();
-//     let posYnueva = nueva.getPosY();
-//     let encontro = false;
-//     let posFichaX = 0; //posiciones donde se pueden colocar fichas
-//     let posFichaY = 0;
- 
-
-//     for(let i = 0; i < posicionesFichas.length; i++) { 
-//         posFichaX = posicionesFichas[i].getPosIniX();
-//         posFichaY = posicionesFichas[i].getPosIniY();
-
-//         if(posXnueva >= posFichaX - 30 && posXnueva < posFichaX + diferencia 
-//             && posYnueva > posValorValidoY && posYnueva<=valory) { //mira si coincide con alguna de las posiciones de las fichas
-//             encontro = true;
-//             return i;
-//         }
-//     }
-//     if(!encontro && nueva.estaSeleccionado(posXnueva,posYnueva)) {
-//         volverPosInicial(nueva);
-//     }
-// }
-
 function findCol(nueva){
     let diferencia = 40; //tiene un margen de 40 px para errar...
     let valory = 50;
@@ -990,7 +960,6 @@ function timer() {
                 //clearInterval(intervalID);
                 stop = true;
                 alert("empate");
-                reset();
                 showMensaje();
                 segundos =0; //para que cuando se reinicie tambien se reinicie el timer
                 minutos = 0;
@@ -1002,13 +971,14 @@ function timer() {
 
 let mensajeGanador = document.querySelector("#mensajeGanador");
 let opacidad = document.querySelector("#opacidad");
+let divGanador = document.querySelector("#divGanador");
 function showMensaje(){
-
+    mensajeGanador.innerHTML = " ";
     opacidad.classList.remove("hidden");
     opacidad.classList.add("opacidad")
+    divGanador.classList.remove("hidden");
+    divGanador.classList.add("divGanador");
     mensajeGanador.classList.add("textoGanador");
-    mensajeGanador.innerHTML = " ";
     mensajeGanador.innerHTML += "Gano el " + lastClicked.getNombreJugador();
-
 
 }

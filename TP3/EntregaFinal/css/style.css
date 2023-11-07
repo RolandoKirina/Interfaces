@@ -2828,14 +2828,21 @@ button {
     font-size: 13px;
 }
 
-.mensajeGanador {
-    top:15em;
-
-    height: 2em;
-    left: 25em;
-    width: auto;
+.divGanador {
+    top:13.3em;
+    display: flex;
+    align-items:center;
+    justify-content: space-evenly;
+    flex-direction: column;
+    position: absolute;
+    height: 8em;
+    left: 17em;
+    width: 35em;
     text-align: center;
     background-color: var(--prim-sombra2);
+    border-radius: 8px;
+    box-shadow: 1px 0px 5px var(--prim-sombra3);
+
 }
 
 .textoGanador {
