@@ -2798,33 +2798,19 @@ button {
 .btnpausar{
     display: flex;
     align-items: center;
+    justify-content: space-evenly;
     border-radius: 8px;
     width: 9em;
     background-color: var(--prim-luz3);
     border: solid 3px var(--prim-sombra3);
-}
-.btnplay{
-    display: flex;
-    align-items: center;
-    border-radius: 8px;
-    width: 9em;
     height: 2.8em;
-    background-color: var(--prim-luz3);
-    border: solid 3px var(--prim-sombra3);
 }
-.btnpausarimg {
-    width: 4em;
-    height: 1em;
-    margin-left: 1em;
-    margin-right: 0.25em;
+
+.btnpausar img {
+    width: auto;
+    height: auto;
 }
-.imgvisible{
-    width: 4em;
-    height: 2em;
-    margin-left: 1em;
-    margin-right: 0.25em;
-    border: 0;
-}
+
 .turno {
     display: flex;
     align-items: center;

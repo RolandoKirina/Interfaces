@@ -888,28 +888,20 @@ let btnPausar = document.getElementById("btnpausar");
 
 let imagenPausar = document.getElementById("imagenpausar");
 
-let rutaplay = "imgs/iconos/play.png";
-let rutapausa = "imgs/iconos/pausa.png";
 // Arreglar img
 btnPausar.addEventListener('click',function (){
     if (segundos > 0 && minutos >= 0 && !clickeo){
     
        stop = true; //frena el timer
-       clickeo = true //el user clickea el btn
-
-       btnPausar.classList.remove('btnpausar'); 
-       btnPausar.classList.add('btnplay');
-       btnPausar.classList.add('imgvisible'); //agrego la clase img visible
-       imagenPausar.src = rutaplay; //le seteo la imagen
-       btnPausar.innerHTML = "Renaudar" //cambio el DOM
+       clickeo = true //el user clickea el bt
+       console.log(imagenPausar);
+       btnPausar.innerHTML = '<img src="imgs/iconos/play.png" id="imagenpausar">Reanudar' //cambio el DOM
     }
     else if (clickeo){
         stop = false;
         clickeo = false; 
-        imagenPausar.classList.remove('imgvisible');
-        imagenPausar.src = rutapausa;
-        btnPausar.classList.add('btnpausar')
-        btnPausar.innerHTML = "Pausar"
+        console.log(imagenPausar);
+        btnPausar.innerHTML = '<img src="imgs/iconos/pausa.png" id="imagenpausar">Pausar';
     }
 });
 
