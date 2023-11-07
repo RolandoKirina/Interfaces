@@ -22,10 +22,26 @@ let modoJuego = document.querySelector("#modoJuegoElegir");
 
 let contadortimer = document.querySelector("#contadortimer");
 
+let btnElegirMinutos = document.querySelector("#btnElegirMinutos");
+
+let envio = false;
+
+let cantMinutosMaximo = 2;
+    btnElegirMinutos.addEventListener('click', function(){
+        let inputvalue = document.querySelector("#minutos").value;
+        console.log(inputvalue);
+        if(!envio) {
+            cantMinutosMaximo = Number(inputvalue);
+            console.log(cantMinutosMaximo);
+            envio = true;
+        }
+       
+       
+    }
+) 
 let btnReset = document.querySelector("#reset");
 btnReset.addEventListener('click', mostrarMensajeReset);
 let empato = false;
-let cantMinutosMaximo = 2;
 let segundos = 59;
 let minutos = cantMinutosMaximo;
 
@@ -121,9 +137,8 @@ function seleccionarPersonajes(){
                         modoJuego.classList.remove("hiddendos");
                         modoJuego.classList.add("tablerojuego");
                         modoJuego.classList.add("modosJuego");
-                        // contadortimer.classList.remove("hidden");
-                        // contadortimer.classList.add("timer");
-
+                        btnElegirMinutos.classList.remove("hidden"); //muestra el boton x primera vez
+                        btnElegirMinutos.classList.add('btn', 'colorblanco', 'btnañadiralcarro', 'h4', 'tercer-hover-boton', 'btnabsoluto');;
                         minutos = cantMinutosMaximo-1;
                         segundos = 59;
                        
@@ -841,7 +856,7 @@ function mostrarMensajeReset(){
 
 
 function reset() {
-
+    envio = false;
     //mostrar primero menu elegir modo de juego al reiniciar partida
     elegirpersonajes.classList.add("elegirpersonajes");
     elegirpersonajes.classList.remove("hidden");
@@ -850,8 +865,8 @@ function reset() {
     modoJuego.classList.remove("elegirpersonajes");
     contadortimer.classList.remove("timer");
     contadortimer.classList.add("hidden");
-    
-
+    btnElegirMinutos.classList.add("hidden"); //lo oculta al btn y luego lo muestra
+    btnElegirMinutos.classList.remove('btn', 'colorblanco', 'btnañadiralcarro', 'h4', 'tercer-hover-boton', 'btnabsoluto');
 
     stop = false;
     minutos = cantMinutosMaximo-1;

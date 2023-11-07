@@ -2771,6 +2771,10 @@ button {
     font-size: larger;
     text-align: center;
 }
+.tituloh1 {
+    font-size: 28px;
+    margin-top: 3.2em;
+}
 .contenedortitulo{
     width: 50%;
 }
@@ -2796,7 +2800,36 @@ button {
     justify-content: center;
     align-items: center;
     margin-left: 12em; 
+
 }
+.divFormMinutos {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    
+    margin-top: 1em;
+    margin-bottom: 8em;
+}
+.divFormMinutos form{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.inputMinutos{
+    margin-top: 0.25em;
+    height: 2.5em;
+    margin-bottom: 0.25em;
+}
+.btnabsoluto {
+    position: absolute;
+    width: 5em; 
+    height: 1.8em;
+    bottom: 0.5em;
+}
+
+
 .resaltado{
     color: white;
     text-shadow: 1px 1px 2px var(--acento-luz), 0 0 1em var(--acento), 0 0 0.2em var(--prim-luz2);

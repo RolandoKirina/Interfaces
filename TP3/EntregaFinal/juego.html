@@ -129,7 +129,7 @@
                                     
                                     <div class="colorblanco modosJuego" id="modoJuegoElegir">
                                         <div class="divbackground">
-                                            <h1 class="h1 resaltado">Selecciona el tablero que deseas utilizar</h1>
+                                            <h1 class="tituloh1 resaltado">Selecciona el tablero que deseas utilizar</h1>
 
                                         <div class="divcenter">
                                             <div class="divflex">
@@ -153,9 +153,13 @@
                                                 </div>
                                             </div>
                                         </div>
-                              
-                                  
-
+                                        <div class="divFormMinutos">
+                                            <form>
+                                                <label class="resaltado">Puede elegir la duracion en minutos de la partida (Opcional)</label>
+                                                <input type="number"  class="inputForm inputMinutos" name="minutos" id="minutos" required>
+                                                <button type="button" class="hidden" id="btnElegirMinutos">Elegir</button>
+                                            </form>
+                                        </div>
                                         </div>
                                     </div>
                                 <div class="elegirpersonajes colorblanco fichasElegir" id="elegirpersonajes">
