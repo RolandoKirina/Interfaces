@@ -878,16 +878,35 @@ function reset() {
 
 }
 
-function pausar() {
-    stop = true;
-}
-function continuar(){
-    stop = false;
-}
+let clickeo = false;
+let btnPausar = document.getElementById("btnpausar");
 
-setTimeout(pausar, 20000);
+let imagenPausar = document.getElementById("imagenpausar");
 
-setTimeout(continuar, 30000);
+let rutaplay = "imgs/iconos/play.png";
+let rutapausa = "imgs/iconos/pausa.png";
+// Arreglar img
+btnPausar.addEventListener('click',function (){
+    if (segundos > 0 && minutos >= 0 && !clickeo){
+    
+       stop = true; //frena el timer
+       clickeo = true //el user clickea el btn
+
+       btnPausar.classList.remove('btnpausar'); 
+       btnPausar.classList.add('btnplay');
+       btnPausar.classList.add('imgvisible'); //agrego la clase img visible
+       imagenPausar.src = rutaplay; //le seteo la imagen
+       btnPausar.innerHTML = "Renaudar" //cambio el DOM
+    }
+    else if (clickeo){
+        stop = false;
+        clickeo = false; 
+        imagenPausar.classList.remove('imgvisible');
+        imagenPausar.src = rutapausa;
+        btnPausar.classList.add('btnpausar')
+        btnPausar.innerHTML = "Pausar"
+    }
+});
 
 let segundos = 0;
 let minutos = 0;
@@ -923,3 +942,6 @@ function timer() {
             }
         }, 1000);
 }
+
+
+

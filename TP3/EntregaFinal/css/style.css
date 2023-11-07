@@ -2572,7 +2572,7 @@ button {
     margin-top: 8em;
     height: 2.40em;
     background-color: var(--prim-sombra3);
-    width: 16em;
+    width: 24em;
     text-align: center;
     justify-content: space-evenly;
     align-items: center;
@@ -2580,7 +2580,7 @@ button {
     border-radius: 6px;
     position: absolute;
     top: -10.5em;
-    right: 24.3em;
+    right: 15.5em;
     box-shadow: 1px 0px 5px var(--prim-sombra3);
 }
 .timer p {
@@ -2613,11 +2613,11 @@ button {
 .mensaje {
     margin-top: 10em;
     background-color: var(--prim-sombra3);
-    width: 40em;
+    width: 25em;
     height: 20em;
     border-radius: 8px;
     position:absolute;
-    top:-2em;
+    top:-2.7em;
     right: 20em;
     box-shadow: 1px 0px 5px var(--prim-sombra3);
 }
@@ -2795,3 +2795,34 @@ button {
     color: white;
     text-shadow: 1px 1px 2px var(--acento-luz), 0 0 1em var(--acento), 0 0 0.2em var(--prim-luz2);
 }
+.btnpausar{
+    display: flex;
+    align-items: center;
+    border-radius: 8px;
+    width: 9em;
+    background-color: var(--prim-luz3);
+    border: solid 3px var(--prim-sombra3);
+}
+.btnplay{
+    display: flex;
+    align-items: center;
+    border-radius: 8px;
+    width: 9em;
+    height: 2.8em;
+    background-color: var(--prim-luz3);
+    border: solid 3px var(--prim-sombra3);
+}
+.btnpausarimg {
+    width: 4em;
+    height: 1em;
+    margin-left: 1em;
+    margin-right: 0.25em;
+}
+.imgvisible{
+    width: 4em;
+    height: 2em;
+    margin-left: 1em;
+    margin-right: 0.25em;
+    border: 0;
+}
+
