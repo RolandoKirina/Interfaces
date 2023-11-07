@@ -116,8 +116,8 @@
                                         <p id="timer">00:00</p>
                                         <button class="resetButton cuarto-hover-boton" id="reset"><img src="imgs/iconos/reset.png"> Reiniciar</button>
                                         <button class="btnpausar colorblanco" id="btnpausar"><img src="imgs/iconos/pausa.png" id="imagenpausar">Pausar</button>
-                                        <div class="turno colorblanco"><span id="turno"></span></div>
                                     </div>
+                                    <div class="turno colorblanco"><span id="turno" class="resaltado"></span></div>
             
                                     <div class="hidden" id="mensajeReinicio">
                                         <div class="mensajediv"><p class="colorblanco">¿Desea reiniciar el juego?</p></div>
@@ -156,7 +156,7 @@
                                         <div class="divFormMinutos">
                                             <form>
                                                 <label class="resaltado">Puede elegir la duracion en minutos de la partida (Opcional)</label>
-                                                <input type="number"  class="inputForm inputMinutos" name="minutos" id="minutos" required>
+                                                <input type="number"  class="inputForm inputMinutos" name="minutos" max="10" id="minutos" required>
                                                 <button type="button" class="hidden" id="btnElegirMinutos">Elegir</button>
                                             </form>
                                         </div>

@@ -856,6 +856,7 @@ function mostrarMensajeReset(){
 function reset() {
     envio = false;
     //mostrar primero menu elegir modo de juego al reiniciar partida
+    timerDom.innerHTML = " ";
     elegirpersonajes.classList.add("elegirpersonajes");
     elegirpersonajes.classList.remove("hidden");
     modoJuego.classList.remove("modosJuego");
@@ -928,19 +929,24 @@ let mensajestop;
 
 //muestra un timer en pantalla para ver el tiempo que queda disponible en la partida del juego
 function timer() {
+    timerDom.innerHTML = " ";
         // Usar setInterval en lugar de setTimeout para ejecutar una función cada segundo
         intervalID =  setInterval(function(){
             if (!stop){
                 segundos--; // Incrementar el contador de segundos
             }
-            if (minutos >= 0 && segundos < 10){
+            if (minutos >= 0 && minutos < 10 && segundos < 10){
                 mensaje =  0 + "" + minutos + ":" + 0 + segundos;
                 timerDom.innerHTML = mensaje;
             }
-            else{
+            else if (segundos > 10 && minutos < 10){
                 mensaje =  0 + "" + minutos + ":" + segundos;
                 timerDom.innerHTML = mensaje;
             } 
+            else {
+                mensaje =  minutos + ":" + segundos;
+                timerDom.innerHTML = mensaje;
+            }
                 
             if (segundos == 0 && minutos > 0 && !stop) {
                 minutos--;
