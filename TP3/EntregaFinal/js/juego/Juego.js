@@ -626,22 +626,40 @@ function hizoXenLineaDiagonal(col,fila,contador,contador2,contador3, contador4, 
 
 }
 
+function volverPosInicial(nueva) {
+    let duracion = 700;
+    const posInicialX = nueva.getPosIniX();
+    const posInicialY = nueva.getPosIniY();
+    const posXActual = nueva.getPosX();
+    const posYActual = nueva.getPosY();
+    const pasos = 60; // Número de pasos en la animación
+    const intervalo = duracion / pasos; // Intervalo entre pasos
 
+    let paso = 0;
 
-function volverPosInicial(nueva){ //en caso de posicion incorrecta, vuelve a la pos original la ficha
-    //alert(nueva.getMovible())
-    if (nueva.getMovible()){ // Para que si esta en el tablero no vuelva a la posicion original
-        let posinix = nueva.getPosIniX();
-        let posiniy = nueva.getPosIniY();
-        nueva.setPosition(posinix,posiniy); //vuelve bruscamente de momento a la pos original
-        nueva.draw();
-        clearCanvas();
-        drawTablero();
-        drawAllFichas();
-        mouseDown = false;
-    }
-    console.log(lastClicked.getMovible());
-} 
+    const animacionInterval = setInterval(() => {
+        if (paso >= pasos) {
+            clearInterval(animacionInterval);
+            nueva.setPosX(posInicialX);
+            nueva.setPosY(posInicialY);
+            nueva.draw();
+            clearCanvas();
+            drawTablero();
+            drawAllFichas();
+            limpiarTodoCanvas();
+            mouseDown = false;
+        } else {
+            paso++;
+            const progreso = paso / pasos;
+            const posXAnimacion = posXActual + (posInicialX - posXActual) * progreso;
+            const posYAnimacion = posYActual + (posInicialY - posYActual) * progreso;
+            nueva.setPosX(posXAnimacion);
+            nueva.setPosY(posYAnimacion);
+            nueva.draw();
+            limpiarTodoCanvas();
+        }
+    }, intervalo);
+}
 
 
 let turnos = document.querySelector("#turno");
@@ -687,14 +705,36 @@ function EstaEnTablero(ficha){
 
 function setearPosicion(nueva,col,fila){
    
-    let posYfichaTab = fichastablero[col][fila].getPosY();
-    //let posYnueva = nueva.getPosY();
-    let posXvalida = fichastablero[col][fila].getPosX();
-    nueva.setPosX(posXvalida);
-    nueva.setMovible(false);
-    nueva.setPosY(posYfichaTab);
-    nueva.draw();
-    limpiarTodoCanvas()
+    let duracion = 600; //velocidad de la animacion
+    const fichaTablero = fichastablero[col][fila];
+    const posXInicial = nueva.getPosX();
+    const posYInicial = nueva.getPosY();
+    const posXFinal = fichaTablero.getPosX();
+    const posYFinal = fichaTablero.getPosY();
+    const pasos = 60; // iteraciones de la animacion
+    const intervalo = duracion / pasos; // Intervalo entre pasos
+
+    let paso = 0;
+
+    const animacionInterval = setInterval(() => {
+        if (paso >= pasos) { // si paso es mayor al maximo de pasos
+            clearInterval(animacionInterval); // limpia el intervalo
+            nueva.setPosX(posXFinal); //setea las posiciones
+            nueva.setPosY(posYFinal);
+            nueva.setMovible(false); //lo inserta en el tablero
+            nueva.draw(); //dibuja la ultima caida
+            limpiarTodoCanvas(); //limpia el canvas
+        } else {
+            paso++;
+            const progreso = paso / pasos; // va midiendo cuanto progresa la animacion
+            const posXAnimacion = posXInicial + (posXFinal - posXInicial) * progreso; // suma la posx inicial le suma la diferencia entre 
+            const posYAnimacion = posYInicial + (posYFinal - posYInicial) * progreso; // la posxfinal y la inicial y multiplica por la cantidad de progreso.
+            nueva.setPosX(posXAnimacion); // setea las posiciones
+            nueva.setPosY(posYAnimacion);
+            nueva.draw(); // dibuja
+            limpiarTodoCanvas(); //limpia el canvas
+        }
+    }, intervalo);
 }
 
 function limpiarTodoCanvas(){
@@ -749,37 +789,6 @@ function encontrarFila(columna) {
 
     return -1; // Si no se encuentra una vacia devuelve -1.
 }
-
-//function addFicha(fila,columna,nueva, centrarFichaPuesta){
-    //let iteraciones = 7; 
-    /*if (tablero.casillero[fila][columna] == null && !nueva.getAgregada()){
-        tablero.casillero[fila][columna] = nueva;
-    }   
-    else if (tablero.casillero[fila][columna] != null && !nueva.getAgregada()){
-        alert("me posicione arriba de la ficha previamente puesta");
-        tablero.casillero[fila][columna] = nueva;
-        iteraciones--; //ERROR, SOLO SE REDUCE UNA VEZ
-    } 
-    alert("me agregue en la fila" + fila + "columna" + columna);
-    nueva.setAgregada(true);
-
-    let desplazamiento = 60; */
-
-    /*for (let i = 0; i < iteraciones; i++){ //CORREGIR, esta bug
-        clearCanvas();
-        drawTablero();
-        drawAllFichas();
-        
-        console.log(nueva.getPosY());
-        nueva.setPosY(nueva.getPosY()+desplazamiento);
-        nueva.setPosX(centrarFichaPuesta);
-        nueva.draw();  
-
-        clearCanvas();
-        drawTablero();
-        drawAllFichas();
-        nueva.draw(); 
-    } */
 
 
 function clearCanvas(){
