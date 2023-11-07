@@ -24,7 +24,10 @@ let contadortimer = document.querySelector("#contadortimer");
 
 let btnReset = document.querySelector("#reset");
 btnReset.addEventListener('click', mostrarMensajeReset);
+let empato = false;
 
+let segundos = 59;
+let minutos = cantMinutosMaximo;
 
 let canvasWidth = canvas.width;
 let canvasHeight = canvas.height;
@@ -123,8 +126,8 @@ function seleccionarPersonajes(){
                         // contadortimer.classList.remove("hidden");
                         // contadortimer.classList.add("timer");
 
-                        minutos = 0;
-                        segundos = 0;
+                        minutos = cantMinutosMaximo-1;
+                        segundos = 59;
                        
 
 
@@ -389,22 +392,22 @@ function hizoXenLinea(col,fila){
     switch(true) {
         case hizoXenLineaHorizontal(col,fila,contador,contador2,jugador): 
             alert("gano en horizontal el"+lastClicked.getNombreJugador());
-            minutos = 0;
-            segundos = 0;
+            minutos = cantMinutosMaximo-1;
+            segundos = 59;
             stop = true;
             showMensaje();
             break;
         case hizoXenLineaVertical(col,fila,contador,jugador):
             alert("gano en vertical el "+lastClicked.getNombreJugador());
-            minutos = 0;
-            segundos = 0;
+            minutos = cantMinutosMaximo-1;
+            segundos = 59;
             stop = true;
             showMensaje();
             break;
         case hizoXenLineaDiagonal(col,fila,contador,contador2,contador3,contador4,jugador):
             alert("gano en diagonal el "+lastClicked.getNombreJugador());
-            minutos = 0;
-            segundos = 0;
+            minutos = cantMinutosMaximo-1;
+            segundos = 59;
             stop = true;
             showMensaje(); 
             break;
@@ -844,8 +847,8 @@ let mensajeReinicio = document.querySelector("#mensajeReinicio");
 
 btnaceptarReinicio.addEventListener('click', function (){
     mensajeReinicio.classList.add("hidden");
-    segundos =0; //para que cuando se reinicie tambien se reinicie el timer
-    minutos = 0;
+    segundos =59; //para que cuando se reinicie tambien se reinicie el timer
+    minutos = cantMinutosMaximo-1;
     stop = false;
     reset();
 });
@@ -875,8 +878,8 @@ function reset() {
 
 
     stop = false;
-    minutos = 0;
-    segundos = 0;
+    minutos = cantMinutosMaximo-1;
+    segundos = 59;
 
 
     if(tablero.getColumnas() > 0 && tablero.getFilas() > 0) {
@@ -933,37 +936,35 @@ btnPausar.addEventListener('click',function (){
     }
 });
 
-let segundos = 0;
-let minutos = 0;
 let stop = false; //sirve para frenar el timer cuando esta el mensaje de reinicio.
 let mensajestop;
 function timer() {
         // Usar setInterval en lugar de setTimeout para ejecutar una función cada segundo
         intervalID =  setInterval(function(){
             if (!stop){
-                segundos++; // Incrementar el contador de segundos
+                segundos--; // Incrementar el contador de segundos
             }
-            if (segundos < 10 && minutos < cantMinutosMaximo && !stop){
+            if (minutos >= 0 && segundos < 10){
                 mensaje =  0 + "" + minutos + ":" + 0 + segundos;
                 timerDom.innerHTML = mensaje;
-                
             }
-            if (segundos >= 10 && minutos < cantMinutosMaximo && !stop){
-                mensaje = 0 + ""+ minutos + ":" + segundos;
+            else{
+                mensaje =  0 + "" + minutos + ":" + segundos;
                 timerDom.innerHTML = mensaje;
+            } 
+                
+            if (segundos == 0 && minutos > 0 && !stop) {
+                minutos--;
+                segundos = 59;
             }
-            if (segundos == 59 && minutos < cantMinutosMaximo && !stop) {
-                minutos++;
-                segundos = 0;
-            }
-            if (minutos == cantMinutosMaximo && segundos == 0 && !stop){
+            if (minutos == 0 && segundos == 0 && !stop){
                 //clearInterval(intervalID);
                 stop = true;
                 alert("empate");
+                empato = true;
                 showMensaje();
-                segundos =0; //para que cuando se reinicie tambien se reinicie el timer
-                minutos = 0;
-             
+                segundos =59; //para que cuando se reinicie tambien se reinicie el timer
+                minutos = cantMinutosMaximo-1; 
             }
         }, 1000);
 }
@@ -972,13 +973,29 @@ function timer() {
 let mensajeGanador = document.querySelector("#mensajeGanador");
 let opacidad = document.querySelector("#opacidad");
 let divGanador = document.querySelector("#divGanador");
+let botonReset = document.querySelector("#botonReset");
+
 function showMensaje(){
     mensajeGanador.innerHTML = " ";
     opacidad.classList.remove("hidden");
     opacidad.classList.add("opacidad")
     divGanador.classList.remove("hidden");
     divGanador.classList.add("divGanador");
+    mensajeGanador.classList.remove("hidden");
     mensajeGanador.classList.add("textoGanador");
-    mensajeGanador.innerHTML += "Gano el " + lastClicked.getNombreJugador();
+    if (!empato){
+        mensajeGanador.innerHTML += "Gano el " + lastClicked.getNombreJugador();
+    }
+    else {
+        mensajeGanador.innerHTML += "Empate";
+        empato = false;
+    }
+    botonReset.addEventListener('click', function(){
+        opacidad.classList.add("hidden");
+        divGanador.classList.add("hidden");
+        divGanador.classList.remove("divGanador");
+        mensajeGanador.classList.add("hidden");
+        reset();
+    })
 
 }
