@@ -370,6 +370,7 @@ function mouseUp(){
        
     
         hizoXenLinea(col,fila)
+        
     }   
     else if (lastClicked.getMovible()){
         //console.log(posicionesFichas[0].getRadio());
@@ -392,6 +393,7 @@ function hizoXenLinea(col,fila){
             minutos = 0;
             segundos = 0;
             stop = true;
+            showMensaje();
             reset();
             break;
         case hizoXenLineaVertical(col,fila,contador,jugador):
@@ -399,6 +401,7 @@ function hizoXenLinea(col,fila){
             minutos = 0;
             segundos = 0;
             stop = true;
+            showMensaje();
             reset();
             break;
         case hizoXenLineaDiagonal(col,fila,contador,contador2,contador3,contador4,jugador):
@@ -406,7 +409,9 @@ function hizoXenLinea(col,fila){
             minutos = 0;
             segundos = 0;
             stop = true;
-            reset();
+            showMensaje();
+             reset();
+          
             break;
         default:
             contador = 0; //se resetea, ej se pusieron 2 fichas nada mas, por lo que no contó 4 a su alrededor
@@ -835,7 +840,7 @@ function reset() {
     stop = false;
     minutos = 0;
     segundos = 0;
-    // timer(); // se llama al timer cuando inicia la partida
+
 
     if(tablero.getColumnas() > 0 && tablero.getFilas() > 0) {
         for (let j= 0; j< tablero.getColumnas(); j++){
@@ -866,15 +871,6 @@ function reset() {
     primerValor = null;
     segundoValor = null;
 
-
-    // for(let i = 0; i < fichas.length; i++) {
-    //     if(i < fichas.length/2) {
-    //         fichas[i].setFill(rutajug1);
-    //     }
-    //     else {
-    //         fichas[i].setFill(rutajug2);
-    //     }
-    // }
 
 }
 
@@ -935,13 +931,25 @@ function timer() {
                 //clearInterval(intervalID);
                 stop = true;
                 alert("empate");
+                reset();
+                showMensaje();
                 segundos =0; //para que cuando se reinicie tambien se reinicie el timer
                 minutos = 0;
-                reset();
              
             }
         }, 1000);
 }
 
 
+let mensajeGanador = document.querySelector("#mensajeGanador");
+let opacidad = document.querySelector("#opacidad");
+function showMensaje(){
 
+    opacidad.classList.remove("hidden");
+    opacidad.classList.add("opacidad")
+    mensajeGanador.classList.add("textoGanador");
+    mensajeGanador.innerHTML = " ";
+    mensajeGanador.innerHTML += "Gano el " + lastClicked.getNombreJugador();
+
+
+}
