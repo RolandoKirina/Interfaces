@@ -25,7 +25,7 @@ let contadortimer = document.querySelector("#contadortimer");
 let btnReset = document.querySelector("#reset");
 btnReset.addEventListener('click', mostrarMensajeReset);
 let empato = false;
-
+let cantMinutosMaximo = 2;
 let segundos = 59;
 let minutos = cantMinutosMaximo;
 
@@ -838,7 +838,6 @@ function crearFichaStroke(posX, posY, radio, fill, decrementacion, aumentox, arr
 let timerDom = document.querySelector("#timer");
 timerDom.innerHTML = " ";
 let mensaje = " ";
-let cantMinutosMaximo = 2;
 let intervalID;
 
 let btnaceptarReinicio = document.querySelector("#reiniciar");
