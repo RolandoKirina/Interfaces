@@ -142,7 +142,9 @@ function seleccionarPersonajes(){
                         minutos = cantMinutosMaximo-1;
                         segundos = 59;
                        
-
+                        if(!envio) {
+                            cantMinutosMaximo = 2;
+                        }
 
                 }   
                 }
