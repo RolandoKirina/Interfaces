@@ -2790,12 +2790,15 @@ button {
     display: flex;
     flex-direction: column;
     background-color: rgba(0, 0, 0, 0.3);  
-    height: 100%;
-    margin-bottom: 0.15em;
+    height: 32em;
     justify-content: center;
     align-items: center;
-    margin-top: 0;
+    margin-bottom: 1em;
 }
+.resaltadoblur{
+    box-shadow: 1px 0px 15px rgba(0, 0, 0, 0.8);
+}
+
 .divcenter {
     display: flex;
     flex-direction: column;
