@@ -227,6 +227,7 @@ function crearXenLinea(col,fila,cant,radio,decrementacionYTab,aumentoX,decrement
     contadortimer.classList.add("timer");
     // elegirpersonajes.classList.remove("elegirpersonajes");
     // elegirpersonajes.classList.add("hidden");
+    turnos.innerHTML = "Tira una ficha para empezar";
 
 
     fichas = []; //resetea la cantidad de fichas al cambiar entre modos de juego
@@ -643,7 +644,7 @@ function volverPosInicial(nueva){ //en caso de posicion incorrecta, vuelve a la 
 } 
 
 
-
+let turnos = document.querySelector("#turno");
 function verificarTurnos(){
     let jugador = lastClicked.getNombreJugador(); // obtiene el nombre de cualquier jugador
     if (!lastClicked.getMovible()){ // si no es movible la ultima
@@ -658,6 +659,14 @@ function verificarTurnos(){
                 
             }
         }   
+    }
+
+    
+    if(jugador == jugador1) {
+        turnos.innerHTML = " Turno: "+jugador2;
+    }
+    else {
+        turnos.innerHTML = " Turno: "+jugador1;
     }
 }
 

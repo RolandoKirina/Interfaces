@@ -2825,6 +2825,22 @@ button {
     margin-right: 0.25em;
     border: 0;
 }
+.turno {
+    display: flex;
+    align-items: center;
+    border-radius: 8px;
+    width: 9em;
+    height: 2.25em;
+    background-color: var(--prim-luz3);
+    border: solid 3px var(--prim-sombra3);
+    text-align: center;
+    justify-content: center;
+}
+
+.turno span {
+    display: inline-block;
+    font-size: 13px;
+}
 
 .mensajeGanador {
     top:15em;
