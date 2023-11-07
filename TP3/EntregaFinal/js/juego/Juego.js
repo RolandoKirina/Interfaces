@@ -98,6 +98,7 @@ imagenTablero.onload = () => {
     drawTablero();
 }
 
+//dibuja el rectangulo del tablero incluyendo la imagen
 function drawTablero(){
 
     context.beginPath();
@@ -117,7 +118,7 @@ function drawTablero(){
 }
 
 
-
+//se encarga de traer la imagen  de la ficha del jugador 1 y jugador 2
 function seleccionarPersonajes(){
    
     imagenesficha.forEach(img => {
@@ -143,7 +144,7 @@ function seleccionarPersonajes(){
                         segundos = 59;
                        
                         if(!envio) {
-                            cantMinutosMaximo = 2;
+                            cantMinutosMaximo = 2; // si no hizo click a enviar le setea x default 2 minutos
                         }
 
                 }   
@@ -156,7 +157,7 @@ function seleccionarPersonajes(){
 
 
 
-
+//se encarga de crear cada tablero depende de cual elija el usuario
 function cargarJuego(){
     
     btn4enlinea.addEventListener('click', function (){
@@ -233,20 +234,17 @@ function cargarJuego(){
 }
 
 
-
+//crea el tablero con la cantidad de fichas  que se elijan y las fichas de arriba y de los jugadores
 function crearXenLinea(col,fila,cant,radio,decrementacionYTab,aumentoX,decrementacionCostados,nrofichas,ancho){
     
-    //mostrar primero menu elegir modo de juego al reiniciar partida
     modoJuego.classList.remove("modosJuego");
     modoJuego.classList.add("hidden");
     elegirpersonajes.classList.remove("elegirpersonajes");
     elegirpersonajes.classList.add("hidden");
     contadortimer.classList.remove("hidden");
     contadortimer.classList.add("timer");
-    // elegirpersonajes.classList.remove("elegirpersonajes");
-    // elegirpersonajes.classList.add("hidden");
-    turnos.innerHTML = "Tira una ficha para empezar";
 
+    turnos.innerHTML = "Tira una ficha para empezar";
 
     fichas = []; //resetea la cantidad de fichas al cambiar entre modos de juego
     posicionesFichas = []; //resetea la cantidad de posiciones al cambiar entre modos de juego
@@ -261,6 +259,7 @@ function crearXenLinea(col,fila,cant,radio,decrementacionYTab,aumentoX,decrement
     
 }
 
+//rellena el tablero con las fichas blancas
 function rellenarTablero(){
     let decrementacion = 0;
     let aumentox = 0;
@@ -276,6 +275,7 @@ function rellenarTablero(){
     
 }
 
+// crea la ficha individual del tablero, llamando a crear ficha de la clase ficha
 function crearFichaTab(posX, posY, radio, fill, decrementacion, aumentox,j,i,movible,anchoFicha) {
     posY = posY - decrementacion;
     posX = posX + aumentox;
@@ -286,7 +286,7 @@ function crearFichaTab(posX, posY, radio, fill, decrementacion, aumentox,j,i,mov
 }
 
 
-
+//crea la ficha de los jugadores 1 y 2
 function crearFicha(posX, posY, radio, fill, decrementacion, aumentox, arr,jugador,movible,anchoFicha) {
     posY = posY - decrementacion;
     posX = posX + aumentox;
@@ -296,6 +296,7 @@ function crearFicha(posX, posY, radio, fill, decrementacion, aumentox, arr,jugad
 }
 
 
+//dibuja las fichas del arreglo de posiciones, las de los costados, y la de los tableros
 function drawAllFichas(){
     clearCanvas();
     drawTablero();
@@ -319,6 +320,7 @@ function drawAllFichas(){
 
 }
 
+//se encarga de crear las fichas del jugador 1 y del jugador2
 function crearTodasFichas(){
     fichas = [];
     let decrementacion = 0;
@@ -330,7 +332,7 @@ function crearTodasFichas(){
     
 }
 
-
+//recorre todo el arreglo de fichas de jugadores y retorna si hay alguna seleccionada.
 function encontrarFiguraClickeada(x,y){
     for (let i = 0; i < fichas.length; i++){
         let ficha = fichas[i];
@@ -340,7 +342,7 @@ function encontrarFiguraClickeada(x,y){
     }
 }
 
-
+// se activa cuando el usuario hace click en algun lugar del canvas
 function mousedown(e){
     
     mouseDown = true;
@@ -356,7 +358,7 @@ function mousedown(e){
 }
 
 
-
+// se activa cuando el usuario mueve una ficha
 function mouseMove(e){
     if (mouseDown && lastClicked != null && lastClicked.getMovible()){
         lastClicked.setPosition(e.offsetX, e.offsetY);   
@@ -366,7 +368,7 @@ function mouseMove(e){
 
 
 
-
+// se activa cuando el usuario suelta una ficha
 function mouseUp(){
     mouseDown = false;
     if (lastClicked != null){
@@ -395,6 +397,7 @@ function mouseUp(){
 
 }
 
+//verifica cada vez que se tira una ficha si el usuario gano o no.
 function hizoXenLinea(col,fila){
     let contador = 0;
     let contador2 = 0;
@@ -430,6 +433,7 @@ function hizoXenLinea(col,fila){
 }
 
 
+// se encarga de contar a partir de la ultima ficha lanzada a la derecha y retorna la cantidad de fichas que sumo el ultimo jugador
 function  verificarHorizontalDerecha(col,fila,contador2, jugador){
     let contveces = 0;
     let j = col;
@@ -448,6 +452,7 @@ function  verificarHorizontalDerecha(col,fila,contador2, jugador){
     }
 }
 
+// se encarga de ver si el jugador hizo x en linea horizontal.
 function hizoXenLineaHorizontal(col, fila, contador, contador2,jugador) {
 
     let contadorIzquierda = verificarHorizontalIzquierda(col, fila, contador, jugador);
@@ -465,7 +470,7 @@ function hizoXenLineaHorizontal(col, fila, contador, contador2,jugador) {
 }
 
 
-
+//se fija recorriendo el tablero si la suma horizontal valio x en linea
 function sumoXenLinea(fila,jugador){
     let cont = 0;
     for (let i = 0; i < tablero.getColumnas(); i++ ){
@@ -481,7 +486,9 @@ function sumoXenLinea(fila,jugador){
     }
     return false;
 }
-    //anda
+
+
+//verifica a partir de la ultima ficha lanzada si el jugador sumo x en linea a izquierda
 function verificarHorizontalIzquierda(col,fila,contador,jugador){
 
     let i = col;
