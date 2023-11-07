@@ -332,10 +332,8 @@ function mousedown(e){
 
     if (figuraClickeada != null){ 
         lastClicked = figuraClickeada;
-       // console.log("pos x: "+lastClicked.getPosX());
-        //console.log("pos y: "+lastClicked.getPosY());
     }
-    else {  //ARREGLA BUG QUE SIGUE POSICIONANDO FICHA AUNQUE YA LA HAYA SOLTADO
+    else { 
         lastClicked = null;
     }
    
@@ -742,10 +740,37 @@ function limpiarTodoCanvas(){
     drawTablero();
     drawAllFichas();
 }
+
+// function findCol(nueva){
+//     let diferencia = 25; //corregida diferencia
+//     let valory = 50;
+//     let posValorValidoY = 25;
+//     let posXnueva = nueva.getPosX();
+//     let posYnueva = nueva.getPosY();
+//     let encontro = false;
+//     let posFichaX = 0; //posiciones donde se pueden colocar fichas
+//     let posFichaY = 0;
+ 
+
+//     for(let i = 0; i < posicionesFichas.length; i++) { 
+//         posFichaX = posicionesFichas[i].getPosIniX();
+//         posFichaY = posicionesFichas[i].getPosIniY();
+
+//         if(posXnueva >= posFichaX - 30 && posXnueva < posFichaX + diferencia 
+//             && posYnueva > posValorValidoY && posYnueva<=valory) { //mira si coincide con alguna de las posiciones de las fichas
+//             encontro = true;
+//             return i;
+//         }
+//     }
+//     if(!encontro && nueva.estaSeleccionado(posXnueva,posYnueva)) {
+//         volverPosInicial(nueva);
+//     }
+// }
+
 function findCol(nueva){
-    let diferencia = 25; //corregida diferencia
+    let diferencia = 40; //tiene un margen de 40 px para errar...
     let valory = 50;
-    let posValorValidoY = 25;
+    let posValorValidoY = 0; //empieza en el techo del canvas
     let posXnueva = nueva.getPosX();
     let posYnueva = nueva.getPosY();
     let encontro = false;
@@ -766,6 +791,30 @@ function findCol(nueva){
     if(!encontro && nueva.estaSeleccionado(posXnueva,posYnueva)) {
         volverPosInicial(nueva);
     }
+    // const diferencia = 25; // Ancho de cada posición
+    // const posXnueva = nueva.getPosX(); // Coordenada X del centro de la ficha
+    // const posYnueva = nueva.getPosY(); // Coordenada Y del centro de la ficha
+    // let encontro = false;
+    // let columna = -1; // Inicializa como -1 para indicar que no se encontró una columna válida
+
+    // for (let i = 0; i < posicionesFichas.length; i++) {
+    //     const posFichaX = posicionesFichas[i].getPosIniX();
+
+    //     if (posXnueva >= posFichaX - diferencia / 2 && posXnueva < posFichaX + diferencia / 2) {
+    //         // Comprueba si el centro de la ficha está dentro de la posición
+    //         encontro = true;
+    //         columna = i;
+    //         break; // No es necesario continuar buscando
+    //     }
+    // }
+
+    // if (!encontro) {
+    //     if (nueva.estaSeleccionado(posXnueva, posYnueva)) {
+    //         volverPosInicial(nueva);
+    //     }
+    // }
+
+    // return columna;
 
 }
 
