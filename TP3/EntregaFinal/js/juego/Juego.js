@@ -508,6 +508,8 @@ function verificarHorizontalIzquierda(col,fila,contador,jugador){
     }
 
 }
+
+//verifica que hayan 4 fichas del mismo jugador juntas en vertical
 function hizoXenLineaVertical(col, fila, contador,jugador) {
  
     if (hizoVerticalArriba(col,fila,contador,jugador) == cantLinea){
@@ -515,6 +517,7 @@ function hizoXenLineaVertical(col, fila, contador,jugador) {
     }
 }
 
+//verifica que hayan 4 fichas del mismo jugador juntas en vertical
 function hizoVerticalArriba(col,fila,contador,jugador){
     let i = fila;
     let cantveces = 0;
@@ -530,7 +533,7 @@ function hizoVerticalArriba(col,fila,contador,jugador){
     }
 }
 
-
+//verifica que hayan 4 fichas del mismo jugador juntas en diagonal mirando todas las diagonales
 function hizoXenLineaDiagonal(col,fila,contador,contador2,contador3, contador4, jugador){
     
 
@@ -624,6 +627,7 @@ function hizoXenLineaDiagonal(col,fila,contador,contador2,contador3, contador4, 
     return false;
 }
 
+//vuelve x ficha a su posicion inicial, por ejemplo si tira la ficha en un lugar ajeno al tablero
 function volverPosInicial(nueva) {
     let duracion = 700;
     const posInicialX = nueva.getPosIniX();
@@ -660,6 +664,7 @@ function volverPosInicial(nueva) {
 }
 
 
+//verifica los turnos de modo que juegue el jugador 1 y luego el 2 o viceversa
 let turnos = document.querySelector("#turno");
 function verificarTurnos(){
     let jugador = lastClicked.getNombreJugador(); // obtiene el nombre de cualquier jugador
@@ -686,6 +691,7 @@ function verificarTurnos(){
     }
 }
 
+//verifica que x ficha se encuentre en el tablero
 function EstaEnTablero(ficha){
     let posXficha = ficha.getPosX();
     let posYficha = ficha.getPosY();
@@ -701,6 +707,7 @@ function EstaEnTablero(ficha){
     return esta;
 }
 
+//coloca las fichas desde que se tiran arriba del tablero hacia abajo en la ubicacion en la que debe ir.
 function setearPosicion(nueva,col,fila){
    
     let duracion = 600; //velocidad de la animacion
@@ -735,12 +742,14 @@ function setearPosicion(nueva,col,fila){
     }, intervalo);
 }
 
+//limpia el canvas y vuelve a dibujar el tablero y todas las fichas
 function limpiarTodoCanvas(){
     clearCanvas();
     drawTablero();
     drawAllFichas();
 }
 
+//encuentra la columna donde se tiró la ficha 
 function findCol(nueva){
     let diferencia = 40; //tiene un margen de 40 px para errar...
     let valory = 50;
@@ -765,37 +774,12 @@ function findCol(nueva){
     if(!encontro && nueva.estaSeleccionado(posXnueva,posYnueva)) {
         volverPosInicial(nueva);
     }
-    // const diferencia = 25; // Ancho de cada posición
-    // const posXnueva = nueva.getPosX(); // Coordenada X del centro de la ficha
-    // const posYnueva = nueva.getPosY(); // Coordenada Y del centro de la ficha
-    // let encontro = false;
-    // let columna = -1; // Inicializa como -1 para indicar que no se encontró una columna válida
-
-    // for (let i = 0; i < posicionesFichas.length; i++) {
-    //     const posFichaX = posicionesFichas[i].getPosIniX();
-
-    //     if (posXnueva >= posFichaX - diferencia / 2 && posXnueva < posFichaX + diferencia / 2) {
-    //         // Comprueba si el centro de la ficha está dentro de la posición
-    //         encontro = true;
-    //         columna = i;
-    //         break; // No es necesario continuar buscando
-    //     }
-    // }
-
-    // if (!encontro) {
-    //     if (nueva.estaSeleccionado(posXnueva, posYnueva)) {
-    //         volverPosInicial(nueva);
-    //     }
-    // }
-
-    // return columna;
-
+    
 }
 
 
-//let iteraciones = 7; //que vaya subiendo la ficha a medida se ocupan lugares.
-//se guardan cambios pero deberia resetearse al poner la ficha en otra columna
 
+//encuentra la fila donde la ficha se colocará en base a la columna ya encontrada(si la encontró)
 function encontrarFila(columna) {
 
     let fila = tablero.getFilas()-1;
@@ -813,7 +797,7 @@ function encontrarFila(columna) {
     return -1; // Si no se encuentra una vacia devuelve -1.
 }
 
-
+//limpia el canvas
 function clearCanvas(){
 
     // context.fillStyle = "#C79A6B";
@@ -821,6 +805,7 @@ function clearCanvas(){
     context.fillRect(0,0,canvasWidth,canvasHeight);
 }
 
+//crea las posiciones donde las fichas pueden tirarse para colocarse en el tablero
 function crearPosicionesFicha(){
     let aumentox = 0;
     for (let i = 0; i < tablero.getColumnas(); i++){
@@ -829,6 +814,7 @@ function crearPosicionesFicha(){
     }
 }
 
+//crea las fichas especiales donde estan las ubicaciones disponibles para tirar la ficha
 function crearFichaStroke(posX, posY, radio, fill, decrementacion, aumentox, arr,anchoFicha) {
     posY = posY - decrementacion;
     posX = posX + aumentox;
@@ -836,6 +822,7 @@ function crearFichaStroke(posX, posY, radio, fill, decrementacion, aumentox, arr
     arr.push(ficha);
     ficha.drawStroke();
 }
+
 let timerDom = document.querySelector("#timer");
 timerDom.innerHTML = " ";
 let mensaje = " ";
@@ -857,13 +844,15 @@ btnContinuarJugando.addEventListener('click', function (){
     mensajeReinicio.classList.add("hidden");
     stop = false;
 })
+
+//muestra el mensaje de reset en pantalla
 function mostrarMensajeReset(){
     stop = true;
     mensajeReinicio.classList.remove("hidden");
     mensajeReinicio.classList.add("mensaje");
 }
 
-
+//resetea el juego poniendo las fichas en su pos original, resetea el tablero seteandolo en null, vuelve el juego al menu principal
 function reset() {
     envio = false;
     //mostrar primero menu elegir modo de juego al reiniciar partida
@@ -919,7 +908,7 @@ let btnPausar = document.getElementById("btnpausar");
 
 let imagenPausar = document.getElementById("imagenpausar");
 
-// Arreglar img
+
 btnPausar.addEventListener('click',function (){
     if (segundos > 0 && minutos >= 0 && !clickeo){
     
@@ -936,6 +925,8 @@ btnPausar.addEventListener('click',function (){
 
 let stop = false; //sirve para frenar el timer cuando esta el mensaje de reinicio.
 let mensajestop;
+
+//muestra un timer en pantalla para ver el tiempo que queda disponible en la partida del juego
 function timer() {
         // Usar setInterval en lugar de setTimeout para ejecutar una función cada segundo
         intervalID =  setInterval(function(){
@@ -972,6 +963,7 @@ let opacidad = document.querySelector("#opacidad");
 let divGanador = document.querySelector("#divGanador");
 let botonReset = document.querySelector("#botonReset");
 
+//muestra mensaje del ganador cuando hay 4 en linea
 function showMensaje(){
     mensajeGanador.innerHTML = " ";
     opacidad.classList.remove("hidden");
