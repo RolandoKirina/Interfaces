@@ -189,8 +189,6 @@ nav div button {
 
 /* telaraña izquierda */
 
-/* spidey negro */
-
 .spidey-amazing-friends div:nth-child(9) {
     position: absolute;
     z-index: 100;
@@ -200,7 +198,23 @@ nav div button {
 }
 
 .spidey-amazing-friends div:nth-child(9) img {
-    /* transform: rotate(-114.597deg); */
+    width: auto;
+    height: auto;
+} 
+
+
+
+/* telaraña derecha */
+
+.spidey-amazing-friends div:nth-child(10) {
+    position: absolute;
+    z-index: 100;
+    height: auto;
+    left: 72.8%;
+    top: 58.5%;
+}
+
+.spidey-amazing-friends div:nth-child(10) img {
     width: auto;
     height: auto;
 } 
