@@ -241,19 +241,21 @@ nav div button {
 } */
 
 .green-goblin-svg {
-    height: 80em;
+    height: 150em;
     position: absolute;
     z-index: 40;
     right: 0;
     width: 100%;
-    top: 35em;
+    top: 0em;
 }
 
 .meet-spider-friends {
     position: absolute;
     z-index: 45;
-    top: 35em;
-    height: 50em
+    top: 58em;
+    height: 50em;
+    display: flex;
+    
 }
 
 .textSpidey {
