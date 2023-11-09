@@ -97,11 +97,10 @@ nav div button {
 
 /* edificio centro */
 .spidey-amazing-friends div:nth-child(3) {
-    
     position: absolute;
     z-index: 20;
     height: auto;
-    left: 25%;
+    left: 33%;
     top: 100%;
 }
 
@@ -126,8 +125,35 @@ nav div button {
 } 
 
 
+/* titulo spidey */
 
+.spidey-amazing-friends div:nth-child(5) {
+    position: absolute;
+    z-index: 50;
+    height: auto;
+    left: 30%;
+    top: 15%;
+}
 
+.spidey-amazing-friends div:nth-child(5) img {
+    width: auto;
+    height: auto;
+} 
+
+/* spidey blanco */
+
+.spidey-amazing-friends div:nth-child(6) {
+    position: absolute;
+    z-index: 50;
+    height: auto;
+    left: 6.7%;
+    top: 60%;
+}
+
+.spidey-amazing-friends div:nth-child(6) img {
+    width: auto;
+    height: auto;
+} 
 
 
 
