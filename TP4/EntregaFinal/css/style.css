@@ -1,19 +1,149 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato&family=Poppins:wght@100;400&family=Roboto:wght@100;400&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Lato&family=Poppins:wght@100;400&family=Roboto:wght@100;400&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;900&family=Poppins:wght@100;400&family=Roboto:wght@100;400&display=swap');
 
 * {
     font-family: 'Lato', sans-serif;
+    font-family: 'Poppins', sans-serif;
+    font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+button {
+    cursor: pointer;
+}
+
 header {
     width: 100%;
-    height: 5em;
+    height: 6em;
     background-color: #2982FF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 nav {
+    width: 80%;
+}
+
+nav div {
+    width: 100%;
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
+
+nav div button {
+    background-color: #2982FF;
+    border: 0;
+}
+
+.buy {
+    width: 12.5rem;
+    height: 3.125rem;
+    border-radius: 6.9375rem;
+    border: 8px solid var(--2982-ff, #2982FF);
+    background: #FFE901;
+    box-shadow: 4px 5px 0px 0px #02187E;
+}
+
+.buy span {
+    color: #02187E;
+    font-size: 1.25rem;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 94.5%; /* 1.18125rem */
+    letter-spacing: 0.1375rem;
+}
+
+/* seccion spidey and his amazing friends*/
+
+.spidey-amazing-friends {
+    width: 100%;
+    background-color: #2982FF;
+    height: auto;
+    /* position: relative; */
+}
+
+/* fondo cielo*/
+
+.spidey-amazing-friends div:nth-child(1) {
+    width: 100%;
+    position: absolute;
+    z-index: 1;
+    height: auto;
+}
+
+.spidey-amazing-friends div:nth-child(1) img {
+    width: 100%;
+    height: 100%;
+}
+
+
+/* edificio izquierda */
+ .spidey-amazing-friends div:nth-child(2) {
+    width: 100%;
+    position: absolute;
+    z-index: 30;
+    height: auto;
+    top: 20%;
+}
+
+.spidey-amazing-friends div:nth-child(2) img {
+    width: auto;
+    height: auto;
+} 
+
+/* edificio centro */
+.spidey-amazing-friends div:nth-child(3) {
+    
+    position: absolute;
+    z-index: 20;
+    height: auto;
+    left: 25%;
+    top: 100%;
+}
+
+.spidey-amazing-friends div:nth-child(3) img {
+    width: auto;
+    height: auto;
+} 
+
+
+/* edificio derecha */
+.spidey-amazing-friends div:nth-child(4) {
+    position: absolute;
+    z-index: 30;
+    height: auto;
+    top: 20%;
+    right: 0;
+}
+
+.spidey-amazing-friends div:nth-child(4) img {
+    width: auto;
+    height: auto;
+} 
+
+
+
+
+
+
+
+
+
+/* 
+.spidey-amazing-friends div:nth-child(4) {
+    
+    position: absolute;
+    z-index: 30;
+    height: auto;
+    left: 100%;
+    top: 100%;
+}
+
+.spidey-amazing-friends div:nth-child(4) img {
+    width: auto;
+    height: auto;
+}  */
