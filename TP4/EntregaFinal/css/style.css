@@ -100,7 +100,7 @@ nav div button {
     position: absolute;
     z-index: 20;
     height: auto;
-    left: 33%;
+    left: 28%;
     top: 100%;
 }
 
@@ -178,7 +178,7 @@ nav div button {
     position: absolute;
     z-index: 50;
     height: auto;
-    left: 53%;
+    left: 54%;
     top: 50%;
 }
 
@@ -210,7 +210,7 @@ nav div button {
     position: absolute;
     z-index: 100;
     height: auto;
-    left: 74.8%;
+    right: 0;
     top: 58.5%;
 }
 
