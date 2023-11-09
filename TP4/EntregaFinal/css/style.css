@@ -1,7 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato&family=Poppins:wght@100;400&family=Roboto:wght@100;400&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;900&family=Poppins:wght@100;400&family=Roboto:wght@100;400&display=swap');
 * {
     font-family: 'Lato', sans-serif;
+    font-family: 'Poppins', sans-serif;
+    font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -61,11 +64,13 @@ nav {
  width: 44em; 
  margin-left: 8em; 
  margin-top: 1.5em;
+
+}
+.margintop{
+    margin-top: 1em;
 }
 
-
 .underline{
-    margin-top: 1em;
     text-decoration: underline;
 }
 
@@ -95,7 +100,7 @@ nav {
 
 .buildings {
     position: absolute;
-    top:28em; /* cambiar a futuro x bottom 0*/
+    top:27.5em; /* cambiar a futuro x bottom 0*/
     width: 100%;
 }
 
@@ -105,10 +110,10 @@ nav {
 .titleSpidey {
     position: absolute;
     display: flex;
-    top:  5em;
-    left: 9.5em;
+    top:  7em;
+    left: 12em;
     justify-content: center;
-    width: 51rem;
+    width: 45rem;
 }
 
 .titleSpidey h1 {
@@ -122,34 +127,82 @@ nav {
 
 .inputMail{
     position: absolute;
-    top: 20em;
-    left: 20em;
-    width: 35.125rem;
+    display: flex;
+    justify-content: center;
+    top: 16.5em;
+    left: 1em;
+    width: 100%;
     height: auto;
 }
 .inputMail ::placeholder{
     color: rgba(0, 0, 0, 0.39);
-    font-size: 1.25rem;
+    font-size: 1em;
     font-weight: 400;
     line-height: 94.5%; /* 1.18125rem */
     letter-spacing: 0.1375rem;
+    padding:1.5em;
 }
-
+.textoInscribirse {
+    position: absolute;
+    top: 22em;
+    width: 100%;
+    left: 15em;
+    color: #000;
+}
+.textoInscribirse p{
+    width: 45%;
+    color: black;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 400;
+}
 .inputMail input {
     border-radius: 3.125rem 0rem 0rem 3.125rem;
     border-top: 9px solid #2982FF;
     border-bottom: 9px solid #2982FF;
     border-left: 9px solid #2982FF;
-    height: 2em;
+    height: 4em;
+    width: 40%;
     box-shadow: 4px 5px 0px 0px var(--blue);
 }
 
 .inputMail button {
     color: #02187E;
+    font-weight: bold;
     background-color: var(--yellow);
-    border-radius: 3.125rem 0rem 0rem 3.125rem;
-    border: 9px solid var(var(--skyblue));
-    height: 2em;
+    border-radius: 0 3.125rem 3.125rem  0;
+    border: 9px solid var(--skyblue);
+    height: 4em;
+    width: 12em;
     box-shadow: 4px 5px 0px 0px var(--blue);
 
+}
+
+.mildlenguaguesimg{
+    position: absolute;
+    top: 28em;
+    left: 15em;
+}
+
+.underline{
+    text-decoration: underline;
+}
+
+.spider1, .spider2, .spider3{
+    position: absolute;
+}
+
+.spider1 {
+    top: 55em;
+    left: 10em;
+}
+
+.spider2 {
+    top: 51em;
+    left: 25.5em;
+}
+
+.spider3 {
+    top: 46.5em;
+    left: 46.5em;
 }
