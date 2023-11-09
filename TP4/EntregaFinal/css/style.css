@@ -100,6 +100,7 @@ nav div button {
     position: absolute;
     z-index: 20;
     height: auto;
+    /* left: 28%; */
     left: 28%;
     top: 100%;
 }
@@ -219,3 +220,49 @@ nav div button {
     height: auto;
 } 
 
+/* .spidey-amazing-friends div:nth-child(11) {
+    background-color: #8F6AA6;
+    height: 20em;
+    position: absolute;
+    z-index: 35;
+    top: 100%;
+} */
+
+
+
+/* .main section:nth-child(2) {
+    position: absolute;
+    z-index: 40;
+    background-color: #8F6AA6;
+    height: 60em;
+    width: 100%;
+    bottom: 0;
+    top: 50em;
+} */
+
+.green-goblin-svg {
+    height: 80em;
+    position: absolute;
+    z-index: 40;
+    right: 0;
+    width: 100%;
+    top: 35em;
+}
+
+.meet-spider-friends {
+    position: absolute;
+    z-index: 45;
+    top: 35em;
+    height: 50em
+}
+
+.textSpidey {
+    background-color: black;
+    color: white;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items:flex-start;
+    justify-content: space-evenly;
+    height: 20em;
+}
