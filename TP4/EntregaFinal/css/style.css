@@ -187,3 +187,21 @@ nav div button {
     height: auto;
 } 
 
+/* telaraña izquierda */
+
+/* spidey negro */
+
+.spidey-amazing-friends div:nth-child(9) {
+    position: absolute;
+    z-index: 100;
+    height: auto;
+    left: 0;
+    top: 61%;
+}
+
+.spidey-amazing-friends div:nth-child(9) img {
+    /* transform: rotate(-114.597deg); */
+    width: auto;
+    height: auto;
+} 
+
