@@ -1,6 +1,6 @@
-/* @import url('https://fonts.googleapis.com/css2?family=Lato&family=Poppins:wght@100;400&family=Roboto:wght@100;400&display=swap'); */
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;900&family=Poppins:wght@100;400&family=Roboto:wght@100;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato&family=Poppins:wght@100;400&family=Roboto:wght@100;400&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;900&family=Poppins:wght@100;400&family=Roboto:wght@100;400&display=swap');
 * {
     font-family: 'Lato', sans-serif;
     font-family: 'Poppins', sans-serif;
@@ -8,263 +8,274 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
-
-button {
-    cursor: pointer;
-}
-
-header {
-    width: 100%;
-    height: 6em;
-    background-color: #4F98F7;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-nav {
-    width: 80%;
-}
-
-nav div {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-nav div button {
-    background-color: #4F98F7;
-    border: 0;
-}
-
-.buy {
-    width: 12.5rem;
-    height: 3.125rem;
-    border-radius: 6.9375rem;
-    border: 8px solid var(--2982-ff, #2982FF);
-    background: #FFE901;
-    box-shadow: 4px 5px 0px 0px #02187E;
-}
-
-.buy span {
-    color: #02187E;
+    color: #FFF;
+    color: #FFF;
     font-size: 1.25rem;
     font-style: normal;
-    font-weight: 900;
+    font-weight: 400;
     line-height: 94.5%; /* 1.18125rem */
     letter-spacing: 0.1375rem;
 }
 
-/* seccion spidey and his amazing friends*/
-
-.spidey-amazing-friends {
+/* header {
     width: 100%;
+    height: 5em;
     background-color: #2982FF;
-    height: auto;
-    /* position: relative; */
 }
 
-/* fondo cielo*/
-
-.spidey-amazing-friends div:nth-child(1) {
-    width: 100%;
-    position: absolute;
-    z-index: 1;
-    height: auto;
-}
-
-.spidey-amazing-friends div:nth-child(1) img {
-    width: 100%;
-    height: 100%;
-}
-
-
-/* edificio izquierda */
- .spidey-amazing-friends div:nth-child(2) {
-    width: 100%;
-    position: absolute;
-    z-index: 30;
-    height: auto;
-    top: 20%;
-}
-
-.spidey-amazing-friends div:nth-child(2) img {
-    width: auto;
-    height: auto;
-} 
-
-/* edificio centro */
-.spidey-amazing-friends div:nth-child(3) {
-    position: absolute;
-    z-index: 20;
-    height: auto;
-    /* left: 28%; */
-    left: 28%;
-    top: 100%;
-}
-
-.spidey-amazing-friends div:nth-child(3) img {
-    width: auto;
-    height: auto;
-} 
-
-
-/* edificio derecha */
-.spidey-amazing-friends div:nth-child(4) {
-    position: absolute;
-    z-index: 30;
-    height: auto;
-    top: 20%;
-    right: 0;
-}
-
-.spidey-amazing-friends div:nth-child(4) img {
-    width: auto;
-    height: auto;
-} 
-
-
-/* titulo spidey */
-
-.spidey-amazing-friends div:nth-child(5) {
-    position: absolute;
-    z-index: 50;
-    height: auto;
-    left: 25%;
-    top: 11%;
-}
-
-.spidey-amazing-friends div:nth-child(5) img {
-    width: auto;
-    height: auto;
-} 
-
-/* spidey blanco */
-
-.spidey-amazing-friends div:nth-child(6) {
-    position: absolute;
-    z-index: 50;
-    height: auto;
-    left: 6.7%;
-    top: 60%;
-}
-
-.spidey-amazing-friends div:nth-child(6) img {
-    width: auto;
-    height: auto;
-} 
-
-
-/* spidey rojo */
-
-.spidey-amazing-friends div:nth-child(7) {
-    position: absolute;
-    z-index: 50;
-    height: auto;
-    left: 29%;
-    top: 65%;
-}
-
-.spidey-amazing-friends div:nth-child(7) img {
-    width: auto;
-    height: auto;
-} 
-
-
-/* spidey negro */
-
-.spidey-amazing-friends div:nth-child(8) {
-    position: absolute;
-    z-index: 50;
-    height: auto;
-    left: 54%;
-    top: 50%;
-}
-
-.spidey-amazing-friends div:nth-child(8) img {
-    width: auto;
-    height: auto;
-} 
-
-/* telaraña izquierda */
-
-.spidey-amazing-friends div:nth-child(9) {
-    position: absolute;
-    z-index: 100;
-    height: auto;
-    left: 0;
-    top: 61%;
-}
-
-.spidey-amazing-friends div:nth-child(9) img {
-    width: auto;
-    height: auto;
-} 
-
-
-
-/* telaraña derecha */
-
-.spidey-amazing-friends div:nth-child(10) {
-    position: absolute;
-    z-index: 100;
-    height: auto;
-    right: 0;
-    top: 58.5%;
-}
-
-.spidey-amazing-friends div:nth-child(10) img {
-    width: auto;
-    height: auto;
-} 
-
-/* .spidey-amazing-friends div:nth-child(11) {
-    background-color: #8F6AA6;
-    height: 20em;
-    position: absolute;
-    z-index: 35;
-    top: 100%;
-} */
-
-
-
-/* .main section:nth-child(2) {
-    position: absolute;
-    z-index: 40;
-    background-color: #8F6AA6;
-    height: 60em;
-    width: 100%;
-    bottom: 0;
-    top: 50em;
-} */
-
-.green-goblin-svg {
-    height: 150em;
-    position: absolute;
-    z-index: 40;
-    right: 0;
-    width: 100%;
-    top: 0em;
-}
-
-.meet-spider-friends {
-    position: absolute;
-    z-index: 45;
-    top: 58em;
-    height: 50em;
+nav {
     display: flex;
+    justify-content: space-between;
+} */
+
+
+:root{
+    /*colores*/
+    --black: #242424;
+    --gray: #5E5E5D;
+    --skyblue: #2982FF;
+    --blue: #02187E;
+    --yellow: #FFE901;
+}
+.container{
+    width: 100%;
+    margin: 0;
+    position: relative;
+}
+.footer {
+    width: 100%;
+    margin: 0;
+    background-color: var(--gray);
+}
+.brandsfooter{
+    width: 100%;
+    display: flex;
+    height: 5em;
+    background-color: var(--black);
+    justify-content: center;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+.brandsfooter img {
+    width: 75%;
+}
+.footergray{
+    background-color: var(--gray);
+}
+
+.infofooter{
+ background-color: var(--gray);
+ height: 26em;
+ width: auto; 
+ margin-left: 8em; 
+ margin-top: 1.5em;
+
+}
+.margintop{
+    margin-top: 1em;
+}
+
+.underline{
+    text-decoration: underline;
+}
+
+.socialmedia {
+    margin-top: 1.5em;
+}
+
+.socialmedia img {
+    width: 25%;
+    height: auto;
+}
+
+.theLast {
+    width: 100%;
+    height: auto;
+    position: relative;
+}
+.backgroundsky {
+    width: 100%;
+    height: auto;
+}
+.backgroundsky svg {
+    width: 100%;
+    height: auto;
+}
+
+
+.buildings {
+    position: absolute;
+    top:27.5em; /* cambiar a futuro x bottom 0*/
+    width: 100%;
+}
+
+.buildings img {
+    width: 100%;
+}
+.titleSpidey {
+    position: absolute;
+    display: flex;
+    top:  7em;
+    left: 12em;
+    justify-content: center;
+    width: 45rem;
+}
+
+.titleSpidey h1 {
+    color: #000;
+    text-align: center;
+    font-size: 2.5em;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 94.5%; 
+}
+
+.inputMail{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    top: 16.5em;
+    left: 0em;
+    width: 100%;
+    height: auto;
+}
+.inputMail ::placeholder{
+    color: rgba(0, 0, 0, 0.39);
+    font-size: 1em;
+    font-weight: 400;
+    line-height: 94.5%; /* 1.18125rem */
+    letter-spacing: 0.1375rem;
+    padding:1.5em;
+}
+.textoInscribirse {
+    position: absolute;
+    top: 22em;
+    width: auto;
+    left: 14em;
+    color: #000;
+}
+.textoInscribirse p{
+    width: 45%;
+    color: black;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 400;
+}
+.inputMail input {
+    border-radius: 3.125rem 0rem 0rem 3.125rem;
+    border-top: 9px solid #2982FF;
+    border-bottom: 9px solid #2982FF;
+    border-left: 9px solid #2982FF;
+    height: 4em;
+    width: 40%;
+    box-shadow: 4px 5px 0px 0px var(--blue);
+}
+
+.inputMail button {
+    color: #02187E;
+    font-weight: bold;
+    background-color: var(--yellow);
+    border-radius: 0 3.125rem 3.125rem  0;
+    border: 9px solid var(--skyblue);
+    height: 4em;
+    width: 12em;
+    box-shadow: 4px 5px 0px 0px var(--blue);
+
+}
+
+.mildlenguaguesimg{
+    position: absolute;
+    top: 29em;
+    left: 14em;
+}
+
+.underline{
+    text-decoration: underline;
+}
+
+.spider1, .spider2, .spider3{
+    position: absolute;
+}
+
+.spider1 {
+    top: 55em;
+    left: 10em;
+}
+
+.spider2 {
+    top: 51em;
+    left: 25.5em;
+}
+
+.spider3 {
+    top: 46.5em;
+    left: 46.5em;
+}
+
+
+.spiderwhite, .spiderred, .spiderblue {
+    top: 35em;
+    position: absolute;
+}
+
+
+.spiderwhite {
+    left: 14em;
+}
+.spiderred {
+    left: 22em;
+}
+.spiderblue {
+    left: 38em;
+}
+
+.buynowsection{
+    width: 100%;
+    height: 30em;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    background-color: #000;
+    flex-direction: column;
+}
+
+.power {
+    width: 40em;
+    position: absolute;
+    top: 10em;
+    left: 4em;
+}
+.power h1 {
+    text-align: center;
+    color: #FFF;
+    font-size: 2em;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
     
 }
+.first , .second{
+    position: absolute;
+    left: 4em;
+}
+.buynow{
+    width: 18.25rem;
+    height: 3.125rem;
+    border-radius: 6.9375rem;
+    border: 8px solid var(--2982-ff, var(--skyblue));
+    background: var(--yellow);
+    box-shadow: 4px 5px 0px 0px #02187E;
+    position: absolute;
+    top: 16em;
+    left: 8em;
 
-.textSpidey {
-    background-color: black;
-    color: white;
-    width: 50%;
-    display: flex;
-    flex-direction: column;
-    align-items:flex-start;
-    justify-content: space-evenly;
-    height: 20em;
+}
+.backgroundblack {
+    background-color: #9c2222;
+    position: relative;
+    width: 80rem;   
+    height: auto;
+}
+
+.backgroundblack svg {
+    width: auto;
 }
