@@ -2,9 +2,7 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;900&family=Poppins:wght@100;400&family=Roboto:wght@100;400&display=swap');
 * {
-    font-family: 'Lato', sans-serif;
-    font-family: 'Poppins', sans-serif;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Lato';
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -356,14 +354,14 @@ nav div button {
     position: relative;
 }
 .footer {
-    width: 100%;
+    width: auto;
     bottom:0;
     height: 34em;
     background-color: var(--gray);
     position: relative;
 }
 .brandsfooter{
-    width: 100%;
+    width: auto;
     display: flex;
     height: 5em;
     background-color: var(--black);
@@ -402,12 +400,10 @@ nav div button {
 }
 
 .theLast {
-    width: 100%;
     height: auto;
     position: relative;
 }
 .backgroundsky {
-    width: 100%;
     height: auto;
     position: relative;
     top: -1em;
@@ -464,13 +460,13 @@ nav div button {
 }
 .textoInscribirse {
     position: absolute;
-    top: 22em;
-    width: 60em;
+    top: 22em; 
+    width: auto;
     left: 14em;
     color: #000;
 }
 .textoInscribirse p{
-    width: 45%;
+    width: 30em;
     color: black;
     font-size: 22px;
     font-style: normal;
@@ -510,7 +506,7 @@ nav div button {
 
 .spidersabsolute{
     position: absolute;  
-    top: 0em; 
+    top: -5em; 
     border: 2px solid red;
     height: auto;
 }
@@ -566,7 +562,7 @@ nav div button {
     text-align: center;
     color: #FFF;
     font-size: 2em;
-    font-style: normal;
+    font-style: regular;
     font-weight: 400;
     line-height: normal;
     
@@ -580,7 +576,7 @@ nav div button {
     top: 2em;
 }
 .second {
-    top: 4em;
+    top: 3.5em;
 }
 .buynow{
     width: 18.25rem;
@@ -593,7 +589,7 @@ nav div button {
     position: absolute;
     top: 10em;
     left: 5em;
-
+    font-weight: bolder;
 }
 .backgroundblack {
     background-color: #000;
@@ -606,13 +602,132 @@ nav div button {
 }
 
 .imgbackgroundwhite {
-    width: auto;
-    height: 137.15625rem;;
+    height: 97em;
+    width: 100%;
     position: relative;
     background-color: #000;
 }
 
+.textTitle h1, .textTitle p  , .titleFriendsFun h1{
+    color: #000;
+}
+.moreFriends{
+    position: absolute;
+    height: auto;
+    top: 16em;
+    left: 4em;
+}
 .imgbackgroundwhite img {
     width: auto;
     height: 100%;
+}
+
+.firstImgText {
+    top: 20em;
+}
+.secondImgText {
+    top: 38em;
+}
+.thirdImgText{
+    top: 56em;
+}
+.fourthImgText {
+    top: 74em;
+}
+
+.firstImgText, .secondImgText, .thirdImgText, .fourthImgText{
+    position: absolute;
+    z-index: 10;
+    left: 4em;
+}
+
+.firstImgText img , .secondImgText img, .thirdImgText img, .fourthImgText img{
+    height: 14em;
+}
+
+.textTitle {
+    top: 0em;
+    position: absolute;
+    z-index: 15;
+    left: 28em;
+}
+
+.textTitle p {
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 100%;
+    width: 26em; 
+}
+.textTitle h1 {
+    width: 14em;
+    font-size:  36px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 94.5%;
+    margin-bottom: 1em;
+}
+
+.titleFriendsFun {
+    position: absolute;
+    top: 14em;
+    z-index: 10;
+    left: 4em;
+
+}
+.titleFriendsFun h1 {
+    font-size: 3.75rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 94.5%; 
+    width: 20em;
+}
+
+
+
+.maincontainer {
+    width: 100%;
+    background-color: #000;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    z-index: -100;
+}
+.newcontainer {
+    width: 1080px;
+    background-color: #000;
+    position: relative;
+    height: 40em;
+}
+
+.titleAvengers h1{
+    position: absolute;
+    width: 8em;
+    font-size: 60px;
+    top: 2em;
+}
+.containerimages {
+    position: absolute;
+    top: 14em;
+}
+
+.sky, .trees, .plants, .girl, .black, .hulk{
+    position: absolute;
+}
+
+.sky img , .plants img{
+    width: 20em;
+    height: 20em;   
+}
+
+.girl {
+    top: -4em;
+}
+.black {
+    top: -10.2em;
+    left: 17.5em;
+}
+.hulk {
+    top: 4em;
+    left: 27em;
 }
