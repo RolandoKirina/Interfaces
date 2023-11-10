@@ -254,14 +254,23 @@ nav div button {
     height: auto;
 } 
 
+/* seccion goblin */
+
+.spidey-amazing-friends section {
+    position: absolute;
+    z-index: 40;
+    width: 100%;
+}
+
+
 .green-goblin-svg {
-    height: 150em;
+    height: 845px;
     position: absolute;
     z-index: 40;
     right: 0;
     width: 100%;
-    top: 0em;
-}
+    top: 30em;
+} 
 
 .meet-spider-friends {
     position: absolute;
@@ -269,20 +278,46 @@ nav div button {
     top: 38em;
     height: 50em;
     display: flex;
-    
 }
 
 .textSpidey {
     background-color: black;
     color: white;
-    width: 50%;
     display: flex;
     flex-direction: column;
     align-items:flex-start;
     justify-content: space-evenly;
     height: 20em;
+    position: absolute;
+    left: 7%;
+    top: -5em;
 }
 
+.textSpidey h1 {
+    margin-bottom: 0.5em;
+    width: 60%;
+    display: inline-block;
+    font-size: 60px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 94.5%; /* 56.7px */
+}
+
+.textSpidey p {
+    width: 60%;
+    display: inline-block;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.octopus {
+    position: absolute;
+    top: 53em;
+    z-index: 100;
+    left: 6%;
+}
 
 
 /* contenedor, footer */
@@ -290,6 +325,7 @@ nav div button {
 
 
 .container{
+    top: 80em;/* puesto de momento */
     width: 100%;
     margin: 0;
     position: relative;
@@ -298,6 +334,7 @@ nav div button {
     width: 100%;
     margin: 0;
     background-color: var(--gray);
+    bottom: 0;
 }
 .brandsfooter{
     width: 100%;
