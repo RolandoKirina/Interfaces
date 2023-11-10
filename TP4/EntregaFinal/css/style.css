@@ -271,8 +271,7 @@ nav {
 }
 .backgroundblack {
     background-color: #9c2222;
-    position: relative;
-    width: 80rem;   
+    position: relative; 
     height: auto;
 }
 
