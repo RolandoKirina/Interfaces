@@ -28,6 +28,9 @@ nav {
     justify-content: space-between;
 } */
 
+button {
+    cursor: pointer;
+}
 
 :root{
     /*colores*/
@@ -37,7 +40,317 @@ nav {
     --blue: #02187E;
     --yellow: #FFE901;
 }
+
+
+/* header seccion */
+
+
+header {
+    width: 100%;
+    height: 6em;
+    background-color: #4F98F7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+nav {
+    width: 80%;
+}
+
+nav div {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav div button {
+    background-color: #4F98F7;
+    border: 0;
+}
+
+.buy {
+    width: 12.5rem;
+    height: 3.125rem;
+    border-radius: 6.9375rem;
+    border: 8px solid var(--2982-ff, #2982FF);
+    background: #FFE901;
+    box-shadow: 4px 5px 0px 0px #02187E;
+}
+
+.buy span {
+    color: #02187E;
+    font-size: 1.25rem;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 94.5%; /* 1.18125rem */
+    letter-spacing: 0.1375rem;
+}
+
+/* primeras secciones */
+
+
+/* seccion spidey and his amazing friends*/
+
+.spidey-amazing-friends {
+    width: 100%;
+    background-color: #2982FF;
+    height: auto;
+    /* position: relative; */
+}
+
+/* fondo cielo*/
+
+.spidey-amazing-friends div:nth-child(1) {
+    width: 100%;
+    position: absolute;
+    z-index: 1;
+    height: auto;
+}
+
+.spidey-amazing-friends div:nth-child(1) img {
+    width: 100%;
+    height: 100%;
+}
+
+
+/* edificio izquierda */
+ .spidey-amazing-friends div:nth-child(2) {
+    width: 100%;
+    position: absolute;
+    z-index: 30;
+    height: auto;
+    top: 20%;
+}
+
+.spidey-amazing-friends div:nth-child(2) img {
+    width: auto;
+    height: auto;
+} 
+
+/* edificio centro */
+.spidey-amazing-friends div:nth-child(3) {
+    position: absolute;
+    z-index: 20;
+    height: auto;
+    /* left: 28%; */
+    left: 28%;
+    top: 100%;
+}
+
+.spidey-amazing-friends div:nth-child(3) img {
+    width: auto;
+    height: auto;
+} 
+
+
+/* edificio derecha */
+.spidey-amazing-friends div:nth-child(4) {
+    position: absolute;
+    z-index: 30;
+    height: auto;
+    top: 20%;
+    right: 0;
+}
+
+.spidey-amazing-friends div:nth-child(4) img {
+    width: auto;
+    height: auto;
+} 
+
+
+/* titulo spidey */
+
+.spidey-amazing-friends div:nth-child(5) {
+    position: absolute;
+    z-index: 50;
+    height: auto;
+    left: 25%;
+    top: 11%;
+}
+
+.spidey-amazing-friends div:nth-child(5) img {
+    width: auto;
+    height: auto;
+} 
+
+/* spidey blanco */
+
+.spidey-amazing-friends div:nth-child(6) {
+    position: absolute;
+    z-index: 50;
+    height: auto;
+    left: 6.7%;
+    top: 60%;
+}
+
+.spidey-amazing-friends div:nth-child(6) img {
+    width: auto;
+    height: auto;
+} 
+
+
+/* spidey rojo */
+
+.spidey-amazing-friends div:nth-child(7) {
+    position: absolute;
+    z-index: 50;
+    height: auto;
+    left: 29%;
+    top: 65%;
+}
+
+.spidey-amazing-friends div:nth-child(7) img {
+    width: auto;
+    height: auto;
+} 
+
+
+/* spidey negro */
+
+.spidey-amazing-friends div:nth-child(8) {
+    position: absolute;
+    z-index: 50;
+    height: auto;
+    left: 55%;
+    top: 50%;
+}
+
+.spidey-amazing-friends div:nth-child(8) img {
+    width: auto;
+    height: auto;
+} 
+
+/* telaraña izquierda */
+
+.spidey-amazing-friends div:nth-child(9) {
+    position: absolute;
+    z-index: 100;
+    height: auto;
+    left: 0;
+    top: 61%;
+}
+
+.spidey-amazing-friends div:nth-child(9) img {
+    width: auto;
+    height: auto;
+} 
+
+
+
+/* telaraña derecha */
+
+.spidey-amazing-friends div:nth-child(10) {
+    position: absolute;
+    z-index: 100;
+    height: auto;
+    right: 0;
+    top: 58.5%;
+}
+
+.spidey-amazing-friends div:nth-child(10) img {
+    width: auto;
+    height: auto;
+} 
+
+
+
+/* seccion goblin */
+
+.spidey-amazing-friends section {
+    position: absolute;
+    z-index: 100;
+    width: 100%;
+}
+
+/* rectangulo violeta */
+
+.purpleform {
+    position: absolute;
+    z-index: 45;
+    height: auto;
+    right: 0;
+    top: 30.5em;
+}
+
+.purpleform img {
+    height: 34em;
+}
+
+
+
+
+.green-goblin-svg {
+    height: 845px;
+    position: absolute;
+    z-index: 70;
+    right: 0;
+    width: 100%;
+    top: 30em;
+} 
+
+.meet-spider-friends {
+    position: absolute;
+    z-index: 70;
+    top: 38em;
+    height: 50em;
+    display: flex;
+}
+
+.textSpidey {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items:flex-start;
+    justify-content: space-evenly;
+    height: 20em;
+    position: absolute;
+    left: 7%;
+    top: -5em;
+    z-index: 70;
+}
+
+.textSpidey h1 {
+    margin-bottom: 0.5em;
+    width: 60%;
+    display: inline-block;
+    font-size: 60px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 94.5%; /* 56.7px */
+}
+
+.textSpidey p {
+    width: 60%;
+    display: inline-block;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.octopus {
+    position: absolute;
+    top: 52em;
+    z-index: 100;
+    left: 6%;
+}
+
+.green-gobling {
+    position: absolute;
+    z-index: 100;
+    top: 37em;
+    left: 56%;
+}
+
+
+/* contenedor, footer */
+
+
+
 .container{
+    top: 80em;/* puesto de momento */
     width: 100%;
     margin: 0;
     position: relative;
