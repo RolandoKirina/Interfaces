@@ -254,19 +254,37 @@ nav div button {
     height: auto;
 } 
 
+
+
 /* seccion goblin */
 
 .spidey-amazing-friends section {
     position: absolute;
-    z-index: 40;
+    z-index: 100;
     width: 100%;
 }
+
+/* rectangulo violeta */
+
+.purpleform {
+    position: absolute;
+    z-index: 45;
+    height: auto;
+    right: 0;
+    top: 30.5em;
+}
+
+.purpleform img {
+    height: 34em;
+}
+
+
 
 
 .green-goblin-svg {
     height: 845px;
     position: absolute;
-    z-index: 40;
+    z-index: 70;
     right: 0;
     width: 100%;
     top: 30em;
@@ -274,14 +292,13 @@ nav div button {
 
 .meet-spider-friends {
     position: absolute;
-    z-index: 45;
+    z-index: 70;
     top: 38em;
     height: 50em;
     display: flex;
 }
 
 .textSpidey {
-    background-color: black;
     color: white;
     display: flex;
     flex-direction: column;
@@ -291,6 +308,7 @@ nav div button {
     position: absolute;
     left: 7%;
     top: -5em;
+    z-index: 70;
 }
 
 .textSpidey h1 {
@@ -314,9 +332,16 @@ nav div button {
 
 .octopus {
     position: absolute;
-    top: 53em;
+    top: 52em;
     z-index: 100;
     left: 6%;
+}
+
+.green-gobling {
+    position: absolute;
+    z-index: 100;
+    top: 37em;
+    left: 56%;
 }
 
 
