@@ -371,12 +371,50 @@ nav {
 }
 
 
-.container {
-    width: 1080px;
-    background-color: #ff0f77;
+
+.maincontainer {
+    width: 100%;
+    background-color: #000;
+    display: flex;
+    justify-content: center;
     position: relative;
-    height: auto;
+    z-index: -100;
 }
-.backgroundavengers {
-    background-color: rgba(255, 125, 125, 0.427);   
+.newcontainer {
+    width: 1080px;
+    background-color: #000;
+    position: relative;
+    height: 40em;
+}
+
+.titleAvengers h1{
+    position: absolute;
+    width: 8em;
+    font-size: 60px;
+    top: 2em;
+}
+.containerimages {
+    position: absolute;
+    top: 14em;
+}
+
+.sky, .trees, .plants, .girl, .black, .hulk{
+    position: absolute;
+}
+
+.sky img , .plants img{
+    width: 20em;
+    height: 20em;   
+}
+
+.girl {
+    top: -4em;
+}
+.black {
+    top: -10.2em;
+    left: 17.5em;
+}
+.hulk {
+    top: 4em;
+    left: 27em;
 }
