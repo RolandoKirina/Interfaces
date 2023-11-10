@@ -2,9 +2,7 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;900&family=Poppins:wght@100;400&family=Roboto:wght@100;400&display=swap');
 * {
-    font-family: 'Lato', sans-serif;
-    font-family: 'Poppins', sans-serif;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Lato';
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -251,7 +249,7 @@ nav {
     text-align: center;
     color: #FFF;
     font-size: 2em;
-    font-style: normal;
+    font-style: regular;
     font-weight: 400;
     line-height: normal;
     
@@ -265,7 +263,7 @@ nav {
     top: 2em;
 }
 .second {
-    top: 4em;
+    top: 3.5em;
 }
 .buynow{
     width: 18.25rem;
@@ -278,7 +276,7 @@ nav {
     position: absolute;
     top: 10em;
     left: 5em;
-
+    font-weight: bolder;
 }
 .backgroundblack {
     background-color: #000;
@@ -291,7 +289,8 @@ nav {
 }
 
 .imgbackgroundwhite {
-    height: 137.15625rem;;
+    height: 97em;
+    width: 100%;
     position: relative;
     background-color: #000;
 }
@@ -311,41 +310,56 @@ nav {
 }
 
 .firstImgText {
-    position: absolute;
     top: 20em;
-    z-index: 10;
 }
+.secondImgText {
+    top: 38em;
+}
+.thirdImgText{
+    top: 56em;
+}
+.fourthImgText {
+    top: 74em;
+}
+
+.firstImgText, .secondImgText, .thirdImgText, .fourthImgText{
+    position: absolute;
+    z-index: 10;
+    left: 4em;
+}
+
+.firstImgText img , .secondImgText img, .thirdImgText img, .fourthImgText img{
+    height: 14em;
+}
+
 .textTitle {
     top: 0em;
     position: absolute;
     z-index: 15;
-    left: 26em;
+    left: 28em;
 }
 
 .textTitle p {
-    font-size: 1.25rem;
+    font-size: 18px;
     font-style: normal;
     font-weight: 400;
-    line-height: 94.5%;
+    line-height: 100%;
     width: 26em; 
 }
 .textTitle h1 {
     width: 14em;
-    font-size: 2.5rem;
+    font-size:  36px;
     font-style: normal;
     font-weight: 400;
     line-height: 94.5%;
     margin-bottom: 1em;
 }
 
-.firstImgText img {
-    height: 14em;
-}
-
 .titleFriendsFun {
     position: absolute;
-    top: 2em;
+    top: 14em;
     z-index: 10;
+    left: 4em;
 
 }
 .titleFriendsFun h1 {
@@ -354,4 +368,15 @@ nav {
     font-weight: 600;
     line-height: 94.5%; 
     width: 20em;
+}
+
+
+.container {
+    width: 1080px;
+    background-color: #ff0f77;
+    position: relative;
+    height: auto;
+}
+.backgroundavengers {
+    background-color: rgba(255, 125, 125, 0.427);   
 }
