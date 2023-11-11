@@ -379,7 +379,6 @@ function mouseUp(){
     if (lastClicked != null){
         let col = findCol(lastClicked);
         let fila = encontrarFila(col);
-    
     if (fila != -1) {
         tablero.casillero[col][fila]= lastClicked;
         setearPosicion(lastClicked,col,fila);
@@ -395,6 +394,7 @@ function mouseUp(){
         
     }   
     else if (lastClicked.getMovible()){
+        console.log("hola");
             volverPosInicial(lastClicked);
         }
     }
