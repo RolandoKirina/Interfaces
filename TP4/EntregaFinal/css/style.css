@@ -445,8 +445,8 @@ nav div button {
     display: flex;
     justify-content: center;
     top: 16.5em;
-    left: 1.5em;
-    width: 100%;
+    left: 2.5em;
+    width: 90%;
     height: auto;
 }
 .inputMail ::placeholder{
@@ -542,7 +542,7 @@ nav div button {
 }
 
 .buynowsection{
-    width: 100%;
+    width: auto;
     height: 14em;
     display: flex;
     justify-content: center;
@@ -602,9 +602,10 @@ nav div button {
 
 .imgbackgroundwhite {
     height: 97em;
-    width: 100%;
+    width: auto;
     position: relative;
     background-color: #000;
+    z-index: -100;
 }
 
 .textTitle h1, .textTitle p  , .titleFriendsFun h1{
@@ -615,29 +616,31 @@ nav div button {
     height: auto;
     top: 16em;
     left: 4em;
+    z-index: -10;
 }
 .imgbackgroundwhite img {
     width: auto;
     height: 100%;
+    position: relative;
 }
 
 .firstImgText {
-    top: 20em;
+    top: 52em;
 }
 .secondImgText {
-    top: 38em;
+    top: 70em;
 }
 .thirdImgText{
-    top: 56em;
+    top: 88em;
 }
 .fourthImgText {
-    top: 74em;
+    top: 106em;
 }
 
 .firstImgText, .secondImgText, .thirdImgText, .fourthImgText{
     position: absolute;
     z-index: 10;
-    left: 4em;
+    left: 2em;
 }
 
 .firstImgText img , .secondImgText img, .thirdImgText img, .fourthImgText img{
@@ -659,8 +662,8 @@ nav div button {
     width: 26em; 
 }
 .textTitle h1 {
-    width: 14em;
-    font-size:  36px;
+    width: auto;
+    font-size:  34px;
     font-style: normal;
     font-weight: 400;
     line-height: 94.5%;
@@ -669,9 +672,9 @@ nav div button {
 
 .titleFriendsFun {
     position: absolute;
-    top: 14em;
+    top: 62em;
     z-index: 10;
-    left: 4em;
+    left: 6em;
 
 }
 .titleFriendsFun h1 {
@@ -679,7 +682,7 @@ nav div button {
     font-style: normal;
     font-weight: 600;
     line-height: 94.5%; 
-    width: 20em;
+    width: auto;
 }
 
 
@@ -690,7 +693,7 @@ nav div button {
     display: flex;
     justify-content: center;
     position: relative;
-    z-index: -100;
+    /*se superpuso sacandole el z index negativo aca*/
 }
 .newcontainer {
     width: 1080px;
@@ -703,11 +706,11 @@ nav div button {
     position: absolute;
     width: 8em;
     font-size: 60px;
-    top: 2em;
+    top: 6.5em;
 }
 .containerimages {
     position: absolute;
-    top: 14em;
+    top: 25em;
 }
 
 .sky, .trees, .plants, .girl, .black, .hulk{
@@ -718,15 +721,27 @@ nav div button {
     width: 20em;
     height: 20em;   
 }
-
+.sky {
+    z-index: 10;
+    box-shadow: 26px 29px 41px 14px rgba(0, 0, 0, 0.15);
+}
+.trees {
+    z-index: 15;
+}
+.plants {
+    z-index: 30;
+}
 .girl {
     top: -4em;
+    z-index: 20;
 }
 .black {
     top: -10.2em;
     left: 17.5em;
+    z-index: 20;
 }
 .hulk {
     top: 4em;
     left: 27em;
+    z-index: 20;
 }
