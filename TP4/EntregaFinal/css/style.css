@@ -333,53 +333,48 @@ nav div button {
 
 .spiders-info div:nth-child(1) {
     position: absolute;
-    background-color: rgb(73, 31, 31);
     left: 4em;
     display: flex;
     flex-direction: column;
-    width: 332.96px;
+    width: 360px;
     height: 302.691px;
 }
 
 .spiders-info div:nth-child(1) img, .spiders-info div:nth-child(2) img, .spiders-info div:nth-child(3) img{
     width: 332.96px;
     height: 302.691px;
+    margin-bottom: 1em;
 }
 
-.spiders-info div:nth-child(1) span {
-    background-color: rgb(58, 58, 131);
-
+.spiders-info div:nth-child(1) span, .spiders-info div:nth-child(2) span, .spiders-info div:nth-child(3) span{
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 0.0375rem;
+    color: #000;
 }
+
+
 
 .spiders-info div:nth-child(2) {
     position: absolute;
     left: 19em;
-    background-color: blue;
-    width: 332.96px;
+    width: 360px;
     height: 302.691px;
     display: flex;
     flex-direction: column;
-}
-
-.spiders-info div:nth-child(2) span {
-    background-color: rgb(97, 131, 58);
 }
 
 .spiders-info div:nth-child(3) {
     position: absolute;
-    background-color: green;
-    width: 332.96px;
+    width: 360px;
     height: 302.691px;
-    right: 3em;
+    /* right: 3em; */
+    left: 34em;
     display: flex;
     flex-direction: column;
 }
-
-.spiders-info div:nth-child(3) span {
-    background-color: rgb(58, 123, 131);
-
-}
-
 
 /* .main {
     margin-bottom: 200em;
