@@ -354,7 +354,15 @@ nav div button {
     margin-bottom: 200em;
 } */
 
+/* .main {
+    position: relative;
+    top: -200em;
+} */
 
+.all {
+    position: relative;
+    top: 200em;
+}
 
 
 /* contenedor, footer */
