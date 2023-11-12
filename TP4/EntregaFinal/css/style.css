@@ -264,10 +264,12 @@ nav div button {
     height: auto;
     right: 0;
     top: 30.5em;
+    width: 100%;
 }
 
 .purpleform img {
     height: 34em;
+    width: 100%;
 }
 
 
