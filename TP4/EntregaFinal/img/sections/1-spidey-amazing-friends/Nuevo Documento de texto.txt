@@ -1,0 +1,54 @@
+.spidey-amazing-friends div:nth-child(1) img { /* fondo cielo */
+    width: auto;
+    position: absolute;
+    z-index: 1;
+}
+
+.spidey-amazing-friends div:nth-child(2) img { /* edificio izquierdo */
+    width: auto;
+    height: auto;
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    left: 0;
+}
+
+.spidey-amazing-friends div:nth-child(3) img { /* edificio derecho */
+    width: auto;
+    height: auto;
+    position: absolute;
+    z-index: 3;
+    top: 0;
+    right: 0;
+}
+
+.spidey-amazing-friends div:nth-child(4) img { /* edificio central */
+    width: auto;
+    height: auto;
+    position: absolute;
+    z-index: 4;
+    bottom: 0;
+    right: 0;
+    left: 50;
+}
+
+.spidey-amazing-friends div:nth-child(5) {
+    width: 100%;
+}
+.spidey-amazing-friends div:nth-child(5) img { /* edificio derecho */
+    width: auto;
+    height: auto;
+    position: absolute;
+    z-index: 5;
+    top: 0;
+    right: 5;
+    left: 5;
+}
+
+
+
+fondo nube:
+
+621 altura, 1098width
+
+
