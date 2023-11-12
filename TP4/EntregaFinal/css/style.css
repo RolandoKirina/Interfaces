@@ -350,12 +350,10 @@ nav div button {
 }
 
 
+/* .main {
+    margin-bottom: 200em;
+} */
 
-.containers {
-    position: relative;
-    /* Movido temporalmente */
-    /* top: 201em; */
-}
 
 
 
@@ -367,8 +365,6 @@ nav div button {
     width: 100%;
     margin: 0;
     position: relative;
-        /* Movido temporalmente */
-    /* top: 200em;  */
 }
 .footer {
     width: auto;
