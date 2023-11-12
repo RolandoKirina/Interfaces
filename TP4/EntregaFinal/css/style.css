@@ -256,12 +256,6 @@ nav div button {
 
 /* seccion goblin */
 
-.spidey-amazing-friends section {
-    position: absolute;
-    z-index: 100;
-    width: 100%;
-}
-
 /* rectangulo violeta */
 
 .purpleform {
@@ -279,53 +273,39 @@ nav div button {
 
 
 
-.green-goblin-svg {
-    height: 845px;
-    position: absolute;
-    z-index: 70;
-    right: 0;
+.spidey-amazing-friends section {
+    position: relative;
+    z-index: 100;
     width: 100%;
-    top: 30em;
-} 
+}
+
 
 .meet-spider-friends {
-    position: absolute;
+    position: relative;
     z-index: 70;
-    top: 38em;
-    height: 50em;
-    display: flex;
-}
-
-.textSpidey {
-    color: white;
+    top: 32em;
     display: flex;
     flex-direction: column;
-    align-items:flex-start;
     justify-content: space-evenly;
-    height: 20em;
-    position: absolute;
-    left: 7%;
-    top: -5em;
-    z-index: 70;
 }
 
-.textSpidey h1 {
-    margin-bottom: 0.5em;
-    width: 60%;
-    display: inline-block;
+.meet-spider-friends h1{
     font-size: 60px;
     font-style: normal;
     font-weight: 600;
     line-height: 94.5%; /* 56.7px */
+    width: 55%;
+    margin-left: 1.5em;
+    margin-bottom: 0.5em;
 }
 
-.textSpidey p {
-    width: 60%;
-    display: inline-block;
+.meet-spider-friends p{
     font-size: 20px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
+    width: 60%;
+    margin-left: 4.5em;
 }
 
 .octopus {
@@ -341,6 +321,38 @@ nav div button {
     top: 37em;
     left: 56%;
 }
+
+/* seccion spiders info */
+
+.spiders-info {
+    display: flex;
+    justify-content:space-evenly;
+    position: relative;
+    top: 68em;
+}
+
+.spiders-info div:nth-child(1) {
+    position: absolute;
+    background-color: red;
+    left: 4em;
+}
+
+.spiders-info div:nth-child(2) {
+    position: absolute;
+    left: 19em;
+    background-color: blue;
+}
+
+.spiders-info div:nth-child(3) {
+    position: absolute;
+    background-color: green;
+    right: 3em;
+}
+
+
+
+
+
 
 
 /* contenedor, footer */
