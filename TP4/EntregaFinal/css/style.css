@@ -690,7 +690,7 @@ nav div button {
     display: flex;
     justify-content: center;
     position: relative;
-    background-color: #000;
+    background-color: var(--darkblack);
     flex-direction: column;
 }
 
@@ -733,6 +733,7 @@ nav div button {
     left: 5em;
     font-weight: bolder;
 }
+
 .backgroundblack {
     background-color: var(--darkblack);
     position: relative; 
@@ -744,10 +745,11 @@ nav div button {
 }
 
 .imgbackgroundwhite {
-    height: 97em;
+    height: 94em;
     width: auto;
     position: relative;
-    background-color: #000;
+    /* CAMBIAR */
+    background-color: #863838;
     z-index: -100;
 }
 
@@ -757,7 +759,7 @@ nav div button {
 .moreFriends{
     position: absolute;
     height: auto;
-    top: 16em;
+    top: -4em;
     /* crea scroll en x el left*/
     left: 4em;
     z-index: -10;
@@ -818,7 +820,7 @@ nav div button {
 
 .titleFriendsFun {
     position: absolute;
-    top: 62em;
+    top: 40em;
     z-index: 10;
     left: 6em;
 
@@ -845,18 +847,18 @@ nav div button {
     width: 1080px;
     background-color: #000;
     position: relative;
-    height: 40em;
+    height: 28.5em;
 }
 
 .titleAvengers h1{
     position: absolute;
     width: 8em;
     font-size: 60px;
-    top: 6.5em;
+    top: 2em;
 }
 .containerimages {
     position: absolute;
-    top: 25em;
+    top: 13.5em;
 }
 
 .sky, .trees, .plants, .girl, .black, .hulk{
