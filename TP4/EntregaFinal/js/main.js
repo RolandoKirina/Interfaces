@@ -1,8 +1,13 @@
 
 "use strict"
 
-let btn = document.querySelector("#btnhamburguer");
+let menu = document.querySelector(".menu");
 
-btn.addEventListener('click', function(){
-    btn.classList.toggle('activar');
-})
+menu.addEventListener('click', function() {
+    this.classList.toggle('activar');
+});
+
+// btn.addEventListener('click', function(){
+//     /* si esta la clase la quita y si no la agrega*/
+//     btn.classList.toggle('activar');
+// })

@@ -743,51 +743,88 @@ nav div button {
     top: 4em;
     left: 27em;
     z-index: 20;
-}
-
-.line {
-    width: 1em;
-    height: 1em;
-    color: black;
-}
-
-
-
+/* }
 .btnhamburguer{
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 3em;
-    height: 2.3em;
-    background-color: #4F98F7;
-    filter: drop-shadow(4px 5px 0px #02187E);
+    width: 2.8em;
+    height: 1em;
+    background-color: rgb(247, 183, 79);
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out, 0.3s ease-in-out;
+    border-radius: 6em;
+    border: 8px solid var(--blue);
 }
 /* cuando tocan el boton le aplica la transformacion suave con ease int out en 3 segundos*/
-.btnhamburguer div  {
-    margin-bottom: 0.3em;
-    background-color: var(--yellow);
-    width: 2.5em;
-    height: 0.3em;
-    border-radius: 8em;
-    transition: transform 0.3s ease-in-out, 0.3s ease-in-out;
-} 
-.btnhamburguer :first-child{
+/* .btnhamburguer :first-child{
     margin-top: 0.3em;
 }
-
-.btnhamburguer.activar div:nth-child(2) {
+.menu.activar div:nth-child(2){
     transform: scaleX(0); /*escala el elemento en x para que la segunda liena desaparezca*/
 }
+/* 
+.btnhamburguer.activar div:nth-child(2) {
+    /* transform: scaleX(0); /*escala el elemento en x para que la segunda liena desaparezca*/
+
+/* .menu {
+    display: flex;
+    flex-direction: column;
+} */
 
 /*rota la tercer linea desde 0 grados hasta -45 para que se forme la mitad de la cruz*/
-
-.btnhamburguer.activar div:nth-child(3) {
+/* 
+.menu.activar div:nth-child(3) {
     transform: rotate(-45deg) translate(0.6em, -0.2em); 
-}
+} */
 
 /*rota la primer linea de 0 grados a 45 para que se forme
  la segunda mitad de cruz mirando hacia abajo*/
 /*con 0.7 y 0.2em lo translada hacia abajo a la derecha.*/
-.btnhamburguer.activar div:nth-child(1) {
+/* .menu.activar div:nth-child(1) {
     transform: rotate(45deg) translate(0.7em, 0.2em);
+}  */
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden; 
+}
+
+.btnhamburguer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 2.3em;
+    height: 0.7em;
+    background-color: #FFE901;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out;
+    border-radius: 6em;
+    border: 6px solid #2981FF;
+    filter: drop-shadow(4px 5px 0px #02187E);
+    margin-right: 35em;
+}
+
+.menu .btnhamburguer:nth-child(3){
+    margin-bottom: 0.75em;
+}
+.menu.activar .btnhamburguer {
+    transform: rotate(45deg) translate(0.7em, 0.2em);
+    filter: drop-shadow(0px 4px 0px #02187E);
+}
+
+.menu.activar .btnhamburguer:nth-child(2) {
+    transform: scaleX(0);
+}
+
+.menu.activar .btnhamburguer:nth-child(3) {
+    transform: rotate(-45deg) translate(0.8em, -0.2em);
+    filter: drop-shadow(-4px 0px 0px #02187E);
+}
+
+.nav {
+    width: auto;
+    display: flex;
+    flex-direction: row;
 }
