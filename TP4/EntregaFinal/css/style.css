@@ -41,7 +41,8 @@ button {
 header {
     width: 100%;
     height: 6em;
-    background-color: #4F98F7;
+    background-color: var(--header);
+
     display: flex;
     justify-content: center;
     align-items: center;
@@ -939,7 +940,7 @@ header {
     margin-right: 35em;
 }
 
-.menu .btnhamburguer:nth-child(3){
+/* .menu .btnhamburguer:nth-child(3){
     margin-bottom: 0.75em;
 }
 .menu.activar .btnhamburguer {
@@ -955,14 +956,53 @@ header {
     transform: rotate(-45deg) translate(0.8em, -0.2em);
     filter: drop-shadow(-4px 0px 0px #02187E);
 }
-
+*/
 .nav {
     width: auto;
     display: flex;
     flex-direction: row;
+} 
+.menu .btnhamburguer:nth-child(3){
+    margin-bottom: 0.75em;
 }
-#title {
-    transition: height 0.3s ease; /* Agrega una transición suave a la propiedad de altura */
+
+.menu.activar .btnhamburguer {
+    animation: rotateAndMoveButton 0.3s ease-in-out forwards;
+}
+
+.menu.activar .btnhamburguer:nth-child(2) {
+    animation: hideMiddleBar 0.3s ease-in-out forwards;
+}
+
+.menu.activar .btnhamburguer:nth-child(3) {
+    animation: rotateAndMoveButtonInverse 0.3s ease-in-out forwards;
+}
+
+@keyframes rotateButton {
+    to {
+        transform: rotate(0deg);
+        filter: drop-shadow(4px 5px 0px #02187E);
+    }
+}
+
+@keyframes rotateAndMoveButton {
+    to {
+        transform: rotate(45deg) translate(0.7em, 0.2em);
+        filter: drop-shadow(0px 4px 0px #02187E);
+    }
+}
+
+@keyframes hideMiddleBar {
+    to {
+        transform: scaleX(0);
+    }
+}
+
+@keyframes rotateAndMoveButtonInverse {
+    to {
+        transform: rotate(-45deg) translate(0.8em, -0.2em);
+        filter: drop-shadow(-4px 0px 0px #02187E);
+    }
 }
 
 .reducetitle {
