@@ -7,7 +7,14 @@ menu.addEventListener('click', function() {
     this.classList.toggle('activar');
 });
 
-// btn.addEventListener('click', function(){
-//     /* si esta la clase la quita y si no la agrega*/
-//     btn.classList.toggle('activar');
-// })
+
+let title = document.querySelector("#title");
+
+window.addEventListener("scroll", function (){
+    let posY = window.scrollY;
+    let posicion = 100;
+    if (posY >= posicion) {
+        title.classList.remove("maintitle");
+        title.classList.add("reducetitle");
+    } 
+});

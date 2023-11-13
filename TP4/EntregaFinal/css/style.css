@@ -16,16 +16,6 @@
     letter-spacing: 0.1375rem;
 }
 
-/* header {
-    width: 100%;
-    height: 5em;
-    background-color: #2982FF;
-}
-
-nav {
-    display: flex;
-    justify-content: space-between;
-} */
 
 button {
     cursor: pointer;
@@ -47,6 +37,7 @@ button {
 /* header seccion */
 
 
+ 
 header {
     width: 100%;
     height: 6em;
@@ -54,23 +45,11 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
+    position: sticky;
+    top: 0.1px;
+    z-index: 300;
 }
 
-nav {
-    width: 80%;
-}
-
-nav div {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-nav div button {
-    background-color: #4F98F7;
-    border: 0;
-}
 
 .buy {
     width: 12.5rem;
@@ -166,13 +145,13 @@ nav div button {
 
 .spidey-amazing-friends div:nth-child(5) {
     position: absolute;
-    z-index: 50;
+    z-index: 500;
     height: auto;
     left: 25%;
     top: 11%;
 }
 
-.spidey-amazing-friends div:nth-child(5) img {
+.mainTitle {
     width: auto;
     height: auto;
 } 
@@ -549,6 +528,7 @@ nav div button {
     height: auto;
     position: relative;
     top: -1em;
+    z-index: -1;
 }
 .backgroundsky svg {
     width: 100%;
@@ -652,20 +632,24 @@ nav div button {
     border: 2px solid red;
     height: auto;
 }
+.spidersprisheet{
+    position: absolute;
+    z-index: 100;
+}
 
 .spider1 {
-    top: 0em;
+    bottom: 37em;
     left: 10em;
 }
 
 .spider2 {
-    top: 0em;
-    left: 25.5em;
+    bottom: 39em;
+    left: 23.5em;
 }
 
 .spider3 {
-    top: 0em;
-    left: 46.5em;
+    bottom: 42.5em;
+    left: 44em;
 }
 
 
@@ -976,4 +960,12 @@ nav div button {
     width: auto;
     display: flex;
     flex-direction: row;
+}
+#title {
+    transition: height 0.3s ease; /* Agrega una transición suave a la propiedad de altura */
+}
+
+.reducetitle {
+    transform: scale(0.4);
+    transition: transform 0.1s ease;
 }
