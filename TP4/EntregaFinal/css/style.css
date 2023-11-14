@@ -976,6 +976,15 @@ header {
     }
 }
 
+@keyframes scrollgoblin {
+    0% {
+        background-position-y: 0px;
+    }
+    100% {
+        background-position-x: 200em ;
+    }
+}
+
 .titleSticky{
     display: flex;
     justify-content: center;
@@ -988,4 +997,14 @@ header {
 .titleSticky img {
     height: 100%;
     width: 100%;
+}
+/* 
+.backgroundgoblin {
+    animation: scrollgoblin 20s linear;
+} */
+
+/*vamos a usar translate y ?**/
+.frontgoblin {
+    transform: translateY(-50%);
+    animation: scrollgoblin 5s linear;
 }

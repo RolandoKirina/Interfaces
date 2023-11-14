@@ -22,8 +22,5 @@ window.addEventListener("scroll", function (){
         divtitle.classList.remove("absolute");
         divtitle.classList.add("titleSticky");
     } 
-    // if (posY > postitle && posY <posfinal){
-    //     divtitle.classList.remove("absolute");
-    //     divtitle.classList.add("titleSticky");
-    // }
+    console.log(posY);
 });
