@@ -168,8 +168,7 @@ nav div button {
 } 
 
 
-/* titulo spidey */
-
+/* 
 .spidey-amazing-friends div:nth-child(5) {
     position: absolute;
     z-index: 50;
@@ -182,15 +181,31 @@ nav div button {
     width: auto;
     height: auto;
 } 
-
+ */
 /* spidey blanco */
 
-.spidey-amazing-friends div:nth-child(6) {
+.spidey-amazing-friends div:nth-child(5) {
     position: absolute;
     z-index: 50;
     height: auto;
     left: 6.7%;
     top: 60%;
+}
+
+.spidey-amazing-friends div:nth-child(5) img {
+    width: auto;
+    height: auto;
+} 
+
+
+/* spidey rojo */
+
+.spidey-amazing-friends div:nth-child(6) {
+    position: absolute;
+    z-index: 50;
+    height: auto;
+    left: 29%;
+    top: 65%;
 }
 
 .spidey-amazing-friends div:nth-child(6) img {
@@ -199,25 +214,9 @@ nav div button {
 } 
 
 
-/* spidey rojo */
-
-.spidey-amazing-friends div:nth-child(7) {
-    position: absolute;
-    z-index: 50;
-    height: auto;
-    left: 29%;
-    top: 65%;
-}
-
-.spidey-amazing-friends div:nth-child(7) img {
-    width: auto;
-    height: auto;
-} 
-
-
 /* spidey negro */
 
-.spidey-amazing-friends div:nth-child(8) {
+.spidey-amazing-friends div:nth-child(7) {
     position: absolute;
     z-index: 50;
     height: auto;
@@ -225,14 +224,14 @@ nav div button {
     top: 50%;
 }
 
-.spidey-amazing-friends div:nth-child(8) img {
+.spidey-amazing-friends div:nth-child(7) img {
     width: auto;
     height: auto;
 } 
 
 /* telaraña izquierda */
 
-.spidey-amazing-friends div:nth-child(9) {
+.spidey-amazing-friends div:nth-child(8) {
     position: absolute;
     z-index: 100;
     height: auto;
@@ -240,7 +239,7 @@ nav div button {
     top: 61%;
 }
 
-.spidey-amazing-friends div:nth-child(9) img {
+.spidey-amazing-friends div:nth-child(8) img {
     width: auto;
     height: auto;
 } 
@@ -249,7 +248,7 @@ nav div button {
 
 /* telaraña derecha */
 
-.spidey-amazing-friends div:nth-child(10) {
+.spidey-amazing-friends div:nth-child(9) {
     position: absolute;
     z-index: 100;
     height: auto;
@@ -257,7 +256,7 @@ nav div button {
     top: 58.5%;
 }
 
-.spidey-amazing-friends div:nth-child(10) img {
+.spidey-amazing-friends div:nth-child(9) img {
     width: auto;
     height: auto;
 } 
