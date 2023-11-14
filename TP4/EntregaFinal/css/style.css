@@ -312,7 +312,7 @@ nav div button {
     display: flex;
     justify-content:space-evenly;
     position: relative;
-    top: 68em;
+    top: 60em;
 }
 
 .spiders-info div:nth-child(1) {
@@ -388,7 +388,6 @@ nav div button {
     display: flex;
     justify-content:space-evenly;
     position: relative;
-    top: 95em;
     z-index: 5;
 }
 
@@ -547,7 +546,7 @@ nav div button {
     position: absolute;
     display: flex;
     top:  7em;
-    left: 12em;
+    left: 8em;
     justify-content: center;
     width: 45rem;
 }
@@ -1019,4 +1018,7 @@ nav div button {
     position: absolute;
     top: 2em;
     left: 25%;
+}
+.allcontainer{
+    height: 500em;
 }
