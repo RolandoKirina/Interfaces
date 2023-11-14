@@ -17,6 +17,18 @@
 }
 
 
+
+/* header {
+    width: 100%;
+    height: 5em;
+    background-color: #2982FF;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+} */
+
 button {
     cursor: pointer;
 }
@@ -37,7 +49,6 @@ button {
 /* header seccion */
 
 
- 
 header {
     width: 100%;
     height: 6em;
@@ -51,12 +62,25 @@ header {
     z-index: 300;
 }
 
+nav {
+    width: 80%;
+}
+
+nav div {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav div button {
+    background-color: #4F98F7;
+    border: 0;
+}
 
 .buy {
     width: 12.5rem;
     height: 3.125rem;
-    position: absolute;
-    right: 4em;
     border-radius: 6.9375rem;
     border: 8px solid var(--2982-ff, #2982FF);
     background: #FFE901;
@@ -143,17 +167,18 @@ header {
     height: auto;
 } 
 
-.absolute {
-    position: absolute;
-    top: 5em;
-    z-index: 500;
-    height: auto;
-    left: 25%;
-}
+
 /* titulo spidey */
 
+.spidey-amazing-friends div:nth-child(5) {
+    position: absolute;
+    z-index: 50;
+    height: auto;
+    left: 25%;
+    top: 11%;
+}
 
-.mainTitle {
+.spidey-amazing-friends div:nth-child(5) img {
     width: auto;
     height: auto;
 } 
@@ -439,7 +464,7 @@ header {
 
 .ghost-spider div:nth-child(5) {
     position: absolute;
-    top: -6.1em;
+    top: -7.5em;
     left: 0em;
     z-index: 12;
     background-color: var(--darkblack);
@@ -463,22 +488,21 @@ header {
 /* hecho para mover temporalmente el contenedor de abajo*/
 .all {
     position: relative;
-    top: 96em;
+    top: 95em;
 }
 
 
 /* contenedor, footer */
 
-
-
 .container{
     width: 100%;
     margin: 0;
     position: relative;
+    top: -4em;
 }
 .footer {
     width: auto;
-    bottom:0;
+    bottom: -4.5em;
     height: 34em;
     background-color: var(--gray);
     position: relative;
@@ -525,12 +549,12 @@ header {
 .theLast {
     height: auto;
     position: relative;
+    top: 0em;
 }
 .backgroundsky {
     height: auto;
     position: relative;
     top: -1em;
-    z-index: -1;
 }
 .backgroundsky svg {
     width: 100%;
@@ -628,12 +652,6 @@ header {
     text-decoration: underline;
 }
 
-.spidersabsolute{
-    position: absolute;  
-    top: -5em; 
-    border: 2px solid red;
-    height: auto;
-}
 .spidersprisheet{
     position: absolute;
     z-index: 100;
@@ -654,9 +672,8 @@ header {
     left: 44em;
 }
 
-
 .spiderwhite, .spiderred, .spiderblue {
-    top: 28em;
+    top: 23em;
     position: absolute;
 }
 
@@ -672,7 +689,7 @@ header {
 
 .buynowsection{
     width: auto;
-    height: 14em;
+    height: 10em;
     display: flex;
     justify-content: center;
     position: relative;
@@ -680,10 +697,25 @@ header {
     flex-direction: column;
 }
 
+.buynow{
+    width: 18.25rem;
+    height: 3.125rem;
+    border-radius: 6.9375rem;
+    color: var(--blue);
+    border: 8px solid var(--2982-ff, var(--skyblue));
+    background: var(--yellow);
+    box-shadow: 4px 5px 0px 0px #02187E;
+    position: absolute;
+    top: 7em;
+    left: 5em;
+    font-weight: bolder;
+}
+
+
 .power {
     width: 40em;
     position: absolute;
-    top: -1em;
+    top: -4em;
     left: -3em;
 }
 .power h1 {
@@ -706,19 +738,6 @@ header {
 .second {
     top: 3.5em;
 }
-.buynow{
-    width: 18.25rem;
-    height: 3.125rem;
-    border-radius: 6.9375rem;
-    color: var(--blue);
-    border: 8px solid var(--2982-ff, var(--skyblue));
-    background: var(--yellow);
-    box-shadow: 4px 5px 0px 0px #02187E;
-    position: absolute;
-    top: 10em;
-    left: 5em;
-    font-weight: bolder;
-}
 
 .backgroundblack {
     background-color: var(--darkblack);
@@ -727,17 +746,19 @@ header {
 }
 
 .backgroundblack svg {
-    width: auto;
+    width: 100%;
 }
 
 .imgbackgroundwhite {
-    height: 94em;
+    height: 100em;
     width: auto;
     position: relative;
     /* CAMBIAR */
     background-color: #000;
     z-index: -100;
+    top: -4em;
 }
+
 
 .textTitle h1, .textTitle p  , .titleFriendsFun h1{
     color: #000;
@@ -745,30 +766,33 @@ header {
 .moreFriends{
     position: absolute;
     height: auto;
-    top: -4em;
+    top: -7em;
     /* crea scroll en x el left*/
-    left: 4em;
+    left: 1em;
     z-index: -10;
 }
 
+/* CORREGIR AQUI, HACER MAS ANCHO*/
 .imgbackgroundwhite img {
     width: 100%;
      /* crea scroll en x el height en 100%*/
     /* height: 100%; */
     position: relative;
+    height: 100%;
+    background-color: var(--darkblack);
 }
 
 .firstImgText {
     top: 52em;
 }
 .secondImgText {
-    top: 70em;
+    top: 72em;
 }
 .thirdImgText{
-    top: 88em;
+    top: 94em;
 }
 .fourthImgText {
-    top: 106em;
+    top: 115em;
 }
 
 .firstImgText, .secondImgText, .thirdImgText, .fourthImgText{
@@ -808,11 +832,11 @@ header {
     position: absolute;
     top: 40em;
     z-index: 10;
-    left: 6em;
+    left: 5em;
 
 }
 .titleFriendsFun h1 {
-    font-size: 3.75rem;
+    font-size: 60px;
     font-style: normal;
     font-weight: 600;
     line-height: 94.5%; 
@@ -823,18 +847,22 @@ header {
 
 .maincontainer {
     width: 100%;
-    background-color: #000;
+    background-color: var(--darkblack);
     display: flex;
     justify-content: center;
     position: relative;
+    top: -4em;
+    height: 34em;
     /*se superpuso sacandole el z index negativo aca*/
 }
 .newcontainer {
     width: 1080px;
     background-color: #000;
     position: relative;
-    height: 28.5em;
+    height: 34.5em;
+    top: 6em;
 }
+
 
 .titleAvengers h1{
     position: absolute;
@@ -879,6 +907,9 @@ header {
     left: 27em;
     z-index: 20;
 }
+
+
+
 
 .menu {
     display: flex;
