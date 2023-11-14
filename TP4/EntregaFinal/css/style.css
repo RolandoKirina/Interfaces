@@ -85,6 +85,8 @@ nav div button {
     border: 8px solid var(--2982-ff, #2982FF);
     background: #FFE901;
     box-shadow: 4px 5px 0px 0px #02187E;
+    position: absolute;
+    right: 2em;
 }
 
 .buy span {
@@ -142,9 +144,8 @@ nav div button {
     position: absolute;
     z-index: 20;
     height: auto;
-    /* left: 28%; */
-    left: 28%;
-    top: 100%;
+    left: 31%;
+    bottom: -55%;
 }
 
 .spidey-amazing-friends div:nth-child(3) img {
@@ -168,21 +169,6 @@ nav div button {
 } 
 
 
-/* 
-.spidey-amazing-friends div:nth-child(5) {
-    position: absolute;
-    z-index: 50;
-    height: auto;
-    left: 25%;
-    top: 11%;
-}
-
-.spidey-amazing-friends div:nth-child(5) img {
-    width: auto;
-    height: auto;
-} 
- */
-/* spidey blanco */
 
 .spidey-amazing-friends div:nth-child(5) {
     position: absolute;
@@ -205,7 +191,7 @@ nav div button {
     z-index: 50;
     height: auto;
     left: 29%;
-    top: 65%;
+    top: 70%;
 }
 
 .spidey-amazing-friends div:nth-child(6) img {
@@ -929,7 +915,7 @@ nav div button {
     border-radius: 6em;
     border: 6px solid #2981FF;
     filter: drop-shadow(4px 5px 0px #02187E);
-    margin-right: 35em;
+    margin-right: 42em;
 }
 
 
@@ -1041,4 +1027,9 @@ nav div button {
 .frontgoblin {
     transform: translateY(-50%);
     animation: scrollgoblin 5s linear;
+}
+.absolute {
+    position: absolute;
+    top: 2em;
+    left: 25%;
 }
