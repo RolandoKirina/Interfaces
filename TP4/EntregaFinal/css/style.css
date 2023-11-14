@@ -144,9 +144,8 @@ nav div button {
     position: absolute;
     z-index: 20;
     height: auto;
-    /* left: 28%; */
-    left: 28%;
-    top: 100%;
+    left: 31%;
+    bottom: -55%;
 }
 
 .spidey-amazing-friends div:nth-child(3) img {
@@ -170,21 +169,6 @@ nav div button {
 } 
 
 
-/* 
-.spidey-amazing-friends div:nth-child(5) {
-    position: absolute;
-    z-index: 50;
-    height: auto;
-    left: 25%;
-    top: 11%;
-}
-
-.spidey-amazing-friends div:nth-child(5) img {
-    width: auto;
-    height: auto;
-} 
- */
-/* spidey blanco */
 
 .spidey-amazing-friends div:nth-child(5) {
     position: absolute;
@@ -207,7 +191,7 @@ nav div button {
     z-index: 50;
     height: auto;
     left: 29%;
-    top: 65%;
+    top: 70%;
 }
 
 .spidey-amazing-friends div:nth-child(6) img {
@@ -1043,4 +1027,9 @@ nav div button {
 .frontgoblin {
     transform: translateY(-50%);
     animation: scrollgoblin 5s linear;
+}
+.absolute {
+    position: absolute;
+    top: 2em;
+    left: 25%;
 }
