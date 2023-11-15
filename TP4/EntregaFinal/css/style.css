@@ -388,7 +388,7 @@ nav div button {
     display: flex;
     justify-content:space-evenly;
     position: relative;
-    top: 95em;
+    top: 94em;
     z-index: 5;
 }
 
@@ -470,7 +470,7 @@ nav div button {
     width: 100%;
     margin: 0;
     position: relative;
-    top: -4em;
+    top: 90em;
 }
 .footer {
     width: auto;
@@ -726,9 +726,9 @@ nav div button {
     width: auto;
     position: relative;
     /* CAMBIAR */
-    background-color: #000;
+    background-color: var(--darkblack);
     z-index: -100;
-    top: -4em;
+    top: 90em;
 }
 
 
@@ -738,8 +738,7 @@ nav div button {
 .moreFriends{
     position: absolute;
     height: auto;
-    top: -7em;
-    /* crea scroll en x el left*/
+    top: 115em;
     left: 1em;
     z-index: -10;
 }
@@ -802,7 +801,7 @@ nav div button {
 
 .titleFriendsFun {
     position: absolute;
-    top: 40em;
+    top: 162em;
     z-index: 10;
     left: 5em;
 
@@ -823,7 +822,7 @@ nav div button {
     display: flex;
     justify-content: center;
     position: relative;
-    top: -4em;
+    top: 90em;
     height: 34em;
     /*se superpuso sacandole el z index negativo aca*/
 }
@@ -1020,3 +1019,4 @@ nav div button {
     top: 2em;
     left: 25%;
 }
+
