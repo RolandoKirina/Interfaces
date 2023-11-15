@@ -873,7 +873,8 @@ nav div button {
     display: flex;
     flex-direction: column;
     position: absolute;
-    left: 4em;
+    /* si hay */
+   right: 0em;
 }
 
 .btnhamburguer {
@@ -888,7 +889,7 @@ nav div button {
     border-radius: 6em;
     border: 6px solid #2981FF;
     filter: drop-shadow(4px 5px 0px #02187E);
-    margin-right: 49em; 
+    margin-right: 40em; 
     
 }
 
