@@ -1029,9 +1029,18 @@ height: 302.762px;
     left: 25em;
     right: 0;
 }
+.spiderblueselected-red{
+    left: 16em;
+    right: 0;
+}
+.spiderblueselected-white{
+    left: 10em;
+    right: 0;
+}
+
 .spiderredselected-white, .spiderwhiteselected-blue, 
 .spiderwhiteselected-red,  .spiderwhiteselected-blue, 
-.spiderwhite , .spiderred, .spiderblue, .spiderredselected-blue {
+.spiderwhite , .spiderred, .spiderblue, .spiderredselected-blue,.spiderblueselected-red, .spiderblueselected-white  {
     top: 17em;
     position: absolute;
 }

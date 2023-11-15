@@ -49,10 +49,15 @@ spiderwhite.addEventListener("mousemove", function (){
     spiderwhite.classList.add("spiderwhite");
     spiderwhite.classList.remove("spiderred");
     spiderwhite.classList.remove("spiderblue");
-    spiderblue.classList.add("spiderwhiteselected-blue");
-    spiderred.classList.add("spiderwhiteselected-red");
-    spiderblue.classList.remove("spiderredselected-blue");
     spiderwhite.classList.remove("spiderredselected-white");
+    spiderwhite.classList.remove("spiderblueselected-white");
+
+    spiderblue.classList.add("spiderwhiteselected-blue");
+    spiderblue.classList.remove("spiderredselected-blue");
+   
+
+    spiderred.classList.add("spiderwhiteselected-red");
+    spiderred.classList.remove("spiderblueselected-red");
     spiderwhite.style.transform =`scale(${1})`;
     spiderblue.style.transform = `scale(${0.5})`;
     spiderred.style.transform = `scale(${0.5})`;
@@ -72,14 +77,20 @@ spiderred.addEventListener("mousemove",  function(){
     spiderred.style.transform = `scale(${1})`;
     spiderblue.style.transform = `scale(${0.5})`;
     spiderwhite.style.transform =`scale(${0.5})`;
-    spiderwhite.classList.remove("spiderwhite");
 
-    spiderred.classList.add("spiderred");
+    /*agregamos la clase spiderred y removemos la clase blue y white*/
+   
     spiderblue.classList.remove("spiderblue");
     spiderblue.classList.add("spiderredselected-blue");
-    spiderwhite.classList.add("spiderredselected-white");
 
+    spiderwhite.classList.add("spiderredselected-white");
+    spiderwhite.classList.remove("spiderwhite");
+    spiderwhite.classList.remove("spiderblueselected-white");
+
+    spiderred.classList.add("spiderred");
     spiderred.classList.remove("spiderwhiteselected-red");
+    spiderred.classList.remove("spiderblueselected-red");
+
     spiderred.style.filter = "blur(0px)";
     spiderwhite.style.filter = "blur(5px)";
     spiderblue.style.filter = "blur(5px)";
@@ -92,16 +103,28 @@ spiderred.addEventListener("mousemove",  function(){
 
 spiderblue.addEventListener("mousemove",  function(){
 
-    // spiderblue.style.transform = `scale(${1})`;
-    // spiderred.style.transform = `scale(${0.5})`;
-    // spiderwhite.style.transform =`scale(${0.5})`;
+    spiderblue.style.transform = `scale(${1})`;
+    spiderred.style.transform = `scale(${0.5})`;
+    spiderwhite.style.transform =`scale(${0.5})`;
+    spiderblue.style.filter = "blur(0px)";
+    spiderwhite.style.filter = "blur(5px)";
+    spiderred.style.filter = "blur(5px)";
+    
+    spiderred.classList.add("spiderblueselected-red");
+    spiderred.classList.remove("spiderred");
+    spiderred.classList.remove("spiderwhiteselected-red");
+
+    spiderwhite.classList.remove("spiderwhite");
+    spiderwhite.classList.add("spiderblueselected-white");
+    spiderwhite.classList.remove("spiderredselected-white");
+
+    spiderblue.classList.add("spiderblue");
+    spiderblue.classList.remove("spiderwhiteselected-blue");
+    spiderblue.classList.remove("spiderredselected-blue");
     // spiderblue.style.left = `scale(${22})`;
     // spiderred.style.left = `${20}em`;
     // spiderwhite.style.left = `${16}em`;
 
     // spiderblue.style.left = `${32}em`;
     // spiderblue.style.right = `${0}em`;
-    // spiderblue.style.filter = "blur(0px)";
-    // spiderwhite.style.filter = "blur(5px)";
-    // spiderred.style.filter = "blur(5px)";
 })
