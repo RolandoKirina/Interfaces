@@ -312,7 +312,7 @@ nav div button {
     display: flex;
     justify-content:space-evenly;
     position: relative;
-    top: 68em;
+    top: 60em;
 }
 
 .spiders-info div:nth-child(1) {
