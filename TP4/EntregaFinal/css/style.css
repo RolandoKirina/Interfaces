@@ -615,15 +615,6 @@ nav div button {
     position: absolute;
 }
 
-.spiderwhite {
-    left: 8em;
-}
-.spiderred {
-    left: 16em;
-}
-.spiderblue {
-    left: 32em;
-}
 
 .buynowsection{
     width: auto;
@@ -1003,4 +994,27 @@ height: 302.762px;
  cierto punto*/
 .allcontainers {
     height: 374em;
+}
+
+.spiderwhite {
+    left: 8em;
+    right: 0;
+}
+.spiderred {
+    left: 16em;
+    right: 0;
+}
+.spiderblue {
+    left: 32em;
+    right: 0;
+}
+.filterandscale {
+    filter: blur(5px);
+}
+.spiderwhiteselected-blue{
+    left: 20em;
+    
+}
+.spiderwhiteselected-red{
+    right: 24em;
 }
