@@ -16,7 +16,7 @@ window.addEventListener("scroll", function (){
     let title = document.getElementById("title");
     let divtitle = document.getElementById("divtitle");
     let scaleValue = 0.4;
-    let maxscale =0.9; 
+    let maxscale =0.9;
     let initialpos = 1;
     let speed = 0.0017;
     if (posY >= initialpos && posY <= 300) {
@@ -51,6 +51,8 @@ spiderwhite.addEventListener("mousemove", function (){
     spiderwhite.classList.remove("spiderblue");
     spiderblue.classList.add("spiderwhiteselected-blue");
     spiderred.classList.add("spiderwhiteselected-red");
+    spiderblue.classList.remove("spiderredselected-blue");
+    spiderwhite.classList.remove("spiderredselected-white");
     spiderwhite.style.transform =`scale(${1})`;
     spiderblue.style.transform = `scale(${0.5})`;
     spiderred.style.transform = `scale(${0.5})`;
@@ -62,34 +64,41 @@ spiderwhite.addEventListener("mousemove", function (){
     // spiderblue.style.right = `${22}em`;
     // spiderblue.style.left = `${25}em`;
     // spiderred.style.right = `${24}em`;
-    
+
 })
 
 spiderred.addEventListener("mousemove",  function(){
-    // spiderred.style.transform = `scale(${1})`;
-    // spiderblue.style.transform = `scale(${0.5})`;
-    // spiderwhite.style.transform =`scale(${0.5})`;
 
-    // spiderblue.style.right = `${22}em`;
+    spiderred.style.transform = `scale(${1})`;
+    spiderblue.style.transform = `scale(${0.5})`;
+    spiderwhite.style.transform =`scale(${0.5})`;
+    spiderwhite.classList.remove("spiderwhite");
+
+    spiderred.classList.add("spiderred");
+    spiderblue.classList.remove("spiderblue");
+    spiderblue.classList.add("spiderredselected-blue");
+    spiderwhite.classList.add("spiderredselected-white");
+
+    spiderred.classList.remove("spiderwhiteselected-red");
+    spiderred.style.filter = "blur(0px)";
+    spiderwhite.style.filter = "blur(5px)";
+    spiderblue.style.filter = "blur(5px)";
+      // spiderblue.style.right = `${22}em`;
     // spiderwhite.style.left = `${10}em`;
 
     // spiderred.style.left = `${16}em`;
     // spiderred.style.right = `${0}em`;
-
-    // spiderred.style.filter = "blur(0px)";
-    // spiderwhite.style.filter = "blur(5px)";
-    // spiderblue.style.filter = "blur(5px)";
 })
 
 spiderblue.addEventListener("mousemove",  function(){
- 
+
     // spiderblue.style.transform = `scale(${1})`;
     // spiderred.style.transform = `scale(${0.5})`;
     // spiderwhite.style.transform =`scale(${0.5})`;
     // spiderblue.style.left = `scale(${22})`;
     // spiderred.style.left = `${20}em`;
     // spiderwhite.style.left = `${16}em`;
-    
+
     // spiderblue.style.left = `${32}em`;
     // spiderblue.style.right = `${0}em`;
     // spiderblue.style.filter = "blur(0px)";
