@@ -312,7 +312,7 @@ nav div button {
     display: flex;
     justify-content:space-evenly;
     position: relative;
-    top: 60em;
+    top: 68em;
 }
 
 .spiders-info div:nth-child(1) {
@@ -727,8 +727,13 @@ nav div button {
     position: absolute;
     height: auto;
     top: 115em;
-    left: 1em;
+    left: 1.7em;
     z-index: -10;
+}
+
+.moreFriends img {
+    width: 552px;
+height: 302.762px;
 }
 
 /* CORREGIR AQUI, HACER MAS ANCHO*/
@@ -768,7 +773,7 @@ nav div button {
     top: 0em;
     position: absolute;
     z-index: 15;
-    left: 28em;
+    left: 26em;
 }
 
 .textTitle p {
@@ -791,7 +796,7 @@ nav div button {
     position: absolute;
     top: 162em;
     z-index: 10;
-    left: 5em;
+    left: 3.8em;
 
 }
 .titleFriendsFun h1 {
