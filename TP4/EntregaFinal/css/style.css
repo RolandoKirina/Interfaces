@@ -73,7 +73,7 @@ nav div button {
     background: #FFE901;
     box-shadow: 4px 5px 0px 0px #02187E;
     position: absolute;
-    right: 4em;
+    right: 3.5em;
     top: 1em;
 }
 
@@ -751,7 +751,7 @@ height: 302.762px;
     top: 0em;
     position: absolute;
     z-index: 15;
-    left: 26em;
+    left: 25em;
 }
 
 .textTitle p {
@@ -873,7 +873,7 @@ height: 302.762px;
     border-radius: 6em;
     border: 4px solid #2981FF;
     filter: drop-shadow(4px 5px 0px #02187E);
-    margin-right: 40em; 
+    margin-right: 41em; 
     
 }
 
