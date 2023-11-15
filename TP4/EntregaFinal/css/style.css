@@ -451,19 +451,6 @@ nav div button {
 
 
 
-
-
-
-
-
-
-/* hecho para mover temporalmente el contenedor de abajo*/
-.all {
-    position: relative;
-    top: 95em;
-}
-
-
 /* contenedor, footer */
 
 .container{
@@ -1020,3 +1007,9 @@ nav div button {
     left: 25%;
 }
 
+
+/* Si la altura del contenedor de todos los contenedores es menor a 374em, el nav no baja pasado
+ cierto punto*/
+.allcontainers {
+    height: 374em;
+}
