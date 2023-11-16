@@ -17,10 +17,11 @@ window.addEventListener("scroll", function (){
     let divtitle = document.getElementById("divtitle");
     let scaleValue = 0.4;
     let maxscale =0.9;
-    let initialpos = 1;
+    let initialpos = 500;
     let speed = 0.0017;
-    if (posY >= initialpos && posY <= 300) {
-        title.classList.remove("maintitle");
+    console.log(divtitle);
+    console.log(title);
+    if (posY >= initialpos && posY <= 800) {
         title.classList.add("reducetitle");
         divtitle.classList.remove("absolute");
         divtitle.classList.add("titleSticky");
@@ -29,12 +30,18 @@ window.addEventListener("scroll", function (){
           inicial y se multiplica por la velocidad. se queda con el numero mas grande*/
         title.style.transform = `scale(${scaleValue})`;
 
-    } else if (posY > 300 ) {
-        title.classList.remove("maintitle");
+    } else if (posY > 800 ) {
         title.classList.remove("reducetitle");
         divtitle.classList.remove("absolute");
-        scaleValue = Math.max(scaleValue, 0.4);
+        scaleValue = Math.max(scaleValue, 0.5);
         title.style.transform = `scale(${scaleValue})`;
+        title.style.left = `(${25}%)`;
+    }
+    else if(posY < initialpos) {
+
+        title.classList.remove("reducetitle");
+        divtitle.classList.remove("titleSticky");
+        divtitle.classList.add("absolute");
     }
 });
 
@@ -111,7 +118,7 @@ spiderblue.addEventListener("mouseenter",  function(){
     spiderblue.classList.remove("spiderredselected-blue");
 })
 
-const container = document.querySelector("#maincontainer");
+const container = document.querySelector("#bodycontainer");
 const goblin = document.querySelector("#goblin");
 console.log(container);
 console.log(goblin);
