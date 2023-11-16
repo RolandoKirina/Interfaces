@@ -301,10 +301,11 @@ nav div button {
 }
 
 .green-gobling {
-    position: absolute;
+    position: relative;
     z-index: 100;
-    top: 37em;
+    top: 10px;
     left: 56%;
+    transform: scale(.7);
 }
 
 /* seccion spiders info */
@@ -993,6 +994,7 @@ height: 302.762px;
 /* Si la altura del contenedor de todos los contenedores es menor a 374em, el nav no baja pasado
  cierto punto*/
 .allcontainers {
+    /* overflow-x: hidden; */
     height: 374em;
 }
 
@@ -1044,5 +1046,4 @@ height: 302.762px;
     top: 17em;
     position: absolute;
 }
-
 

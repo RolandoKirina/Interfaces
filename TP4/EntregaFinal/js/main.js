@@ -36,7 +36,6 @@ window.addEventListener("scroll", function (){
         scaleValue = Math.max(scaleValue, 0.4);
         title.style.transform = `scale(${scaleValue})`;
     }
-    console.log(posY);
 });
 
 let spiderwhite = document.getElementById("spiderwhite");
@@ -44,7 +43,7 @@ let spiderred = document.getElementById("spiderred");
 let spiderblue = document.getElementById("spiderblue");
 
 /*spider white*/
-spiderwhite.addEventListener("mousemove", function (){
+spiderwhite.addEventListener("mouseenter", function (){
 
     spiderwhite.classList.add("spiderwhite");
     spiderwhite.classList.remove("spiderred");
@@ -64,15 +63,9 @@ spiderwhite.addEventListener("mousemove", function (){
     spiderwhite.style.filter = "blur(0px)";
     spiderred.style.filter = "blur(5px)";
     spiderblue.style.filter = "blur(5px)";
-   // spiderwhite.style.right = `${0}em`;
-    // spiderwhite.style.left = `${8}em`;
-    // spiderblue.style.right = `${22}em`;
-    // spiderblue.style.left = `${25}em`;
-    // spiderred.style.right = `${24}em`;
-
 })
 
-spiderred.addEventListener("mousemove",  function(){
+spiderred.addEventListener("mouseenter",  function(){
 
     spiderred.style.transform = `scale(${1})`;
     spiderblue.style.transform = `scale(${0.5})`;
@@ -94,14 +87,9 @@ spiderred.addEventListener("mousemove",  function(){
     spiderred.style.filter = "blur(0px)";
     spiderwhite.style.filter = "blur(5px)";
     spiderblue.style.filter = "blur(5px)";
-      // spiderblue.style.right = `${22}em`;
-    // spiderwhite.style.left = `${10}em`;
-
-    // spiderred.style.left = `${16}em`;
-    // spiderred.style.right = `${0}em`;
 })
 
-spiderblue.addEventListener("mousemove",  function(){
+spiderblue.addEventListener("mouseenter",  function(){
 
     spiderblue.style.transform = `scale(${1})`;
     spiderred.style.transform = `scale(${0.5})`;
@@ -121,10 +109,19 @@ spiderblue.addEventListener("mousemove",  function(){
     spiderblue.classList.add("spiderblue");
     spiderblue.classList.remove("spiderwhiteselected-blue");
     spiderblue.classList.remove("spiderredselected-blue");
-    // spiderblue.style.left = `scale(${22})`;
-    // spiderred.style.left = `${20}em`;
-    // spiderwhite.style.left = `${16}em`;
-
-    // spiderblue.style.left = `${32}em`;
-    // spiderblue.style.right = `${0}em`;
 })
+
+const container = document.querySelector("#maincontainer");
+const goblin = document.querySelector("#goblin");
+console.log(container);
+console.log(goblin);
+let min = 200;
+let max = 3000;
+container.onscroll = function () {
+    let y = window.scrollY;
+    console.log(y);
+    if(y > min && y < max){
+        goblin.style.top =  50 +  y/2.1 + "px";
+    }
+   
+};
