@@ -2,8 +2,17 @@
 
 let menu = document.querySelector(".menu");
 
+let isOpen = false;
 menu.addEventListener('click', function() {
-    this.classList.toggle('activar');
+    if (!isOpen) {
+        menu.classList.add('activar');
+        menu.classList.remove('desactivado');
+        isOpen = true;
+    } else {
+        menu.classList.remove('activar');
+        menu.classList.add('desactivado');
+        isOpen = false;
+    }
 });
 
 
