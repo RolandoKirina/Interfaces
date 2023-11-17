@@ -158,6 +158,12 @@ let leftspiderweb = document.querySelector("#left-spider-web");
 
 let cardscontainer = document.querySelector("#cards-content");
 
+
+let test1 = document.querySelector("#test1");
+
+let test2 = document.querySelector("#test2");
+
+let test3 = document.querySelector("#test3");
 let rightspiderweb = document.querySelector("#right-spider-web");
 
     container.onscroll = function () {
@@ -220,16 +226,57 @@ let rightspiderweb = document.querySelector("#right-spider-web");
             /*si no aplica los estilos antes que la animacion*/
             setTimeout(() =>{
                 card1.style.top = `${1650}px`;
-            },"1000");
+            },1000);
             setTimeout(() =>{
                 card2.style.top = `${1650}px`;
-            },"1500");
+            },1500);
             setTimeout(() =>{
                 card3.style.top = `${1650}px`;
-            },"2000");
+            },2000);
         }
       
+        let mintest = 2200;
 
-
+        if (y > mintest){
+            test1.style.top =  990 - y *0.50 + "px";
+            test2.style.top =  1120 -y *0.50 + "px";
+            test3.style.top =  1320 - y *0.50 + "px";
+        }   
 
     };
+
+
+    let imgtest1 =test1.firstElementChild;
+    let imgtest2 =test2.firstElementChild;
+    let imgtest3 =test3.firstElementChild;
+    imgtest1.addEventListener("mouseenter", function (){
+        test1.classList.add("test1skew");
+        setTimeout(() => {
+            test1.style.transform = `skew(${5}deg)`; // Aplicar la transformación con style.transform
+        }, 1000); 
+        test2.classList.remove("test1skew");
+        test3.classList.remove("test1skew");
+    })
+    imgtest2.addEventListener("mouseenter", function (){
+        test2.classList.add("test1skew");
+        setTimeout(() => {
+            test1.style.transform = `skew(${5}deg)`; // Aplicar la transformación con style.transform
+        }, 1000); 
+        test1.classList.remove("test1skew");
+        test3.classList.remove("test1skew");
+    })
+
+    imgtest3.addEventListener("mouseenter", function (){
+        test3.classList.add("test1skew");
+        setTimeout(() => {
+            test1.style.transform = `skew(${5}deg)`; // Aplicar la transformación con style.transform
+        }, 1000); 
+        test2.classList.remove("test1skew");
+        test1.classList.remove("test1skew");
+    })
+
+
+    imgtest1.addEventListener("mouseover",function (){
+        test1.classList.remove("test1skew");
+        test1.classList.add("skewtestreverse");
+    } )

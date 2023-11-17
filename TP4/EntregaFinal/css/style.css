@@ -580,40 +580,38 @@ main {
     justify-content: center;
 }
 
-
+/*fondo*/
 .ghost-spider-content div:nth-child(1) {
     position: absolute;
     right: 0;
      width: 100%;
-    /*height: 100%; */
-}
 
+}
+/*fondo*/
 .ghost-spider-content div:nth-child(1) img {
     position: absolute;
-    /* width: 100%; */
-    /* width: 100%;
-    height: 100%; */
     width: 100%;
     right: 0;
 }
 
-.ghost-spider-content div:nth-child(2) {
+/*1er test*/
+.test1 {
     position: absolute;
-    top: -6em;
+    top: -96px;
     left: 2em;
     z-index: 15;
 }
-
-.ghost-spider-content div:nth-child(3) {
+/*2do test*/
+.test2 {
     position: absolute;
-    top: 0em;
+    top: 0px;
     left: 1em;
     z-index: 15;
 }
-
-.ghost-spider-content div:nth-child(4) {
+/*3do test*/
+.test3 {
     position: absolute;
-    top: 6em;
+    top: 96px;
     left: 2em;
     z-index: 15;
 }
@@ -1378,5 +1376,30 @@ main {
     to {
         opacity: 1;
         top: 1650px;
+    }
+}
+
+.test1skew{
+    animation: skewtest 1s ease-in;
+}
+.skewtestreverse{
+    animation: testskewover 1s ease-in;
+}
+/*Reverse*/
+@keyframes testskewover{
+    from {
+        transform: skew(5deg);
+    }
+    to {
+        transform: skew(0);
+    }
+}
+
+@keyframes skewtest {
+    from {
+        transform: skew(0);
+    }
+    to {
+        transform: skew(5deg);
     }
 }
