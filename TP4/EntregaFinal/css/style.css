@@ -420,7 +420,7 @@ main {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    bottom: 300px;
+    bottom: 1200px;
 }
 
 
@@ -448,7 +448,7 @@ main {
 .green-goblin {
     position: relative;
     z-index: 70;
-    bottom: 650px;
+    top:  -420px;
     width: 553px;
     height: 921px;
     left: 690px;

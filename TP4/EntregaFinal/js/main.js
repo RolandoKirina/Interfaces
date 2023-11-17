@@ -129,18 +129,21 @@ spiderblue.addEventListener("mouseenter",  function(){
     spiderblue.classList.remove("spiderredselected-blue");
 })
 
+
 const container = document.querySelector("#bodycontainer");
 const goblin = document.querySelector("#goblin");
 console.log(container);
 console.log(goblin);
-let min = 200;
-let max = 3000;
+let min = 400;
+let max = 1400; 
+let posgoblin = -250;
 container.onscroll = function () {
     let y = window.scrollY;
     console.log(y);
-    if(y > min && y < max){
 
-        goblin.style.top =  50 +  y/2.1 + "px";
+    if(y > min && y < max){
+        // goblin.style.top =  50 +  y/2.1 + "px";
+        goblin.style.top =  0 + posgoblin - y*0.25 + "px";
+        /* cambiamos el top original del goblin incrementandole el top negativo*/
     }
-   
 };
