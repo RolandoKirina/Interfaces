@@ -2,8 +2,15 @@
 
 let menu = document.querySelector(".menu");
 
+
+let title = document.querySelector("#title");
+
+let divtitle = document.querySelector("#divtitle");
+
+
 let isOpen = false;
 menu.addEventListener('click', function() {
+    this.classList.toggle('activar');
     if (!isOpen) {
         menu.classList.add('activar');
         menu.classList.remove('desactivado');
@@ -15,10 +22,6 @@ menu.addEventListener('click', function() {
     }
 });
 
-
-let title = document.querySelector("#title");
-
-let divtitle = document.querySelector("#divtitle");
 
 window.addEventListener("scroll", function (){
     let posY = window.scrollY;
@@ -51,6 +54,7 @@ window.addEventListener("scroll", function (){
         title.classList.remove("reducetitle");
         divtitle.classList.remove("titleSticky");
         divtitle.classList.add("absolute");
+        title.style.transform = `scale(${scaleValue})`;
     }
 });
 
