@@ -162,6 +162,8 @@ let rightspiderweb = document.querySelector("#right-spider-web");
             goblin.style.top =  posgoblin - y*0.25 + "px";
             /* cambiamos el top original del goblin incrementandole el top negativo*/
         }
+
+
         /*seccion hero*/
         let minhero =10;
         if (y > minhero){
@@ -172,19 +174,28 @@ let rightspiderweb = document.querySelector("#right-spider-web");
 
             /*sumamos el top de cada imagen con el y y multiplicamos por velocidad*/
             whitespidey.style.top =  400 - y *0.50 + "px";
-            redspidey.style.top =  440 - y *0.75 + "px";
-
-            leftspiderweb.style.top =  420 - y *0.75 + "px";
+            redspidey.style.top =  440 - y *0.90 + "px";
+            rightspiderweb.style.top =  410 - y *0.50 + "px";
+            leftspiderweb.style.top =  420 - y *0.90+ "px";
             blackspidey.style.top =  360 - y *0.50 + "px";
 
+
+            leftbuilding.classList.remove("hidden");
+            centerbuilding.classList.remove("hidden");
+            rightbuilding.classList.remove("hidden");
             whitespidey.classList.remove("hidden");
-            whitespidey.classList.add("spideyvisible");
             redspidey.classList.remove("hidden");
-            redspidey.classList.add("spideyredvisible");
             divtitle.classList.remove("hidden");
-            divtitle.classList.add("spideyredvisible");
             blackspidey.classList.remove("hidden");
+
+            leftbuilding.classList.add("visiblebuildings");
+            centerbuilding.classList.add("visiblebuildings");
+            rightbuilding.classList.add("visiblebuildings");
+            whitespidey.classList.add("spideyvisible");
+            redspidey.classList.add("spideyredvisible");           
+            divtitle.classList.add("spideyredvisible");
             blackspidey.classList.add("spideyvisible");
-            rightspiderweb.style.top =  410 - y *0.50 + "px";
+            leftspiderweb.classList.add("visibleleftspiderweb");
+            rightspiderweb.classList.add("visiblerigthspiderweb");
         }
     };

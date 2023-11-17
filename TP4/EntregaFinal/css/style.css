@@ -293,12 +293,21 @@ main {
 }
 
 .spideyvisible{
-    animation: showSpidey 3s ease-in-out;
+    animation: showSpidey 2s ease-in-out;
 }
 .spideyredvisible{
-    animation: showSpidey 3.5s ease-in-out;
+    animation: showSpidey 2.5s ease-in-out;
+}
+.visiblebuildings{
+    animation: showSpidey 1s ease-in-out;
 }
 
+.visibleleftspiderweb{
+    animation: showSpidey 3s ease-in-out;
+}
+.visiblerigthspiderweb{
+    animation: showSpidey 3.5s ease-in-out;
+}
 @keyframes showSpidey {
     0% {
         opacity: 0;
