@@ -29,13 +29,13 @@ button {
     --skyblue: #2982FF;
     --blue: #02187E;
     --yellow: #FFE901;
-    --white: #f7f1f1;
+    --white: #fcfcfc;
     --darkblack: #070303;
-    --header: #4F98F7;
+    --header: #579FFC;
 }
 
 
-/* header seccion */
+/* header - nav seccion */
 
 header {
     width: 100%;
@@ -44,13 +44,17 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    position: sticky;
+    position: fixed;
     top: 0.1px;
-    z-index: 300;
+    z-index: 5000;
 }
 
 nav {
-    width: 80%;
+    width: 1080px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
 }
 
 nav div {
@@ -64,795 +68,6 @@ nav div button {
     background-color: #4F98F7;
     border: 0;
 }
-
-
-
-
-
-
-
-
-
-
-.buy {
-    width: 12.5rem;
-    height: 3.125rem;
-    border-radius: 6.9375rem;
-    border: 8px solid var(--2982-ff, #2982FF);
-    background: #FFE901;
-    box-shadow: 4px 5px 0px 0px #02187E;
-    position: absolute;
-    right: 3.5em;
-    top: 1em;
-}
-
-.buy span {
-    color: #02187E;
-    font-size: 1.25rem;
-    font-style: normal;
-    font-weight: 900;
-    line-height: 94.5%; /* 1.18125rem */
-    letter-spacing: 0.1375rem;
-}
-
-/* primeras secciones */
-
-
-/* seccion spidey and his amazing friends*/
-
-.spidey-amazing-friends {
-    width: 100%;
-    background-color: #2982FF;
-    height: auto;
-    /* position: relative; */
-}
-
-/* fondo cielo*/
-
-.spidey-amazing-friends div:nth-child(1) {
-    width: 100%;
-    position: absolute;
-    z-index: 1;
-    height: auto;
-}
-
-.spidey-amazing-friends div:nth-child(1) img {
-    width: 100%;
-    height: 100%;
-}
-
-
-/* edificio izquierda */
- .spidey-amazing-friends div:nth-child(2) {
-    width: 100%;
-    position: absolute;
-    z-index: 30;
-    height: auto;
-    top: 20%;
-}
-
-.spidey-amazing-friends div:nth-child(2) img {
-    width: auto;
-    height: auto;
-} 
-
-/* edificio centro */
-.spidey-amazing-friends div:nth-child(3) {
-    position: absolute;
-    z-index: 20;
-    height: auto;
-    left: 31%;
-    bottom: -55%;
-}
-
-.spidey-amazing-friends div:nth-child(3) img {
-    width: auto;
-    height: auto;
-} 
-
-
-/* edificio derecha */
-.spidey-amazing-friends div:nth-child(4) {
-    position: absolute;
-    z-index: 30;
-    height: auto;
-    top: 20%;
-    right: 0;
-}
-
-.spidey-amazing-friends div:nth-child(4) img {
-    width: auto;
-    height: auto;
-} 
-
-
-
-.spidey-amazing-friends div:nth-child(5) {
-    position: absolute;
-    z-index: 50;
-    height: auto;
-    left: 6.7%;
-    top: 60%;
-}
-
-.spidey-amazing-friends div:nth-child(5) img {
-    width: auto;
-    height: auto;
-} 
-
-
-/* spidey rojo */
-
-.spidey-amazing-friends div:nth-child(6) {
-    position: absolute;
-    z-index: 50;
-    height: auto;
-    left: 29%;
-    top: 70%;
-}
-
-.spidey-amazing-friends div:nth-child(6) img {
-    width: auto;
-    height: auto;
-} 
-
-
-/* spidey negro */
-
-.spidey-amazing-friends div:nth-child(7) {
-    position: absolute;
-    z-index: 50;
-    height: auto;
-    left: 55%;
-    top: 50%;
-}
-
-.spidey-amazing-friends div:nth-child(7) img {
-    width: auto;
-    height: auto;
-} 
-
-/* telaraña izquierda */
-
-.spidey-amazing-friends div:nth-child(8) {
-    position: absolute;
-    z-index: 100;
-    height: auto;
-    left: 0;
-    top: 61%;
-}
-
-.spidey-amazing-friends div:nth-child(8) img {
-    width: auto;
-    height: auto;
-} 
-
-
-
-/* telaraña derecha */
-
-.spidey-amazing-friends div:nth-child(9) {
-    position: absolute;
-    z-index: 100;
-    height: auto;
-    right: 0;
-    top: 58.5%;
-}
-
-.spidey-amazing-friends div:nth-child(9) img {
-    width: auto;
-    height: auto;
-} 
-
-
-
-/* seccion goblin */
-
-/* rectangulo violeta */
-
-.purpleform {
-    position: absolute;
-    z-index: 45;
-    height: auto;
-    right: 0;
-    top: 30.5em;
-    width: 100%;
-}
-
-.purpleform img {
-    height: 34em;
-    width: 100%;
-}
-
-
-
-
-.spidey-amazing-friends section {
-    position: relative;
-    z-index: 100;
-    width: 100%;
-}
-
-
-.meet-spider-friends {
-    position: relative;
-    z-index: 70;
-    top: 32em;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-}
-
-.meet-spider-friends h1{
-    font-size: 60px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: 94.5%; /* 56.7px */
-    width: 55%;
-    margin-left: 1.5em;
-    margin-bottom: 0.5em;
-}
-
-.meet-spider-friends p{
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    width: 60%;
-    margin-left: 4.5em;
-}
-
-.octopus {
-    position: absolute;
-    top: 52em;
-    z-index: 100;
-    left: 6%;
-}
-
-.green-gobling {
-    position: relative;
-    z-index: 100;
-    top: 10px;
-    left: 56%;
-    transform: scale(.7);
-}
-
-/* seccion spiders info */
-
-.spiders-info {
-    display: flex;
-    justify-content:space-evenly;
-    position: relative;
-    top: 70em;
-}
-
-.spiders-info div:nth-child(1) {
-    position: absolute;
-    left: 4em;
-    display: flex;
-    flex-direction: column;
-    width: 360px;
-    height: 302.691px;
-    z-index: -1;
-}
-
-.spiders-info div:nth-child(1) img, .spiders-info div:nth-child(2) img, .spiders-info div:nth-child(3) img{
-    width: 332.96px;
-    height: 302.691px;
-    margin-bottom: 1em;
-}
-
-.spiders-info div:nth-child(1) span, .spiders-info div:nth-child(2) span, .spiders-info div:nth-child(3) span{
-    font-size: 17px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    letter-spacing: 0.0375rem;
-    color: #000;
-    width: 20em;
-}
-
-
-
-.spiders-info div:nth-child(2) {
-    position: absolute;
-    left: 19em;
-    width: 360px;
-    height: 302.691px;
-    display: flex;
-    flex-direction: column;
-}
-
-.spiders-info div:nth-child(3) {
-    position: absolute;
-    width: 360px;
-    height: 302.691px;
-    /* right: 3em; */
-    left: 34em;
-    display: flex;
-    flex-direction: column;
-}
-
-.ghost-spider {
-    width: 100%;
-    height: 566px;
-    display: flex;
-    justify-content:space-evenly;
-    position: relative;
-    top: 94em;
-    z-index: 5;
-}
-
-.ghost-spider div:nth-child(1) {
-    position: absolute;
-    right: 0;
-     width: 100%;
-    /*height: 100%; */
-}
-
-.ghost-spider div:nth-child(1) img {
-    position: absolute;
-    /* width: 100%; */
-    /* width: 100%;
-    height: 100%; */
-    width: 100%;
-    right: 0;
-}
-
-.ghost-spider div:nth-child(2) {
-    position: absolute;
-    top: -6em;
-    left: 2em;
-    z-index: 15;
-}
-
-.ghost-spider div:nth-child(3) {
-    position: absolute;
-    top: 0em;
-    left: 1em;
-    z-index: 15;
-}
-
-.ghost-spider div:nth-child(4) {
-    position: absolute;
-    top: 6em;
-    left: 2em;
-    z-index: 15;
-}
-
-.ghost-spider div:nth-child(4) img {
-    position: absolute;
-    z-index: 20;
-}
-
-.ghost-spider div:nth-child(5) {
-    position: absolute;
-    top: -7.5em;
-    left: 0em;
-    z-index: 12;
-    background-color: var(--darkblack);
-    clip-path: polygon(100% 87%, 0% 100%, 100% 100%);
-    width: 100%;
-    height: 30em;
-    
-}
-
-
-
-/* contenedor, footer */
-
-.container{
-    width: 100%;
-    margin: 0;
-    position: relative;
-    top: 90em;
-}
-.footer {
-    width: 100%;
-    bottom: -4.5em;
-    height: 34em;
-    background-color: var(--gray);
-    position: relative;
-}
-.brandsfooter{
-    width: auto;
-    display: flex;
-    height: 5em;
-    background-color: var(--black);
-    justify-content: center;
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-}
-.brandsfooter img {
-    width: 1080px;
-}
-.footergray{
-    background-color: var(--gray);
-}
-
-.infofooter{
- background-color: var(--gray);
- width: 34em; 
- margin-left: 4em; 
- margin-top: 1.5em;
-
-}
-.margintop{
-    margin-top: 0.5em;
-}
-
-.underline{
-    text-decoration: underline;
-}
-
-.socialmedia {
-    margin-top: 1.5em;
-}
-
-.socialmedia img {
-    width: 25%;
-    height: auto;
-}
-
-.theLast {
-    height: auto;
-    position: relative;
-    top: 0em;
-}
-.backgroundsky {
-    height: auto;
-    position: relative;
-    top: -1em;
-}
-.backgroundsky svg {
-    width: 100%;
-    height: auto;
-}
-
-
-.buildings {
-    position: absolute;
-    top:27.5em; /* cambiar a futuro x bottom 0*/
-    width: 100%;
-}
-
-.buildings img {
-    width: 100%;
-}
-.titleSpidey {
-    position: absolute;
-    display: flex;
-    top:  7em;
-    left: 10em;
-    justify-content: center;
-    width: 40rem;
-}
-
-.titleSpidey h1 {
-    color: #000;
-    text-align: center;
-    font-size: 60px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: 94.5%; 
-    
-}
-
-.inputMail{
-    position: absolute;
-    display: flex;
-    justify-content: center;
-    top: 16.5em;
-    left: 2.5em;
-    width: 90%;
-    height: auto;
-}
-.inputMail ::placeholder{
-    color: rgba(0, 0, 0, 0.39);
-    font-size: 1em;
-    font-weight: 400;
-    line-height: 94.5%; /* 1.18125rem */
-    letter-spacing: 0.1375rem;
-    padding:1.5em;
-}
-.textoInscribirse {
-    position: absolute;
-    top: 22em; 
-    width: auto;
-    left: 12em;
-    color: #000;
-}
-.textoInscribirse p{
-    width: 30em;
-    color: var(--darkblack);
-    font-size: 22px;
-    font-style: normal;
-    font-weight: 400;
-}
-.inputMail input {
-    border-radius: 3.125rem 0rem 0rem 3.125rem;
-    border-top: 9px solid #2982FF;
-    border-bottom: 9px solid #2982FF;
-    border-left: 9px solid #2982FF;
-    height: 4em;
-    width: 40%;
-    box-shadow: 4px 5px 0px 0px var(--blue);
-}
-
-.inputMail button {
-    color: #02187E;
-    font-weight: bold;
-    background-color: var(--yellow);
-    border-radius: 0 3.125rem 3.125rem  0;
-    border: 9px solid var(--skyblue);
-    height: 4em;
-    width: 12em;
-    box-shadow: 4px 5px 0px 0px var(--blue);
-
-}
-
-.mildlenguaguesimg{
-    position: absolute;
-    top: 27.5em;
-    left: 12em;
-}
-
-.underline{
-    text-decoration: underline;
-}
-
-.spidersprisheet{
-    position: absolute;
-    z-index: 100;
-}
-
-.spider1 {
-    bottom: 31.9em;
-    left: 8.5em;
-}
-
-.spider2 {
-    bottom: 35.65em;
-    left: 21em;
-}
-
-.spider3 {
-    bottom: 38.7em;
-    left: 39.5em;
-}
-
-/* .spiderwhite, .spiderred, .spiderblue {
-    top: 17em;
-    position: absolute;
-} */
-
-
-.buynowsection{
-    width: auto;
-    height: 10em;
-    display: flex;
-    justify-content: center;
-    position: relative;
-    background-color: var(--darkblack);
-    flex-direction: column;
-}
-
-.buynow{
-    width: 18.25rem;
-    height: 3.125rem;
-    border-radius: 6.9375rem;
-    color: var(--blue);
-    border: 8px solid var(--2982-ff, var(--skyblue));
-    background: var(--yellow);
-    box-shadow: 4px 5px 0px 0px #02187E;
-    position: absolute;
-    top: 7em;
-    left: 5em;
-    font-weight: bolder;
-}
-
-
-.power {
-    width: 40em;
-    position: absolute;
-    top: -4em;
-    left: -3em;
-}
-.power h1 {
-    text-align: center;
-    color: #FFF;
-    font-size: 2em;
-    font-style: regular;
-    font-weight: 400;
-    line-height: normal;
-    
-}
-.first , .second{
-    position: absolute;
-    left: 4em;
-}
-
-.first {
-    top: 2em;
-}
-.second {
-    top: 3.5em;
-}
-
-.backgroundblack {
-    background-color: var(--darkblack);
-    position: relative; 
-    height: auto;
-}
-
-.backgroundblack svg {
-    width: 100%;
-}
-
-.imgbackgroundwhite {
-    height: 100em;
-    width: auto;
-    position: relative;
-    /* CAMBIAR */
-    background-color: var(--darkblack);
-    z-index: -100;
-    top: 90em;
-}
-
-
-.textTitle h1, .textTitle p  , .titleFriendsFun h1{
-    color: #000;
-}
-.moreFriends{
-    position: absolute;
-    height: auto;
-    top: 115em;
-    left: 1.7em;
-    z-index: -10;
-}
-
-.moreFriends img {
-    width: 552px;
-height: 302.762px;
-}
-
-/* CORREGIR AQUI, HACER MAS ANCHO*/
-.imgbackgroundwhite img {
-    width: 100%;
-     /* crea scroll en x el height en 100%*/
-    /* height: 100%; */
-    position: relative;
-    height: 100%;
-    background-color: var(--darkblack);
-}
-
-.firstImgText {
-    top: 52em;
-}
-.secondImgText {
-    top: 72em;
-}
-.thirdImgText{
-    top: 94em;
-}
-.fourthImgText {
-    top: 115em;
-}
-
-.firstImgText, .secondImgText, .thirdImgText, .fourthImgText{
-    position: absolute;
-    z-index: 10;
-    left: 2em;
-}
-
-.firstImgText img , .secondImgText img, .thirdImgText img, .fourthImgText img{
-    height: 14em;
-}
-
-.textTitle {
-    top: 0em;
-    position: absolute;
-    z-index: 15;
-    left: 25em;
-}
-
-.textTitle p {
-    font-size: 18px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 100%;
-    width: 26em; 
-}
-.textTitle h1 {
-    width: auto;
-    font-size:  34px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 94.5%;
-    margin-bottom: 1em;
-}
-
-.titleFriendsFun {
-    position: absolute;
-    top: 162em;
-    z-index: 10;
-    left: 3.8em;
-
-}
-.titleFriendsFun h1 {
-    font-size: 60px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: 94.5%; 
-    width: auto;
-}
-
-
-
-.maincontainer {
-    width: 100%;
-    background-color: var(--darkblack);
-    display: flex;
-    justify-content: center;
-    position: relative;
-    top: 90em;
-    height: 34em;
-    /*se superpuso sacandole el z index negativo aca*/
-}
-.newcontainer {
-    width: 1080px;
-    background-color: #000;
-    position: relative;
-    height: 34.5em;
-    top: 6em;
-}
-
-
-.titleAvengers h1{
-    position: absolute;
-    width: 8em;
-    font-size: 60px;
-    top: 2em;
-}
-.containerimages {
-    position: absolute;
-    top: 13.5em;
-}
-
-.sky, .trees, .plants, .girl, .black, .hulk{
-    position: absolute;
-}
-
-.sky img , .plants img{
-    width: 20em;
-    height: 20em;   
-}
-.sky {
-    z-index: 10;
-    box-shadow: 26px 29px 41px 14px rgba(0, 0, 0, 0.15);
-}
-.trees {
-    z-index: 15;
-}
-.plants {
-    z-index: 30;
-}
-.girl {
-    top: -4em;
-    z-index: 20;
-}
-.black {
-    top: -10.2em;
-    left: 17.5em;
-    z-index: 20;
-}
-.hulk {
-    top: 4em;
-    left: 27em;
-    z-index: 20;
-}
-
-
-
 
 .menu {
     display: flex;
@@ -878,16 +93,11 @@ height: 302.762px;
     
 }
 
+.menu {
+    width: 2em;
+    left: 22em;
+}
 
-
-
-
-.nav {
-    width: auto;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-} 
 .menu .btnhamburguer:nth-child(3){
     margin-bottom: 0.75em;
 }
@@ -931,81 +141,1128 @@ height: 302.762px;
     }
 }
 
-/* .reduceimage{
-    height: 4.25em;
-    transform: scale(0.2); 
-} */
-.reducetitle {
-    position: sticky;
-    top: 0.1px;
-    animation: scrolltitle 0.60s ease-in-out; 
-    margin-right: 5em;
-} 
+
+/* Boton comprar del nav */
+
+.buy {
+    width: 12.5rem;
+    height: 3.125rem;
+    border-radius: 6.9375rem;
+    border: 8px solid var(--2982-ff, #2982FF);
+    background: #FFE901;
+    box-shadow: 4px 5px 0px 0px #02187E;
+    position: absolute;
+    right: 3.5em;
+    top: 1em;
+}
+
+.buy span {
+    color: #02187E;
+    font-size: 1.25rem;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 94.5%; /* 1.18125rem */
+    letter-spacing: 0.1375rem;
+}
 
 
+/* clase absolute del titulo en el nav que lo pone en el centro arriba de los spiders*/
+.absolute {
+    position: absolute;
+    top: 18%;
+    left: 25%;
+    z-index: 100;
+    height: auto;
+    right: 0;
+    z-index: 5000;
+    width: auto;
+}
 
-/* @keyframes scrolltitle {
-    0%{
-        transform: scale(0.9);
-    }
-    25% {
-        transform: scale(0.5);
-    }
-    50% {
-        transform: scale(0.4);
-    }
-    75% {
-        transform: scale(0.3)
-    }
-    100%{
-        transform: scale(0.2);
-    }
-} */
-
-/* @keyframes scrollgoblin {
-    0% {
-        background-position-y: 0px;
-    }
-    100% {
-        background-position-x: 200em ;
-    }
-} */
 
 .titleSticky{
     display: flex;
     justify-content: center;
-    position: sticky;
+    position: fixed;
     top: 0.1px;
     height: 6em;
-    z-index: 500;
+    z-index: 5000;
+    left: 35%;
+} 
+
+
+/* reduce el titulo spidey al hacer scroll*/
+.reducetitle {
+    position: sticky;
+    top: 0.1px;
+    animation: scrolltitle 0.60s ease-in-out; 
+   
+    left: 25%;
+} 
+
+
+
+
+
+
+
+
+/* contenedor principal */
+main {
+    width: 100%;
+    background-color: rgb(170, 59, 59);
 }
-.titleSticky img {
+
+
+/* titulo spidey */
+
+
+
+
+
+
+
+/* seccion spidey and his amazing friends*/
+
+.spidey-amazing-friends {
+    width: 100%;
+    background-color: #2982FF;
+    height: auto;
+    /* position: relative; */
+}
+
+/* fondo cielo*/
+
+.spidey-amazing-friends div:nth-child(1) {
+    width: 100%;
+    position: absolute;
+    z-index: 1;
+    height: auto;
+}
+
+.spidey-amazing-friends div:nth-child(1) img {
+    width: 100%;
     height: 100%;
+}
+
+
+/* edificio izquierda */
+ .spidey-amazing-friends div:nth-child(2) {
+    width: 100%;
+    position: absolute;
+    z-index: 30;
+    height: auto;
+    top: 26%;
+}
+
+.spidey-amazing-friends div:nth-child(2) img {
+    width: auto;
+    height: auto;
+} 
+
+/* edificio centro */
+.spidey-amazing-friends div:nth-child(3) {
+    position: absolute;
+    z-index: 20;
+    height: auto;
+    left: 29%;
+    bottom: -55%;
+}
+
+.spidey-amazing-friends div:nth-child(3) img {
+    width: auto;
+    height: auto;
+} 
+
+
+/* edificio derecha */
+.spidey-amazing-friends div:nth-child(4) {
+    position: absolute;
+    z-index: 30;
+    height: auto;
+    top: 25%;
+    right: 0;
+}
+
+.spidey-amazing-friends div:nth-child(4) img {
+    width: auto;
+    height: auto;
+} 
+
+
+/* spider white */
+.spidey-amazing-friends div:nth-child(5) {
+    position: absolute;
+    z-index: 50;
+    height: auto;
+    left: 6.7%;
+    top: 70%;
+}
+
+.spidey-amazing-friends div:nth-child(5) img {
+    width: auto;
+    height: auto;
+} 
+
+
+/* spidey rojo */
+
+.spidey-amazing-friends div:nth-child(6) {
+    position: absolute;
+    z-index: 50;
+    height: auto;
+    left: 31%;
+    top: 77%;
+}
+
+.spidey-amazing-friends div:nth-child(6) img {
+    width: auto;
+    height: auto;
+} 
+
+
+/* spidey negro */
+
+.spidey-amazing-friends div:nth-child(7) {
+    position: absolute;
+    z-index: 50;
+    height: auto;
+    left: 54%;
+    top: 63%;
+}
+
+.spidey-amazing-friends div:nth-child(7) img {
+    width: auto;
+    height: auto;
+} 
+
+/* telaraña izquierda */
+
+.spidey-amazing-friends div:nth-child(8) {
+    position: absolute;
+    z-index: 100;
+    height: auto;
+    left: 0;
+    top: 73%;
+}
+
+.spidey-amazing-friends div:nth-child(8) img {
+    width: auto;
+    height: auto;
+} 
+
+
+
+/* telaraña derecha */
+
+.spidey-amazing-friends div:nth-child(9) {
+    position: absolute;
+    z-index: 100;
+    height: auto;
+    right: 0;
+    top: 72%;
+}
+
+.spidey-amazing-friends div:nth-child(9) img {
+    width: auto;
+    height: auto;
+} 
+
+
+
+
+
+
+
+/* segunda seccion - goblin */
+
+/* tope triangulo de fondo violeta */
+
+.meet-spider-friends {
+    top: 535px;
+    height: 10em;
+}
+
+.purplebackground-top {
+    clip-path: polygon(100% 65%, 0 100%, 100% 100%);
+    background-color: #8F6AA6;
+    position: relative;
+    z-index: 49;
+    height: 240px;
+    top: 635px;
+}
+
+.purplebackground {
+    position: relative;
+    height: 800px;
+    background-color: #8F6AA6;
+    top: 534px;
+}
+
+/* final triangulo blanco */
+
+.purplebackground-bottom {
+    clip-path: polygon(0 52%, 100% 53%, 100% 100%, 0 66%);
+    background-color: #8F6AA6;
+    position: relative;
+    z-index: 49;
+    height: 300px;
+    top: 375px;
+}
+
+/* contenido con green goblin y texto */
+
+
+
+.meet-spider-friends-content {
+    position: relative;
+    z-index: 70;
+    width: 1080px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    bottom: 300px;
+}
+
+
+.meet-spider-friends-content h1{
+    font-size: 55px;
+    font-style: normal;
+    font-weight: 450;
+    line-height: 94.5%; /* 56.7px */
+    width: 670px;
+    margin-left: 72px;
+    margin-bottom: 25px;
+    letter-spacing: normal;
+}
+
+.meet-spider-friends-content p{
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height:normal;
+    width: 580px;
+    margin-left: 72px;
+    letter-spacing: normal;
+}
+
+.green-goblin {
+    position: relative;
+    z-index: 70;
+    bottom: 650px;
+    width: 553px;
+    height: 921px;
+    left: 690px;
+}
+
+.octopus {
+    position: absolute;
+    top: 1350px;
+    z-index: 65;
+    left: 55px;
+}
+
+
+
+
+
+
+/* tercera seccion cards */
+
+.cards-content {
+    width: 1080px;
+    z-index: 50;
+    position: relative;
+    top: 1650px;
+}
+
+
+.cards-content div:nth-child(1) {
+    position: absolute;
+    left: 64px;
+    display: flex;
+    flex-direction: column;
+    width: 360px;
+    height: 302.691px;
+    z-index: -1;
+}
+
+.cards-content div:nth-child(1) img, .spiders-info div:nth-child(2) img, .spiders-info div:nth-child(3) img{
+    width: 332.96px;
+    height: 302.691px;
+    margin-bottom: 16px;
+}
+
+.cards-content div:nth-child(1) span, .spiders-info div:nth-child(2) span, .spiders-info div:nth-child(3) span{
+    font-size: 17px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 0.6px;
+    color: #000;
+    width: 320px;
+}
+
+
+
+.cards-content div:nth-child(2) {
+    position: absolute;
+    left: 460px;
+    width: 360px;
+    height: 302.691px;
+    display: flex;
+    flex-direction: column;
+}
+
+.cards-content div:nth-child(3) {
+    position: absolute;
+    width: 360px;
+    height: 302.691px;
+    /* right: 3em; */
+    left: 850px;
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+
+/* cuarta seccion ghost-spiders */
+
+
+.ghost-spider {
+    width: 100%;
+    position: relative;
+    background-color: #02187E;
+    top: 2250px;
+    z-index: 51;
+    display: flex;
+    justify-content: center;
+}
+
+
+.ghost-spider-content div:nth-child(1) {
+    position: absolute;
+    right: 0;
+     width: 100%;
+    /*height: 100%; */
+}
+
+.ghost-spider-content div:nth-child(1) img {
+    position: absolute;
+    /* width: 100%; */
+    /* width: 100%;
+    height: 100%; */
+    width: 100%;
+    right: 0;
+}
+
+.ghost-spider-content div:nth-child(2) {
+    position: absolute;
+    top: -6em;
+    left: 2em;
+    z-index: 15;
+}
+
+.ghost-spider-content div:nth-child(3) {
+    position: absolute;
+    top: 0em;
+    left: 1em;
+    z-index: 15;
+}
+
+.ghost-spider-content div:nth-child(4) {
+    position: absolute;
+    top: 6em;
+    left: 2em;
+    z-index: 15;
+}
+
+.ghost-spider-content div:nth-child(4) img {
+    position: absolute;
+    z-index: 20;
+}
+
+.ghost-spider-content div:nth-child(5) {
+    position: absolute;
+    top: -7.5em;
+    left: 0em;
+    z-index: 12;
+    background-color: var(--darkblack);
+    clip-path: polygon(100% 87%, 0% 100%, 100% 100%);
+    width: 100%;
+    height: 30em;
+    
+}
+
+
+
+
+
+
+
+/* quinta seccion avengers */
+
+.avengers {
     width: 100%;
 }
-/* 
-.backgroundgoblin {
-    animation: scrollgoblin 20s linear;
-} */
 
-/*vamos a usar translate y ?**/
-.frontgoblin {
-    transform: translateY(-50%);
-    animation: scrollgoblin 5s linear;
+/* parte superior negra fondo */
+.blackbackground-top {
+    clip-path: polygon(0 88%, 100% 65%, 100% 100%, 0% 100%);
+    background-color: var(--darkblack);
+    position: relative;
+    z-index: 49;
+    height: 300px;
+    top: 2520px;
+
 }
-.absolute {
+
+
+
+/* parte inferior negra fondo */
+.blackbackground-bottom {
+    clip-path: polygon(0 56%, 100% 57%, 100% 100%, 0 77%);
+    background-color: var(--darkblack);
+    position: relative;
+    z-index: 49;
+    height: 300px;
+    top: 3050px;
+
+}
+
+/* contenido avengers */
+.avengers-content {
+    position: relative;
+    z-index: 49;
+    top: 2200px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 750px;
+    background-color: var(--darkblack);
+}
+
+.center-avengers-content {
+    width: 1080px;
+    position: relative;
+}
+
+
+.avengers-content .titleAvengers h1{
     position: absolute;
+    width: 8em;
+    font-size: 60px;
+    top: 2.5em;
+}
+.avengers-content  .containerimages {
+    position: absolute;
+    top: 15em;
+}
+
+.sky, .trees, .plants, .girl, .black, .hulk{
+    position: absolute;
+}
+
+.sky img , .plants img{
+    width: 20em;
+    height: 20em;   
+}
+.sky {
+    z-index: 10;
+    box-shadow: 26px 29px 41px 14px rgba(0, 0, 0, 0.15);
+}
+.trees {
+    z-index: 15;
+}
+.plants {
+    z-index: 30;
+}
+.girl {
+    top: -4em;
+    z-index: 20;
+    left: 0.7em;
+}
+.black {
+    top: -10.2em;
+    left: 17.5em;
+    z-index: 20;
+}
+.hulk {
+    top: 4em;
+    left: 27em;
+    z-index: 20;
+}
+
+
+
+
+
+
+
+/* sexta seccion more friends more fun */
+
+.morefriendsMoreFun {
+    position: relative;
+    width: 100%;
+    top: 2450px;
+    z-index: 45;
+}
+
+
+/* contenido textos y imagenes */
+
+/* centrar contenido more friends more fun */
+.moreFriendsMoreFun-content {
+    display: flex;
+    justify-content: center;
+}
+
+.moreFriendsMoreFun-content-centered {
+    width: 1080px;
+    position: relative;
+    z-index: 51;
+}
+
+.moreFriends{
+    position: absolute;
+    height: auto;
+    top: 120px;
+    z-index: -10;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+
+.titleFriendsFun {
+    position: absolute;
+    z-index: 10;
+    display: flex;
+    justify-content: flex-start;
+ }
+
+ .titleFriendsFun h1 {
+    font-size: 60px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 94.5%; 
+    color: var(--darkblack);
+}
+
+ .firstImgText img , .secondImgText img, .thirdImgText img, .fourthImgText img{
+    width: 552px;
+    height: 302.762px;
+}
+
+
+.textTitle {
+    z-index: 15;
+    width: 467px;
+}
+
+.textTitle p {
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 100%;
+    color: var(--darkblack);
+   
+}
+.textTitle h1 {
+    font-size:  40px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 94.5%;
+    margin-bottom: 16px;
+    color: var(--darkblack);
+}
+
+.firstImgText, .secondImgText, .thirdImgText, .fourthImgText{
+   display: flex;
+   margin-bottom: 32px;
+   justify-content: space-between;
+  
+}
+
+.firstImgText {
+   margin-bottom: 104px;
+}
+
+.secondImgText {
+    margin-bottom: 121px;
+}
+
+.thirdImgText{
+    margin-bottom: 211.49px;
+}
+
+.fourthImgText {
+    margin-bottom: 163.75px;
+} 
+
+
+
+
+
+
+
+/* septima seccion buy now */
+
+.buynowsection {
+    position: relative;
+    width: 100%;
+    top: 1600px;
+}
+
+.buynowsection .blackbackground-top{
+    clip-path: polygon(0 56%, 100% 57%, 100% 100%, 0 77%);
+    background-color: var(--white);
+}
+
+.buynowsection .blackbackground {
+    background-color: var(--darkblack);
+    height: 351px;
+}
+
+.buynowsection .blackbackground-bottom{
+    clip-path: polygon(0 57%, 100% 58%, 100% 62%, 0% 100%);
+    background-color: var(--darkblack);
+    top: 2275px;
+    z-index: -1;
+}
+
+.buynowsection-content {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    z-index: 48;
+    top: 2450px;
+    background-color: var(--darkblack);
+    height: 13em;
+}
+
+.buynowsection-content-centered {
+    width: 1080px;
+}
+
+.buynow{
+    width: 18.25rem;
+    height: 3.125rem;
+    border-radius: 6.9375rem;
+    color: var(--blue);
+    border: 8px solid var(--2982-ff, var(--skyblue));
+    background: var(--yellow);
+    box-shadow: 4px 5px 0px 0px #02187E;
+    position: absolute;
+    top: 11em;
+    left: 5em;
+    font-weight: bolder;
+}
+
+
+.power {
+    width: 40em;
+    position: absolute;
+    top: 0em;
+    left: -3em;
+}
+.power h1 {
+    text-align: center;
+    color: #FFF;
+    font-size: 2em;
+    font-style: regular;
+    font-weight: 400;
+    line-height: normal;
+    
+}
+.first , .second{
+    position: absolute;
+    left: 4em;
+}
+
+.first {
     top: 2em;
-    left: 25%;
+}
+.second {
+    top: 3.5em;
 }
 
 
-/* Si la altura del contenedor de todos los contenedores es menor a 374em, el nav no baja pasado
- cierto punto*/
-.allcontainers {
-    /* overflow-x: hidden; */
-    height: 374em;
+
+
+/* septima seccion buy now  */
+
+.threeSpidersHover {
+    position: relative;
+    width: 100%;
 }
+
+.threeSpidersHover .whitebackground-top {
+    clip-path: polygon(0 6%, 100% 0, 100% 28%, 0 77%);
+    background-color: silver;
+    position: relative;
+    top: 3730px;
+    height: 10em;
+    z-index: -2;
+}
+
+.threeSpidersHover .whitebackground {
+    height: 551px;
+}
+
+.threeSpidersHover .whitebackground-bottom {
+    clip-path: polygon(0 37%, 100% 38%, 100% 100%, 0 77%);
+    background-color: var(--white);
+    position: relative;
+    top: 4050px;
+    height: 10em;
+    z-index: -3;
+}
+
+
+.threeSpidersHover-content {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    top: 3270px;
+    z-index: 3;
+}
+
+.threeSpidersHover-content-centered {
+    width: 1080px;
+}
+
+
+.spiderwhite, .spiderred, .spiderblue {
+    top: 17em;
+    position: absolute;
+}
+
+.spiderwhite {
+    left: 148px;
+}
+.spiderred {
+    right: 450px;
+}
+.spiderblue {
+    right: 150px;
+}
+
+
+
+
+
+/* octava seccion the last of spidey friends */
+
+.theLastOfSpideyFriends {
+    width: 100%;
+    position: relative;
+    top: 3970px;
+    z-index: 60;
+}
+
+
+.theLast {
+    height: auto;
+    position: relative;
+    top: 0em;
+}
+.backgroundsky {
+    height: auto;
+    position: relative;
+    top: -1em;
+}
+.backgroundsky svg {
+    width: 100%;
+    height: auto;
+}
+
+
+.buildings {
+    position: absolute;
+    top:24.5em; /* cambiar a futuro x bottom 0*/
+    width: 100%;
+}
+
+.buildings img {
+    width: 100%;
+}
+.titleSpidey {
+    position: absolute;
+    display: flex;
+    top:  4em;
+    left: 9em;
+    justify-content: center;
+    width: 45rem;
+}
+
+.titleSpidey h1 {
+    color: #000;
+    text-align: center;
+    font-size: 60px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 94.5%; 
+    
+}
+
+.inputMail{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    top: 12.5em;
+    left: 2.5em;
+    width: 90%;
+    height: auto;
+}
+.inputMail ::placeholder{
+    color: rgba(0, 0, 0, 0.39);
+    font-size: 1em;
+    font-weight: 400;
+    line-height: 94.5%; /* 1.18125rem */
+    letter-spacing: 0.1375rem;
+    padding:1.5em;
+}
+.textoInscribirse {
+    position: absolute;
+    top: 18em; 
+    width: auto;
+    left: 12em;
+    color: #000;
+}
+.textoInscribirse p{
+    width: 30em;
+    color: var(--darkblack);
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 400;
+}
+.inputMail input {
+    border-radius: 3.125rem 0rem 0rem 3.125rem;
+    border-top: 9px solid #2982FF;
+    border-bottom: 9px solid #2982FF;
+    border-left: 9px solid #2982FF;
+    height: 4em;
+    width: 40%;
+    box-shadow: 4px 5px 0px 0px var(--blue);
+}
+
+.inputMail button {
+    color: #02187E;
+    font-weight: bold;
+    background-color: var(--yellow);
+    border-radius: 0 3.125rem 3.125rem  0;
+    border: 9px solid var(--skyblue);
+    height: 4em;
+    width: 12em;
+    box-shadow: 4px 5px 0px 0px var(--blue);
+
+}
+
+.mildlenguaguesimg{
+    position: absolute;
+    top: 24em;
+    left: 12em;
+}
+
+.underline{
+    text-decoration: underline;
+}
+
+.spidersprisheet{
+    position: absolute;
+    z-index: 100;
+}
+
+.spider1 {
+    bottom: 0.7em;
+    left: 8.4em;
+}
+
+.spider2 {
+    bottom: 4.6em;
+    left: 21em;
+}
+
+.spider3 {
+    bottom: 7.7em;
+    left: 39em;
+}
+
+.spiderwhite, .spiderred, .spiderblue {
+    top: 17em;
+    position: absolute;
+}
+
+.spiderwhite {
+    left: 8em;
+}
+.spiderred {
+    left: 16em;
+}
+.spiderblue {
+    left: 32em;
+}
+
+
+
+
+
+ /* decima seccion footer */
+
+.footer {
+    width: 100%;
+    background-color: var(--gray);
+    position: relative;
+    top: 4010px;
+}
+
+.footercontent {
+    display: flex;
+    justify-content: center;
+}
+
+.footercontent-centered {
+    width: 1080px;
+}
+
+.brandsfooter{
+    width: auto;
+    display: flex;
+    background-color: var(--black);
+    justify-content: center;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    margin-bottom: 1.5em;
+}
+
+.footergray{
+    background-color: var(--gray);
+}
+
+.infofooter{
+ background-color: var(--gray);
+}
+
+.infofooter div {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.infofooter div p {
+    color: #FFF;
+    font-family: Lato;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 94.5%; /* 18.9px */
+    letter-spacing: 2.2px;
+    width: 820px;
+}
+
+
+.margintop{
+    margin-top: 0.5em;
+}
+
+.underline{
+    text-decoration: underline;
+}
+
+.socialmedia {
+    margin-top: 1.5em;
+    margin-bottom: 1.5em;
+}
+
+.socialmedia img {
+    width: 25%;
+    height: auto;
+}
+
+
+
+
+
+/* activar */
+.menu.activar .btnhamburguer {
+    animation: rotateAndMoveButton 0.4s ease-in-out forwards;
+}
+
+.menu.activar .btnhamburguer:nth-child(2) {
+    animation: hideMiddleBar 0.4s ease-in-out forwards;
+}
+
+.menu.activar .btnhamburguer:nth-child(3) {
+    animation: rotateAndMoveButtonInverse 0.4s ease-in-out forwards;
+}
+
+/*desactivado*/
+.menu.desactivado .btnhamburguer:nth-child(1) {
+    animation: inverseRotateButton 0.4s ease-in-out forwards;
+}
+
+.menu.desactivado .btnhamburguer:nth-child(2) {
+    animation: inverseRotateAndMoveButton 0.4s ease-in-out forwards;
+}
+
+.menu.desactivado .btnhamburguer:nth-child(3) {
+    animation: inverseRotateAndMoveButtonInverse 0.4s ease-in-out forwards;
+}
+
+@keyframes inverseRotateButton {
+    from {
+        transform: rotate(45deg);
+        filter: drop-shadow(0px 4px 0px #02187E);
+    }
+    to {
+        transform: rotate(0deg);
+    }
+}
+
+@keyframes inverseRotateAndMoveButton {
+    from {
+        transform: rotate(-45deg) translate(0.6em, -0.2em);
+        filter: drop-shadow(-4px 0px 0px #02187E);
+    }
+    to {
+        transform: rotate(0deg) translate(0);
+    }
+} 
+@keyframes inverseRotateAndMoveButtonInverse {
+    from {
+        transform: rotate(45deg) translate(0.6em, 0.2em);
+        filter: drop-shadow(0px 4px 0px #02187E);
+    }
+    to {
+        transform: rotate(0deg) translate(0em);
+    } 
+}
+
+/*activar*/
+
+@keyframes hideMiddleBar {
+    to {
+        transform: scaleX(0);
+    }
+}
+
+@keyframes rotateAndMoveButton {
+    to {
+        transform: rotate(45deg) translate(0.6em, 0.2em);
+        filter: drop-shadow(0px 4px 0px #02187E);
+    }
+}
+
+@keyframes rotateAndMoveButtonInverse {
+    to {
+        transform: rotate(-45deg) translate(0.6em, -0.2em);
+        filter: drop-shadow(-4px 0px 0px #02187E);
+    }
+}
+
+
 
 .spiderwhite {
     left: 8em;
@@ -1055,4 +1312,6 @@ height: 302.762px;
     top: 17em;
     position: absolute;
 }
+
+
 

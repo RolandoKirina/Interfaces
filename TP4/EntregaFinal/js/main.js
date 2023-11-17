@@ -58,9 +58,9 @@ window.addEventListener("scroll", function (){
     }
 });
 
-let spiderwhite = document.getElementById("spiderwhite");
-let spiderred = document.getElementById("spiderred");
-let spiderblue = document.getElementById("spiderblue");
+let spiderwhite = document.querySelector(".spiderwhite");
+let spiderred = document.querySelector(".spiderred");
+let spiderblue = document.querySelector(".spiderblue");
 
 /*spider white*/
 spiderwhite.addEventListener("mouseenter", function (){
@@ -141,6 +141,7 @@ container.onscroll = function () {
     let y = window.scrollY;
     console.log(y);
     if(y > min && y < max){
+
         goblin.style.top =  50 +  y/2.1 + "px";
     }
    
