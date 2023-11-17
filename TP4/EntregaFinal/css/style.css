@@ -288,6 +288,34 @@ main {
     height: auto;
 } 
 
+.hidden {
+    opacity: 0;
+}
+
+.spideyvisible{
+    animation: showSpidey 3s ease-in-out;
+}
+.spideyredvisible{
+    animation: showSpidey 3.5s ease-in-out;
+}
+
+@keyframes showSpidey {
+    0% {
+        opacity: 0;
+    }
+    25% {
+        opacity: 0.25;
+    }
+    50% {
+        opacity: 0.50;
+    }
+    75%{
+        opacity: 0.75;
+    }
+    100% {
+        opacity: 1;
+    }
+}
 
 /* spider white */
 .spidey-amazing-friends div:nth-child(5) {
@@ -395,7 +423,7 @@ main {
     position: relative;
     height: 800px;
     background-color: #8F6AA6;
-    top: 630px;
+    top: 635px;
     z-index: 49;
 }
 

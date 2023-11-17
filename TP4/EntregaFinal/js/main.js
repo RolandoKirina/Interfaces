@@ -38,7 +38,6 @@ window.addEventListener("scroll", function (){
          /* se resta la escala maxima menos la posy actual menos la pos y
           inicial y se multiplica por la velocidad. se queda con el numero mas grande*/
         title.style.transform = `scale(${scaleValue})`;
-
     } 
     else if (posY > 800) {
         title.classList.add("reducetitle");
@@ -56,6 +55,8 @@ window.addEventListener("scroll", function (){
     }
 });
 
+divtitle.classList.remove("hidden");
+divtitle.classList.remove("spideyredvisible");
 let spiderwhite = document.querySelector(".spiderwhite");
 let spiderred = document.querySelector(".spiderred");
 let spiderblue = document.querySelector(".spiderblue");
@@ -173,9 +174,17 @@ let rightspiderweb = document.querySelector("#right-spider-web");
             whitespidey.style.top =  400 - y *0.50 + "px";
             redspidey.style.top =  440 - y *0.75 + "px";
 
-            leftspiderweb.style.top =  440 - y *0.75 + "px";
+            leftspiderweb.style.top =  420 - y *0.75 + "px";
+            blackspidey.style.top =  360 - y *0.50 + "px";
 
-            blackspidey.style.top =  330 - y *0.50 + "px";
-            rightspiderweb.style.top =  390 - y *0.50 + "px";
+            whitespidey.classList.remove("hidden");
+            whitespidey.classList.add("spideyvisible");
+            redspidey.classList.remove("hidden");
+            redspidey.classList.add("spideyredvisible");
+            divtitle.classList.remove("hidden");
+            divtitle.classList.add("spideyredvisible");
+            blackspidey.classList.remove("hidden");
+            blackspidey.classList.add("spideyvisible");
+            rightspiderweb.style.top =  410 - y *0.50 + "px";
         }
     };
