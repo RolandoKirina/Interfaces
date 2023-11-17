@@ -132,18 +132,50 @@ spiderblue.addEventListener("mouseenter",  function(){
 
 const container = document.querySelector("#bodycontainer");
 const goblin = document.querySelector("#goblin");
-console.log(container);
-console.log(goblin);
 let min = 400;
 let max = 1400; 
 let posgoblin = -250;
-container.onscroll = function () {
-    let y = window.scrollY;
-    console.log(y);
+let heaven = document.querySelector("#heaven");
 
-    if(y > min && y < max){
-        // goblin.style.top =  50 +  y/2.1 + "px";
-        goblin.style.top =  0 + posgoblin - y*0.25 + "px";
-        /* cambiamos el top original del goblin incrementandole el top negativo*/
-    }
-};
+let leftbuilding = document.querySelector("#left-building");
+
+let centerbuilding = document.querySelector("#center-building");
+
+let rightbuilding = document.querySelector("#right-building");
+
+let whitespidey = document.querySelector("#white-spidey");
+
+let redspidey = document.querySelector("#redspidey");
+
+let blackspidey = document.querySelector("#black-spidey");
+
+console.log(redspidey);
+console.log(blackspidey);
+let leftspiderweb = document.querySelector("#left-spider-web");
+
+let rightspiderweb = document.querySelector("#right-spider-web");
+
+    container.onscroll = function () {
+        let y = window.scrollY;
+        if(y > min && y < max){
+            goblin.style.top =  posgoblin - y*0.25 + "px";
+            /* cambiamos el top original del goblin incrementandole el top negativo*/
+        }
+        /*seccion hero*/
+        let minhero =10;
+        if (y > minhero){
+            heaven.style.top =  y *0.10 + "px";
+            leftbuilding.style.top =  140 + y *0.25 + "px";
+            centerbuilding.style.top =  550 + y *0.25 + "px";
+            rightbuilding.style.top =  140 + y *0.25 + "px";
+
+            /*sumamos el top de cada imagen con el y y multiplicamos por velocidad*/
+            whitespidey.style.top =  400 - y *0.50 + "px";
+            redspidey.style.top =  440 - y *0.75 + "px";
+
+            leftspiderweb.style.top =  440 - y *0.75 + "px";
+
+            blackspidey.style.top =  330 - y *0.50 + "px";
+            rightspiderweb.style.top =  390 - y *0.50 + "px";
+        }
+    };

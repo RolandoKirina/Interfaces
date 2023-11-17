@@ -251,7 +251,7 @@ main {
     position: absolute;
     z-index: 30;
     height: auto;
-    top: 26%;
+    top: 140px;
 }
 
 .spidey-amazing-friends div:nth-child(2) img {
@@ -262,10 +262,10 @@ main {
 /* edificio centro */
 .spidey-amazing-friends div:nth-child(3) {
     position: absolute;
-    z-index: 20;
+    z-index: 30;
     height: auto;
-    left: 29%;
-    bottom: -55%;
+    left: 29%; 
+    top: 600px;
 }
 
 .spidey-amazing-friends div:nth-child(3) img {
@@ -292,10 +292,10 @@ main {
 /* spider white */
 .spidey-amazing-friends div:nth-child(5) {
     position: absolute;
-    z-index: 50;
+    z-index: 46;
     height: auto;
     left: 6.7%;
-    top: 70%;
+    top: 400px;
 }
 
 .spidey-amazing-friends div:nth-child(5) img {
@@ -311,7 +311,7 @@ main {
     z-index: 50;
     height: auto;
     left: 31%;
-    top: 77%;
+    top: 440px;
 }
 
 .spidey-amazing-friends div:nth-child(6) img {
@@ -327,7 +327,7 @@ main {
     z-index: 50;
     height: auto;
     left: 54%;
-    top: 63%;
+    top: 350px;
 }
 
 .spidey-amazing-friends div:nth-child(7) img {
@@ -395,7 +395,8 @@ main {
     position: relative;
     height: 800px;
     background-color: #8F6AA6;
-    top: 534px;
+    top: 630px;
+    z-index: 49;
 }
 
 /* final triangulo blanco */
