@@ -22,17 +22,14 @@ menu.addEventListener('click', function() {
     }
 });
 
-
 window.addEventListener("scroll", function (){
     let posY = window.scrollY;
     let title = document.getElementById("title");
     let divtitle = document.getElementById("divtitle");
     let scaleValue = 0.4;
     let maxscale =0.9;
-    let initialpos = 500;
+    let initialpos = 200;
     let speed = 0.0017;
-    console.log(divtitle);
-    console.log(title);
     if (posY >= initialpos && posY <= 800) {
         title.classList.add("reducetitle");
         divtitle.classList.remove("absolute");
@@ -42,11 +39,12 @@ window.addEventListener("scroll", function (){
           inicial y se multiplica por la velocidad. se queda con el numero mas grande*/
         title.style.transform = `scale(${scaleValue})`;
 
-    } else if (posY > 800 ) {
-        title.classList.remove("reducetitle");
+    } 
+    else if (posY > 800) {
+        title.classList.add("reducetitle");
         divtitle.classList.remove("absolute");
-        scaleValue = Math.max(scaleValue, 0.5);
-        title.style.transform = `scale(${scaleValue})`;
+        divtitle.classList.add("titleSticky");
+        title.style.transform = `scale(${0.4})`;
         title.style.left = `(${25}%)`;
     }
     else if(posY < initialpos) {
@@ -54,7 +52,7 @@ window.addEventListener("scroll", function (){
         title.classList.remove("reducetitle");
         divtitle.classList.remove("titleSticky");
         divtitle.classList.add("absolute");
-        title.style.transform = `scale(${scaleValue})`;
+        title.style.transform = `scale(${1})`;
     }
 });
 

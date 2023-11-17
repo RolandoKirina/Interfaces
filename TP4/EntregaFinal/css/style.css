@@ -183,7 +183,7 @@ nav div button {
     display: flex;
     justify-content: center;
     position: fixed;
-    top: 0.1px;
+    top: -18px;
     height: 6em;
     z-index: 5000;
     left: 35%;
@@ -1128,16 +1128,20 @@ main {
 }
 
 .brandsfooter{
-    width: auto;
     display: flex;
     background-color: var(--black);
     justify-content: center;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
     margin-bottom: 1.5em;
 }
+.brandsfooter img {
+    width: 80%;
+}
 
 .footergray{
     background-color: var(--gray);
+    display: flex;
+    justify-content: center;
 }
 
 .infofooter{
@@ -1146,9 +1150,10 @@ main {
 
 .infofooter div {
     display: flex;
-    justify-content: center;
     flex-direction: column;
-    align-items: center;
+    justify-content: flex-start;
+    width: 1080px;
+    margin-left: 3em;
 }
 
 .infofooter div p {
@@ -1160,6 +1165,7 @@ main {
     line-height: 94.5%; /* 18.9px */
     letter-spacing: 2.2px;
     width: 820px;
+
 }
 
 
@@ -1173,12 +1179,12 @@ main {
 
 .socialmedia {
     margin-top: 1.5em;
-    margin-bottom: 1.5em;
+    margin-bottom: 3em;
 }
 
 .socialmedia img {
-    width: 25%;
-    height: auto;
+    height: 1.5em;
+    width: 20%;
 }
 
 
