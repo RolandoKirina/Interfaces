@@ -510,9 +510,12 @@ main {
     width: 1080px;
     z-index: 50;
     position: relative;
-    top: 1650px;
+    /* top: 1650px; */
 }
 
+.card1, .card2, .card3 {
+    top: 1900px;
+}
 
 .cards-content div:nth-child(1) {
     position: absolute;
@@ -1357,5 +1360,23 @@ main {
     position: absolute;
 }
 
+.fadeincard1{
+    animation: changetopcards 1s ease;
+}
 
+.fadeincard2{
+    animation: changetopcards 1.5s ease;
+}
+.fadeincard3{
+    animation: changetopcards 2s ease;
+}
 
+@keyframes changetopcards {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+        top: 1650px;
+    }
+}

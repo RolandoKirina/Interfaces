@@ -150,9 +150,13 @@ let redspidey = document.querySelector("#redspidey");
 
 let blackspidey = document.querySelector("#black-spidey");
 
-console.log(redspidey);
-console.log(blackspidey);
+
+let card1 = document.querySelector("#card1");
+let card2 = document.querySelector("#card2");
+let card3 = document.querySelector("#card3");
 let leftspiderweb = document.querySelector("#left-spider-web");
+
+let cardscontainer = document.querySelector("#cards-content");
 
 let rightspiderweb = document.querySelector("#right-spider-web");
 
@@ -198,4 +202,34 @@ let rightspiderweb = document.querySelector("#right-spider-web");
             leftspiderweb.classList.add("visibleleftspiderweb");
             rightspiderweb.classList.add("visiblerigthspiderweb");
         }
+
+        console.log(y);
+        let mincards = 1421;
+        if (y > mincards){
+
+            card1.classList.remove("hidden");
+            card1.classList.add("visiblecard1");
+            card2.classList.remove("hidden");
+            card2.classList.add("visiblecard2");
+            card3.classList.remove("hidden");
+            card3.classList.add("visiblecard3");
+
+            card1.classList.add("fadeincard1");
+            card2.classList.add("fadeincard2");
+            card3.classList.add("fadeincard3");
+            /*si no aplica los estilos antes que la animacion*/
+            setTimeout(() =>{
+                card1.style.top = `${1650}px`;
+            },"1000");
+            setTimeout(() =>{
+                card2.style.top = `${1650}px`;
+            },"1500");
+            setTimeout(() =>{
+                card3.style.top = `${1650}px`;
+            },"2000");
+        }
+      
+
+
+
     };
