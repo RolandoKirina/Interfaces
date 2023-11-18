@@ -61,9 +61,18 @@ let spiderwhite = document.querySelector(".spiderwhite");
 let spiderred = document.querySelector(".spiderred");
 let spiderblue = document.querySelector(".spiderblue");
 
+let backgroundspidershover = document.querySelector("#backgroundspidershover");
+let clippathtop = document.querySelector("#clip-path-top");
+let clippathbottom = document.querySelector("#clip-path-bottom");
 /*spider white*/
 spiderwhite.addEventListener("mouseenter", function (){
 
+    backgroundspidershover.style.backgroundColor = "#FF00A7";
+    backgroundspidershover.style.opacity = "0.4";
+    clippathtop.style.backgroundColor = "#C92B94";
+    clippathtop.style.opacity = "1";
+    clippathbottom.style.backgroundColor = "#C92B94";
+    clippathbottom.style.opacity = "1";
     spiderwhite.classList.add("spiderwhite");
     spiderwhite.classList.remove("spiderred");
     spiderwhite.classList.remove("spiderblue");
@@ -85,6 +94,15 @@ spiderwhite.addEventListener("mouseenter", function (){
 })
 
 spiderred.addEventListener("mouseenter",  function(){
+
+    backgroundspidershover.style.backgroundColor = "#2552C8";
+    backgroundspidershover.style.opacity = "0.3";
+
+    clippathtop.style.backgroundColor = "#2552C8";
+    clippathtop.style.opacity = "0.6";
+
+    clippathbottom.style.backgroundColor = "#2552C8";
+    clippathbottom.style.opacity = "0.6";
 
     spiderred.style.transform = `scale(${1})`;
     spiderblue.style.transform = `scale(${0.5})`;
@@ -109,6 +127,16 @@ spiderred.addEventListener("mouseenter",  function(){
 })
 
 spiderblue.addEventListener("mouseenter",  function(){
+
+    backgroundspidershover.style.backgroundColor = "#000000";
+
+    backgroundspidershover.style.opacity = "0.3";
+
+    clippathtop.style.backgroundColor = "#304C71";
+    clippathtop.style.opacity = "1";
+
+    clippathbottom.style.backgroundColor = "#304C71";
+    clippathbottom.style.opacity = "1";
 
     spiderblue.style.transform = `scale(${1})`;
     spiderred.style.transform = `scale(${0.5})`;
@@ -301,7 +329,7 @@ function loader (){
         // incrementa el porc de a 1
         if (percentage < 100) {
             percentage++;
-            setTimeout(updatePercentage, 40); // Actualiza cada 40 milisegundos
+            setTimeout(updatePercentage, 1); // Actualiza cada 40 milisegundos
         }
         else {
             loader.classList.remove("backgroundblackloader");

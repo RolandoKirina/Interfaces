@@ -967,24 +967,29 @@ main {
 
 .threeSpidersHover .whitebackground-top {
     clip-path: polygon(0 6%, 100% 0, 100% 28%, 0 77%);
-    background-color: silver;
+    background-color: rgb(255, 255, 255);
     position: relative;
     top: 3730px;
     height: 10em;
-    z-index: -2;
+    z-index: -12;
 }
 
-.threeSpidersHover .whitebackground {
-    height: 551px;
+.threeSpidersHover .backgroundspiders {
+    position: relative;
+    top: 3500px;
+    z-index: -15;
+    height: 850px;
+    background-color: var(--white);
 }
 
 .threeSpidersHover .whitebackground-bottom {
-    clip-path: polygon(0 37%, 100% 38%, 100% 100%, 0 77%);
-    background-color: var(--white);
+    /* clip-path: polygon(0 57%, 100% 92%, 100% 100%, 0 59%); */
+    clip-path: polygon(0 58%, 100% 92%, 100% 100%, 0 61%);
+    background-color: #8FBEFC;
     position: relative;
-    top: 4050px;
-    height: 10em;
-    z-index: -3;
+    top: 3210px;
+    height: 20em;
+    z-index: 90;
 }
 
 
@@ -993,8 +998,9 @@ main {
     display: flex;
     justify-content: center;
     position: relative;
-    top: 3270px;
+    top: 2400px;
     z-index: 3;
+   
 }
 
 .threeSpidersHover-content-centered {
@@ -1026,7 +1032,7 @@ main {
 .theLastOfSpideyFriends {
     width: 100%;
     position: relative;
-    top: 3970px;
+    top: 3230px;
     z-index: 60;
 }
 
@@ -1183,7 +1189,7 @@ main {
     width: 100%;
     background-color: var(--gray);
     position: relative;
-    top: 4010px;
+    top: 3270px;
 }
 
 .footercontent {
@@ -1506,4 +1512,13 @@ main {
     } to {
         transform: rotate(360deg);
     }
+}
+.clippathblue{
+    clip-path: polygon(0 91%, 100% 96%, 100% 100%, 0% 100%);
+    height: 10em;
+    width: 100%;
+    position: relative;
+    background-color:#8FBEFC;
+    z-index: 3000;
+    top: 3213px;
 }
