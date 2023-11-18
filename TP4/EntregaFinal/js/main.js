@@ -282,3 +282,36 @@ let rightspiderweb = document.querySelector("#right-spider-web");
     //     test3.classList.remove("test1skew");
     //     test3.classList.add("skewtestreverse");
     // } )
+
+document.addEventListener("DOMContentLoaded", loader);
+
+function loader (){
+    const percentageElement = document.querySelector('#percentage');
+    const progressBar = document.querySelector('#progress-bar');
+
+    // Inicializa el porcentaje en 1%
+    let percentage = 1;
+
+    // Función para actualizar el porcentaje en el DOM
+    function updatePercentage() {
+        percentageElement.textContent = `${percentage}%`;
+
+
+        // incrementa el porc de a 1
+        if (percentage < 100) {
+            console.log("p " +percentage)
+            percentage++;
+            setTimeout(updatePercentage, 40); // Actualiza cada 40 milisegundos
+        }
+        else {
+            loader.classList.remove("backgroundblackloader");
+            loader.classList.add("hiddenblock");
+        }
+    }
+    // se llama por primera vez al update
+    updatePercentage();
+
+    const loader = document.querySelector(".backgroundblackloader");
+
+}
+    
