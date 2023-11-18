@@ -130,7 +130,7 @@ spiderblue.addEventListener("mouseenter",  function(){
 
     backgroundspidershover.style.backgroundColor = "#000000";
 
-    backgroundspidershover.style.opacity = "0.3";
+    backgroundspidershover.style.opacity = "0.2";
 
     clippathtop.style.backgroundColor = "#304C71";
     clippathtop.style.opacity = "1";
