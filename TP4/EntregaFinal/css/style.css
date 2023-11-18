@@ -143,26 +143,52 @@ nav div button {
 
 
 /* Boton comprar del nav */
-
 .buy {
+    position: absolute; 
     width: 12.5rem;
     height: 3.125rem;
     border-radius: 6.9375rem;
     border: 8px solid var(--2982-ff, #2982FF);
     background: #FFE901;
     box-shadow: 4px 5px 0px 0px #02187E;
-    position: absolute;
-    right: 3.5em;
-    top: 1em;
+    overflow: hidden; 
+    right: 100px;
 }
 
+/* Texto dentro del botón */
 .buy span {
-    color: #02187E;
+    color: var(--blue);
     font-size: 1.25rem;
     font-style: normal;
     font-weight: 900;
-    line-height: 94.5%; /* 1.18125rem */
+    line-height: 94.5%; 
     letter-spacing: 0.1375rem;
+    transition: color 0.3s ease; /* Transición para el cambio de color */
+    z-index: 2;
+    position: relative;
+}
+
+
+.buy:hover span {
+    color: #ffffff;
+}
+
+/*sirve para la animacion*/
+.buy::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: var(--blue); 
+    top: 0;
+    left: 100%;
+    transition: all 0.3s ease;
+    z-index: 1;
+
+}
+
+.buy:hover::after {
+    left: 0;
 }
 
 
@@ -1382,9 +1408,11 @@ main {
 .test1skew{
     animation: skewtest 1s ease-in;
 }
+
 .skewtestreverse{
     animation: testskewover 1s ease-in;
 }
+
 /*Reverse*/
 @keyframes testskewover{
     from {
