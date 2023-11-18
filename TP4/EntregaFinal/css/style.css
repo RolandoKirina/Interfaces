@@ -7,8 +7,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    color: #FFF;
-    color: #FFF;
+    color: #FFF; /*esto causa problema*/
     font-size: 1.25rem;
     font-style: normal;
     font-weight: 400;
@@ -1458,29 +1457,39 @@ main {
     justify-content: center;
     align-items: center;
     position: absolute;
-    z-index: 9000;
+    z-index: 8000;
     height: 25em;
     width: 100%;
     top: 0;
     background-image: url('../img/backgroundspidey.jpg');
     opacity: 0.7;
 }
-
+.loaders {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
 .spinner {
     position: absolute;
+    z-index: 9000;
     width: 6.6em;
     height: 6.6em;
     opacity: 1;
 }
 .percentage{
     position: absolute;
-    bottom:150px;
+    bottom:140px;
     left: 48.5%; 
-    z-index: 300;
-    color: #000;
+    z-index: 9000;
+    /*color: #000000; tratar de cambiar*/
 }
-.percentaje span {
-    color: #000;
+
+.percentagespan span{
+    position: absolute;
+    z-index: 10000;
+    /*poner el texto en blanco*/
+    opacity: 1;
 }
 .spinner-circle {
     width: 100%;
