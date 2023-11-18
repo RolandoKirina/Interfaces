@@ -287,7 +287,8 @@ document.addEventListener("DOMContentLoaded", loader);
 
 function loader (){
     const percentageElement = document.querySelector('#percentage');
-    const progressBar = document.querySelector('#progress-bar');
+ 
+    const content = document.querySelector("#content");
 
     // Inicializa el porcentaje en 1%
     let percentage = 1;
@@ -299,13 +300,14 @@ function loader (){
 
         // incrementa el porc de a 1
         if (percentage < 100) {
-            console.log("p " +percentage)
             percentage++;
             setTimeout(updatePercentage, 40); // Actualiza cada 40 milisegundos
         }
         else {
             loader.classList.remove("backgroundblackloader");
             loader.classList.add("hiddenblock");
+            content.classList.remove("hiddenblock");
+            content.classList.add("content");
         }
     }
     // se llama por primera vez al update
