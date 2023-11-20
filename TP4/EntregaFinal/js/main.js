@@ -349,10 +349,22 @@ let btnmenu = document.querySelector("#btnmenu");
 
 btnmenu.addEventListener('click', showdropdownmenu);
 
-function showdropdownmenu (){
-     let menu = document.querySelector("#dropdownmenu");
-     menu.classList.toggle("menuopen");
-     let li = document.querySelector("#li");
-     li.classList.add("livisible");
-     li.style.opacity = "1";
+function showdropdownmenu() {
+    let menu = document.querySelector("#dropdownmenu");
+    menu.classList.toggle("menuopen");
+
+    let listItems = document.querySelectorAll('.hiddenblock ul li');
+    
+    let time = 300;
+    let totaltime = 0
+    listItems.forEach((li, index) => {
+        li.classList.remove("livisible"); 
+        li.style.opacity = "0";
+        totaltime += time;
+        setTimeout(() => {
+            li.classList.add("livisible");
+            li.style.opacity = "1";
+        },totaltime);
+    });
+    totaltime = 0;
 }
