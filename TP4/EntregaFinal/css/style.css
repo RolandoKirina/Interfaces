@@ -1523,3 +1523,31 @@ main {
     z-index: 3000;
     top: 2820px;
 }
+.menuopen {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items:center;
+    position: absolute;
+    top: 118px;
+    z-index: 9000;
+    height: 500px;
+    width: 15%;
+    left: 0px;
+    background-color: #404281;
+    animation: showmenu 1s ease-in;
+}
+
+.menuopen ul {
+    margin:   2px;
+}
+
+.menuopen ul :nth-child(1){
+    margin-top: 0px;
+}
+
+.menuopen ul li {
+    font-size: 16px;
+    margin: 24px;
+    list-style: none;
+}

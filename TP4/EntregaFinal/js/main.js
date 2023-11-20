@@ -344,4 +344,12 @@ function loader (){
     const loader = document.querySelector(".backgroundblackloader");
 
 }
-    
+
+let btnmenu = document.querySelector("#btnmenu");
+
+btnmenu.addEventListener('click', showdropdownmenu);
+
+function showdropdownmenu (){
+     let menu = document.querySelector("#dropdownmenu");
+     menu.classList.toggle("menuopen");
+}
