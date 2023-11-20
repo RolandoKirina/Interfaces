@@ -629,7 +629,10 @@ main {
     top: -96px;
     left: 2em;
     z-index: 15;
+    /* width: 400px; */
 }
+
+
 /*2do test*/
 .test2 {
     position: absolute;
@@ -1427,7 +1430,7 @@ main {
 /*Reverse*/
 @keyframes testskewover{
     from {
-        transform: skew(5deg);
+        transform: skew(-180deg);
     }
     to {
         transform: skew(0);
@@ -1439,7 +1442,7 @@ main {
         transform: skew(0);
     }
     to {
-        transform: skew(5deg);
+        transform: skew(-180deg);
     }
 }
 .content{

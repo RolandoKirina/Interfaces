@@ -279,30 +279,36 @@ let rightspiderweb = document.querySelector("#right-spider-web");
     let imgtest3 =test3.firstElementChild;
     imgtest1.addEventListener("mouseenter", function (){
         test1.classList.add("test1skew");
-        setTimeout(() => {
-            test1.style.transform = `skew(${5}deg)`; // Aplicar la transformación con style.transform
-        }, 1000); 
+      
         test2.classList.remove("test1skew");
         test3.classList.remove("test1skew");
+        test1.classList.remove("skewtestreverse");
+    
     })
     imgtest2.addEventListener("mouseenter", function (){
         test2.classList.add("test1skew");
-        setTimeout(() => {
-            test2.style.transform = `skew(${5}deg)`; // Aplicar la transformación con style.transform
-        }, 1000); 
+ 
         test1.classList.remove("test1skew");
         test3.classList.remove("test1skew");
+        test2.classList.remove("skewtestreverse");
     })
 
     imgtest3.addEventListener("mouseenter", function (){
         test3.classList.add("test1skew");
-        setTimeout(() => {
-            test3.style.transform = `skew(${5}deg)`; // Aplicar la transformación con style.transform
-        }, 1000); 
+
         test2.classList.remove("test1skew");
         test1.classList.remove("test1skew");
+        test3.classList.remove("skewtestreverse");
     })
 
+    imgtest1.addEventListener("mouseleave", function () {
+        test1.classList.remove("test1skew");
+        test1.classList.add("skewtestreverse");
+
+
+   
+
+    });
 
     // imgtest3.addEventListener("mouseover",function (){
     //     test1.classList.remove("test1skew");
