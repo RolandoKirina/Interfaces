@@ -1535,11 +1535,10 @@ main {
     width: 15%;
     left: 0px;
     background-color: #404281;
-    animation: showmenu 1s ease-in;
 }
 
 .menuopen ul {
-    margin:   2px;
+    margin: 2px;
 }
 
 .menuopen ul :nth-child(1){
