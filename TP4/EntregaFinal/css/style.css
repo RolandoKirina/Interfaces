@@ -169,7 +169,7 @@ nav div button {
 
 
 .buy:hover span {
-    color: #ffffff;
+    color: var(--yellow);
 }
 
 /*sirve para la animacion*/
@@ -183,7 +183,7 @@ nav div button {
     left: 100%;
     transition: all 0.3s ease;
     z-index: 1;
-
+    color: var(--yellow);
 }
 
 .buy:hover::after {
@@ -917,16 +917,48 @@ main {
     width: 18.25rem;
     height: 3.125rem;
     border-radius: 6.9375rem;
-    color: var(--blue);
     border: 8px solid var(--2982-ff, var(--skyblue));
-    background: var(--yellow);
+    background-color: var(--yellow);
     box-shadow: 4px 5px 0px 0px #02187E;
     position: absolute;
+    overflow: hidden; 
     top: 11em;
     left: 5em;
     font-weight: bolder;
 }
 
+.buynow span {
+    color: var(--blue);
+    font-size: 1.25rem;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 94.5%; 
+    letter-spacing: 0.1375rem;
+    transition: color 0.3s ease; /* Transición para el cambio de color */
+    z-index: 2;
+    position: relative;
+}
+
+.buynow:hover span {
+    color: var(--yellow);
+}
+
+/*sirve para la animacion*/
+.buynow::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: var(--blue); 
+    top: 0;
+    left: 100%;
+    transition: all 0.3s ease;
+    z-index: 1;
+}
+
+.buynow:hover::after {
+    left: 0; /*lleva del 100 al 0*/
+}
 
 .power {
     width: 40em;
@@ -954,9 +986,6 @@ main {
 .second {
     top: 3.5em;
 }
-
-
-
 
 /* septima seccion buy now  */
 
@@ -1190,7 +1219,7 @@ main {
     width: 100%;
     background-color: var(--gray);
     position: relative;
-    top: 3270px;
+    top: 2870px;
 }
 
 .footercontent {
@@ -1537,17 +1566,17 @@ main {
     background-color: #404281;
 }
 
-.menuopen ul {
-    margin: 2px;
-}
 
 .menuopen ul :nth-child(1){
     margin-top: 0px;
 }
 
+.menuopen ul :nth-child(7){
+    margin-bottom: 46px;
+}
 .menuopen ul li {
     font-size: 16px;
-    margin: 24px;
+    margin: 28px;
     list-style: none;
     opacity: 0;
 }
@@ -1555,6 +1584,7 @@ main {
 .livisible {
     animation: livisible 1s ease-in-out;
 }
+
 @keyframes livisible {
     from {
         opacity: 0;
