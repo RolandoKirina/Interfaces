@@ -1549,4 +1549,17 @@ main {
     font-size: 16px;
     margin: 24px;
     list-style: none;
+    opacity: 0;
+}
+
+.livisible {
+    animation: livisible 1s ease-in-out;
+}
+@keyframes livisible {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }

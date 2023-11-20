@@ -352,4 +352,7 @@ btnmenu.addEventListener('click', showdropdownmenu);
 function showdropdownmenu (){
      let menu = document.querySelector("#dropdownmenu");
      menu.classList.toggle("menuopen");
+     let li = document.querySelector("#li");
+     li.classList.add("livisible");
+     li.style.opacity = "1";
 }
