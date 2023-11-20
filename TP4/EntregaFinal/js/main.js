@@ -359,8 +359,8 @@ function showDropdownMenu() {
 
     listItems.forEach((li) => {
         /* si tiene la clase la remueve y restablece la opacidad */
-        // li.classList.remove("livisible");
-        // li.style.opacity = "0";
+        li.classList.remove("livisible");
+        li.style.opacity = "0";
         totaltime += time;
         setTimeout(() => {
             li.classList.add("livisible");
