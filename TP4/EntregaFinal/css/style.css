@@ -1418,33 +1418,6 @@ main {
     }
 }
 
-.test1skew{
-    animation: skewtest 1s ease-in;
-}
-
-.skewtestreverse{
-    animation: testskewover 1s ease-in;
-}
-
-
-/*Reverse*/
-@keyframes testskewover{
-    from {
-        transform: skew(-180deg);
-    }
-    to {
-        transform: skew(0);
-    }
-}
-
-@keyframes skewtest {
-    from {
-        transform: skew(0);
-    }
-    to {
-        transform: skew(-180deg);
-    }
-}
 .content{
     display: block;
 }
@@ -1526,3 +1499,18 @@ main {
     z-index: 3000;
     top: 2820px;
 }
+
+
+
+/* animacion cambio perspectiva ghost spiders test */
+
+.testSkew {
+    transform: rotateY(50deg);
+    transition: transform 1s ease;
+ }
+ 
+ .testSkewReverse {
+     transform: rotateY(0deg);
+     transition: transform 1s ease;
+ }
+ 

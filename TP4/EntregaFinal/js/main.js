@@ -273,49 +273,44 @@ let rightspiderweb = document.querySelector("#right-spider-web");
 
     };
 
-
+/* animacion cambio perspectiva ghost spiders test */
     let imgtest1 =test1.firstElementChild;
     let imgtest2 =test2.firstElementChild;
     let imgtest3 =test3.firstElementChild;
+
+
+      /* hace hover */
     imgtest1.addEventListener("mouseenter", function (){
-        test1.classList.add("test1skew");
-      
-        test2.classList.remove("test1skew");
-        test3.classList.remove("test1skew");
-        test1.classList.remove("skewtestreverse");
-    
-    })
+        test1.classList.remove("testSkewReverse");
+        test1.classList.add("testSkew");
+    });
+
     imgtest2.addEventListener("mouseenter", function (){
-        test2.classList.add("test1skew");
- 
-        test1.classList.remove("test1skew");
-        test3.classList.remove("test1skew");
-        test2.classList.remove("skewtestreverse");
+        test2.classList.remove("testSkewReverse");
+        test2.classList.add("testSkew");
     })
 
     imgtest3.addEventListener("mouseenter", function (){
-        test3.classList.add("test1skew");
-
-        test2.classList.remove("test1skew");
-        test1.classList.remove("test1skew");
-        test3.classList.remove("skewtestreverse");
+        test3.classList.remove("testSkewReverse");
+        test3.classList.add("testSkew");
     })
 
-    imgtest1.addEventListener("mouseleave", function () {
-        test1.classList.remove("test1skew");
-        test1.classList.add("skewtestreverse");
 
-
-   
-
+    /* no hace hover */
+    imgtest1.addEventListener("mouseleave", function (){
+        test1.classList.remove("testSkew");
+        test1.classList.add("testSkewReverse");
     });
 
-    // imgtest3.addEventListener("mouseover",function (){
-    //     test1.classList.remove("test1skew");
-    //     test2.classList.remove("test1skew");
-    //     test3.classList.remove("test1skew");
-    //     test3.classList.add("skewtestreverse");
-    // } )
+    imgtest2.addEventListener("mouseleave", function (){
+        test2.classList.remove("testSkew");
+        test2.classList.add("testSkewReverse");
+    });
+
+    imgtest3.addEventListener("mouseleave", function (){
+        test3.classList.remove("testSkew");
+        test3.classList.add("testSkewReverse");
+    });
 
 document.addEventListener("DOMContentLoaded", loader);
 
