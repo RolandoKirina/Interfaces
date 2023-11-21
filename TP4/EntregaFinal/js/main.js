@@ -345,4 +345,42 @@ function loader (){
     const loader = document.querySelector(".backgroundblackloader");
 
 }
-    
+
+let btnmenu = document.querySelector("#btnmenu");
+
+btnmenu.addEventListener('click', showDropdownMenu);
+
+let open = false;
+
+function showDropdownMenu() {
+
+    let menu = document.querySelector("#dropdownmenu");
+    menu.classList.toggle("menuopen");
+
+
+
+    let listItems = document.querySelectorAll('.hiddenblock ul li');
+    let time = 300;
+    let totaltime = 0; 
+
+
+    if (open == false){
+        listItems.forEach((li) => {
+            /* si tiene la clase la remueve y restablece la opacidad */
+            // li.classList.remove("livisible");
+            totaltime += time;
+            setTimeout(() => {
+                li.classList.add("livisible");
+                li.style.opacity = "1";
+            }, totaltime);
+            open = true;
+        });
+    } else {
+        listItems.forEach((li) => {
+            li.classList.remove("livisible");
+            li.style.opacity = "0";
+            open = false;
+        })
+    }
+
+}
