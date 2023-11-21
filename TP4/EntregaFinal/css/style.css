@@ -813,6 +813,8 @@ body {
 }
 
 
+
+
 .titleFriendsFun {
     position: absolute;
     z-index: 10;
@@ -828,9 +830,13 @@ body {
     color: var(--darkblack);
 }
 
- .firstImgText img , .secondImgText img, .thirdImgText img, .fourthImgText img{
+ .firstImgText img, .secondImgText img, .thirdImgText img, .fourthImgText img{
     width: 552px;
     height: 302.762px;
+}
+.imgsMoreFriends{
+    position: relative;
+    
 }
 
 

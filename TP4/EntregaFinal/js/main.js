@@ -274,10 +274,18 @@ let rightspiderweb = document.querySelector("#right-spider-web");
         console.log(y);
         let minmorefriends = 3982;
         let maxmorefriends = 6080;
+
         if (y >= minmorefriends && y <= maxmorefriends ){
            let texts = document.querySelectorAll(".textTitle");
+           let imgs = document.querySelectorAll(".imgsMoreFriends");
+           if (y >= 4040){
+                imgs.forEach(images => {
+                    // images.style.position = "sticky";
+                    images.style.top = 1900 - y *0.50 + "px";
+                });
+           }
            texts.forEach(text => {
-                text.style.top = 990 - y *0.50 + "px";
+                text.style.top = 2000 - y *0.50 + "px";
            });
         }
 
