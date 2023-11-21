@@ -834,16 +834,16 @@ body {
     width: 552px;
     height: 302.762px;
 }
-.imgsMoreFriends{
+/* .imgsMoreFriends{
     position: relative;
-    
-}
+} */
 
 
 .textTitle {
     z-index: 15;
     width: 467px;
-    position: relative;
+    position: absolute;
+    right: 10px;
 }
 
 .textTitle p {
