@@ -253,6 +253,7 @@ main {
     background-color: #2982FF;
     height: auto;
     /* position: relative; */
+    overflow-x: hidden;
 }
 
 /* fondo cielo*/
@@ -389,17 +390,24 @@ main {
 /* spidey negro */
 
 .spidey-amazing-friends div:nth-child(7) {
+
     position: absolute;
     z-index: 50;
     height: auto;
-    left: 54%;
+    left: 55%;
     top: 350px;
+  
 }
 
 .spidey-amazing-friends div:nth-child(7) img {
     width: auto;
     height: auto;
+    overflow-x: hidden;
 } 
+
+body {
+    overflow-x: hidden;
+}
 
 /* telaraña izquierda */
 
@@ -629,7 +637,10 @@ main {
     top: -96px;
     left: 2em;
     z-index: 15;
+    /* width: 400px; */
 }
+
+
 /*2do test*/
 .test2 {
     position: absolute;
@@ -1445,33 +1456,6 @@ main {
     }
 }
 
-.test1skew{
-    animation: skewtest 1s ease-in;
-}
-
-.skewtestreverse{
-    animation: testskewover 1s ease-in;
-}
-
-
-/*Reverse*/
-@keyframes testskewover{
-    from {
-        transform: skew(5deg);
-    }
-    to {
-        transform: skew(0);
-    }
-}
-
-@keyframes skewtest {
-    from {
-        transform: skew(0);
-    }
-    to {
-        transform: skew(5deg);
-    }
-}
 .content{
     display: block;
 }
@@ -1553,6 +1537,21 @@ main {
     z-index: 3000;
     top: 2820px;
 }
+
+
+
+/* animacion cambio perspectiva ghost spiders test */
+
+.testSkew {
+    transform: rotateY(50deg);
+    transition: transform 1s ease;
+ }
+ 
+ .testSkewReverse {
+     transform: rotateY(0deg);
+     transition: transform 1s ease;
+ }
+ 
 .menuopen {
     display: flex;
     flex-direction: column;
