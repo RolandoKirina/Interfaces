@@ -253,6 +253,7 @@ main {
     background-color: #2982FF;
     height: auto;
     /* position: relative; */
+    overflow-x: hidden;
 }
 
 /* fondo cielo*/
@@ -389,17 +390,24 @@ main {
 /* spidey negro */
 
 .spidey-amazing-friends div:nth-child(7) {
+
     position: absolute;
     z-index: 50;
     height: auto;
-    left: 54%;
+    left: 55%;
     top: 350px;
+  
 }
 
 .spidey-amazing-friends div:nth-child(7) img {
     width: auto;
     height: auto;
+    overflow-x: hidden;
 } 
+
+body {
+    overflow-x: hidden;
+}
 
 /* telaraña izquierda */
 
