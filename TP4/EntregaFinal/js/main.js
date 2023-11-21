@@ -271,6 +271,16 @@ let rightspiderweb = document.querySelector("#right-spider-web");
             test3.style.top =  1320 - y *0.50 + "px";
         }   
 
+        console.log(y);
+        let minmorefriends = 3982;
+        let maxmorefriends = 6080;
+        if (y >= minmorefriends && y <= maxmorefriends ){
+           let texts = document.querySelectorAll(".textTitle");
+           texts.forEach(text => {
+                text.style.top = 990 - y *0.50 + "px";
+           });
+        }
+
     };
 
 
