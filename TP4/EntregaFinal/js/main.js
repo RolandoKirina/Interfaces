@@ -284,40 +284,83 @@ let rightspiderweb = document.querySelector("#right-spider-web");
             test3.style.top =  1320 - y *0.50 + "px";
         }   
 
-        // console.log(y);
-        let minmorefriends = 3982;
-        let maxmorefriends = 5000;
+        /*seccion more friends*/
+        let minmorefriends = 4000;
+        let maxmorefriends = 6000;
 
+        let divimages = document.querySelector("#divimages");
+
+        let texts = document.querySelectorAll(".textTitle");
+        if (y >= 3500){
+            texts[0].classList.add("textvisibles");
+        }
         if (y >= minmorefriends && y <= maxmorefriends ){
-           let texts = document.querySelectorAll(".textTitle");
-           let first = document.querySelector("#firstimg");
-
-           let imgs = document.querySelectorAll(".imgsMoreFriends");
-
-        //    let increment = 0;
-        //    if (y >= 4040 && y < 5600){
-           
-        //     for (let i = 0; i < 4; i++) {
-        //          increment += 0;
-        //          imgs[i].style.position = "fixed";
-        //          imgs[i].style.top = `${increment}px`
-        //          imgs[i].style.zIndex = "300";
-        //     }
- 
-        //    }
-        //    else {
-        //         first.style.position = "relative";
-        //    }
-        //    texts.forEach(text => {
-        //         text.style.top = 1800 -y *0.50 + "px";
-        //    });
-
            texts[0].style.top = 2200 -y *0.50 + "px";
            texts[1].style.top = 2800 -y *0.50 + "px";
            texts[2].style.top = 3400 -y *0.50 + "px";
            texts[3].style.top = 4000 -y *0.50 + "px";
-        }
 
+            divimages.style.position = "fixed";
+            divimages.style.top = "190px";
+
+           if (y < 4200){
+            divimages.classList.add("img1");
+            divimages.classList.remove("img2");
+            divimages.classList.remove("img3");
+            divimages.classList.remove("img4");
+            texts[1].classList.remove("textvisibles");
+            texts[2].classList.remove("textvisibles");
+            texts[3].classList.remove("textvisibles");
+
+            texts[0].classList.remove("textinvisibles");
+            texts[0].classList.add("textvisibles");
+           }
+           else if (y >= 4200 && y < 4600){
+            divimages.classList.add("img2");
+            divimages.classList.remove("img1");
+            divimages.classList.remove("img3");
+            divimages.classList.remove("img4");
+            texts[0].classList.remove("textvisibles");
+            texts[2].classList.remove("textvisibles");
+            texts[3].classList.remove("textvisibles");
+
+            texts[1].classList.remove("textinvisibles");
+            texts[1].classList.add("textvisibles");
+            texts[0].classList.add("textinvisibles");
+
+           }
+           else if (y >= 4600 && y < 5022){
+            divimages.classList.add("img3");
+            divimages.classList.remove("img1");
+            divimages.classList.remove("img2");
+            divimages.classList.remove("img4");
+
+            texts[0].classList.remove("textvisibles");
+            texts[1].classList.remove("textvisibles");
+            texts[3].classList.remove("textvisibles");
+            texts[2].classList.add("textvisibles");
+
+            texts[2].classList.remove("textinvisibles");
+            texts[1].classList.add("textinvisibles");
+           }
+           else if (y >= 5022 && y < maxmorefriends){
+            divimages.classList.add("img4");
+            divimages.classList.remove("img1");
+            divimages.classList.remove("img2");
+            divimages.classList.remove("img3");
+            // texts[2].classList.toggle("textinvisibles");
+
+            texts[0].classList.remove("textvisibles");
+            texts[1].classList.remove("textvisibles");
+            texts[2].classList.remove("textvisibles");
+
+            texts[3].classList.add("textvisibles");
+            texts[2].classList.add("textinvisibles");
+           }
+           else if (y>5040 && y < maxmorefriends){
+            alert("holaaaaaaaaa");
+           }
+        }
     };
 
 /* animacion cambio perspectiva ghost spiders test */

@@ -845,7 +845,6 @@ body {
 .moreFriends{
     position: absolute;
     height: auto;
-    top: 120px;
     z-index: -10;
     display: flex;
     flex-direction: column;
@@ -884,6 +883,49 @@ body {
     width: 467px;
     position: absolute;
     right: 10px;
+}
+
+.text1 {
+    top: 189px;
+    opacity: 0;
+}
+.text2 {
+    top: 798px;
+    opacity: 0;
+}
+.text3 {
+    top: 1389px;
+    opacity: 0;
+}
+.text4 {
+    top: 1989px;
+    opacity: 0;
+}
+.textvisibles{
+   animation: textvisiblekeyframe 0.25s ease-out;
+   opacity: 1;
+}
+
+@keyframes textvisiblekeyframe {    
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.textinvisibles{
+    animation: reversetextvisiblekeyframe 0.25s ease-out;
+    opacity: 0;
+}
+@keyframes reversetextvisiblekeyframe {    
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
 }
 
 .textTitle p {
@@ -1639,3 +1681,23 @@ body {
         opacity: 1;
     }
 }
+
+.img1 {
+    background-image: url("../img/masAmigos/masde100juegos.png");
+}
+.img2 {
+    background-image: url("../img/masAmigos/escenasdeslubrantes.png");
+}
+.img3 {
+    background-image: url("../img/masAmigos/cadamision.png");
+}
+.img4{
+    background-image: url("../img/masAmigos/derrota a los villanos.png");
+}
+.images{
+    width: 552px;
+    height: 302.762px;
+    position: absolute;
+    top: 190px;
+}
+
