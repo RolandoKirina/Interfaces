@@ -28,7 +28,7 @@ window.addEventListener("scroll", function (){
     let divtitle = document.getElementById("divtitle");
     let scaleValue = 0.4;
     let maxscale =0.9;
-    let initialpos = 200;
+    let initialpos = 100;
     let speed = 0.0017;
     if (posY >= initialpos && posY <= 800) {
         title.classList.add("reducetitle");
@@ -229,10 +229,23 @@ let rightspiderweb = document.querySelector("#right-spider-web");
             leftbuilding.classList.add("visiblebuildings");
             centerbuilding.classList.add("visiblebuildings");
             rightbuilding.classList.add("visiblebuildings");
-            whitespidey.classList.add("spideyvisible");
-            redspidey.classList.add("spideyredvisible");           
+          
+            setTimeout(() => {
+                whitespidey.classList.add("spideyvisible");
+                whitespidey.classList.add("showWhiteSpidey");
+                whitespidey.style.left="6.7%";
+
+
+                redspidey.classList.add("spideyredvisible");  
+                redspidey.classList.add("showRedSpidey"); 
+                blackspidey.classList.add("showBlackSpidey");
+                blackspidey.classList.add("spideyvisible");
+                
+                blackspidey.style.right="15%";
+                
+            },1000);
+          
             divtitle.classList.add("spideyredvisible");
-            blackspidey.classList.add("spideyvisible");
             leftspiderweb.classList.add("visibleleftspiderweb");
             rightspiderweb.classList.add("visiblerigthspiderweb");
         }
@@ -271,21 +284,30 @@ let rightspiderweb = document.querySelector("#right-spider-web");
             test3.style.top =  1320 - y *0.50 + "px";
         }   
 
-        console.log(y);
+        // console.log(y);
         let minmorefriends = 3982;
-        let maxmorefriends = 6080;
+        let maxmorefriends = 5000;
 
         if (y >= minmorefriends && y <= maxmorefriends ){
            let texts = document.querySelectorAll(".textTitle");
            let first = document.querySelector("#firstimg");
-           if (y >= 4040 && y < 5600){
-                first.style.position = "fixed";
-                first.style.top = "200px";
-                first.style.zIndex = "8000";
-           }
-           else {
-                first.style.position = "relative";
-           }
+
+           let imgs = document.querySelectorAll(".imgsMoreFriends");
+
+        //    let increment = 0;
+        //    if (y >= 4040 && y < 5600){
+           
+        //     for (let i = 0; i < 4; i++) {
+        //          increment += 0;
+        //          imgs[i].style.position = "fixed";
+        //          imgs[i].style.top = `${increment}px`
+        //          imgs[i].style.zIndex = "300";
+        //     }
+ 
+        //    }
+        //    else {
+        //         first.style.position = "relative";
+        //    }
         //    texts.forEach(text => {
         //         text.style.top = 1800 -y *0.50 + "px";
         //    });
@@ -385,7 +407,7 @@ function showDropdownMenu() {
 
 
     let listItems = document.querySelectorAll('.hiddenblock ul li');
-    let time = 300;
+    let time = 250;
     let totaltime = 0; 
 
 
