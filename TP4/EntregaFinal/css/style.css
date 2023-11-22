@@ -152,6 +152,7 @@ nav div button {
     box-shadow: 4px 5px 0px 0px #02187E;
     overflow: hidden; 
     right: 100px;
+    -webkit-text-stroke:2px;
 }
 
 /* Texto dentro del botón */
