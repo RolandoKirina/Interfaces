@@ -231,21 +231,17 @@ let rightspiderweb = document.querySelector("#right-spider-web");
             rightbuilding.classList.add("visiblebuildings");
           
             setTimeout(() => {
-                whitespidey.classList.add("spideyvisible");
                 whitespidey.classList.add("showWhiteSpidey");
                 whitespidey.style.left="6.7%";
-
-
-                redspidey.classList.add("spideyredvisible");  
+ 
                 redspidey.classList.add("showRedSpidey"); 
+
                 blackspidey.classList.add("showBlackSpidey");
-                blackspidey.classList.add("spideyvisible");
-                
                 blackspidey.style.right="15%";
                 
             },1000);
           
-            divtitle.classList.add("spideyredvisible");
+            divtitle.classList.add("divtitlevisible");
             leftspiderweb.classList.add("visibleleftspiderweb");
             rightspiderweb.classList.add("visiblerigthspiderweb");
         }

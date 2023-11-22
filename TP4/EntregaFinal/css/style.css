@@ -323,27 +323,19 @@ main {
     display: none;
 }
 
-.spideyvisible{
-    animation: showSpidey 2s ease-in-out;
-}
-.spideyredvisible{
-    animation: showSpidey 2.5s ease-in-out;
-}
 .visiblebuildings{
     animation: showSpidey 1s ease-in-out;
 }
+.divtitlevisible {
+    animation: showSpidey 2.5s ease-in-out;
+}
 
-.visibleleftspiderweb{
-    animation: showSpidey 3s ease-in-out;
-}
-.visiblerigthspiderweb{
-    animation: showSpidey 3.5s ease-in-out;
-}
+
 @keyframes showSpidey {
-    0% {
+    0%{
         opacity: 0;
     }
-    25% {
+    25%{
         opacity: 0.25;
     }
     50% {
@@ -352,9 +344,15 @@ main {
     75%{
         opacity: 0.75;
     }
-    100% {
+    100%{
         opacity: 1;
     }
+}
+.visibleleftspiderweb{
+    animation: showSpidey 3s ease-in-out;
+}
+.visiblerigthspiderweb{
+    animation: showSpidey 3.5s ease-in-out;
 }
 
 .showBlackSpidey {
@@ -369,18 +367,22 @@ main {
 @keyframes translateRedSpidey {
    from {
         top: -30%;
+        opacity: 0;
     }
     to {
         top: 440px;
+        opacity: 1;
     }   
 }
 
 @keyframes translateBlackSpidey {
     from {
          right: -30%;
+         opacity: 0;
      }
      to {
          right: 15%;
+         opacity: 1;
      }   
  }
  
@@ -388,9 +390,11 @@ main {
 @keyframes  translateWhiteSpidey {
     from {
         left: -30%;
+        opacity: 0;
     }
     to {
         left: 6.7%;
+        opacity: 1;
     }
 
 }
@@ -419,7 +423,7 @@ main {
     z-index: 50;
     height: auto;
     left: 31%;
-    top: -30%;
+    top: -100%;
 }
 
 .spidey-amazing-friends div:nth-child(6) img {
