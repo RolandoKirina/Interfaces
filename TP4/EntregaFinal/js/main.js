@@ -307,7 +307,7 @@ let rightspiderweb = document.querySelector("#right-spider-web");
            texts[3].style.top = 4000 -y *0.50 + "px";
 
             divimages.style.position = "fixed";
-            divimages.style.top = "190px";
+            divimages.style.top = "215px";
 
            if (y < 4200){
             divimages.classList.add("img1");
