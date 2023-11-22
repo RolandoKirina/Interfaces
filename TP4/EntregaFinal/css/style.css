@@ -122,7 +122,7 @@ nav div button {
 
 @keyframes rotateAndMoveButton {
     to {
-        transform: rotate(45deg) translate(0.2em, 0.2em);
+        transform: rotate(45deg) translate(0.12em, 0.4em);
         filter: drop-shadow(0px 4px 0px #02187E);
     }
 }
