@@ -28,7 +28,7 @@ window.addEventListener("scroll", function (){
     let divtitle = document.getElementById("divtitle");
     let scaleValue = 0.4;
     let maxscale =0.9;
-    let initialpos = 200;
+    let initialpos = 100;
     let speed = 0.0017;
     if (posY >= initialpos && posY <= 800) {
         title.classList.add("reducetitle");
@@ -229,10 +229,23 @@ let rightspiderweb = document.querySelector("#right-spider-web");
             leftbuilding.classList.add("visiblebuildings");
             centerbuilding.classList.add("visiblebuildings");
             rightbuilding.classList.add("visiblebuildings");
-            whitespidey.classList.add("spideyvisible");
-            redspidey.classList.add("spideyredvisible");           
+          
+            setTimeout(() => {
+                whitespidey.classList.add("spideyvisible");
+                whitespidey.classList.add("showWhiteSpidey");
+                whitespidey.style.left="6.7%";
+
+
+                redspidey.classList.add("spideyredvisible");  
+                redspidey.classList.add("showRedSpidey"); 
+                blackspidey.classList.add("showBlackSpidey");
+                blackspidey.classList.add("spideyvisible");
+                
+                blackspidey.style.right="15%";
+                
+            },1000);
+          
             divtitle.classList.add("spideyredvisible");
-            blackspidey.classList.add("spideyvisible");
             leftspiderweb.classList.add("visibleleftspiderweb");
             rightspiderweb.classList.add("visiblerigthspiderweb");
         }
@@ -271,6 +284,92 @@ let rightspiderweb = document.querySelector("#right-spider-web");
             test3.style.top =  1320 - y *0.50 + "px";
         }   
 
+        /*seccion more friends*/
+        let minmorefriends = 4000;
+        let maxmorefriends = 5300;
+
+        let divimages = document.querySelector("#divimages");
+
+        let texts = document.querySelectorAll(".textTitle");
+        if (y < 4000){
+            divimages.style.position = "absolute";
+            divimages.style.top = "199.5px";
+            console.log("1ero");
+        }
+        if (y >= 3500){
+            texts[0].classList.add("textvisibles");
+        }
+        if (y >= minmorefriends && y <= maxmorefriends ){
+            console.log("holaa")
+           texts[0].style.top = 2200 -y *0.50 + "px";
+           texts[1].style.top = 2800 -y *0.50 + "px";
+           texts[2].style.top = 3400 -y *0.50 + "px";
+           texts[3].style.top = 4000 -y *0.50 + "px";
+
+            divimages.style.position = "fixed";
+            divimages.style.top = "215px";
+
+           if (y < 4200){
+            divimages.classList.add("img1");
+            divimages.classList.remove("img2");
+            divimages.classList.remove("img3");
+            divimages.classList.remove("img4");
+            texts[1].classList.remove("textvisibles");
+            texts[2].classList.remove("textvisibles");
+            texts[3].classList.remove("textvisibles");
+
+            texts[0].classList.remove("textinvisibles");
+            texts[0].classList.add("textvisibles");
+           }
+           else if (y >= 4200 && y < 4600){
+
+            divimages.classList.add("img2");
+            divimages.classList.remove("img1");
+            divimages.classList.remove("img3");
+            divimages.classList.remove("img4");
+            texts[0].classList.remove("textvisibles");
+            texts[2].classList.remove("textvisibles");
+            texts[3].classList.remove("textvisibles");
+
+            texts[1].classList.remove("textinvisibles");
+            texts[1].classList.add("textvisibles");
+            texts[0].classList.add("textinvisibles");
+
+           }
+           else if (y >= 4600 && y < 5022){
+            divimages.classList.add("img3");
+            divimages.classList.remove("img1");
+            divimages.classList.remove("img2");
+            divimages.classList.remove("img4");
+
+            texts[0].classList.remove("textvisibles");
+            texts[1].classList.remove("textvisibles");
+            texts[3].classList.remove("textvisibles");
+            texts[2].classList.add("textvisibles");
+
+            texts[2].classList.remove("textinvisibles");
+            texts[1].classList.add("textinvisibles");
+           }
+           else if (y >= 5022 && y <= 5060){
+            divimages.classList.add("img4");
+            divimages.classList.remove("img1");
+            divimages.classList.remove("img2");
+            divimages.classList.remove("img3");
+            // texts[2].classList.toggle("textinvisibles");
+
+            texts[0].classList.remove("textvisibles");
+            texts[1].classList.remove("textvisibles");
+            texts[2].classList.remove("textvisibles");
+
+            texts[3].classList.add("textvisibles");
+            texts[2].classList.add("textinvisibles");
+           }
+           else if (y> 5150 && y < maxmorefriends){
+
+            divimages.style.position = "absolute";
+            divimages.style.top = "1363.5px";
+           }
+        }
     };
 
 /* animacion cambio perspectiva ghost spiders test */
@@ -360,7 +459,7 @@ function showDropdownMenu() {
 
 
     let listItems = document.querySelectorAll('.hiddenblock ul li');
-    let time = 300;
+    let time = 250;
     let totaltime = 0; 
 
 
