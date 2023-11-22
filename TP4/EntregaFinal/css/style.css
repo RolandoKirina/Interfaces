@@ -1706,6 +1706,9 @@ body {
 .img4{
     background-image: url("../img/masAmigos/derrota a los villanos.png");
 }
+.img1, .img2, .img3, .img4 {
+    transition: background-image 0.5s ease-in-out;
+}
 .images{
     width: 552px;
     height: 302.762px;
@@ -1713,3 +1716,15 @@ body {
     top: 190px;
 }
 
+.converthiddentext{
+    animation: hiddentext 0.25s ease-in-out;
+    opacity: 0;
+}
+@keyframes hiddentext {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}

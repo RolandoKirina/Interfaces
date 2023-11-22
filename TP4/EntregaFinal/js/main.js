@@ -286,14 +286,11 @@ let rightspiderweb = document.querySelector("#right-spider-web");
             let girl = document.querySelector("#girl");
             let black = document.querySelector("#black");
             let hulk = document.querySelector("#hulk");
-            let plants = document.querySelector("#plants");
-            const containerimages = document.querySelector("#containerimages");
             document.addEventListener("mousemove", parallaxSectionAvengers);    
 
             function parallaxSectionAvengers(e){
                 let mouseX = e.clientX;
                 let mouseY = e.clientY;
-                console.log(hulk)
                 sky.style.left =  `${0 + mouseX  * 0.0005}%`;
                 sky.style.top =`${0 +mouseY * 0.0010}%`;
                 
@@ -315,20 +312,28 @@ let rightspiderweb = document.querySelector("#right-spider-web");
                 // // containerimages.style.backgroundPosition = x;
             }
         }
+        console.log(y);
         /*seccion more friends*/
         let minmorefriends = 4000;
         let maxmorefriends = 5300;
-
+        let mintext = 3500;
         let divimages = document.querySelector("#divimages");
 
         let texts = document.querySelectorAll(".textTitle");
-        if (y < 4000){
+        if (y < minmorefriends){
             divimages.style.position = "absolute";
             divimages.style.top = "199.5px";
         }
-        if (y >= 3500){
+        if (y >= mintext){
             texts[0].classList.add("textvisibles");
         }
+
+        let minfirstimg = 4200;
+        let maxsecondimg = 4600;
+        let maxthirdimg = 5022;
+        let maxfourthimg = 5060;
+        let mintextscroll = 5061;
+        
         if (y >= minmorefriends && y <= maxmorefriends ){
            texts[0].style.top = 2200 -y *0.50 + "px";
            texts[1].style.top = 2800 -y *0.50 + "px";
@@ -338,7 +343,7 @@ let rightspiderweb = document.querySelector("#right-spider-web");
             divimages.style.position = "fixed";
             divimages.style.top = "215px";
 
-           if (y < 4200){
+           if (y < minfirstimg){
             divimages.classList.add("img1");
             divimages.classList.remove("img2");
             divimages.classList.remove("img3");
@@ -349,8 +354,10 @@ let rightspiderweb = document.querySelector("#right-spider-web");
 
             texts[0].classList.remove("textinvisibles");
             texts[0].classList.add("textvisibles");
+            texts[1].classList.remove("converthiddentext");
+            texts[2].classList.remove("converthiddentext");
            }
-           else if (y >= 4200 && y < 4600){
+           else if (y >= minfirstimg && y < maxsecondimg){
 
             divimages.classList.add("img2");
             divimages.classList.remove("img1");
@@ -363,9 +370,11 @@ let rightspiderweb = document.querySelector("#right-spider-web");
             texts[1].classList.remove("textinvisibles");
             texts[1].classList.add("textvisibles");
             texts[0].classList.add("textinvisibles");
+            texts[1].classList.remove("converthiddentext");
+            texts[2].classList.remove("converthiddentext");
 
            }
-           else if (y >= 4600 && y < 5022){
+           else if (y >= maxsecondimg && y < maxthirdimg){
             divimages.classList.add("img3");
             divimages.classList.remove("img1");
             divimages.classList.remove("img2");
@@ -378,8 +387,11 @@ let rightspiderweb = document.querySelector("#right-spider-web");
 
             texts[2].classList.remove("textinvisibles");
             texts[1].classList.add("textinvisibles");
+
+            texts[1].classList.remove("converthiddentext");
+            texts[2].classList.remove("converthiddentext");
            }
-           else if (y >= 5022 && y <= 5060){
+           else if (y >= maxthirdimg && y <= maxfourthimg ){
             divimages.classList.add("img4");
             divimages.classList.remove("img1");
             divimages.classList.remove("img2");
@@ -392,11 +404,22 @@ let rightspiderweb = document.querySelector("#right-spider-web");
 
             texts[3].classList.add("textvisibles");
             texts[2].classList.add("textinvisibles");
-           }
-           else if (y> 5150 && y < maxmorefriends){
 
+            texts[1].classList.remove("converthiddentext");
+            texts[2].classList.remove("converthiddentext");
+
+           }
+           else if (y> mintextscroll && y < maxmorefriends){
+            console.log("holaaaaaaa")
             divimages.style.position = "absolute";
             divimages.style.top = "1363.5px";
+           }
+
+           if (y>=4292 && y < 4300){
+            texts[1].classList.add("converthiddentext");
+           }
+           if (y >= 4692 && y < 4700){
+            texts[2].classList.add("converthiddentext");
            }
         }
     };
