@@ -246,7 +246,6 @@ let rightspiderweb = document.querySelector("#right-spider-web");
             rightspiderweb.classList.add("visiblerigthspiderweb");
         }
 
-        console.log(y);
         let mincards = 1421;
         if (y > mincards){
 
@@ -280,6 +279,45 @@ let rightspiderweb = document.querySelector("#right-spider-web");
             test3.style.top =  1320 - y *0.50 + "px";
         }   
 
+        let minparallaxmouse = 3291;
+        if (y > minparallaxmouse && y < 4000){
+            let sky = document.querySelector("#sky");
+            let trees = document.querySelector("#trees");
+            let girl = document.querySelector("#girl");
+            let black = document.querySelector("#black");
+            let hulk = document.querySelector("#hulk");
+            let plants = document.querySelector("#plants");
+            const containerimages = document.querySelector("#containerimages");
+            document.addEventListener("mousemove", parallaxSectionAvengers);    
+
+            function parallaxSectionAvengers(e){
+                let mouseX = e.clientX;
+                let mouseY = e.clientY;
+                console.log(hulk)
+                sky.style.left =  `${0 + mouseX  * 0.0005}%`;
+                sky.style.top =`${0 +mouseY * 0.005}%`;
+                
+                trees.style.left =  `${0 + mouseX  * 0.0008}%`;
+                trees.style.top =`${0 +mouseY * 0.0008}%`;
+
+                girl.style.left =  `${0 + mouseX  * 0.008}%`;
+                girl.style.top =`${0 +mouseY * 0.008}%`;
+
+                /* 432 es el left del hulk menos el mouse en x por una velocidad*/
+                hulk.style.left =  `${55 + mouseX  * 0.008}%`;
+                hulk.style.top =`${20 +mouseY * 0.008}%`;
+
+                // black.style.left =  `${0 - mouseX  * 0.008}%`;
+                // black.style.top =`${0 -mouseY * 0.008}%`;
+
+                // plants.style.left =  `${0 - mouseX  * 0.012}%`;
+                // plants.style.top =`${0 -mouseY * 0.012}%`;
+
+                
+                // // let x = `${characters}, ${trees}, ${skymove}`;
+                // // containerimages.style.backgroundPosition = x;
+            }
+        }
         /*seccion more friends*/
         let minmorefriends = 4000;
         let maxmorefriends = 5300;
@@ -290,13 +328,11 @@ let rightspiderweb = document.querySelector("#right-spider-web");
         if (y < 4000){
             divimages.style.position = "absolute";
             divimages.style.top = "199.5px";
-            console.log("1ero");
         }
         if (y >= 3500){
             texts[0].classList.add("textvisibles");
         }
         if (y >= minmorefriends && y <= maxmorefriends ){
-            console.log("holaa")
            texts[0].style.top = 2200 -y *0.50 + "px";
            texts[1].style.top = 2800 -y *0.50 + "px";
            texts[2].style.top = 3400 -y *0.50 + "px";
@@ -478,4 +514,5 @@ function showDropdownMenu() {
         })
     }
 
+    
 }

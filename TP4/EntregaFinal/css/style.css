@@ -781,6 +781,8 @@ body {
 .avengers-content  .containerimages {
     position: absolute;
     top: 15em;
+    height: 20em;
+    width: 100%;
 }
 
 .sky, .trees, .plants, .girl, .black, .hulk{
