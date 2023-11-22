@@ -279,7 +279,7 @@ let rightspiderweb = document.querySelector("#right-spider-web");
             test3.style.top =  1320 - y *0.50 + "px";
         }   
 
-        let minparallaxmouse = 3291;
+        let minparallaxmouse = 3200;
         if (y > minparallaxmouse && y < 4000){
             let sky = document.querySelector("#sky");
             let trees = document.querySelector("#trees");
@@ -295,23 +295,20 @@ let rightspiderweb = document.querySelector("#right-spider-web");
                 let mouseY = e.clientY;
                 console.log(hulk)
                 sky.style.left =  `${0 + mouseX  * 0.0005}%`;
-                sky.style.top =`${0 +mouseY * 0.005}%`;
+                sky.style.top =`${0 +mouseY * 0.0010}%`;
                 
-                trees.style.left =  `${0 + mouseX  * 0.0008}%`;
-                trees.style.top =`${0 +mouseY * 0.0008}%`;
+                trees.style.top =`${0 +mouseY * 0.0006}%`;
 
                 girl.style.left =  `${0 + mouseX  * 0.008}%`;
-                girl.style.top =`${0 +mouseY * 0.008}%`;
+                girl.style.top =`${-10 +mouseY * 0.008}%`;
 
                 /* 432 es el left del hulk menos el mouse en x por una velocidad*/
                 hulk.style.left =  `${55 + mouseX  * 0.008}%`;
                 hulk.style.top =`${20 +mouseY * 0.008}%`;
 
-                // black.style.left =  `${0 - mouseX  * 0.008}%`;
-                // black.style.top =`${0 -mouseY * 0.008}%`;
+                black.style.left =  `${38 + mouseX  * 0.008}%`;
+                black.style.top =`${-50 + mouseY * 0.008}%`;
 
-                // plants.style.left =  `${0 - mouseX  * 0.012}%`;
-                // plants.style.top =`${0 -mouseY * 0.012}%`;
 
                 
                 // // let x = `${characters}, ${trees}, ${skymove}`;

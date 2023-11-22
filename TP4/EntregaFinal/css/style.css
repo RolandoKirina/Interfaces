@@ -366,7 +366,7 @@ main {
 }
 @keyframes translateRedSpidey {
    from {
-        top: -30%;
+        top: 20%;
         opacity: 0;
     }
     to {
@@ -377,7 +377,7 @@ main {
 
 @keyframes translateBlackSpidey {
     from {
-         right: -30%;
+         right: 5%;
          opacity: 0;
      }
      to {
@@ -389,7 +389,7 @@ main {
 
 @keyframes  translateWhiteSpidey {
     from {
-        left: -30%;
+        left: 0%;
         opacity: 0;
     }
     to {
@@ -405,8 +405,7 @@ main {
     position: absolute;
     z-index: 46;
     height: auto;
-    /* left: 6.7%; */
-    left: -30%;
+    left: 0%;
     top: 400px;
 }
 
@@ -423,7 +422,7 @@ main {
     z-index: 50;
     height: auto;
     left: 31%;
-    top: -100%;
+    top: 20%;
 }
 
 .spidey-amazing-friends div:nth-child(6) img {
@@ -439,7 +438,7 @@ main {
     position: absolute;
     z-index: 50;
     height: auto;
-    right: -30%;
+    right: 5%;
     top: 350px;
   
 }
@@ -1644,14 +1643,14 @@ body {
 /* animacion cambio perspectiva ghost spiders test */
 
 .testSkew {
-    transform: rotateY(50deg);
+    transform: rotateY(0deg);
     transition: transform 1s ease;
- }
+}
  
  .testSkewReverse {
-     transform: rotateY(0deg);
+     transform: rotateY(25deg);
      transition: transform 1s ease;
- }
+}
  
 .menuopen {
     display: flex;
