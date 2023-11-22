@@ -286,15 +286,21 @@ let rightspiderweb = document.querySelector("#right-spider-web");
 
         /*seccion more friends*/
         let minmorefriends = 4000;
-        let maxmorefriends = 6000;
+        let maxmorefriends = 5300;
 
         let divimages = document.querySelector("#divimages");
 
         let texts = document.querySelectorAll(".textTitle");
+        if (y < 4000){
+            divimages.style.position = "absolute";
+            divimages.style.top = "199.5px";
+            console.log("1ero");
+        }
         if (y >= 3500){
             texts[0].classList.add("textvisibles");
         }
         if (y >= minmorefriends && y <= maxmorefriends ){
+            console.log("holaa")
            texts[0].style.top = 2200 -y *0.50 + "px";
            texts[1].style.top = 2800 -y *0.50 + "px";
            texts[2].style.top = 3400 -y *0.50 + "px";
@@ -316,6 +322,7 @@ let rightspiderweb = document.querySelector("#right-spider-web");
             texts[0].classList.add("textvisibles");
            }
            else if (y >= 4200 && y < 4600){
+
             divimages.classList.add("img2");
             divimages.classList.remove("img1");
             divimages.classList.remove("img3");
@@ -343,7 +350,7 @@ let rightspiderweb = document.querySelector("#right-spider-web");
             texts[2].classList.remove("textinvisibles");
             texts[1].classList.add("textinvisibles");
            }
-           else if (y >= 5022 && y < maxmorefriends){
+           else if (y >= 5022 && y <= 5060){
             divimages.classList.add("img4");
             divimages.classList.remove("img1");
             divimages.classList.remove("img2");
@@ -357,8 +364,10 @@ let rightspiderweb = document.querySelector("#right-spider-web");
             texts[3].classList.add("textvisibles");
             texts[2].classList.add("textinvisibles");
            }
-           else if (y>5040 && y < maxmorefriends){
-            alert("holaaaaaaaaa");
+           else if (y> 5150 && y < maxmorefriends){
+
+            divimages.style.position = "absolute";
+            divimages.style.top = "1363.5px";
            }
         }
     };
