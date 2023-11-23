@@ -70,6 +70,9 @@ menu.addEventListener('click', function() {
 });
 
 
+
+
+
 /* animacion desplegar menu nav */
 let btnmenu = document.querySelector("#btnmenu");
 
@@ -110,6 +113,7 @@ function showDropdownMenu() {
 
     
 }
+
 
 
 
@@ -172,6 +176,10 @@ window.addEventListener("scroll", function (){
 });
 
 
+
+
+/* Seccion primer titulo spidey friends */
+
 function titleSpideyFriendsAnimated(posY) {
     let scaleValue = 0.4;
     let maxscale =0.9;
@@ -205,6 +213,10 @@ function titleSpideyFriendsAnimated(posY) {
     }
 }
 
+
+
+/* Seccion goblin animado segun scroll */
+
 function goblinAnimated(y) {
     const goblin = document.querySelector("#goblin");
     let min = 400;
@@ -215,6 +227,10 @@ function goblinAnimated(y) {
         /* cambiamos el top original del goblin incrementandole el top negativo*/
     }
 }
+
+
+
+
 
 function spidersAndBuildings(y) {
 
@@ -263,6 +279,10 @@ function spidersAndBuildings(y) {
     }
 } 
 
+
+
+
+
 function cardsAnimated(y) {
     
     let mincards = 1421;
@@ -291,6 +311,10 @@ function cardsAnimated(y) {
     }
 }
 
+
+
+
+
 function testsAnimated(y) {
     
     let mintest = 2200;
@@ -302,6 +326,10 @@ function testsAnimated(y) {
     }   
 
 }
+
+
+
+
 
 function avengersMouseMove(y) {
     let minparallaxmouse = 3200;
@@ -334,6 +362,10 @@ function avengersMouseMove(y) {
         }
     }
 }
+
+
+
+
 
 function textImgsMoreFriendsAnimated(y) {
     
@@ -572,6 +604,8 @@ spiderwhite.addEventListener("mouseleave", function () {
 }
 
 hoverSpiders();
+
+
 
 
 
