@@ -394,7 +394,7 @@ function textImgsMoreFriendsAnimated(y) {
         texts[0].classList.add("textvisibles");
     }
 
-    let maxfirstimg = 4300;
+    let maxfirstimg = 4350;
     let maxsecondimg = 4600;
     let maxthirdimg = 5022;
     let maxfourthimg = 5060;
@@ -412,7 +412,7 @@ function textImgsMoreFriendsAnimated(y) {
         divimages.style.position = "absolute";
     }
     
-    if (y > 4100 && y < maxfirstimg){
+    if (y >= 4250 && y < maxfirstimg){
         // divimages.classList.add("img1");
         // divimages.classList.remove("img2");
         // divimages.classList.remove("img3");
