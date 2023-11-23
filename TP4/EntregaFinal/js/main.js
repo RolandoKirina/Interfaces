@@ -166,6 +166,8 @@ window.addEventListener("scroll", function (){
     testsAnimated(posY);
 
     avengersMouseMove(posY);
+
+    textImgsMoreFriendsAnimated(posY);
    
 });
 
@@ -333,6 +335,122 @@ function avengersMouseMove(y) {
     }
 }
 
+function textImgsMoreFriendsAnimated(y) {
+    
+    console.log(y);
+    /*seccion more friends*/
+    let minmorefriends = 4000;
+    let maxmorefriends = 5300;
+    let mintext = 3500;
+    let divimages = document.querySelector("#divimages");
+
+    let texts = document.querySelectorAll(".textTitle");
+    if (y < minmorefriends){
+        divimages.style.position = "absolute";
+        divimages.style.top = "199.5px";
+    }
+    if (y >= mintext){
+        texts[0].classList.add("textvisibles");
+    }
+
+    let minfirstimg = 4200;
+    let maxsecondimg = 4600;
+    let maxthirdimg = 5022;
+    let maxfourthimg = 5060;
+    let mintextscroll = 5061;
+    
+    if (y >= minmorefriends && y <= maxmorefriends ){
+        texts[0].style.top = 2200 -y *0.50 + "px";
+        texts[1].style.top = 2800 -y *0.50 + "px";
+        texts[2].style.top = 3400 -y *0.50 + "px";
+        texts[3].style.top = 4000 -y *0.50 + "px";
+
+        divimages.style.position = "fixed";
+        divimages.style.top = "215px";
+
+        if (y < minfirstimg){
+        divimages.classList.add("img1");
+        divimages.classList.remove("img2");
+        divimages.classList.remove("img3");
+        divimages.classList.remove("img4");
+        texts[1].classList.remove("textvisibles");
+        texts[2].classList.remove("textvisibles");
+        texts[3].classList.remove("textvisibles");
+
+        texts[0].classList.remove("textinvisibles");
+        texts[0].classList.add("textvisibles");
+        texts[1].classList.remove("converthiddentext");
+        texts[2].classList.remove("converthiddentext");
+        }
+        else if (y >= minfirstimg && y < maxsecondimg){
+
+        divimages.classList.add("img2");
+        divimages.classList.remove("img1");
+        divimages.classList.remove("img3");
+        divimages.classList.remove("img4");
+        texts[0].classList.remove("textvisibles");
+        texts[2].classList.remove("textvisibles");
+        texts[3].classList.remove("textvisibles");
+
+        texts[1].classList.remove("textinvisibles");
+        texts[1].classList.add("textvisibles");
+        texts[0].classList.add("textinvisibles");
+        texts[1].classList.remove("converthiddentext");
+        texts[2].classList.remove("converthiddentext");
+
+        }
+        else if (y >= maxsecondimg && y < maxthirdimg){
+        divimages.classList.add("img3");
+        divimages.classList.remove("img1");
+        divimages.classList.remove("img2");
+        divimages.classList.remove("img4");
+
+        texts[0].classList.remove("textvisibles");
+        texts[1].classList.remove("textvisibles");
+        texts[3].classList.remove("textvisibles");
+        texts[2].classList.add("textvisibles");
+
+        texts[2].classList.remove("textinvisibles");
+        texts[1].classList.add("textinvisibles");
+
+        texts[1].classList.remove("converthiddentext");
+        texts[2].classList.remove("converthiddentext");
+        }
+        else if (y >= maxthirdimg && y <= maxfourthimg ){
+        divimages.classList.add("img4");
+        divimages.classList.remove("img1");
+        divimages.classList.remove("img2");
+        divimages.classList.remove("img3");
+        // texts[2].classList.toggle("textinvisibles");
+
+        texts[0].classList.remove("textvisibles");
+        texts[1].classList.remove("textvisibles");
+        texts[2].classList.remove("textvisibles");
+
+        texts[3].classList.add("textvisibles");
+        texts[2].classList.add("textinvisibles");
+
+        texts[1].classList.remove("converthiddentext");
+        texts[2].classList.remove("converthiddentext");
+
+        }
+        else if (y> mintextscroll && y < maxmorefriends){
+        console.log("holaaaaaaa")
+        divimages.style.position = "absolute";
+        divimages.style.top = "1363.5px";
+        }
+
+        if (y>=4292 && y < 4300){
+        texts[1].classList.add("converthiddentext");
+        }
+        if (y >= 4692 && y < 4700){
+        texts[2].classList.add("converthiddentext");
+        }
+    }
+}
+
+
+
 /* Seccion animacion hover spiders white, red y blue */
 
 
@@ -456,151 +574,16 @@ spiderwhite.addEventListener("mouseleave", function () {
 hoverSpiders();
 
 
-/* variables seccion edificios spiders, goblin, ghostspider*/
 
-const container = document.querySelector("#bodycontainer");
+function hoverTests() {
 
-
-
-
-
-
-
-
-
-window.addEventListener("scroll", function (){
-
-
-    let y = window.scrollY;
-
-
-
-
-    
-    
-    console.log(y);
-    /*seccion more friends*/
-    let minmorefriends = 4000;
-    let maxmorefriends = 5300;
-    let mintext = 3500;
-    let divimages = document.querySelector("#divimages");
-
-    let texts = document.querySelectorAll(".textTitle");
-    if (y < minmorefriends){
-        divimages.style.position = "absolute";
-        divimages.style.top = "199.5px";
-    }
-    if (y >= mintext){
-        texts[0].classList.add("textvisibles");
-    }
-
-    let minfirstimg = 4200;
-    let maxsecondimg = 4600;
-    let maxthirdimg = 5022;
-    let maxfourthimg = 5060;
-    let mintextscroll = 5061;
-    
-    if (y >= minmorefriends && y <= maxmorefriends ){
-        texts[0].style.top = 2200 -y *0.50 + "px";
-        texts[1].style.top = 2800 -y *0.50 + "px";
-        texts[2].style.top = 3400 -y *0.50 + "px";
-        texts[3].style.top = 4000 -y *0.50 + "px";
-
-        divimages.style.position = "fixed";
-        divimages.style.top = "215px";
-
-        if (y < minfirstimg){
-        divimages.classList.add("img1");
-        divimages.classList.remove("img2");
-        divimages.classList.remove("img3");
-        divimages.classList.remove("img4");
-        texts[1].classList.remove("textvisibles");
-        texts[2].classList.remove("textvisibles");
-        texts[3].classList.remove("textvisibles");
-
-        texts[0].classList.remove("textinvisibles");
-        texts[0].classList.add("textvisibles");
-        texts[1].classList.remove("converthiddentext");
-        texts[2].classList.remove("converthiddentext");
-        }
-        else if (y >= minfirstimg && y < maxsecondimg){
-
-        divimages.classList.add("img2");
-        divimages.classList.remove("img1");
-        divimages.classList.remove("img3");
-        divimages.classList.remove("img4");
-        texts[0].classList.remove("textvisibles");
-        texts[2].classList.remove("textvisibles");
-        texts[3].classList.remove("textvisibles");
-
-        texts[1].classList.remove("textinvisibles");
-        texts[1].classList.add("textvisibles");
-        texts[0].classList.add("textinvisibles");
-        texts[1].classList.remove("converthiddentext");
-        texts[2].classList.remove("converthiddentext");
-
-        }
-        else if (y >= maxsecondimg && y < maxthirdimg){
-        divimages.classList.add("img3");
-        divimages.classList.remove("img1");
-        divimages.classList.remove("img2");
-        divimages.classList.remove("img4");
-
-        texts[0].classList.remove("textvisibles");
-        texts[1].classList.remove("textvisibles");
-        texts[3].classList.remove("textvisibles");
-        texts[2].classList.add("textvisibles");
-
-        texts[2].classList.remove("textinvisibles");
-        texts[1].classList.add("textinvisibles");
-
-        texts[1].classList.remove("converthiddentext");
-        texts[2].classList.remove("converthiddentext");
-        }
-        else if (y >= maxthirdimg && y <= maxfourthimg ){
-        divimages.classList.add("img4");
-        divimages.classList.remove("img1");
-        divimages.classList.remove("img2");
-        divimages.classList.remove("img3");
-        // texts[2].classList.toggle("textinvisibles");
-
-        texts[0].classList.remove("textvisibles");
-        texts[1].classList.remove("textvisibles");
-        texts[2].classList.remove("textvisibles");
-
-        texts[3].classList.add("textvisibles");
-        texts[2].classList.add("textinvisibles");
-
-        texts[1].classList.remove("converthiddentext");
-        texts[2].classList.remove("converthiddentext");
-
-        }
-        else if (y> mintextscroll && y < maxmorefriends){
-        console.log("holaaaaaaa")
-        divimages.style.position = "absolute";
-        divimages.style.top = "1363.5px";
-        }
-
-        if (y>=4292 && y < 4300){
-        texts[1].classList.add("converthiddentext");
-        }
-        if (y >= 4692 && y < 4700){
-        texts[2].classList.add("converthiddentext");
-        }
-    }
-});
-
-
-
-
-
-/* animacion cambio perspectiva ghost spiders test */
+    /* animacion cambio perspectiva ghost spiders test */
     let imgtest1 =test1.firstElementChild;
     let imgtest2 =test2.firstElementChild;
     let imgtest3 =test3.firstElementChild;
 
 
-      /* hace hover */
+    /* hace hover */
     imgtest1.addEventListener("mouseenter", function (){
         test1.classList.remove("testSkewReverse");
         test1.classList.add("testSkew");
@@ -632,3 +615,17 @@ window.addEventListener("scroll", function (){
         test3.classList.remove("testSkew");
         test3.classList.add("testSkewReverse");
     });
+
+}
+
+
+hoverTests();
+
+
+
+
+
+
+
+
+
