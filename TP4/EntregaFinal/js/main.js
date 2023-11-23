@@ -272,7 +272,7 @@ function spidersAndBuildings(y) {
             centerbuilding.classList.add("visiblebuildings");
             rightbuilding.classList.add("visiblebuildings");
             
-        },500);
+        },500); /* en medio segundo aparecen los personajes*/
         
         divtitle.classList.add("divtitlevisible");
         leftspiderweb.classList.add("visibleleftspiderweb");
@@ -595,12 +595,64 @@ spiderblue.addEventListener("mouseenter",  function(){
 
 /* al quitar el mouse, vuelven los valores por defecto */
 
+
 spiderwhite.addEventListener("mouseleave", function () {
 
-    
+    defaultCharactersBackground();
 
+    spiderblue.style.transform = `scale(${1})`;
+    spiderred.style.transform = `scale(${1})`;
+    spiderblue.style.filter = "blur(0px)";
+    spiderred.style.filter = "blur(0px)";
 
 });
+
+spiderred.addEventListener("mouseleave", function () {
+
+    defaultCharactersBackground();
+
+    spiderblue.style.transform = `scale(${1})`;
+    spiderwhite.style.transform = `scale(${1})`;
+    spiderblue.style.filter = "blur(0px)";
+    spiderwhite.style.filter = "blur(0px)";
+
+});
+
+spiderblue.addEventListener("mouseleave", function () {
+
+    defaultCharactersBackground();
+
+    spiderred.style.transform = `scale(${1})`;
+    spiderwhite.style.transform = `scale(${1})`;
+    spiderred.style.filter = "blur(0px)";
+    spiderwhite.style.filter = "blur(0px)";
+
+});
+
+function defaultCharactersBackground() {
+    backgroundspidershover.style.backgroundColor = "#FFFFFF";
+    clippathtop.style.backgroundColor = "#FFFFFF";
+    clippathtop.style.opacity = "1";
+
+    clippathbottom.style.backgroundColor = "#FFFFFF";
+    clippathbottom.style.opacity = "1";
+
+    spiderwhite.classList.add("spiderwhite");
+    spiderblue.classList.add("spiderblue");
+    spiderred.classList.add("spiderred");
+
+    spiderwhite.classList.remove("spiderredselected-white");
+    spiderwhite.classList.remove("spiderblueselected-white");
+
+    spiderblue.classList.remove("spiderredselected-blue");
+    spiderblue.classList.remove("spiderwhiteselected-blue");
+
+    spiderred.classList.remove("spiderblueselected-red");
+    spiderred.classList.remove("spiderwhiteselected-red");
+}
+
+
+
 
 }
 
