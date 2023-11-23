@@ -114,6 +114,39 @@ function showDropdownMenu() {
 
 
 
+/* variables spiders buildings */
+
+let heaven = document.querySelector("#heaven");
+
+let leftbuilding = document.querySelector("#left-building");
+
+let centerbuilding = document.querySelector("#center-building");
+
+let rightbuilding = document.querySelector("#right-building");
+
+let whitespidey = document.querySelector("#white-spidey");
+
+let redspidey = document.querySelector("#redspidey");
+
+let blackspidey = document.querySelector("#black-spidey");
+
+let leftspiderweb = document.querySelector("#left-spider-web");
+
+let rightspiderweb = document.querySelector("#right-spider-web");
+
+/* variables cards animados */
+
+let card1 = document.querySelector("#card1");
+let card2 = document.querySelector("#card2");
+let card3 = document.querySelector("#card3");
+
+/* variables tests */
+
+let test1 = document.querySelector("#test1");
+
+let test2 = document.querySelector("#test2");
+
+let test3 = document.querySelector("#test3");
 
 
 window.addEventListener("scroll", function (){
@@ -127,6 +160,12 @@ window.addEventListener("scroll", function (){
     goblinAnimated(posY);
 
     spidersAndBuildings(posY);
+
+    cardsAnimated(posY);
+
+    testsAnimated(posY);
+
+    avengersMouseMove(posY);
    
 });
 
@@ -222,7 +261,77 @@ function spidersAndBuildings(y) {
     }
 } 
 
+function cardsAnimated(y) {
+    
+    let mincards = 1421;
+    if (y > mincards){
 
+        card1.classList.remove("hidden");
+        card1.classList.add("visiblecard1");
+        card2.classList.remove("hidden");
+        card2.classList.add("visiblecard2");
+        card3.classList.remove("hidden");
+        card3.classList.add("visiblecard3");
+
+        card1.classList.add("fadeincard1");
+        card2.classList.add("fadeincard2");
+        card3.classList.add("fadeincard3");
+        /*si no aplica los estilos antes que la animacion*/
+        setTimeout(() =>{
+            card1.style.top = `${1650}px`;
+        },1000);
+        setTimeout(() =>{
+            card2.style.top = `${1650}px`;
+        },1500);
+        setTimeout(() =>{
+            card3.style.top = `${1650}px`;
+        },2000);
+    }
+}
+
+function testsAnimated(y) {
+    
+    let mintest = 2200;
+
+    if (y > mintest){
+        test1.style.top =  990 - y *0.50 + "px";
+        test2.style.top =  1120 -y *0.50 + "px";
+        test3.style.top =  1320 - y *0.50 + "px";
+    }   
+
+}
+
+function avengersMouseMove(y) {
+    let minparallaxmouse = 3200;
+    if (y > minparallaxmouse && y < 4000){
+        let sky = document.querySelector("#sky");
+        let trees = document.querySelector("#trees");
+        let girl = document.querySelector("#girl");
+        let black = document.querySelector("#black");
+        let hulk = document.querySelector("#hulk");
+        document.addEventListener("mousemove", parallaxSectionAvengers);    
+
+        function parallaxSectionAvengers(e){
+            let mouseX = e.clientX;
+            let mouseY = e.clientY;
+            sky.style.left =  `${0 + mouseX  * 0.0005}%`;
+            sky.style.top =`${0 +mouseY * 0.0010}%`;
+            
+            trees.style.top =`${0 +mouseY * 0.0006}%`;
+
+            girl.style.left =  `${0 + mouseX  * 0.008}%`;
+            girl.style.top =`${-10 +mouseY * 0.008}%`;
+
+            /* 432 es el left del hulk menos el mouse en x por una velocidad*/
+            hulk.style.left =  `${55 + mouseX  * 0.008}%`;
+            hulk.style.top =`${20 +mouseY * 0.008}%`;
+
+            black.style.left =  `${38 + mouseX  * 0.008}%`;
+            black.style.top =`${-50 + mouseY * 0.008}%`;
+
+        }
+    }
+}
 
 /* Seccion animacion hover spiders white, red y blue */
 
@@ -351,36 +460,13 @@ hoverSpiders();
 
 const container = document.querySelector("#bodycontainer");
 
-let heaven = document.querySelector("#heaven");
-
-let leftbuilding = document.querySelector("#left-building");
-
-let centerbuilding = document.querySelector("#center-building");
-
-let rightbuilding = document.querySelector("#right-building");
-
-let whitespidey = document.querySelector("#white-spidey");
-
-let redspidey = document.querySelector("#redspidey");
-
-let blackspidey = document.querySelector("#black-spidey");
 
 
-let card1 = document.querySelector("#card1");
-let card2 = document.querySelector("#card2");
-let card3 = document.querySelector("#card3");
-let leftspiderweb = document.querySelector("#left-spider-web");
-
-let cardscontainer = document.querySelector("#cards-content");
 
 
-let test1 = document.querySelector("#test1");
 
-let test2 = document.querySelector("#test2");
 
-let test3 = document.querySelector("#test3");
 
-let rightspiderweb = document.querySelector("#right-spider-web");
 
 window.addEventListener("scroll", function (){
 
@@ -390,72 +476,8 @@ window.addEventListener("scroll", function (){
 
 
 
-    let mincards = 1421;
-    if (y > mincards){
-
-        card1.classList.remove("hidden");
-        card1.classList.add("visiblecard1");
-        card2.classList.remove("hidden");
-        card2.classList.add("visiblecard2");
-        card3.classList.remove("hidden");
-        card3.classList.add("visiblecard3");
-
-        card1.classList.add("fadeincard1");
-        card2.classList.add("fadeincard2");
-        card3.classList.add("fadeincard3");
-        /*si no aplica los estilos antes que la animacion*/
-        setTimeout(() =>{
-            card1.style.top = `${1650}px`;
-        },1000);
-        setTimeout(() =>{
-            card2.style.top = `${1650}px`;
-        },1500);
-        setTimeout(() =>{
-            card3.style.top = `${1650}px`;
-        },2000);
-    }
     
-    let mintest = 2200;
-
-    if (y > mintest){
-        test1.style.top =  990 - y *0.50 + "px";
-        test2.style.top =  1120 -y *0.50 + "px";
-        test3.style.top =  1320 - y *0.50 + "px";
-    }   
-
-    let minparallaxmouse = 3200;
-    if (y > minparallaxmouse && y < 4000){
-        let sky = document.querySelector("#sky");
-        let trees = document.querySelector("#trees");
-        let girl = document.querySelector("#girl");
-        let black = document.querySelector("#black");
-        let hulk = document.querySelector("#hulk");
-        document.addEventListener("mousemove", parallaxSectionAvengers);    
-
-        function parallaxSectionAvengers(e){
-            let mouseX = e.clientX;
-            let mouseY = e.clientY;
-            sky.style.left =  `${0 + mouseX  * 0.0005}%`;
-            sky.style.top =`${0 +mouseY * 0.0010}%`;
-            
-            trees.style.top =`${0 +mouseY * 0.0006}%`;
-
-            girl.style.left =  `${0 + mouseX  * 0.008}%`;
-            girl.style.top =`${-10 +mouseY * 0.008}%`;
-
-            /* 432 es el left del hulk menos el mouse en x por una velocidad*/
-            hulk.style.left =  `${55 + mouseX  * 0.008}%`;
-            hulk.style.top =`${20 +mouseY * 0.008}%`;
-
-            black.style.left =  `${38 + mouseX  * 0.008}%`;
-            black.style.top =`${-50 + mouseY * 0.008}%`;
-
-
-            
-            // // let x = `${characters}, ${trees}, ${skymove}`;
-            // // containerimages.style.backgroundPosition = x;
-        }
-    }
+    
     console.log(y);
     /*seccion more friends*/
     let minmorefriends = 4000;
