@@ -126,6 +126,7 @@ window.addEventListener("scroll", function (){
 
     goblinAnimated(posY);
 
+    spidersAndBuildings(posY);
    
 });
 
@@ -174,7 +175,52 @@ function goblinAnimated(y) {
     }
 }
 
+function spidersAndBuildings(y) {
 
+    /*seccion hero*/
+    let minhero =10;
+    if (y > minhero){
+        heaven.style.top =  y *0.10 + "px";
+        leftbuilding.style.top =  140 + y *0.25 + "px";
+        centerbuilding.style.top =  550 + y *0.25 + "px";
+        rightbuilding.style.top =  140 + y *0.25 + "px";
+
+        /*sumamos el top de cada imagen con el y y multiplicamos por velocidad*/
+        whitespidey.style.top =  400 - y *0.50 + "px";
+        redspidey.style.top =  440 - y *0.90 + "px";
+        rightspiderweb.style.top =  410 - y *0.50 + "px";
+        leftspiderweb.style.top =  420 - y *0.90+ "px";
+        blackspidey.style.top =  360 - y *0.50 + "px";
+
+
+        leftbuilding.classList.remove("hidden");
+        centerbuilding.classList.remove("hidden");
+        rightbuilding.classList.remove("hidden");
+        whitespidey.classList.remove("hidden");
+        redspidey.classList.remove("hidden");
+        divtitle.classList.remove("hidden");
+        blackspidey.classList.remove("hidden");
+
+        leftbuilding.classList.add("visiblebuildings");
+        centerbuilding.classList.add("visiblebuildings");
+        rightbuilding.classList.add("visiblebuildings");
+        
+        setTimeout(() => {
+            whitespidey.classList.add("showWhiteSpidey");
+            whitespidey.style.left="6.7%";
+
+            redspidey.classList.add("showRedSpidey"); 
+
+            blackspidey.classList.add("showBlackSpidey");
+            blackspidey.style.right="15%";
+            
+        },1000);
+        
+        divtitle.classList.add("divtitlevisible");
+        leftspiderweb.classList.add("visibleleftspiderweb");
+        rightspiderweb.classList.add("visiblerigthspiderweb");
+    }
+} 
 
 
 
@@ -343,49 +389,6 @@ window.addEventListener("scroll", function (){
 
 
 
-    /*seccion hero*/
-    let minhero =10;
-    if (y > minhero){
-        heaven.style.top =  y *0.10 + "px";
-        leftbuilding.style.top =  140 + y *0.25 + "px";
-        centerbuilding.style.top =  550 + y *0.25 + "px";
-        rightbuilding.style.top =  140 + y *0.25 + "px";
-
-        /*sumamos el top de cada imagen con el y y multiplicamos por velocidad*/
-        whitespidey.style.top =  400 - y *0.50 + "px";
-        redspidey.style.top =  440 - y *0.90 + "px";
-        rightspiderweb.style.top =  410 - y *0.50 + "px";
-        leftspiderweb.style.top =  420 - y *0.90+ "px";
-        blackspidey.style.top =  360 - y *0.50 + "px";
-
-
-        leftbuilding.classList.remove("hidden");
-        centerbuilding.classList.remove("hidden");
-        rightbuilding.classList.remove("hidden");
-        whitespidey.classList.remove("hidden");
-        redspidey.classList.remove("hidden");
-        divtitle.classList.remove("hidden");
-        blackspidey.classList.remove("hidden");
-
-        leftbuilding.classList.add("visiblebuildings");
-        centerbuilding.classList.add("visiblebuildings");
-        rightbuilding.classList.add("visiblebuildings");
-        
-        setTimeout(() => {
-            whitespidey.classList.add("showWhiteSpidey");
-            whitespidey.style.left="6.7%";
-
-            redspidey.classList.add("showRedSpidey"); 
-
-            blackspidey.classList.add("showBlackSpidey");
-            blackspidey.style.right="15%";
-            
-        },1000);
-        
-        divtitle.classList.add("divtitlevisible");
-        leftspiderweb.classList.add("visibleleftspiderweb");
-        rightspiderweb.classList.add("visiblerigthspiderweb");
-    }
 
     let mincards = 1421;
     if (y > mincards){
