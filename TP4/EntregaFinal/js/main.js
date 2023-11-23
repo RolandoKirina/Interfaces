@@ -2,12 +2,59 @@
 
 let menu = document.querySelector(".menu");
 
-
+/* variables titulo spidey friends */
 let title = document.querySelector("#title");
 
 let divtitle = document.querySelector("#divtitle");
 
 
+
+
+
+/* Seccion loader de la pagina */
+
+document.addEventListener("DOMContentLoaded", loader);
+
+function loader (){
+    const percentageElement = document.querySelector('#percentage');
+ 
+    const content = document.querySelector("#content");
+
+    // Inicializa el porcentaje en 1%
+    let percentage = 1;
+
+    // Función para actualizar el porcentaje en el DOM
+    function updatePercentage() {
+        percentageElement.textContent = `${percentage}%`;
+
+
+        // incrementa el porc de a 1
+        if (percentage < 100) {
+            percentage++;
+            setTimeout(updatePercentage, 1); // Actualiza cada 40 milisegundos
+        }
+        else {
+            loader.classList.remove("backgroundblackloader");
+            loader.classList.add("hiddenblock");
+            content.classList.remove("hiddenblock");
+            content.classList.add("content");
+        }
+    }
+    // se llama por primera vez al update
+    updatePercentage();
+
+    const loader = document.querySelector(".backgroundblackloader");
+
+}
+
+
+
+
+
+/* Seccion nav abrir menu */
+
+
+/* animacion menu nav */
 let isOpen = false;
 menu.addEventListener('click', function() {
     this.classList.toggle('activar');
@@ -22,15 +69,74 @@ menu.addEventListener('click', function() {
     }
 });
 
+
+/* animacion desplegar menu nav */
+let btnmenu = document.querySelector("#btnmenu");
+
+btnmenu.addEventListener('click', showDropdownMenu);
+
+let open = false;
+
+function showDropdownMenu() {
+
+    let menu = document.querySelector("#dropdownmenu");
+    menu.classList.toggle("menuopen");
+
+
+
+    let listItems = document.querySelectorAll('.hiddenblock ul li');
+    let time = 250;
+    let totaltime = 0; 
+
+
+    if (open == false){
+        listItems.forEach((li) => {
+            /* si tiene la clase la remueve y restablece la opacidad */
+            // li.classList.remove("livisible");
+            totaltime += time;
+            setTimeout(() => {
+                li.classList.add("livisible");
+                li.style.opacity = "1";
+            }, totaltime);
+            open = true;
+        });
+    } else {
+        listItems.forEach((li) => {
+            li.classList.remove("livisible");
+            li.style.opacity = "0";
+            open = false;
+        })
+    }
+
+    
+}
+
+
+
+
+
+
 window.addEventListener("scroll", function (){
+
+    /* Seccion animacion titulo spidey friends */
+
     let posY = window.scrollY;
-    let title = document.getElementById("title");
-    let divtitle = document.getElementById("divtitle");
+
+    titleSpideyFriendsAnimated(posY);
+
+   
+});
+
+
+function titleSpideyFriendsAnimated(posY) {
     let scaleValue = 0.4;
     let maxscale =0.9;
     let initialpos = 100;
+    let maxinitialpos = 800;
     let speed = 0.0017;
-    if (posY >= initialpos && posY <= 800) {
+
+
+    if (posY >= initialpos && posY <= maxinitialpos) {
         title.classList.add("reducetitle");
         divtitle.classList.remove("absolute");
         divtitle.classList.add("titleSticky");
@@ -39,7 +145,7 @@ window.addEventListener("scroll", function (){
           inicial y se multiplica por la velocidad. se queda con el numero mas grande*/
         title.style.transform = `scale(${scaleValue})`;
     } 
-    else if (posY > 800) {
+    else if (posY > maxinitialpos) {
         title.classList.add("reducetitle");
         divtitle.classList.remove("absolute");
         divtitle.classList.add("titleSticky");
@@ -53,7 +159,11 @@ window.addEventListener("scroll", function (){
         divtitle.classList.add("absolute");
         title.style.transform = `scale(${1})`;
     }
-});
+}
+
+
+/* Seccion animacion hover spiders white, red y blue */
+
 
 divtitle.classList.remove("hidden");
 divtitle.classList.remove("spideyredvisible");
@@ -64,6 +174,9 @@ let spiderblue = document.querySelector(".spiderblue");
 let backgroundspidershover = document.querySelector("#backgroundspidershover");
 let clippathtop = document.querySelector("#clip-path-top");
 let clippathbottom = document.querySelector("#clip-path-bottom");
+
+
+
 /*spider white*/
 spiderwhite.addEventListener("mouseenter", function (){
 
@@ -462,77 +575,3 @@ let rightspiderweb = document.querySelector("#right-spider-web");
         test3.classList.remove("testSkew");
         test3.classList.add("testSkewReverse");
     });
-
-document.addEventListener("DOMContentLoaded", loader);
-
-function loader (){
-    const percentageElement = document.querySelector('#percentage');
- 
-    const content = document.querySelector("#content");
-
-    // Inicializa el porcentaje en 1%
-    let percentage = 1;
-
-    // Función para actualizar el porcentaje en el DOM
-    function updatePercentage() {
-        percentageElement.textContent = `${percentage}%`;
-
-
-        // incrementa el porc de a 1
-        if (percentage < 100) {
-            percentage++;
-            setTimeout(updatePercentage, 1); // Actualiza cada 40 milisegundos
-        }
-        else {
-            loader.classList.remove("backgroundblackloader");
-            loader.classList.add("hiddenblock");
-            content.classList.remove("hiddenblock");
-            content.classList.add("content");
-        }
-    }
-    // se llama por primera vez al update
-    updatePercentage();
-
-    const loader = document.querySelector(".backgroundblackloader");
-
-}
-
-let btnmenu = document.querySelector("#btnmenu");
-
-btnmenu.addEventListener('click', showDropdownMenu);
-
-let open = false;
-
-function showDropdownMenu() {
-
-    let menu = document.querySelector("#dropdownmenu");
-    menu.classList.toggle("menuopen");
-
-
-
-    let listItems = document.querySelectorAll('.hiddenblock ul li');
-    let time = 250;
-    let totaltime = 0; 
-
-
-    if (open == false){
-        listItems.forEach((li) => {
-            /* si tiene la clase la remueve y restablece la opacidad */
-            // li.classList.remove("livisible");
-            totaltime += time;
-            setTimeout(() => {
-                li.classList.add("livisible");
-                li.style.opacity = "1";
-            }, totaltime);
-            open = true;
-        });
-    } else {
-        listItems.forEach((li) => {
-            li.classList.remove("livisible");
-            li.style.opacity = "0";
-            open = false;
-        })
-    }
-
-    
-}
