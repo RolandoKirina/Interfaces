@@ -1288,6 +1288,28 @@ body {
     left: 540px;
 }
 
+.seconddivspidersprisheet{
+    position: absolute;
+    z-index: 100;
+    bottom: 192px;
+    right: 200px;   
+}
+
+
+.secondspidersprisheet{
+    width:82px;
+    height:76px;
+    margin:auto;
+    background:url("../img/sprisheet/spider2withouthoverdef.png") repeat-x;
+    animation:walkSpiderHover.8s steps(12) infinite;
+}
+.secondspidersprisheetHover{
+    width:81.25px;
+    height:75px;
+    margin:auto;
+    background:url("../img/sprisheet/spider2hoverdef.png") repeat-x;
+    animation:walkSpiderHover.8s steps(12) infinite;
+}
 
 .spidersprisheet{
     width:93.16px;
@@ -1297,14 +1319,35 @@ body {
     animation:walkspider.8s steps(6) infinite;
 }
 
+.spiderSpriteHover{
+    width:81.91px;
+    height:81px;
+    margin:auto;
+    background:url("../img/sprisheet/sprite2def.png") repeat-x;
+    animation:walkSpiderHover.8s steps(12) infinite;
+}
+
+@keyframes walkSpiderHover {
+    /* Empezamos en la primera imagen del total del sprite sheet */
+    0% { 
+        background-position:0;
+    }
+    /* El tamaño total de ancho del sprite. Es negativo para que no "camine" hacia atrás */
+    100% { 
+        background-position:-983px;
+    }
+}
+
 @keyframes walkspider {
     /* Empezamos en la primera imagen del total del sprite sheet */
     0% { 
-        background-position:0 
+        background-position:0;
     }
     /* El tamaño total de ancho del sprite. Es negativo para que no "camine" hacia atrás */
-    100% { background-position:-551px }
-  }
+    100% { 
+        background-position:-551px;
+     }
+}
 
 .spiderwhite, .spiderred, .spiderblue {
     top: 17em;

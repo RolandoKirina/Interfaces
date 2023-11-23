@@ -250,19 +250,16 @@ function spidersAndBuildings(y) {
         blackspidey.style.top =  360 - y *0.50 + "px";
 
 
-        leftbuilding.classList.remove("hidden");
-        centerbuilding.classList.remove("hidden");
-        rightbuilding.classList.remove("hidden");
-        whitespidey.classList.remove("hidden");
-        redspidey.classList.remove("hidden");
-        divtitle.classList.remove("hidden");
-        blackspidey.classList.remove("hidden");
 
-        leftbuilding.classList.add("visiblebuildings");
-        centerbuilding.classList.add("visiblebuildings");
-        rightbuilding.classList.add("visiblebuildings");
         
         setTimeout(() => {
+            leftbuilding.classList.remove("hidden");
+            centerbuilding.classList.remove("hidden");
+            rightbuilding.classList.remove("hidden");
+            whitespidey.classList.remove("hidden");
+            redspidey.classList.remove("hidden");
+            divtitle.classList.remove("hidden");
+            blackspidey.classList.remove("hidden");
             whitespidey.classList.add("showWhiteSpidey");
             whitespidey.style.left="6.7%";
 
@@ -270,8 +267,12 @@ function spidersAndBuildings(y) {
 
             blackspidey.classList.add("showBlackSpidey");
             blackspidey.style.right="15%";
+
+            leftbuilding.classList.add("visiblebuildings");
+            centerbuilding.classList.add("visiblebuildings");
+            rightbuilding.classList.add("visiblebuildings");
             
-        },1000);
+        },500);
         
         divtitle.classList.add("divtitlevisible");
         leftspiderweb.classList.add("visibleleftspiderweb");
@@ -656,10 +657,30 @@ function hoverTests() {
 hoverTests();
 
 
+let sprisheet = document.querySelector("#sprisheet");
+
+sprisheet.addEventListener("mouseenter", sprisheetHover);
 
 
+let secondsprisheet = document.querySelector("#secondsprisheet");
+secondsprisheet.addEventListener("mouseenter",secondSprisheetHover);
 
+function secondSprisheetHover() {
+    secondsprisheet.classList.remove("secondspidersprisheet");
+    secondsprisheet.classList.add("secondspidersprisheetHover");
+    secondsprisheet.addEventListener("mouseleave", function(){
+        secondsprisheet.classList.remove("secondspidersprisheetHover");
+        secondsprisheet.classList.add("secondspidersprisheet");
+    });
+}
 
-
+function sprisheetHover(){
+    sprisheet.classList.remove("spidersprisheet");
+    sprisheet.classList.add("spiderSpriteHover");
+    sprisheet.addEventListener("mouseleave", function(){
+        sprisheet.classList.remove("spiderSpriteHover");
+        sprisheet.classList.add("spidersprisheet");
+    });
+}
 
 
