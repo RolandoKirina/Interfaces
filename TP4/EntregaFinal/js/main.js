@@ -124,6 +124,8 @@ window.addEventListener("scroll", function (){
 
     titleSpideyFriendsAnimated(posY);
 
+    goblinAnimated(posY);
+
    
 });
 
@@ -161,6 +163,20 @@ function titleSpideyFriendsAnimated(posY) {
     }
 }
 
+function goblinAnimated(y) {
+    const goblin = document.querySelector("#goblin");
+    let min = 400;
+    let max = 1400; 
+    let posgoblin = -250;
+    if(y > min && y < max){
+        goblin.style.top =  posgoblin - y*0.25 + "px";
+        /* cambiamos el top original del goblin incrementandole el top negativo*/
+    }
+}
+
+
+
+
 
 /* Seccion animacion hover spiders white, red y blue */
 
@@ -175,7 +191,7 @@ let backgroundspidershover = document.querySelector("#backgroundspidershover");
 let clippathtop = document.querySelector("#clip-path-top");
 let clippathbottom = document.querySelector("#clip-path-bottom");
 
-
+function hoverSpiders() {
 
 /*spider white*/
 spiderwhite.addEventListener("mouseenter", function (){
@@ -271,12 +287,24 @@ spiderblue.addEventListener("mouseenter",  function(){
     spiderblue.classList.remove("spiderredselected-blue");
 })
 
+/* al quitar el mouse, vuelven los valores por defecto */
+
+spiderwhite.addEventListener("mouseleave", function () {
+
+    
+
+
+});
+
+}
+
+hoverSpiders();
+
+
+/* variables seccion edificios spiders, goblin, ghostspider*/
 
 const container = document.querySelector("#bodycontainer");
-const goblin = document.querySelector("#goblin");
-let min = 400;
-let max = 1400; 
-let posgoblin = -250;
+
 let heaven = document.querySelector("#heaven");
 
 let leftbuilding = document.querySelector("#left-building");
@@ -305,237 +333,241 @@ let test1 = document.querySelector("#test1");
 let test2 = document.querySelector("#test2");
 
 let test3 = document.querySelector("#test3");
+
 let rightspiderweb = document.querySelector("#right-spider-web");
 
-    container.onscroll = function () {
-        let y = window.scrollY;
-        if(y > min && y < max){
-            goblin.style.top =  posgoblin - y*0.25 + "px";
-            /* cambiamos el top original del goblin incrementandole el top negativo*/
-        }
+window.addEventListener("scroll", function (){
 
 
-        /*seccion hero*/
-        let minhero =10;
-        if (y > minhero){
-            heaven.style.top =  y *0.10 + "px";
-            leftbuilding.style.top =  140 + y *0.25 + "px";
-            centerbuilding.style.top =  550 + y *0.25 + "px";
-            rightbuilding.style.top =  140 + y *0.25 + "px";
-
-            /*sumamos el top de cada imagen con el y y multiplicamos por velocidad*/
-            whitespidey.style.top =  400 - y *0.50 + "px";
-            redspidey.style.top =  440 - y *0.90 + "px";
-            rightspiderweb.style.top =  410 - y *0.50 + "px";
-            leftspiderweb.style.top =  420 - y *0.90+ "px";
-            blackspidey.style.top =  360 - y *0.50 + "px";
+    let y = window.scrollY;
 
 
-            leftbuilding.classList.remove("hidden");
-            centerbuilding.classList.remove("hidden");
-            rightbuilding.classList.remove("hidden");
-            whitespidey.classList.remove("hidden");
-            redspidey.classList.remove("hidden");
-            divtitle.classList.remove("hidden");
-            blackspidey.classList.remove("hidden");
 
-            leftbuilding.classList.add("visiblebuildings");
-            centerbuilding.classList.add("visiblebuildings");
-            rightbuilding.classList.add("visiblebuildings");
-          
-            setTimeout(() => {
-                whitespidey.classList.add("showWhiteSpidey");
-                whitespidey.style.left="6.7%";
- 
-                redspidey.classList.add("showRedSpidey"); 
+    /*seccion hero*/
+    let minhero =10;
+    if (y > minhero){
+        heaven.style.top =  y *0.10 + "px";
+        leftbuilding.style.top =  140 + y *0.25 + "px";
+        centerbuilding.style.top =  550 + y *0.25 + "px";
+        rightbuilding.style.top =  140 + y *0.25 + "px";
 
-                blackspidey.classList.add("showBlackSpidey");
-                blackspidey.style.right="15%";
-                
-            },1000);
-          
-            divtitle.classList.add("divtitlevisible");
-            leftspiderweb.classList.add("visibleleftspiderweb");
-            rightspiderweb.classList.add("visiblerigthspiderweb");
-        }
-
-        let mincards = 1421;
-        if (y > mincards){
-
-            card1.classList.remove("hidden");
-            card1.classList.add("visiblecard1");
-            card2.classList.remove("hidden");
-            card2.classList.add("visiblecard2");
-            card3.classList.remove("hidden");
-            card3.classList.add("visiblecard3");
-
-            card1.classList.add("fadeincard1");
-            card2.classList.add("fadeincard2");
-            card3.classList.add("fadeincard3");
-            /*si no aplica los estilos antes que la animacion*/
-            setTimeout(() =>{
-                card1.style.top = `${1650}px`;
-            },1000);
-            setTimeout(() =>{
-                card2.style.top = `${1650}px`;
-            },1500);
-            setTimeout(() =>{
-                card3.style.top = `${1650}px`;
-            },2000);
-        }
-      
-        let mintest = 2200;
-
-        if (y > mintest){
-            test1.style.top =  990 - y *0.50 + "px";
-            test2.style.top =  1120 -y *0.50 + "px";
-            test3.style.top =  1320 - y *0.50 + "px";
-        }   
-
-        let minparallaxmouse = 3200;
-        if (y > minparallaxmouse && y < 4000){
-            let sky = document.querySelector("#sky");
-            let trees = document.querySelector("#trees");
-            let girl = document.querySelector("#girl");
-            let black = document.querySelector("#black");
-            let hulk = document.querySelector("#hulk");
-            document.addEventListener("mousemove", parallaxSectionAvengers);    
-
-            function parallaxSectionAvengers(e){
-                let mouseX = e.clientX;
-                let mouseY = e.clientY;
-                sky.style.left =  `${0 + mouseX  * 0.0005}%`;
-                sky.style.top =`${0 +mouseY * 0.0010}%`;
-                
-                trees.style.top =`${0 +mouseY * 0.0006}%`;
-
-                girl.style.left =  `${0 + mouseX  * 0.008}%`;
-                girl.style.top =`${-10 +mouseY * 0.008}%`;
-
-                /* 432 es el left del hulk menos el mouse en x por una velocidad*/
-                hulk.style.left =  `${55 + mouseX  * 0.008}%`;
-                hulk.style.top =`${20 +mouseY * 0.008}%`;
-
-                black.style.left =  `${38 + mouseX  * 0.008}%`;
-                black.style.top =`${-50 + mouseY * 0.008}%`;
+        /*sumamos el top de cada imagen con el y y multiplicamos por velocidad*/
+        whitespidey.style.top =  400 - y *0.50 + "px";
+        redspidey.style.top =  440 - y *0.90 + "px";
+        rightspiderweb.style.top =  410 - y *0.50 + "px";
+        leftspiderweb.style.top =  420 - y *0.90+ "px";
+        blackspidey.style.top =  360 - y *0.50 + "px";
 
 
-                
-                // // let x = `${characters}, ${trees}, ${skymove}`;
-                // // containerimages.style.backgroundPosition = x;
-            }
-        }
-        console.log(y);
-        /*seccion more friends*/
-        let minmorefriends = 4000;
-        let maxmorefriends = 5300;
-        let mintext = 3500;
-        let divimages = document.querySelector("#divimages");
+        leftbuilding.classList.remove("hidden");
+        centerbuilding.classList.remove("hidden");
+        rightbuilding.classList.remove("hidden");
+        whitespidey.classList.remove("hidden");
+        redspidey.classList.remove("hidden");
+        divtitle.classList.remove("hidden");
+        blackspidey.classList.remove("hidden");
 
-        let texts = document.querySelectorAll(".textTitle");
-        if (y < minmorefriends){
-            divimages.style.position = "absolute";
-            divimages.style.top = "199.5px";
-        }
-        if (y >= mintext){
-            texts[0].classList.add("textvisibles");
-        }
-
-        let minfirstimg = 4200;
-        let maxsecondimg = 4600;
-        let maxthirdimg = 5022;
-        let maxfourthimg = 5060;
-        let mintextscroll = 5061;
+        leftbuilding.classList.add("visiblebuildings");
+        centerbuilding.classList.add("visiblebuildings");
+        rightbuilding.classList.add("visiblebuildings");
         
-        if (y >= minmorefriends && y <= maxmorefriends ){
-           texts[0].style.top = 2200 -y *0.50 + "px";
-           texts[1].style.top = 2800 -y *0.50 + "px";
-           texts[2].style.top = 3400 -y *0.50 + "px";
-           texts[3].style.top = 4000 -y *0.50 + "px";
+        setTimeout(() => {
+            whitespidey.classList.add("showWhiteSpidey");
+            whitespidey.style.left="6.7%";
 
-            divimages.style.position = "fixed";
-            divimages.style.top = "215px";
+            redspidey.classList.add("showRedSpidey"); 
 
-           if (y < minfirstimg){
-            divimages.classList.add("img1");
-            divimages.classList.remove("img2");
-            divimages.classList.remove("img3");
-            divimages.classList.remove("img4");
-            texts[1].classList.remove("textvisibles");
-            texts[2].classList.remove("textvisibles");
-            texts[3].classList.remove("textvisibles");
+            blackspidey.classList.add("showBlackSpidey");
+            blackspidey.style.right="15%";
+            
+        },1000);
+        
+        divtitle.classList.add("divtitlevisible");
+        leftspiderweb.classList.add("visibleleftspiderweb");
+        rightspiderweb.classList.add("visiblerigthspiderweb");
+    }
 
-            texts[0].classList.remove("textinvisibles");
-            texts[0].classList.add("textvisibles");
-            texts[1].classList.remove("converthiddentext");
-            texts[2].classList.remove("converthiddentext");
-           }
-           else if (y >= minfirstimg && y < maxsecondimg){
+    let mincards = 1421;
+    if (y > mincards){
 
-            divimages.classList.add("img2");
-            divimages.classList.remove("img1");
-            divimages.classList.remove("img3");
-            divimages.classList.remove("img4");
-            texts[0].classList.remove("textvisibles");
-            texts[2].classList.remove("textvisibles");
-            texts[3].classList.remove("textvisibles");
+        card1.classList.remove("hidden");
+        card1.classList.add("visiblecard1");
+        card2.classList.remove("hidden");
+        card2.classList.add("visiblecard2");
+        card3.classList.remove("hidden");
+        card3.classList.add("visiblecard3");
 
-            texts[1].classList.remove("textinvisibles");
-            texts[1].classList.add("textvisibles");
-            texts[0].classList.add("textinvisibles");
-            texts[1].classList.remove("converthiddentext");
-            texts[2].classList.remove("converthiddentext");
+        card1.classList.add("fadeincard1");
+        card2.classList.add("fadeincard2");
+        card3.classList.add("fadeincard3");
+        /*si no aplica los estilos antes que la animacion*/
+        setTimeout(() =>{
+            card1.style.top = `${1650}px`;
+        },1000);
+        setTimeout(() =>{
+            card2.style.top = `${1650}px`;
+        },1500);
+        setTimeout(() =>{
+            card3.style.top = `${1650}px`;
+        },2000);
+    }
+    
+    let mintest = 2200;
 
-           }
-           else if (y >= maxsecondimg && y < maxthirdimg){
-            divimages.classList.add("img3");
-            divimages.classList.remove("img1");
-            divimages.classList.remove("img2");
-            divimages.classList.remove("img4");
+    if (y > mintest){
+        test1.style.top =  990 - y *0.50 + "px";
+        test2.style.top =  1120 -y *0.50 + "px";
+        test3.style.top =  1320 - y *0.50 + "px";
+    }   
 
-            texts[0].classList.remove("textvisibles");
-            texts[1].classList.remove("textvisibles");
-            texts[3].classList.remove("textvisibles");
-            texts[2].classList.add("textvisibles");
+    let minparallaxmouse = 3200;
+    if (y > minparallaxmouse && y < 4000){
+        let sky = document.querySelector("#sky");
+        let trees = document.querySelector("#trees");
+        let girl = document.querySelector("#girl");
+        let black = document.querySelector("#black");
+        let hulk = document.querySelector("#hulk");
+        document.addEventListener("mousemove", parallaxSectionAvengers);    
 
-            texts[2].classList.remove("textinvisibles");
-            texts[1].classList.add("textinvisibles");
+        function parallaxSectionAvengers(e){
+            let mouseX = e.clientX;
+            let mouseY = e.clientY;
+            sky.style.left =  `${0 + mouseX  * 0.0005}%`;
+            sky.style.top =`${0 +mouseY * 0.0010}%`;
+            
+            trees.style.top =`${0 +mouseY * 0.0006}%`;
 
-            texts[1].classList.remove("converthiddentext");
-            texts[2].classList.remove("converthiddentext");
-           }
-           else if (y >= maxthirdimg && y <= maxfourthimg ){
-            divimages.classList.add("img4");
-            divimages.classList.remove("img1");
-            divimages.classList.remove("img2");
-            divimages.classList.remove("img3");
-            // texts[2].classList.toggle("textinvisibles");
+            girl.style.left =  `${0 + mouseX  * 0.008}%`;
+            girl.style.top =`${-10 +mouseY * 0.008}%`;
 
-            texts[0].classList.remove("textvisibles");
-            texts[1].classList.remove("textvisibles");
-            texts[2].classList.remove("textvisibles");
+            /* 432 es el left del hulk menos el mouse en x por una velocidad*/
+            hulk.style.left =  `${55 + mouseX  * 0.008}%`;
+            hulk.style.top =`${20 +mouseY * 0.008}%`;
 
-            texts[3].classList.add("textvisibles");
-            texts[2].classList.add("textinvisibles");
+            black.style.left =  `${38 + mouseX  * 0.008}%`;
+            black.style.top =`${-50 + mouseY * 0.008}%`;
 
-            texts[1].classList.remove("converthiddentext");
-            texts[2].classList.remove("converthiddentext");
 
-           }
-           else if (y> mintextscroll && y < maxmorefriends){
-            console.log("holaaaaaaa")
-            divimages.style.position = "absolute";
-            divimages.style.top = "1363.5px";
-           }
-
-           if (y>=4292 && y < 4300){
-            texts[1].classList.add("converthiddentext");
-           }
-           if (y >= 4692 && y < 4700){
-            texts[2].classList.add("converthiddentext");
-           }
+            
+            // // let x = `${characters}, ${trees}, ${skymove}`;
+            // // containerimages.style.backgroundPosition = x;
         }
-    };
+    }
+    console.log(y);
+    /*seccion more friends*/
+    let minmorefriends = 4000;
+    let maxmorefriends = 5300;
+    let mintext = 3500;
+    let divimages = document.querySelector("#divimages");
+
+    let texts = document.querySelectorAll(".textTitle");
+    if (y < minmorefriends){
+        divimages.style.position = "absolute";
+        divimages.style.top = "199.5px";
+    }
+    if (y >= mintext){
+        texts[0].classList.add("textvisibles");
+    }
+
+    let minfirstimg = 4200;
+    let maxsecondimg = 4600;
+    let maxthirdimg = 5022;
+    let maxfourthimg = 5060;
+    let mintextscroll = 5061;
+    
+    if (y >= minmorefriends && y <= maxmorefriends ){
+        texts[0].style.top = 2200 -y *0.50 + "px";
+        texts[1].style.top = 2800 -y *0.50 + "px";
+        texts[2].style.top = 3400 -y *0.50 + "px";
+        texts[3].style.top = 4000 -y *0.50 + "px";
+
+        divimages.style.position = "fixed";
+        divimages.style.top = "215px";
+
+        if (y < minfirstimg){
+        divimages.classList.add("img1");
+        divimages.classList.remove("img2");
+        divimages.classList.remove("img3");
+        divimages.classList.remove("img4");
+        texts[1].classList.remove("textvisibles");
+        texts[2].classList.remove("textvisibles");
+        texts[3].classList.remove("textvisibles");
+
+        texts[0].classList.remove("textinvisibles");
+        texts[0].classList.add("textvisibles");
+        texts[1].classList.remove("converthiddentext");
+        texts[2].classList.remove("converthiddentext");
+        }
+        else if (y >= minfirstimg && y < maxsecondimg){
+
+        divimages.classList.add("img2");
+        divimages.classList.remove("img1");
+        divimages.classList.remove("img3");
+        divimages.classList.remove("img4");
+        texts[0].classList.remove("textvisibles");
+        texts[2].classList.remove("textvisibles");
+        texts[3].classList.remove("textvisibles");
+
+        texts[1].classList.remove("textinvisibles");
+        texts[1].classList.add("textvisibles");
+        texts[0].classList.add("textinvisibles");
+        texts[1].classList.remove("converthiddentext");
+        texts[2].classList.remove("converthiddentext");
+
+        }
+        else if (y >= maxsecondimg && y < maxthirdimg){
+        divimages.classList.add("img3");
+        divimages.classList.remove("img1");
+        divimages.classList.remove("img2");
+        divimages.classList.remove("img4");
+
+        texts[0].classList.remove("textvisibles");
+        texts[1].classList.remove("textvisibles");
+        texts[3].classList.remove("textvisibles");
+        texts[2].classList.add("textvisibles");
+
+        texts[2].classList.remove("textinvisibles");
+        texts[1].classList.add("textinvisibles");
+
+        texts[1].classList.remove("converthiddentext");
+        texts[2].classList.remove("converthiddentext");
+        }
+        else if (y >= maxthirdimg && y <= maxfourthimg ){
+        divimages.classList.add("img4");
+        divimages.classList.remove("img1");
+        divimages.classList.remove("img2");
+        divimages.classList.remove("img3");
+        // texts[2].classList.toggle("textinvisibles");
+
+        texts[0].classList.remove("textvisibles");
+        texts[1].classList.remove("textvisibles");
+        texts[2].classList.remove("textvisibles");
+
+        texts[3].classList.add("textvisibles");
+        texts[2].classList.add("textinvisibles");
+
+        texts[1].classList.remove("converthiddentext");
+        texts[2].classList.remove("converthiddentext");
+
+        }
+        else if (y> mintextscroll && y < maxmorefriends){
+        console.log("holaaaaaaa")
+        divimages.style.position = "absolute";
+        divimages.style.top = "1363.5px";
+        }
+
+        if (y>=4292 && y < 4300){
+        texts[1].classList.add("converthiddentext");
+        }
+        if (y >= 4692 && y < 4700){
+        texts[2].classList.add("converthiddentext");
+        }
+    }
+});
+
+
+
+
 
 /* animacion cambio perspectiva ghost spiders test */
     let imgtest1 =test1.firstElementChild;
