@@ -351,14 +351,14 @@ function avengersMouseMove(y) {
             trees.style.top =`${0 +mouseY * 0.0006}%`;
 
             girl.style.left =  `${0 + mouseX  * 0.008}%`;
-            girl.style.top =`${-10 +mouseY * 0.008}%`;
+            girl.style.top =`${-20 +mouseY * 0.008}%`;
 
             /* 432 es el left del hulk menos el mouse en x por una velocidad*/
             hulk.style.left =  `${55 + mouseX  * 0.008}%`;
             hulk.style.top =`${20 +mouseY * 0.008}%`;
 
-            black.style.left =  `${38 + mouseX  * 0.008}%`;
-            black.style.top =`${-50 + mouseY * 0.008}%`;
+            black.style.left =  `${42 + mouseX  * 0.008}%`;
+            black.style.top =`${-45 + mouseY * 0.008}%`;
 
         }
     }
@@ -367,13 +367,20 @@ function avengersMouseMove(y) {
 
 
 
+let isGoingUp=false;
+let lastScrollPos = 0;
 
 function textImgsMoreFriendsAnimated(y) {
-    
+    let isScrollingUp = y < lastScrollPos; 
+    /* una variable booleana que se fija que Y sea menor
+     a la ultima posicion del scroll*/
+     /*la primera vez es false porque y es mayor que 0, por lo tanto no se aplica el efecto 
+     de opacidad inversa*/
+    lastScrollPos = y;
     console.log(y);
     /*seccion more friends*/
     let minmorefriends = 4000;
-    let maxmorefriends = 5300;
+    let maxmorefriends = 5500;
     let mintext = 3500;
     let divimages = document.querySelector("#divimages");
 
@@ -386,7 +393,7 @@ function textImgsMoreFriendsAnimated(y) {
         texts[0].classList.add("textvisibles");
     }
 
-    let minfirstimg = 4200;
+    let maxfirstimg = 4500;
     let maxsecondimg = 4600;
     let maxthirdimg = 5022;
     let maxfourthimg = 5060;
@@ -397,11 +404,14 @@ function textImgsMoreFriendsAnimated(y) {
         texts[1].style.top = 2800 -y *0.50 + "px";
         texts[2].style.top = 3400 -y *0.50 + "px";
         texts[3].style.top = 4000 -y *0.50 + "px";
-
         divimages.style.position = "fixed";
         divimages.style.top = "215px";
-
-        if (y < minfirstimg){
+    }
+    else {
+        divimages.style.position = "absolute";
+    }
+    
+    if (y > 4200 && y < maxfirstimg){
         divimages.classList.add("img1");
         divimages.classList.remove("img2");
         divimages.classList.remove("img3");
@@ -410,13 +420,20 @@ function textImgsMoreFriendsAnimated(y) {
         texts[2].classList.remove("textvisibles");
         texts[3].classList.remove("textvisibles");
 
-        texts[0].classList.remove("textinvisibles");
-        texts[0].classList.add("textvisibles");
-        texts[1].classList.remove("converthiddentext");
+        texts[0].classList.add("textinvisibles");
+        texts[0].classList.remove("textvisibles");
         texts[2].classList.remove("converthiddentext");
-        }
-        else if (y >= minfirstimg && y < maxsecondimg){
+        
+        if (y>=4380 && y <= maxfirstimg && isScrollingUp){
+            console.log("")
+            texts[0].classList.remove("textinvisibles");
+            texts[0].classList.add("textvisibles");
 
+            // texts[1].classList.add("converthiddentext");
+        }
+    }
+    if (y >= maxfirstimg && y < maxsecondimg){
+        console.log("1ero")
         divimages.classList.add("img2");
         divimages.classList.remove("img1");
         divimages.classList.remove("img3");
@@ -431,8 +448,9 @@ function textImgsMoreFriendsAnimated(y) {
         texts[1].classList.remove("converthiddentext");
         texts[2].classList.remove("converthiddentext");
 
-        }
-        else if (y >= maxsecondimg && y < maxthirdimg){
+    }
+    if (y >= maxsecondimg && y < maxthirdimg){
+        console.log("segundo")
         divimages.classList.add("img3");
         divimages.classList.remove("img1");
         divimages.classList.remove("img2");
@@ -447,15 +465,17 @@ function textImgsMoreFriendsAnimated(y) {
         texts[1].classList.add("textinvisibles");
 
         texts[1].classList.remove("converthiddentext");
-        texts[2].classList.remove("converthiddentext");
+        if (y >= 4692 && y < 4700 && isScrollingUp) {
+            texts[2].classList.add("converthiddentext");
         }
-        else if (y >= maxthirdimg && y <= maxfourthimg ){
+    }
+    if (y >= maxthirdimg && y <= maxfourthimg ){
+        console.log("tres");
         divimages.classList.add("img4");
         divimages.classList.remove("img1");
         divimages.classList.remove("img2");
         divimages.classList.remove("img3");
         // texts[2].classList.toggle("textinvisibles");
-
         texts[0].classList.remove("textvisibles");
         texts[1].classList.remove("textvisibles");
         texts[2].classList.remove("textvisibles");
@@ -466,20 +486,12 @@ function textImgsMoreFriendsAnimated(y) {
         texts[1].classList.remove("converthiddentext");
         texts[2].classList.remove("converthiddentext");
 
-        }
-        else if (y> mintextscroll && y < maxmorefriends){
-        console.log("holaaaaaaa")
+    }
+    if (y> mintextscroll){ /* si ya termino de pasar las imagenes*/
         divimages.style.position = "absolute";
         divimages.style.top = "1363.5px";
-        }
-
-        if (y>=4292 && y < 4300){
-        texts[1].classList.add("converthiddentext");
-        }
-        if (y >= 4692 && y < 4700){
-        texts[2].classList.add("converthiddentext");
-        }
     }
+
 }
 
 

@@ -808,8 +808,8 @@ body {
     left: 0.7em;
 }
 .black {
-    top: -10.2em;
-    left: 17.5em;
+    top: -9.2em;
+    left: 19.5em;
     z-index: 20;
 }
 .hulk {
@@ -1760,7 +1760,7 @@ body {
 }
 
 .converthiddentext{
-    animation: hiddentext 0.25s ease-in-out;
+    animation: hiddentext 0.25s ease;
     opacity: 0;
 }
 @keyframes hiddentext {
