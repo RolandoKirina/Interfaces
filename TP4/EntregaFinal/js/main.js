@@ -283,10 +283,12 @@ function spidersAndBuildings(y) {
 
 
 
-
+ /* animacion cards */
 function cardsAnimated(y) {
     
     let mincards = 1421;
+
+    /* si llega a x scroll donde estan los cards, se activa la animacion*/
     if (y > mincards){
 
         card1.classList.remove("hidden");
@@ -309,6 +311,22 @@ function cardsAnimated(y) {
         setTimeout(() =>{
             card3.style.top = `${1650}px`;
         },2000);
+    }
+    else { /* si no lo es, reestablece los valores por defecto*/
+        card1.classList.add("hidden");
+        card1.classList.remove("visiblecard1");
+        card2.classList.add("hidden");
+        card2.classList.remove("visiblecard2");
+        card3.classList.add("hidden");
+        card3.classList.remove("visiblecard3");
+
+        card1.classList.remove("fadeincard1");
+        card2.classList.remove("fadeincard2");
+        card3.classList.remove("fadeincard3");
+
+        card1.style.top = "1900px";
+        card2.style.top = "1900px";
+        card3.style.top = "1900px";
     }
 }
 
@@ -437,38 +455,49 @@ function textImgsMoreFriendsAnimated(y) {
     }
     else {
         divimages.style.position = "absolute";
+        texts[0].style.top = "197.5px";
     }
     
     if (y >= 4250 && y < maxfirstimg){
 
         console.log("primer if");
 
+        /* se añade la imagen correspondiente al texto en pantalla visible */
         divimages.classList.add("img1");
         divimages.classList.remove("img2");
         divimages.classList.remove("img3");
         divimages.classList.remove("img4");
        
+        /*  hace visible el primer texto con una transicion  */
         texts[0].classList.add("textvisibles");
         texts[0].classList.remove("textinvisibles");
         texts[0].classList.remove("converthiddentext");
 
+        
+        /*  si se esta subiendo el scroll, hace invisible el segundo texto con una transicion  */
         if(isScrollingUp) {
             texts[1].classList.add("textinvisibles");
             texts[1].classList.remove("textvisibles");
             texts[1].classList.remove("converthiddentext");
         }
-        else {
-            // alert("no se está subiendo el scroll");
+        else {  /* si se esta bajando el scroll, hace visible el segundo texto con una transicion  */
             texts[1].classList.remove("textinvisibles");
             texts[1].classList.add("textvisibles");
             texts[1].classList.remove("converthiddentext");
 
+             /* hace invisible el primer texto con una transicion  */
             texts[0].classList.remove("textvisibles");
             texts[0].classList.add("textinvisibles");
-            texts[0].classList.remove("converthiddentext");            
+            texts[0].classList.remove("converthiddentext");        
+            
+            /* como se transiciono del primer texto al segundo, tambien cambia la imagen en este if en particular dado que es el primero*/
+            divimages.classList.add("img2");
+            divimages.classList.remove("img1");
+            divimages.classList.remove("img3");
+            divimages.classList.remove("img4");
         }
       
-
+            /* se remueven las clases de los textos que no estan en pantalla */
         texts[2].classList.remove("textinvisibles");
         texts[2].classList.remove("textvisibles");
         texts[2].classList.remove("converthiddentext");
@@ -482,77 +511,146 @@ function textImgsMoreFriendsAnimated(y) {
     if (y >= maxfirstimg && y < maxsecondimg){
         console.log("segundo if");
         
+        /* se añade la imagen correspondiente al texto en pantalla visible */
         divimages.classList.add("img2");
         divimages.classList.remove("img1");
         divimages.classList.remove("img3");
         divimages.classList.remove("img4");
-
-        texts[0].classList.remove("textvisibles");
-        texts[0].classList.add("textinvisibles");
-
-
-        texts[1].classList.remove("textinvisibles");
+       
+        /*  hace visible el segundo texto con una transicion  */
         texts[1].classList.add("textvisibles");
+        texts[1].classList.remove("textinvisibles");
         texts[1].classList.remove("converthiddentext");
 
+        
+        /*  si se esta subiendo el scroll, hace invisible el tercer texto con una transicion  */
+        if(isScrollingUp) {
+            texts[2].classList.add("textinvisibles");
+            texts[2].classList.remove("textvisibles");
+            texts[2].classList.remove("converthiddentext");
+        }
+        else {  /* si se esta bajando el scroll, hace visible el segundo texto con una transicion  */
+            texts[1].classList.remove("textinvisibles");
+            texts[1].classList.add("textvisibles");
+            texts[1].classList.remove("converthiddentext");
 
-        texts[2].classList.remove("textvisibles");
-        texts[2].classList.remove("converthiddentext");
+             /* hace invisible el tercer texto con una transicion  */
+            texts[2].classList.remove("textvisibles");
+            texts[2].classList.add("textinvisibles");
+            texts[2].classList.remove("converthiddentext");        
+            
+        }
+      
+            /* se remueven las clases de los textos que no estan en pantalla */
+        texts[0].classList.remove("textinvisibles");
+        texts[0].classList.remove("textvisibles");
+        texts[0].classList.remove("converthiddentext");
 
-
+        texts[3].classList.remove("textinvisibles");
         texts[3].classList.remove("textvisibles");
-
+        texts[3].classList.remove("converthiddentext");
 
     }
     if (y >= maxsecondimg && y < maxthirdimg){
    
-        divimages.classList.add("img3");
-        divimages.classList.remove("img1");
-        divimages.classList.remove("img2");
-        divimages.classList.remove("img4");
+       console.log("tercer if");
+     
+          /* se añade la imagen correspondiente al texto en pantalla visible */
+          divimages.classList.add("img3");
+          divimages.classList.remove("img1");
+          divimages.classList.remove("img2");
+          divimages.classList.remove("img4");
+         
+          /*  hace visible el tercer texto con una transicion  */
+          texts[2].classList.add("textvisibles");
+          texts[2].classList.remove("textinvisibles");
+          texts[2].classList.remove("converthiddentext");
+  
+          
+          /*  si se esta subiendo el scroll, hace invisible el tercer texto con una transicion  */
+          if(isScrollingUp && y <= 4700) {
+              texts[2].classList.add("textinvisibles");
+              texts[2].classList.remove("textvisibles");
+              texts[2].classList.remove("converthiddentext");
+          }
+          else {  /* si se esta bajando el scroll, hace visible el tercer texto con una transicion  */
+              texts[2].classList.remove("textinvisibles");
+              texts[2].classList.add("textvisibles");
+              texts[2].classList.remove("converthiddentext");
+  
+               /* hace invisible el cuarto texto con una transicion  */
+              texts[3].classList.remove("textvisibles");
+              texts[3].classList.add("textinvisibles");
+              texts[3].classList.remove("converthiddentext");        
+              
+          }
+        
+        /* se remueven las clases de los textos que no estan en pantalla */
+          texts[0].classList.remove("textinvisibles");
+          texts[0].classList.remove("textvisibles");
+          texts[0].classList.remove("converthiddentext");
+  
+          texts[1].classList.remove("textinvisibles");
+          texts[1].classList.remove("textvisibles");
+          texts[1].classList.remove("converthiddentext");
 
-        texts[0].classList.remove("textvisibles");
 
-        texts[1].classList.remove("textvisibles");
-        texts[1].classList.add("textinvisibles");
-
-        texts[1].classList.remove("converthiddentext");
-
-        texts[2].classList.add("textvisibles");
-        texts[2].classList.remove("textinvisibles");
-
-
-        if (y >= 4692 && y < 4700 && isScrollingUp) {
-            texts[2].classList.add("converthiddentext");
-        }
-
-        texts[3].classList.remove("textvisibles");
     }
     if (y >= maxthirdimg && y <= maxfourthimg ){
-
+        /* se añade la imagen correspondiente al texto en pantalla visible */
         divimages.classList.add("img4");
         divimages.classList.remove("img1");
         divimages.classList.remove("img2");
         divimages.classList.remove("img3");
-        // texts[2].classList.toggle("textinvisibles");
-
+     
+        /* se remueven las clases de los textos que no estan en pantalla */
+        texts[0].classList.remove("textinvisibles");
         texts[0].classList.remove("textvisibles");
+        texts[0].classList.remove("converthiddentext");
 
+        /* se remueven las clases de los textos que no estan en pantalla */
+        texts[1].classList.remove("textinvisibles");
         texts[1].classList.remove("textvisibles");
         texts[1].classList.remove("converthiddentext");
         
+       /* se remueven las clases de los textos que no estan en pantalla */
         texts[2].classList.remove("textvisibles");
         texts[2].classList.remove("converthiddentext");
-        texts[2].classList.add("textinvisibles");
+        texts[2].classList.remove("textinvisibles");
   
 
-        texts[3].classList.add("textvisibles");
+    /* se oculta el ultimo texto al subir y se muestra el anteultimo/tercero */
+        if(isScrollingUp && y <= 5100) {
+            texts[3].classList.add("textinvisibles");
+            texts[3].classList.remove("textvisibles");
+            texts[3].classList.remove("converthiddentext");
 
+            texts[2].classList.remove("textinvisibles");
+            texts[2].classList.add("textvisibles");
+            texts[2].classList.remove("converthiddentext");
+
+            /* cambia la imagen de la cuarta a la tercera*/
+            divimages.classList.add("img3");
+            divimages.classList.remove("img1");
+            divimages.classList.remove("img2");
+            divimages.classList.remove("img4");
+        }
+        else {
+            texts[3].classList.remove("textinvisibles");
+            texts[3].classList.add("textvisibles");
+            texts[3].classList.remove("converthiddentext");
+        }
 
     }
     if (y> mintextscroll){ /* si ya termino de pasar las imagenes*/
         divimages.style.position = "absolute";
         divimages.style.top = "1363.5px";
+
+        texts[3].classList.remove("textinvisibles");
+        texts[3].classList.add("textvisibles");
+        texts[3].classList.remove("converthiddentext");
+
+        texts[3].style.top = "1363.5px";
     }
 
 }
