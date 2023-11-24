@@ -108,7 +108,7 @@ function showDropdownMenu() {
             li.classList.remove("livisible");
             li.style.opacity = "0";
             open = false;
-        })
+        });
     }
 
     
