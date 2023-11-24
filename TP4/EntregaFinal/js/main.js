@@ -385,10 +385,37 @@ function textImgsMoreFriendsAnimated(y) {
     let divimages = document.querySelector("#divimages");
 
     let texts = document.querySelectorAll(".textTitle");
+
+
+    /* si la posicion del scroll es menor que el minimo donde comienza a realizar cambios en los divs */
     if (y < minmorefriends){
+        /* las imagenes tienen posicion por defecto absolute */
         divimages.style.position = "absolute";
         divimages.style.top = "199.5px";
+
+        /* quitar todas las clases añadidas segun el scroll */
+
+        texts[0].classList.remove("textvisibles");
+        texts[0].classList.remove("textinvisibles");
+        texts[0].classList.remove("converthiddentext");
+
+
+        texts[1].classList.remove("textinvisibles");
+        texts[1].classList.remove("textvisibles");
+        texts[1].classList.remove("converthiddentext");
+
+        texts[2].classList.remove("textinvisibles");
+        texts[2].classList.remove("textvisibles");
+        texts[2].classList.remove("converthiddentext");
+
+        texts[3].classList.remove("textinvisibles");
+        texts[3].classList.remove("textvisibles");
+        texts[3].classList.remove("converthiddentext");
+
     }
+
+
+
     if (y >= mintext && y < 4302){
         texts[0].classList.remove("textvisibles");
         texts[0].classList.add("textvisibles");
@@ -425,14 +452,32 @@ function textImgsMoreFriendsAnimated(y) {
         texts[0].classList.remove("textinvisibles");
         texts[0].classList.remove("converthiddentext");
 
+        if(isScrollingUp) {
+            texts[1].classList.add("textinvisibles");
+            texts[1].classList.remove("textvisibles");
+            texts[1].classList.remove("converthiddentext");
+        }
+        else {
+            // alert("no se está subiendo el scroll");
+            texts[1].classList.remove("textinvisibles");
+            texts[1].classList.add("textvisibles");
+            texts[1].classList.remove("converthiddentext");
 
-        texts[1].classList.add("textinvisibles");
-        texts[1].classList.remove("textvisibles");
+            texts[0].classList.remove("textvisibles");
+            texts[0].classList.add("textinvisibles");
+            texts[0].classList.remove("converthiddentext");            
+        }
+      
 
-        texts[2].classList.remove("converthiddentext");
+        texts[2].classList.remove("textinvisibles");
         texts[2].classList.remove("textvisibles");
+        texts[2].classList.remove("converthiddentext");
 
+        texts[3].classList.remove("textinvisibles");
         texts[3].classList.remove("textvisibles");
+        texts[3].classList.remove("converthiddentext");
+
+
     }
     if (y >= maxfirstimg && y < maxsecondimg){
         console.log("segundo if");
@@ -441,15 +486,22 @@ function textImgsMoreFriendsAnimated(y) {
         divimages.classList.remove("img1");
         divimages.classList.remove("img3");
         divimages.classList.remove("img4");
+
         texts[0].classList.remove("textvisibles");
-        texts[2].classList.remove("textvisibles");
-        texts[3].classList.remove("textvisibles");
+        texts[0].classList.add("textinvisibles");
+
 
         texts[1].classList.remove("textinvisibles");
         texts[1].classList.add("textvisibles");
-        texts[0].classList.add("textinvisibles");
         texts[1].classList.remove("converthiddentext");
+
+
+        texts[2].classList.remove("textvisibles");
         texts[2].classList.remove("converthiddentext");
+
+
+        texts[3].classList.remove("textvisibles");
+
 
     }
     if (y >= maxsecondimg && y < maxthirdimg){
@@ -460,17 +512,21 @@ function textImgsMoreFriendsAnimated(y) {
         divimages.classList.remove("img4");
 
         texts[0].classList.remove("textvisibles");
-        texts[1].classList.remove("textvisibles");
-        texts[3].classList.remove("textvisibles");
-        texts[2].classList.add("textvisibles");
 
-        texts[2].classList.remove("textinvisibles");
+        texts[1].classList.remove("textvisibles");
         texts[1].classList.add("textinvisibles");
 
         texts[1].classList.remove("converthiddentext");
+
+        texts[2].classList.add("textvisibles");
+        texts[2].classList.remove("textinvisibles");
+
+
         if (y >= 4692 && y < 4700 && isScrollingUp) {
             texts[2].classList.add("converthiddentext");
         }
+
+        texts[3].classList.remove("textvisibles");
     }
     if (y >= maxthirdimg && y <= maxfourthimg ){
 
@@ -479,15 +535,19 @@ function textImgsMoreFriendsAnimated(y) {
         divimages.classList.remove("img2");
         divimages.classList.remove("img3");
         // texts[2].classList.toggle("textinvisibles");
+
         texts[0].classList.remove("textvisibles");
+
         texts[1].classList.remove("textvisibles");
+        texts[1].classList.remove("converthiddentext");
+        
         texts[2].classList.remove("textvisibles");
+        texts[2].classList.remove("converthiddentext");
+        texts[2].classList.add("textinvisibles");
+  
 
         texts[3].classList.add("textvisibles");
-        texts[2].classList.add("textinvisibles");
 
-        texts[1].classList.remove("converthiddentext");
-        texts[2].classList.remove("converthiddentext");
 
     }
     if (y> mintextscroll){ /* si ya termino de pasar las imagenes*/
