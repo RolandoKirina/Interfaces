@@ -413,44 +413,30 @@ function textImgsMoreFriendsAnimated(y) {
     }
     
     if (y >= 4250 && y < maxfirstimg){
-        // divimages.classList.add("img1");
-        // divimages.classList.remove("img2");
-        // divimages.classList.remove("img3");
-        // divimages.classList.remove("img4");
-        // texts[1].classList.remove("textvisibles");
-        // texts[2].classList.remove("textvisibles");
-        // texts[3].classList.remove("textvisibles");
 
-        // console.log("se ocultó el texto 0");
-        // texts[0].classList.remove("textvisibles");
-        // texts[0].classList.add("textinvisibles");
-    
-        // texts[2].classList.remove("converthiddentext");
-        
-        // if (y>=4302 && y <= maxfirstimg && isScrollingUp){
-        //     texts[1].classList.remove("textinvisibles");
-        //     texts[1].classList.add("textvisibles");
+        console.log("primer if");
 
-        //     // texts[1].classList.add("converthiddentext");
-        // }
-
-        console.log("cero");
         divimages.classList.add("img1");
         divimages.classList.remove("img2");
         divimages.classList.remove("img3");
         divimages.classList.remove("img4");
-        texts[1].classList.remove("textvisibles");
-        texts[2].classList.remove("textvisibles");
-        texts[3].classList.remove("textvisibles");
-
-        texts[0].classList.remove("textinvisibles");
+       
         texts[0].classList.add("textvisibles");
-        texts[1].classList.add("textinvisibles");
+        texts[0].classList.remove("textinvisibles");
         texts[0].classList.remove("converthiddentext");
+
+
+        texts[1].classList.add("textinvisibles");
+        texts[1].classList.remove("textvisibles");
+
         texts[2].classList.remove("converthiddentext");
+        texts[2].classList.remove("textvisibles");
+
+        texts[3].classList.remove("textvisibles");
     }
     if (y >= maxfirstimg && y < maxsecondimg){
-        console.log("1ero");
+        console.log("segundo if");
+        
         divimages.classList.add("img2");
         divimages.classList.remove("img1");
         divimages.classList.remove("img3");
@@ -467,7 +453,7 @@ function textImgsMoreFriendsAnimated(y) {
 
     }
     if (y >= maxsecondimg && y < maxthirdimg){
-        console.log("segundo")
+   
         divimages.classList.add("img3");
         divimages.classList.remove("img1");
         divimages.classList.remove("img2");
@@ -487,7 +473,7 @@ function textImgsMoreFriendsAnimated(y) {
         }
     }
     if (y >= maxthirdimg && y <= maxfourthimg ){
-        console.log("tres");
+
         divimages.classList.add("img4");
         divimages.classList.remove("img1");
         divimages.classList.remove("img2");
