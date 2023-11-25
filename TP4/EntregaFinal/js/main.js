@@ -31,7 +31,7 @@ function loader (){
         // incrementa el porc de a 1
         if (percentage < 100) {
             percentage++;
-            setTimeout(updatePercentage, 1); // Actualiza cada 40 milisegundos
+            setTimeout(updatePercentage, 40); // Actualiza cada 40 milisegundos
         }
         else {
             loader.classList.remove("backgroundblackloader");
