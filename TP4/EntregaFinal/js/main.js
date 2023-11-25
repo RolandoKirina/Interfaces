@@ -509,8 +509,6 @@ function textImgsMoreFriendsAnimated(y) {
 
     }
     if (y >= maxfirstimg && y < maxsecondimg){
-        console.log("segundo if");
-        
         /* se añade la imagen correspondiente al texto en pantalla visible */
         divimages.classList.add("img2");
         divimages.classList.remove("img1");
@@ -553,8 +551,6 @@ function textImgsMoreFriendsAnimated(y) {
     }
     if (y >= maxsecondimg && y < maxthirdimg){
    
-       console.log("tercer if");
-     
           /* se añade la imagen correspondiente al texto en pantalla visible */
           divimages.classList.add("img3");
           divimages.classList.remove("img1");
@@ -889,6 +885,19 @@ sprisheet.addEventListener("mouseenter", sprisheetHover);
 
 let secondsprisheet = document.querySelector("#secondsprisheet");
 secondsprisheet.addEventListener("mouseenter",secondSprisheetHover);
+ 
+
+let thirdsprisheet = document.querySelector("#thirdsprisheet");
+thirdsprisheet.addEventListener("mouseenter",thirdSprisheetHover);
+
+function thirdSprisheetHover() {
+    thirdsprisheet.classList.remove("thirdspidersprisheet");
+    thirdsprisheet.classList.add("thirdspidersprisheetHover");
+    thirdsprisheet.addEventListener("mouseleave", function(){
+        thirdsprisheet.classList.remove("thirdspidersprisheetHover");
+        thirdsprisheet.classList.add("thirdspidersprisheet");
+    });
+}
 
 function secondSprisheetHover() {
     secondsprisheet.classList.remove("secondspidersprisheet");

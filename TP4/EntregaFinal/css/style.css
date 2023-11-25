@@ -82,7 +82,7 @@ nav div button {
     flex-direction: column;
     align-items: center;
     width: 2em;
-    height: 0.50em;
+    height: 0.55em;
     background-color: #FFE901;
     overflow: hidden;
     transition: transform 0.3s ease-in-out;
@@ -113,17 +113,10 @@ nav div button {
     animation: rotateAndMoveButtonInverse 0.3s ease-in-out forwards;
 }
 
-@keyframes rotateButton {
-    to {
-        transform: rotate(0deg);
-        filter: drop-shadow(4px 5px 0px #02187E);
-    }
-}
 
 @keyframes rotateAndMoveButton {
     to {
-        transform: rotate(45deg) translate(0.12em, 0.4em);
-        filter: drop-shadow(0px 4px 0px #02187E);
+        transform: rotate(45deg) translate(0.8em, 0.2em);
     }
 }
 
@@ -135,11 +128,9 @@ nav div button {
 
 @keyframes rotateAndMoveButtonInverse {
     to {
-        transform: rotate(-45deg) translate(0.2em, -0.2em);
-        filter: drop-shadow(-4px 0px 0px #02187E);
+        transform: rotate(-45deg) translate(0.8em, -0.2em);
     }
 }
-
 
 /* Boton comprar del nav */
 .buy {
@@ -1295,21 +1286,98 @@ body {
     right: 200px;   
 }
 
+.thirddivspidersprisheet{
+    position: absolute;
+    z-index: 100;
+    bottom: 330px;
+    left: 70px; 
+}
+
 
 .secondspidersprisheet{
     width:82px;
     height:76px;
     margin:auto;
     background:url("../img/sprisheet/spider2withouthoverdef.png") repeat-x;
-    animation:walkSpiderHover.8s steps(12) infinite;
+    animation:walkSecondSpiderHover.8s steps(12) infinite;
 }
 .secondspidersprisheetHover{
     width:81.25px;
     height:75px;
     margin:auto;
     background:url("../img/sprisheet/spider2hoverdef.png") repeat-x;
-    animation:walkSpiderHover.8s steps(12) infinite;
+    animation:walkSecondSpiderHover.8s steps(12) infinite;
 }
+.thirdspidersprisheet{
+    width:79px;
+    height:79px;
+    margin:auto;
+    background:url("../img/sprisheet/sprite3.png") repeat-x;
+    animation:thirdSpider.8s steps(12) infinite;
+}
+
+.thirdspidersprisheetHover{
+    width:81.27px;
+    height:81px;
+    margin:auto;
+    background:url("../img/sprisheet/thirdspiderhover.png") repeat-x;
+    animation:thirdSpiderHover.8s steps(11) infinite;
+}
+@keyframes thirdSpiderHover {
+    /* Empezamos en la primera imagen del total del sprite sheet */
+    0% { 
+        background-position:0;
+    }
+    /* El tamaño total de ancho del sprite. Es negativo para que no "camine" hacia atrás */
+    100% { 
+        background-position:-894px;
+    }
+}
+
+@keyframes thirdSpider {
+    /* Empezamos en la primera imagen del total del sprite sheet */
+    0% { 
+        background-position:0;
+    }
+    /* El tamaño total de ancho del sprite. Es negativo para que no "camine" hacia atrás */
+    100% { 
+        background-position:-975px;
+    }
+}
+
+/* .thirdspidersprisheetHover{
+    width:47.72px;
+    height:75px;
+    margin:auto;
+    background:url("../img/sprisheet/spider2hoverdef.png") repeat-x;
+    animation:walkSecondSpiderHover.8s steps(12) infinite;
+} */
+
+@keyframes walkthirdSpider {
+    /* Empezamos en la primera imagen del total del sprite sheet */
+    0% { 
+        background-position:0;
+    }
+    /* El tamaño total de ancho del sprite. Es negativo para que no "camine" hacia atrás */
+    100% { 
+        background-position:-525px;
+    }
+}
+
+
+@keyframes walkSecondSpiderHover {
+    /* Empezamos en la primera imagen del total del sprite sheet */
+    0% { 
+        background-position:0;
+    }
+    /* El tamaño total de ancho del sprite. Es negativo para que no "camine" hacia atrás */
+    100% { 
+        background-position:-984px;
+    }
+}
+
+
+
 
 .spidersprisheet{
     width:93.16px;
@@ -1320,11 +1388,11 @@ body {
 }
 
 .spiderSpriteHover{
-    width:81.91px;
-    height:81px;
+    width:80.4px;
+    height:79px;
     margin:auto;
-    background:url("../img/sprisheet/sprite2def.png") repeat-x;
-    animation:walkSpiderHover.8s steps(12) infinite;
+    background:url("../img/sprisheet/spritehoverdef2.png") repeat-x;
+    animation:walkSpiderHover.8s steps(5) infinite;
 }
 
 @keyframes walkSpiderHover {
@@ -1334,7 +1402,7 @@ body {
     }
     /* El tamaño total de ancho del sprite. Es negativo para que no "camine" hacia atrás */
     100% { 
-        background-position:-983px;
+        background-position:-402px;
     }
 }
 
