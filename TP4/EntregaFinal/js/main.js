@@ -15,6 +15,8 @@ let divtitle = document.querySelector("#divtitle");
 
 document.addEventListener("DOMContentLoaded", loader);
 
+
+/* muestra un loader al cargar la pagina (Opcional 1)*/
 function loader (){
     const percentageElement = document.querySelector('#percentage');
  
@@ -54,7 +56,7 @@ function loader (){
 /* Seccion nav abrir menu */
 
 
-/* animacion menu nav */
+/* convierte el menu hamburguesa en una X (Opcional 2)*/
 let isOpen = false;
 menu.addEventListener('click', function() {
     this.classList.toggle('activar');
@@ -73,7 +75,7 @@ menu.addEventListener('click', function() {
 
 
 
-/* animacion desplegar menu nav */
+/* despliega los items del menu progresivamente (Opcional 3)*/
 let btnmenu = document.querySelector("#btnmenu");
 
 btnmenu.addEventListener('click', showDropdownMenu);
@@ -118,7 +120,7 @@ function showDropdownMenu() {
 
 
 
-/* variables spiders buildings */
+/* variables spiders and buildings */
 
 let heaven = document.querySelector("#heaven");
 
@@ -180,6 +182,8 @@ window.addEventListener("scroll", function (){
 
 /* Seccion primer titulo spidey friends */
 
+/* el titulo se une al header y se vuelve sticky al hacer scroll (Punto 5)*/
+
 function titleSpideyFriendsAnimated(posY) {
     let scaleValue = 0.4;
     let maxscale =0.9;
@@ -217,6 +221,8 @@ function titleSpideyFriendsAnimated(posY) {
 
 /* Seccion goblin animado segun scroll */
 
+
+/*el duende verde se mueve mas lento que la velocidad del scroll (Punto 6)*/
 function goblinAnimated(y) {
     const goblin = document.querySelector("#goblin");
     let min = 400;
@@ -230,7 +236,7 @@ function goblinAnimated(y) {
 
 
 
-
+/* efecto parallax en la seccion Spider And His Amazing Friends (punto 7)*/
 
 function spidersAndBuildings(y) {
 
@@ -284,6 +290,8 @@ function spidersAndBuildings(y) {
 
 
  /* animacion cards */
+
+ /* cards aparecen flotados Fade-in (Punto 9)*/
 function cardsAnimated(y) {
     
     let mincards = 1421;
@@ -332,7 +340,7 @@ function cardsAnimated(y) {
 
 
 
-
+/* en la seccion Ghost-spider los cards se mueven a destiempo con el scroll (Punto 11) */
 
 function testsAnimated(y) {
     
@@ -347,8 +355,7 @@ function testsAnimated(y) {
 }
 
 
-
-
+/* parallax con movimiento del mouse en la seccion la sección "Los vengadores acompañando tu aventura" (Punto 8) */
 
 function avengersMouseMove(y) {
     let minparallaxmouse = 3200;
@@ -387,6 +394,8 @@ function avengersMouseMove(y) {
 
 let isGoingUp=false;
 let lastScrollPos = 0;
+
+/* las imagenes cambian segun cambian los textos al hacer scroll (Punto 4) */
 
 function textImgsMoreFriendsAnimated(y) {
     let isScrollingUp = y < lastScrollPos; 
@@ -653,7 +662,6 @@ function textImgsMoreFriendsAnimated(y) {
 
 
 
-/* Seccion animacion hover spiders white, red y blue */
 
 
 divtitle.classList.remove("hidden");
@@ -666,6 +674,8 @@ let backgroundspidershover = document.querySelector("#backgroundspidershover");
 let clippathtop = document.querySelector("#clip-path-top");
 let clippathbottom = document.querySelector("#clip-path-bottom");
 
+
+/* Seccion animacion hover spiders white, red y blue (Opcional 5, Punto 12)*/
 function hoverSpiders() {
 
 /*spider white*/
@@ -829,7 +839,7 @@ hoverSpiders();
 
 
 
-
+/* en la seccion Ghost-spider los cards cambian la perspectiva al hacer scroll (Punto 11) */
 
 function hoverTests() {
 
@@ -890,6 +900,8 @@ secondsprisheet.addEventListener("mouseenter",secondSprisheetHover);
 let thirdsprisheet = document.querySelector("#thirdsprisheet");
 thirdsprisheet.addEventListener("mouseenter",thirdSprisheetHover);
 
+
+/* Seccion spritesheets animados, que cambian al hacer hover (Punto 13)*/
 function thirdSprisheetHover() {
     thirdsprisheet.classList.remove("thirdspidersprisheet");
     thirdsprisheet.classList.add("thirdspidersprisheetHover");
