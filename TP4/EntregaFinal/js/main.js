@@ -404,7 +404,7 @@ function textImgsMoreFriendsAnimated(y) {
      /*la primera vez es false porque y es mayor que 0, por lo tanto no se aplica el efecto 
      de opacidad inversa*/
     lastScrollPos = y;
-    console.log(y);
+
     /*seccion more friends*/
     let minmorefriends = 4000;
     let maxmorefriends = 5500;
@@ -469,7 +469,7 @@ function textImgsMoreFriendsAnimated(y) {
     
     if (y >= 4250 && y < maxfirstimg){
 
-        console.log("primer if");
+
 
         /* se añade la imagen correspondiente al texto en pantalla visible */
         divimages.classList.add("img1");
